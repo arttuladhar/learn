@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>01 - Basics on Learn</title>
+    <link>http://hello-hugo.aayushtuladhar.com/01-basics/</link>
+    <description>Recent content in 01 - Basics on Learn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://hello-hugo.aayushtuladhar.com/01-basics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting Started</title>
+      <link>http://hello-hugo.aayushtuladhar.com/01-basics/basic_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://hello-hugo.aayushtuladhar.com/01-basics/basic_1/</guid>
+      <description>Learning the Basics Stuff Starting Server hugo server -D  Documentation Learn</description>
+    </item>
+    
+    <item>
+      <title>Layouts</title>
+      <link>http://hello-hugo.aayushtuladhar.com/01-basics/basic_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://hello-hugo.aayushtuladhar.com/01-basics/basic_2/</guid>
+      <description>Headings # h1 Heading ## h2 Heading ### h3 Heading #### h4 Heading ##### h5 Heading ###### h6 Heading  Renders to:
+h1 Heading h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading Typography I am just being Bold
+I Love my Italics Style
+Strike Through
+ I love to give a quotation
+ Images ![Minion](https://octodex.github.com/images/minion.png)  Resizing Images ![Minion](https://octodex.github.com/images/minion.png?width=20pc)  Buttons Get Grav  Note / Info/ Tip / Warning A notice disclaimer</description>
+    </item>
+    
+  </channel>
+</rss>

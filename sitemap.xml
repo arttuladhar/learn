@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://hello-hugo.aayushtuladhar.com/01-basics/</loc>
+  </url>
+  
+  <url>
+    <loc>http://hello-hugo.aayushtuladhar.com/02-advanced/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hello-hugo.aayushtuladhar.com/02-advanced/advanced_1/</loc>
+  </url>
+  
+  <url>
+    <loc>http://hello-hugo.aayushtuladhar.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hello-hugo.aayushtuladhar.com/01-basics/basic_1/</loc>
+  </url>
+  
+  <url>
+    <loc>http://hello-hugo.aayushtuladhar.com/</loc>
+  </url>
+  
+  <url>
+    <loc>http://hello-hugo.aayushtuladhar.com/01-basics/basic_2/</loc>
+  </url>
+  
+  <url>
+    <loc>http://hello-hugo.aayushtuladhar.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
