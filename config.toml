@@ -1,13 +1,13 @@
-baseURL = "http://hello-hugo.aayushtuladhar.com"
+baseURL = "http://learn.aayushtuladhar.com"
 languageCode = "en-us"
-title = "Learn"
+title = "Always Learning; Always Improving"
 theme = "hugo-theme-learn"
 
 [params]
   AuthorName = "Aayush Tuladhar"
   GitHubUser = "arttuladhar"
   SidebarRecentLimit = 5
-  Subtitle = "Hugo, here we come"
+  Subtitle = "Always Learning; Always Improving"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]

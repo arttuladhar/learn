@@ -2,8 +2,9 @@
 
 ### Deploying to Website
 
-```
-./deploy
+```bash
+
+./deploy.sh
 
 git push origin gh-pages
 ```
