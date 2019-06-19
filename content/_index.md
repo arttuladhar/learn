@@ -1,9 +1,7 @@
 ---
-title: "Hugo Testing"
+title: Digital Learning Notebook
 ---
 
-This is my first experience using Hugo
+## My Digital Learning Notebook
 
-{{% notice info %}}
-Your modification will be deployed automatically when merged.
-{{% /notice %}}
+As I learn new things, I will be using this notebook to capture important notes regarding various technical aspects of Software Engineering and Technology in general.
