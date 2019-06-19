@@ -1,55 +1,90 @@
 [
 {
-	"uri": "http://hello-hugo.aayushtuladhar.com/01-basics/",
+	"uri": "http://learn.aayushtuladhar.com/01-basics/",
 	"title": "01 - Basics",
 	"tags": [],
 	"description": "",
 	"content": " All the basic things "
 },
 {
-	"uri": "http://hello-hugo.aayushtuladhar.com/02-advanced/",
+	"uri": "http://learn.aayushtuladhar.com/02-advanced/",
 	"title": "02 - Advanceds",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://hello-hugo.aayushtuladhar.com/02-advanced/advanced_1/",
+	"uri": "http://learn.aayushtuladhar.com/02-advanced/advanced_1/",
 	"title": "Advanced",
 	"tags": [],
 	"description": "",
 	"content": " Learning the Advanced Stuff Finally\n"
 },
 {
-	"uri": "http://hello-hugo.aayushtuladhar.com/categories/",
+	"uri": "http://learn.aayushtuladhar.com/google-cloud-platform/basic-essentials/",
+	"title": "Basic Essentials",
+	"tags": [],
+	"description": "",
+	"content": " Creting Instance (Directly) # Create Compute Instance gcloud compute instances create gcelab2 --machine-type n1-standard-2 \\ --zone us-central1-c  Using Instance Templates / Instance Groups # Create Instance Template gcloud compute instance-templates create nginx-template \\ --metadata-from-file startup-script=startup.sh # Create Target Pool gcloud compute target-pools create nginx-pool # Create Instance Group gcloud compute instance-groups managed create nginx-group \\ --base-instance-name nginx \\ --size 2 \\ --template nginx-template \\ --target-pool nginx-pool # List Instances gcloud compute instances list  Create Filewall # Create Filewall rule to Allow 80 gcloud compute firewall-rules create www-firewall --allow tcp:80  SSH Instance gcloud compute ssh gcelab2 --zone us-central1-c   gcloud is a command-line tool for Google Cloud Platform\n  gsutil is a command-line tool to mange Cloud Storage resources\n Config # List Config gcloud config list # Sets Default Zone to us-central1-a gcloud config set compute/zone us-central1-a  Kubernetes Cluster Engine A cluster consists of at least one cluster master machine and multiple worker machines called nodes. Nodes are Compute Engine virtual machine (VM) instances that run the Kubernetes processes necessary to make them part of the cluster.\n# Create Cluster gcloud container clusters create my-precious-cluster # Updates a kubeconfig file with appropriate credentials to point kubectl at a specific cluster in GKE gcloud container cluster get-credentials my-precious-cluster # Delete Cluster gcloud container clusters delete my-precious-cluster  Network Load Balancer Network load balancing allows you to balance the load of your systems based on incoming IP protocol data, such as address, port, and protocol type. You also get some options that are not available, with HTTP(S) load balancing. For example, you can load balance additional TCP/UDP-based protocols such as SMTP traffic. And if your application is interested in TCP-connection-related characteristics, network load balancing allows your app to inspect the packets, where HTTP(S) load balancing does not.\n# Create Forwarding Rules gcloud compute forwarding-rules create nginx-lab \\ --region us-central1 --port=80 --target-pool nginx-pool # List Forwarding Rules gcloud compute forwarding-rules list  Creating HTTP(s) Load Balancer # Create Health Check gcloud compute http-health-checks create http-basic-check # Defining a HTTP service and map a port name to the relevant port gcloud compute instance-groups manged set-named-ports nginx-group --named-ports http:80 # Creating Backend Service gcloud compute backend-services create nginx-backend \\ --protocol HTTP \\ --http-health-checks http-basic-check \\ --global # Adding instance group to the backend services gcloud compute backend-services add-backend nginx-backend \\ --instance-group nginx-group \\ --instance-group-zone us-central1-a \\ --global # Create a default URL map that directs all incoming requests to all your instances gcloud compute url-maps create web-map --default-service nginx-backend # Create a target HTTP proxy to route requests to URL map gcloud compute target-http-proxies create http-lb-proxy --url-map web-map # Create global forwarding rule to handle and route incoming requests gcloud compute forwarding-rules create http-content-rule \\ --global --target-http-proxy http-lb-proxy --ports 80  "
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://hello-hugo.aayushtuladhar.com/01-basics/basic_1/",
+	"uri": "http://learn.aayushtuladhar.com/google-cloud-platform/cloud-storage/",
+	"title": "Cloud Storage",
+	"tags": [],
+	"description": "",
+	"content": " Create a Stoage Bucket gsutil mb gs://unique-name  "
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/",
+	"title": "Continuous Delivery with Jenkins in Kubernetes Engine",
+	"tags": [],
+	"description": "",
+	"content": "# Create Kubernetes Cluster gcloud container clusters create jenkins-cd \\ --num-nodes 2 \\ --machine-type n1-standard-2 \\ --scopes \u0026quot;https://www.googleapis.com/auth/projecthosting,cloud-platform\u0026quot; # Update KubeConfig with Cluster credentials gcloud container clusters get-credentials jenkins-cd # Verify Kubernetes can connect to GCP Kubernetes Cluster kubectl cluster-info  "
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/",
+	"title": "Digital Learning Notebook",
+	"tags": [],
+	"description": "",
+	"content": " My Digital Learning Notebook As I learn new things, I will be using this notebook to capture important notes regarding various technical aspects of Software Engineering and Technology in general.\n"
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/01-basics/basic_1/",
 	"title": "Getting Started",
 	"tags": [],
 	"description": "",
 	"content": " Learning the Basics Stuff Starting Server hugo server -D  Documentation Learn\n"
 },
 {
-	"uri": "http://hello-hugo.aayushtuladhar.com/",
-	"title": "Hugo Testing",
+	"uri": "http://learn.aayushtuladhar.com/google-cloud-platform/",
+	"title": "Google Cloud Platforms",
 	"tags": [],
 	"description": "",
-	"content": "This is my first experience using Hugo\nYour modification will be deployed automatically when merged.\n "
+	"content": ""
 },
 {
-	"uri": "http://hello-hugo.aayushtuladhar.com/01-basics/basic_2/",
+	"uri": "http://learn.aayushtuladhar.com/01-basics/basic_2/",
 	"title": "Layouts",
 	"tags": [],
 	"description": "",
 	"content": " Headings # h1 Heading ## h2 Heading ### h3 Heading #### h4 Heading ##### h5 Heading ###### h6 Heading  Renders to:\nh1 Heading h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading Typography I am just being Bold\nI Love my Italics Style\nStrike Through\n I love to give a quotation\n Images ![Minion](https://octodex.github.com/images/minion.png)  Resizing Images ![Minion](https://octodex.github.com/images/minion.png?width=20pc)  Buttons Get Grav  Note / Info/ Tip / Warning A notice disclaimer\n An information disclaimer\n A tip disclaimer\n A warning disclaimer\n Expand   Expand me...   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n  "
 },
 {
-	"uri": "http://hello-hugo.aayushtuladhar.com/tags/",
+	"uri": "http://learn.aayushtuladhar.com/google-cloud-platform/orchestrating-cloud-with-kubernetes/",
+	"title": "Orchestrating Cloud with Kubernetes",
+	"tags": [],
+	"description": "",
+	"content": " # Creating Kubernetes Cluster gcloud container clusters create io  Quick Demo # Create Deployment kubectl create deployment nginx --image=nginx:1.10.0 # List Pods kubectl get pods # Expose Deployment via a Service using LoadBalancer kubectl expose deployment nginx --port 80 --type LoadBalancer # List Service kubectl get services  Pods Pods are the smallest deployable units of computing that can be created and managed in Kubernetes. Pods represent and hold a collection of one or more containers. Generally, if you have multiple containers with a hard dependency on each other, you package the containers inside a single pod.\nPods\n# Create Pod kubectl create -f pods/monolith.yaml # List Pods kubectl get pods # Describe Pod kubectl describe pods monolith # Port Forward Pod kubectl port-forward monolith 10080:80  Services An abstract way to expose an application running on a set of Pods as a network service.\nNo need to modify your application to use an unfamiliar service discovery mechanism. Kubernetes gives pods their own IP addresses and a single DNS name for a set of pods, and can load-balance across them.\nPods aren\u0026rsquo;t meant to be persistent. They can be stopped or started for many reasons - like failed liveness or readiness checks - and this leads to a problem\n "
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",

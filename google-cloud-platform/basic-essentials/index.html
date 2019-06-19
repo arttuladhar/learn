@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>01 - Basics :: Always Learning; Always Improving</title>
+    <title>Basic Essentials :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1560969380" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/01-basics/">
+  <body class="" data-url="/google-cloud-platform/basic-essentials/">
     <nav id="sidebar" class="">
 
 
@@ -77,8 +77,8 @@
   
     
     <li data-nav-id="/01-basics/" title="01 - Basics" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/01-basics/">
@@ -198,7 +198,7 @@
   
     
     <li data-nav-id="/google-cloud-platform/" title="Google Cloud Platforms" class="dd-item 
-        
+        parent
         
         
         ">
@@ -222,7 +222,7 @@
  
   
     
-      <li data-nav-id="/google-cloud-platform/basic-essentials/" title="Basic Essentials" class="dd-item ">
+      <li data-nav-id="/google-cloud-platform/basic-essentials/" title="Basic Essentials" class="dd-item active">
         <a href="/google-cloud-platform/basic-essentials/">
         Basic Essentials
         
@@ -344,7 +344,13 @@
             
           
           
-            <a href='/'>Digital Learning Notebook</a> > 01 - Basics
+            
+            
+          
+          
+            <a href='/'>Digital Learning Notebook</a> > <a href='/google-cloud-platform/'>Google Cloud Platforms</a> > Basic Essentials
+          
+         
           
          
           
@@ -359,9 +365,17 @@
 <ul>
 <li>
 <ul>
-<li>
+<li><a href="#creting-instance-directly">Creting Instance (Directly)</a></li>
+<li><a href="#using-instance-templates-instance-groups">Using Instance Templates / Instance Groups</a></li>
+<li><a href="#create-filewall">Create Filewall</a></li>
+<li><a href="#ssh-instance">SSH Instance</a></li>
+<li><a href="#config">Config</a>
 <ul>
-<li><a href="#all-the-basic-things">All the basic things</a></li>
+<li><a href="#kubernetes-cluster-engine">Kubernetes Cluster Engine</a></li>
+</ul></li>
+<li><a href="#network-load-balancer">Network Load Balancer</a>
+<ul>
+<li><a href="#creating-http-s-load-balancer">Creating HTTP(s) Load Balancer</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -381,7 +395,7 @@
           
             <h1>
               
-              01 - Basics
+              Basic Essentials
             </h1>
           
 
@@ -390,17 +404,137 @@
 
 
 
-	
 
-<h3 id="all-the-basic-things">All the basic things</h3>
+<h2 id="creting-instance-directly">Creting Instance (Directly)</h2>
 
+<pre><code class="language-bash"># Create Compute Instance
+gcloud compute instances create gcelab2 --machine-type n1-standard-2 \
+    --zone us-central1-c
+</code></pre>
 
+<hr />
 
+<h2 id="using-instance-templates-instance-groups">Using Instance Templates / Instance Groups</h2>
+
+<pre><code class="language-bash"># Create Instance Template
+gcloud compute instance-templates create nginx-template \
+         --metadata-from-file startup-script=startup.sh
+
+# Create Target Pool
+gcloud compute target-pools create nginx-pool
+
+# Create Instance Group
+gcloud compute instance-groups managed create nginx-group \
+         --base-instance-name nginx \
+         --size 2 \
+         --template nginx-template \
+         --target-pool nginx-pool
+
+# List Instances
+gcloud compute instances list
+
+</code></pre>
+
+<h2 id="create-filewall">Create Filewall</h2>
+
+<pre><code class="language-bash"># Create Filewall rule to Allow 80
+gcloud compute firewall-rules create www-firewall --allow tcp:80
+</code></pre>
+
+<hr />
+
+<h2 id="ssh-instance">SSH Instance</h2>
+
+<pre><code class="language-bash">gcloud compute ssh gcelab2 --zone us-central1-c
+</code></pre>
+
+<blockquote>
+<p><code>gcloud</code> is a command-line tool for Google Cloud Platform</p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+<p><code>gsutil</code> is a command-line tool to mange Cloud Storage resources</p>
+</blockquote>
+
+<hr />
+
+<h2 id="config">Config</h2>
+
+<pre><code class="language-bash"># List Config
+gcloud config list
+
+# Sets Default Zone to us-central1-a
+gcloud config set compute/zone us-central1-a
+</code></pre>
+
+<hr />
+
+<h3 id="kubernetes-cluster-engine">Kubernetes Cluster Engine</h3>
+
+<p>A cluster consists of at least one cluster master machine and multiple worker machines called nodes. Nodes are Compute Engine virtual machine (VM) instances that run the Kubernetes processes necessary to make them part of the cluster.</p>
+
+<pre><code class="language-bash"># Create Cluster
+gcloud container clusters create my-precious-cluster
+
+# Updates a kubeconfig file with appropriate credentials to point kubectl at a specific cluster in GKE
+gcloud container cluster get-credentials my-precious-cluster
+
+# Delete Cluster
+gcloud container clusters delete my-precious-cluster
+</code></pre>
+
+<hr />
+
+<h2 id="network-load-balancer">Network Load Balancer</h2>
+
+<p>Network load balancing allows you to balance the load of your systems based on incoming IP protocol data, such as address, port, and protocol type. You also get some options that are not available, with HTTP(S) load balancing. For example, you can load balance additional TCP/UDP-based protocols such as SMTP traffic. And if your application is interested in TCP-connection-related characteristics, network load balancing allows your app to inspect the packets, where HTTP(S) load balancing does not.</p>
+
+<pre><code class="language-bash"># Create Forwarding Rules
+gcloud compute forwarding-rules create nginx-lab \
+    --region us-central1 --port=80 --target-pool nginx-pool
+
+# List Forwarding Rules
+gcloud compute forwarding-rules list
+</code></pre>
+
+<h3 id="creating-http-s-load-balancer">Creating HTTP(s) Load Balancer</h3>
+
+<pre><code class="language-bash"># Create Health Check
+gcloud compute http-health-checks create http-basic-check
+
+# Defining a HTTP service and map a port name to the relevant port
+gcloud compute instance-groups manged set-named-ports nginx-group --named-ports http:80
+
+# Creating Backend Service
+gcloud compute backend-services create nginx-backend \
+    --protocol HTTP \
+    --http-health-checks http-basic-check \
+    --global
+
+# Adding instance group to the backend services
+gcloud compute backend-services add-backend nginx-backend \
+    --instance-group nginx-group \
+    --instance-group-zone us-central1-a \
+    --global
+
+# Create a default URL map that directs all incoming requests to all your instances
+gcloud compute url-maps create web-map --default-service nginx-backend
+
+# Create a target HTTP proxy to route requests to URL map
+gcloud compute target-http-proxies create http-lb-proxy --url-map web-map
+
+# Create global forwarding rule to handle and route incoming requests
+gcloud compute forwarding-rules create http-content-rule \
+    --global --target-http-proxy http-lb-proxy --ports 80
+</code></pre>
 
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -433,20 +567,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -457,9 +577,6 @@
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -476,22 +593,6 @@
                     
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -541,10 +642,47 @@
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -601,10 +739,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/" title="Digital Learning Notebook"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/google-cloud-platform/" title="Google Cloud Platforms"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/01-basics/basic_1/" title="Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/google-cloud-platform/cloud-storage/" title="Cloud Storage" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -635,3 +773,4 @@
 
   </body>
 </html>
+

@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Digital Learning Notebook on Always Learning; Always Improving</title>
-    <link>http://learn.aayushtuladhar.com/</link>
-    <description>Recent content in Digital Learning Notebook on Always Learning; Always Improving</description>
+    <title>Google Cloud Platforms on Always Learning; Always Improving</title>
+    <link>http://learn.aayushtuladhar.com/google-cloud-platform/</link>
+    <description>Recent content in Google Cloud Platforms on Always Learning; Always Improving</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://learn.aayushtuladhar.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://learn.aayushtuladhar.com/google-cloud-platform/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Advanced</title>
-      <link>http://learn.aayushtuladhar.com/02-advanced/advanced_1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/02-advanced/advanced_1/</guid>
-      <description>Learning the Advanced Stuff Finally</description>
-    </item>
     
     <item>
       <title>Basic Essentials</title>
@@ -44,29 +35,6 @@
       
       <guid>http://learn.aayushtuladhar.com/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/</guid>
       <description># Create Kubernetes Cluster gcloud container clusters create jenkins-cd \ --num-nodes 2 \ --machine-type n1-standard-2 \ --scopes &amp;quot;https://www.googleapis.com/auth/projecthosting,cloud-platform&amp;quot; # Update KubeConfig with Cluster credentials gcloud container clusters get-credentials jenkins-cd # Verify Kubernetes can connect to GCP Kubernetes Cluster kubectl cluster-info  </description>
-    </item>
-    
-    <item>
-      <title>Getting Started</title>
-      <link>http://learn.aayushtuladhar.com/01-basics/basic_1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/01-basics/basic_1/</guid>
-      <description>Learning the Basics Stuff Starting Server hugo server -D  Documentation Learn</description>
-    </item>
-    
-    <item>
-      <title>Layouts</title>
-      <link>http://learn.aayushtuladhar.com/01-basics/basic_2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/01-basics/basic_2/</guid>
-      <description>Headings # h1 Heading ## h2 Heading ### h3 Heading #### h4 Heading ##### h5 Heading ###### h6 Heading  Renders to:
-h1 Heading h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading Typography I am just being Bold
-I Love my Italics Style
-Strike Through
- I love to give a quotation
- Images ![Minion](https://octodex.github.com/images/minion.png)  Resizing Images ![Minion](https://octodex.github.com/images/minion.png?width=20pc)  Buttons Get Grav  Note / Info/ Tip / Warning A notice disclaimer</description>
     </item>
     
     <item>

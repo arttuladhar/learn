@@ -3,37 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://hello-hugo.aayushtuladhar.com/01-basics/</loc>
+    <loc>http://learn.aayushtuladhar.com/01-basics/</loc>
   </url>
   
   <url>
-    <loc>http://hello-hugo.aayushtuladhar.com/02-advanced/</loc>
+    <loc>http://learn.aayushtuladhar.com/02-advanced/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://hello-hugo.aayushtuladhar.com/02-advanced/advanced_1/</loc>
+    <loc>http://learn.aayushtuladhar.com/02-advanced/advanced_1/</loc>
   </url>
   
   <url>
-    <loc>http://hello-hugo.aayushtuladhar.com/categories/</loc>
+    <loc>http://learn.aayushtuladhar.com/google-cloud-platform/basic-essentials/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://hello-hugo.aayushtuladhar.com/01-basics/basic_1/</loc>
+    <loc>http://learn.aayushtuladhar.com/google-cloud-platform/cloud-storage/</loc>
   </url>
   
   <url>
-    <loc>http://hello-hugo.aayushtuladhar.com/</loc>
+    <loc>http://learn.aayushtuladhar.com/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/</loc>
   </url>
   
   <url>
-    <loc>http://hello-hugo.aayushtuladhar.com/01-basics/basic_2/</loc>
+    <loc>http://learn.aayushtuladhar.com/</loc>
   </url>
   
   <url>
-    <loc>http://hello-hugo.aayushtuladhar.com/tags/</loc>
+    <loc>http://learn.aayushtuladhar.com/01-basics/basic_1/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/google-cloud-platform/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/01-basics/basic_2/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/google-cloud-platform/orchestrating-cloud-with-kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/tags/</loc>
     <priority>0</priority>
   </url>
   
