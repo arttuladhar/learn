@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascripts on Always Learning; Always Improving</title>
+    <link>http://learn.aayushtuladhar.com/javascript/</link>
+    <description>Recent content in Javascripts on Always Learning; Always Improving</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://learn.aayushtuladhar.com/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Arrow Functions</title>
+      <link>http://learn.aayushtuladhar.com/javascript/es-6/arrowfunctions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/javascript/es-6/arrowfunctions/</guid>
+      <description>Arrow Function Express allows you to write shorter syntax than it&amp;rsquo;s predecessor Function expression. In addition and more exciting is how the new Arrow function bind their context.
+(param1, param2, param3) =&amp;gt; { statements } singleParam =&amp;gt; { statements } () =&amp;gt; { statements }  Example var materials = [ &#39;Iron&#39;, &#39;Calcium&#39;, &#39;Sodium&#39;, &#39;Magnanese&#39; ] materials.map(material =&amp;gt; material.length)  An arrow function does not newly define its own this when it&amp;rsquo;s being executed.</description>
+    </item>
+    
+    <item>
+      <title>Destructuring JavaScript Objects</title>
+      <link>http://learn.aayushtuladhar.com/javascript/es-6/destructuring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/javascript/es-6/destructuring/</guid>
+      <description>const person = { firstName: &#39;Aayush&#39;, lastName: &#39;Tuladhar&#39;, country: &#39;Nepal&#39;, twitter: &#39;@aayushtuladhar&#39; } /* Problem */ const first = person.firstName; const last = person.lastName; console.log(`Hello ${first} ${last}`); /* Solution */ const { firstName, lastName } = person; console.log(`Hello ${firstName} ${lastName}`); /* ------------------ */ const art = { first: &#39;ART&#39;, last: &#39;Ratna&#39;, links: { social: { twitter: &#39;https://twitter.com/aayushtuladhar&#39;, facebook: &#39;https://facebook.com/aayush.tuladhar&#39;, }, web: { blog: &#39;https://aayushtuladhar.com&#39; } } }; const { twitter, facebook } = art.</description>
+    </item>
+    
+    <item>
+      <title>Teplate Literals</title>
+      <link>http://learn.aayushtuladhar.com/javascript/template-literals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/javascript/template-literals/</guid>
+      <description>Template literals are string literals allowing embedded expressions. You can use multi-line strings and string interpolation features with them.
+const someText = `string text ${expression} string text`  </description>
+    </item>
+    
+  </channel>
+</rss>

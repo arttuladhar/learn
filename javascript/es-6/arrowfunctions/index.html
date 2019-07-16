@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Advanced :: Always Learning; Always Improving</title>
+    <title>Arrow Functions :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1563298807" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/02-advanced/advanced_1/">
+  <body class="" data-url="/javascript/es-6/arrowfunctions/">
     <nav id="sidebar" class="">
 
 
@@ -147,7 +147,7 @@
   
     
     <li data-nav-id="/02-advanced/" title="02 - Advanceds" class="dd-item 
-        parent
+        
         
         
         ">
@@ -171,7 +171,7 @@
  
   
     
-      <li data-nav-id="/02-advanced/advanced_1/" title="Advanced" class="dd-item active">
+      <li data-nav-id="/02-advanced/advanced_1/" title="Advanced" class="dd-item ">
         <a href="/02-advanced/advanced_1/">
         Advanced
         
@@ -325,7 +325,7 @@
   
     
     <li data-nav-id="/javascript/" title="Javascripts" class="dd-item 
-        
+        parent
         
         
         ">
@@ -349,7 +349,7 @@
  
   
     
-      <li data-nav-id="/javascript/es-6/arrowfunctions/" title="Arrow Functions" class="dd-item ">
+      <li data-nav-id="/javascript/es-6/arrowfunctions/" title="Arrow Functions" class="dd-item active">
         <a href="/javascript/es-6/arrowfunctions/">
         Arrow Functions
         
@@ -507,7 +507,7 @@
             
           
           
-            <a href='/'>Digital Learning Notebook</a> > <a href='/02-advanced/'>02 - Advanceds</a> > Advanced
+            <a href='/'>Digital Learning Notebook</a> > <a href='/javascript/'>Javascripts</a> > Arrow Functions
           
          
           
@@ -526,7 +526,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#learning-the-advanced-stuff">Learning the Advanced Stuff</a></li>
+<li><a href="#example">Example</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -546,7 +546,7 @@
           
             <h1>
               
-              Advanced
+              Arrow Functions
             </h1>
           
 
@@ -556,9 +556,45 @@
 
 
 
-<h3 id="learning-the-advanced-stuff">Learning the Advanced Stuff</h3>
+<p>Arrow Function Express allows you to write shorter syntax than it&rsquo;s predecessor Function expression. In addition and more exciting is how the new Arrow function bind their context.</p>
 
-<p>Finally</p>
+<pre><code class="language-javascript">(param1, param2, param3) =&gt; {
+    statements
+}
+
+singleParam =&gt; { statements }
+
+() =&gt; { statements }
+</code></pre>
+
+<h3 id="example">Example</h3>
+
+<pre><code class="language-javascript">var materials = [
+    'Iron', 'Calcium', 'Sodium', 'Magnanese'
+]
+
+materials.map(material =&gt; material.length)
+</code></pre>
+
+<p>An arrow function does not newly define its own this when it&rsquo;s being executed.The value of this is always inherited from the enclosing scope.</p>
+
+<pre><code class="language-javascript">// ES5
+function CounterES5(){
+   this.seconds = 0;
+   window.setInterval(function() {
+    this.seconds++;
+    console.log(seconds);
+  }.bind(this), 1000);
+}
+//ES6
+function CounterES6(){
+   this.seconds =0;
+   window.setInterval( () =&gt; {
+     this.seconds++;
+     console.log(seconds)
+   },1000 );
+}
+</code></pre>
 
 
 <footer class=" footline" >
@@ -648,7 +684,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -661,7 +696,6 @@
             
             
                 
-                    
                     
                 
                 
@@ -681,9 +715,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -781,6 +812,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -793,6 +825,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -809,6 +842,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -881,10 +917,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/02-advanced/" title="02 - Advanceds"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/javascript/" title="Javascripts"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/google-cloud-platform/" title="Google Cloud Platforms" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/javascript/es-6/destructuring/" title="Destructuring JavaScript Objects" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

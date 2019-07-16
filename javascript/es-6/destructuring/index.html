@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Advanced :: Always Learning; Always Improving</title>
+    <title>Destructuring JavaScript Objects :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1563298807" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/02-advanced/advanced_1/">
+  <body class="" data-url="/javascript/es-6/destructuring/">
     <nav id="sidebar" class="">
 
 
@@ -147,7 +147,7 @@
   
     
     <li data-nav-id="/02-advanced/" title="02 - Advanceds" class="dd-item 
-        parent
+        
         
         
         ">
@@ -171,7 +171,7 @@
  
   
     
-      <li data-nav-id="/02-advanced/advanced_1/" title="Advanced" class="dd-item active">
+      <li data-nav-id="/02-advanced/advanced_1/" title="Advanced" class="dd-item ">
         <a href="/02-advanced/advanced_1/">
         Advanced
         
@@ -325,7 +325,7 @@
   
     
     <li data-nav-id="/javascript/" title="Javascripts" class="dd-item 
-        
+        parent
         
         
         ">
@@ -368,7 +368,7 @@
  
   
     
-      <li data-nav-id="/javascript/es-6/destructuring/" title="Destructuring JavaScript Objects" class="dd-item ">
+      <li data-nav-id="/javascript/es-6/destructuring/" title="Destructuring JavaScript Objects" class="dd-item active">
         <a href="/javascript/es-6/destructuring/">
         Destructuring JavaScript Objects
         
@@ -507,7 +507,7 @@
             
           
           
-            <a href='/'>Digital Learning Notebook</a> > <a href='/02-advanced/'>02 - Advanceds</a> > Advanced
+            <a href='/'>Digital Learning Notebook</a> > <a href='/javascript/'>Javascripts</a> > Destructuring JavaScript Objects
           
          
           
@@ -520,17 +520,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#learning-the-advanced-stuff">Learning the Advanced Stuff</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
+
     </div>
 </div>
 
@@ -546,7 +536,7 @@
           
             <h1>
               
-              Advanced
+              Destructuring JavaScript Objects
             </h1>
           
 
@@ -554,11 +544,48 @@
 
 
 
+<pre><code class="language-javascript">const person = {
+  firstName: 'Aayush',
+  lastName: 'Tuladhar',
+  country: 'Nepal',
+  twitter: '@aayushtuladhar'
+}
+
+/* Problem */
+const first = person.firstName;
+const last = person.lastName;
+console.log(`Hello ${first} ${last}`);
+
+/* Solution */
+const {
+  firstName,
+  lastName
+} = person;
+console.log(`Hello ${firstName} ${lastName}`);
 
 
-<h3 id="learning-the-advanced-stuff">Learning the Advanced Stuff</h3>
+/* ------------------ */
+const art = {
+  first: 'ART',
+  last: 'Ratna',
+  links: {
+    social: {
+      twitter: 'https://twitter.com/aayushtuladhar',
+      facebook: 'https://facebook.com/aayush.tuladhar',
+    },
+    web: {
+      blog: 'https://aayushtuladhar.com'
+    }
+  }
+};
 
-<p>Finally</p>
+const {
+  twitter,
+  facebook
+} = art.links.social;
+console.log(twitter);
+console.log(facebook);
+</code></pre>
 
 
 <footer class=" footline" >
@@ -648,7 +675,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -661,7 +687,6 @@
             
             
                 
-                    
                     
                 
                 
@@ -681,9 +706,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -781,6 +803,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -793,6 +816,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -810,6 +836,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -825,6 +852,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -881,10 +911,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/02-advanced/" title="02 - Advanceds"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/javascript/es-6/arrowfunctions/" title="Arrow Functions"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/google-cloud-platform/" title="Google Cloud Platforms" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/javascript/template-literals/" title="Teplate Literals" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

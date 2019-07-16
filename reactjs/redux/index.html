@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Advanced :: Always Learning; Always Improving</title>
+    <title>Getting Started with Redux :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1563298807" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/02-advanced/advanced_1/">
+  <body class="" data-url="/reactjs/redux/">
     <nav id="sidebar" class="">
 
 
@@ -147,7 +147,7 @@
   
     
     <li data-nav-id="/02-advanced/" title="02 - Advanceds" class="dd-item 
-        parent
+        
         
         
         ">
@@ -171,7 +171,7 @@
  
   
     
-      <li data-nav-id="/02-advanced/advanced_1/" title="Advanced" class="dd-item active">
+      <li data-nav-id="/02-advanced/advanced_1/" title="Advanced" class="dd-item ">
         <a href="/02-advanced/advanced_1/">
         Advanced
         
@@ -414,7 +414,7 @@
   
     
     <li data-nav-id="/reactjs/" title="ReactJs" class="dd-item 
-        
+        parent
         
         
         ">
@@ -438,7 +438,7 @@
  
   
     
-      <li data-nav-id="/reactjs/redux/" title="Getting Started with Redux" class="dd-item ">
+      <li data-nav-id="/reactjs/redux/" title="Getting Started with Redux" class="dd-item active">
         <a href="/reactjs/redux/">
         Getting Started with Redux
         
@@ -507,7 +507,7 @@
             
           
           
-            <a href='/'>Digital Learning Notebook</a> > <a href='/02-advanced/'>02 - Advanceds</a> > Advanced
+            <a href='/'>Digital Learning Notebook</a> > <a href='/reactjs/'>ReactJs</a> > Getting Started with Redux
           
          
           
@@ -524,9 +524,12 @@
 <ul>
 <li>
 <ul>
-<li>
+<li><a href="#redux-store">Redux Store</a></li>
+<li><a href="#redux-reducer">Redux Reducer</a></li>
+<li><a href="#redux-actions">Redux Actions</a>
 <ul>
-<li><a href="#learning-the-advanced-stuff">Learning the Advanced Stuff</a></li>
+<li><a href="#redux-dispatch">Redux Dispatch</a></li>
+<li><a href="#references">References</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -546,7 +549,7 @@
           
             <h1>
               
-              Advanced
+              Getting Started with Redux
             </h1>
           
 
@@ -556,9 +559,36 @@
 
 
 
-<h3 id="learning-the-advanced-stuff">Learning the Advanced Stuff</h3>
+<p>Redux gives you a store, and lets you keep state in it, and get state out, and respond when the state changes. But that’s all it does.</p>
 
-<p>Finally</p>
+<p>It’s actually react-redux that lets you connect pieces of the state to React components.</p>
+
+<blockquote>
+<p>The state is the data, and the store is where it’s kept</p>
+</blockquote>
+
+<h2 id="redux-store">Redux Store</h2>
+
+<h2 id="redux-reducer">Redux Reducer</h2>
+
+<p>Reducer&rsquo;s job is to take the current <code>state</code> and <code>action</code> and return the new state. It has another job, too. It should return the <strong>initial state</strong> the first time it&rsquo;s called.</p>
+
+<p><strong>Reducer Rule # 1</strong> = Never return undefined from a reducer
+<strong>Reduce Rule # 2</strong> = Reduces must be a pure functions (They can&rsquo;t modify their arguments, and they can&rsquo;t have side effects)</p>
+
+<h2 id="redux-actions">Redux Actions</h2>
+
+<p>An action is Redux-speak for a plain object with a property called <code>type</code>. In order to keep things sane and maintainable, we Redux users usually give our actions types that are plain strings, and often uppercased, to signify that they’re meant to be constant values.</p>
+
+<p>An action object describes a change you want to make (like “please increment the counter”) or an event that happenend (like “the request to the server failed with this error”).</p>
+
+<p>In order to make an action DO something, you need to dispatch it.</p>
+
+<h3 id="redux-dispatch">Redux Dispatch</h3>
+
+<p>The store we created earlier has a built-in function called dispatch. Call it with an action, and Redux will call your reducer with that action (and then replace the state with whatever your reducer returned).</p>
+
+<h3 id="references">References</h3>
 
 
 <footer class=" footline" >
@@ -648,7 +678,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -661,7 +690,6 @@
             
             
                 
-                    
                     
                 
                 
@@ -681,9 +709,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -845,6 +870,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -857,6 +883,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -881,10 +908,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/02-advanced/" title="02 - Advanceds"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/reactjs/" title="ReactJs"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/google-cloud-platform/" title="Google Cloud Platforms" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/01-basics/" title="01 - Basics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

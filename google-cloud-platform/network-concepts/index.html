@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Advanced :: Always Learning; Always Improving</title>
+    <title>Network Concepts :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1563298807" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/02-advanced/advanced_1/">
+  <body class="" data-url="/google-cloud-platform/network-concepts/">
     <nav id="sidebar" class="">
 
 
@@ -147,7 +147,7 @@
   
     
     <li data-nav-id="/02-advanced/" title="02 - Advanceds" class="dd-item 
-        parent
+        
         
         
         ">
@@ -171,7 +171,7 @@
  
   
     
-      <li data-nav-id="/02-advanced/advanced_1/" title="Advanced" class="dd-item active">
+      <li data-nav-id="/02-advanced/advanced_1/" title="Advanced" class="dd-item ">
         <a href="/02-advanced/advanced_1/">
         Advanced
         
@@ -198,7 +198,7 @@
   
     
     <li data-nav-id="/google-cloud-platform/" title="Google Cloud Platforms" class="dd-item 
-        
+        parent
         
         
         ">
@@ -279,7 +279,7 @@
  
   
     
-      <li data-nav-id="/google-cloud-platform/network-concepts/" title="Network Concepts" class="dd-item ">
+      <li data-nav-id="/google-cloud-platform/network-concepts/" title="Network Concepts" class="dd-item active">
         <a href="/google-cloud-platform/network-concepts/">
         Network Concepts
         
@@ -507,7 +507,7 @@
             
           
           
-            <a href='/'>Digital Learning Notebook</a> > <a href='/02-advanced/'>02 - Advanceds</a> > Advanced
+            <a href='/'>Digital Learning Notebook</a> > <a href='/google-cloud-platform/'>Google Cloud Platforms</a> > Network Concepts
           
          
           
@@ -524,9 +524,14 @@
 <ul>
 <li>
 <ul>
-<li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#networks">Networks</a></li>
+<li><a href="#subnetworks">Subnetworks</a></li>
+<li><a href="#create-virtual-private-cloud-vpc-network-and-instances">Create Virtual Private Cloud (VPC) Network and Instances</a></li>
+<li><a href="#firewall-rules">Firewall Rules</a></li>
+<li><a href="#cloud-routes">Cloud Routes</a>
 <ul>
-<li><a href="#learning-the-advanced-stuff">Learning the Advanced Stuff</a></li>
+<li><a href="#convert-to-a-nat-gateway">Convert to a NAT gateway</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -546,7 +551,7 @@
           
             <h1>
               
-              Advanced
+              Network Concepts
             </h1>
           
 
@@ -556,9 +561,109 @@
 
 
 
-<h3 id="learning-the-advanced-stuff">Learning the Advanced Stuff</h3>
+<h2 id="projects">Projects</h2>
 
-<p>Finally</p>
+<p>Projects are the outermost container and are used to group resources that share the same trust boundary. Many developers map Projects to teams since each Project has its own access policy (IAM) and member list. Projects also serve as a collector of billing and quota details reflecting resource consumption. Projects contain Networks which contain Subnetworks, Firewall rules, and Routes (see below architecture diagrams for illustration).</p>
+
+<p><img src="/gcp-projects.png?pc=75" alt="GCP Projects" /></p>
+
+<hr />
+
+<h2 id="networks">Networks</h2>
+
+<p>Networks directly connect your resources to each other and to the outside world. Networks, using Firewalls, also house the access policies for incoming and outgoing connections. Networks can be Global (offering horizontal scalability across multiple Regions) or Regional (offering low-latency within a single Region).</p>
+
+<h2 id="subnetworks">Subnetworks</h2>
+
+<p>Subnetworks allow you to group related resources (Compute Engine instances) into RFC1918 private address spaces. Subnetworks can only be Regional. A subnetwork can be in auto mode or custom mode.</p>
+
+<p>An auto mode network has one subnet per region, each with a predetermined IP range and gateway. These subnets are created automatically when you create the auto mode network, and each subnet has the same name as the overall network.</p>
+
+<p>A custom mode network has no subnets at creation. In order to create an instance in a custom mode network, you must first create a subnetwork in that region and specify its IP range. A custom mode network can have zero, one, or many subnets per region.</p>
+
+<hr />
+
+<h2 id="create-virtual-private-cloud-vpc-network-and-instances">Create Virtual Private Cloud (VPC) Network and Instances</h2>
+
+<pre><code class="language-bash"># Creating VPC Network with auto subnet
+gcloud compute networks create mynetwork --subnet-mode=auto
+
+# Creating VPC Network with Custom Subnet
+gcloud compute networks create privatenet --subnet-mode=custom
+
+# Creating Custom Subnet - privatesubnet
+gcloud compute networks subnets create privatesubnet --network=privatenet \
+    --region=us-central1 --range=10.0.0.0/24 --enable-private-ip-google-access
+
+</code></pre>
+
+<pre><code class="language-bash">gcloud compute instances create default-us-vm --zone=us-central1-a --network=default
+
+gcloud compute instances create mynet-us-vm --zone=us-central1-a --network=mynetwork
+
+gcloud compute instances create mynet-eu-vm --zone=europe-west1-b --network=mynetwork
+
+gcloud compute instances create privatenet-bastion --zone=us-central1-c \
+    --subnet=privatesubnet --can-ip-forward
+
+gcloud compute instances create privatenet-us-vm --zone=us-central1-f \
+    --subnet=privatesubnet
+</code></pre>
+
+
+<div class="notices tip" ><p>When any Project is created, a single Network named default is created for you. The default Network has the following 2 firewall rules defined for network traffic:</p>
+</div>
+
+
+<p><code>default-deny-all-ingress</code> - Deny all incoming traffic</p>
+
+<p><code>default-allow-all-egress</code> - Allow all outbound traffic</p>
+
+<h2 id="firewall-rules">Firewall Rules</h2>
+
+
+<div class="notices info" ><p>The privilege of creating, modifying, and deleting firewall rules is reserved for the <strong>compute.securityAdmin</strong> role by IAM.</p>
+</div>
+
+
+<pre><code class="language-bash">gcloud beta compute firewall-rules create mynetwork-allow-icmp --network mynetwork \
+    --action ALLOW --direction INGRESS --rules icmp
+
+gcloud beta compute firewall-rules create mynetwork-allow-ssh --network mynetwork \
+    --action ALLOW --direction INGRESS --rules tcp:22
+
+gcloud beta compute firewall-rules create mynetwork-allow-internal --network \
+    mynetwork --action ALLOW --direction INGRESS --rules all \
+    --source-ranges 10.128.0.0/9
+
+gcloud beta compute firewall-rules list \
+    --filter=&quot;network:mynetwork&quot;
+</code></pre>
+
+<h2 id="cloud-routes">Cloud Routes</h2>
+
+<p>If you want traffic from specific instances to specific ranges to be routed in a specific way, you can use Google Cloud Routes to set up the destination for this traffic.</p>
+
+<p>You can route traffic based on instance tags and destination range, and you can set the next hop to either:</p>
+
+<ul>
+<li>A specific instance (by instance name or IP)</li>
+<li>A VPN Tunnel</li>
+<li>The default internet gateway</li>
+</ul>
+
+<p>If multiple routes exist, the more specific route will be used. If there are multiple of those, the lowest priority value is used. Between Subnetworks, routes are automatically created implicitly at lowest priority value. Those routes cannot be changed or deleted.</p>
+
+<h3 id="convert-to-a-nat-gateway">Convert to a NAT gateway</h3>
+
+<pre><code class="language-bash"># Tag Instance
+gcloud compute instances add-tags privatenet-us-vm --zone us-central1-f --tags nat-me
+
+# Create NAT Route
+gcloud compute routes create nat-route --network privatenet \
+--destination-range 0.0.0.0/0 --next-hop-instance privatenet-bastion \
+--next-hop-instance-zone us-central1-c --tags nat-me --priority 800
+</code></pre>
 
 
 <footer class=" footline" >
@@ -648,43 +753,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -709,10 +777,30 @@
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -761,6 +849,26 @@
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -881,10 +989,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/02-advanced/" title="02 - Advanceds"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/" title="Continuous Delivery with Jenkins in Kubernetes Engine"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/google-cloud-platform/" title="Google Cloud Platforms" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/google-cloud-platform/orchestrating-cloud-with-kubernetes/" title="Orchestrating Cloud with Kubernetes" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

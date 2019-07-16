@@ -20,6 +20,16 @@
     </item>
     
     <item>
+      <title>Arrow Functions</title>
+      <link>http://learn.aayushtuladhar.com/javascript/es-6/arrowfunctions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/javascript/es-6/arrowfunctions/</guid>
+      <description>Arrow Function Express allows you to write shorter syntax than it&amp;rsquo;s predecessor Function expression. In addition and more exciting is how the new Arrow function bind their context.
+(param1, param2, param3) =&amp;gt; { statements } singleParam =&amp;gt; { statements } () =&amp;gt; { statements }  Example var materials = [ &#39;Iron&#39;, &#39;Calcium&#39;, &#39;Sodium&#39;, &#39;Magnanese&#39; ] materials.map(material =&amp;gt; material.length)  An arrow function does not newly define its own this when it&amp;rsquo;s being executed.</description>
+    </item>
+    
+    <item>
       <title>Basic Essentials</title>
       <link>http://learn.aayushtuladhar.com/google-cloud-platform/basic-essentials/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -47,12 +57,33 @@
     </item>
     
     <item>
+      <title>Destructuring JavaScript Objects</title>
+      <link>http://learn.aayushtuladhar.com/javascript/es-6/destructuring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/javascript/es-6/destructuring/</guid>
+      <description>const person = { firstName: &#39;Aayush&#39;, lastName: &#39;Tuladhar&#39;, country: &#39;Nepal&#39;, twitter: &#39;@aayushtuladhar&#39; } /* Problem */ const first = person.firstName; const last = person.lastName; console.log(`Hello ${first} ${last}`); /* Solution */ const { firstName, lastName } = person; console.log(`Hello ${firstName} ${lastName}`); /* ------------------ */ const art = { first: &#39;ART&#39;, last: &#39;Ratna&#39;, links: { social: { twitter: &#39;https://twitter.com/aayushtuladhar&#39;, facebook: &#39;https://facebook.com/aayush.tuladhar&#39;, }, web: { blog: &#39;https://aayushtuladhar.com&#39; } } }; const { twitter, facebook } = art.</description>
+    </item>
+    
+    <item>
       <title>Getting Started</title>
       <link>http://learn.aayushtuladhar.com/01-basics/basic_1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://learn.aayushtuladhar.com/01-basics/basic_1/</guid>
       <description>Learning the Basics Stuff Starting Server hugo server -D  Documentation Learn</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Redux</title>
+      <link>http://learn.aayushtuladhar.com/reactjs/redux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/reactjs/redux/</guid>
+      <description>Redux gives you a store, and lets you keep state in it, and get state out, and respond when the state changes. But that’s all it does.
+It’s actually react-redux that lets you connect pieces of the state to React components.
+ The state is the data, and the store is where it’s kept
+ Redux Store Redux Reducer Reducer&amp;rsquo;s job is to take the current state and action and return the new state.</description>
     </item>
     
     <item>
@@ -70,12 +101,32 @@ Strike Through
     </item>
     
     <item>
+      <title>Network Concepts</title>
+      <link>http://learn.aayushtuladhar.com/google-cloud-platform/network-concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/google-cloud-platform/network-concepts/</guid>
+      <description>Projects Projects are the outermost container and are used to group resources that share the same trust boundary. Many developers map Projects to teams since each Project has its own access policy (IAM) and member list. Projects also serve as a collector of billing and quota details reflecting resource consumption. Projects contain Networks which contain Subnetworks, Firewall rules, and Routes (see below architecture diagrams for illustration).
+Networks Networks directly connect your resources to each other and to the outside world.</description>
+    </item>
+    
+    <item>
       <title>Orchestrating Cloud with Kubernetes</title>
       <link>http://learn.aayushtuladhar.com/google-cloud-platform/orchestrating-cloud-with-kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://learn.aayushtuladhar.com/google-cloud-platform/orchestrating-cloud-with-kubernetes/</guid>
       <description># Creating Kubernetes Cluster gcloud container clusters create io  Quick Demo # Create Deployment kubectl create deployment nginx --image=nginx:1.10.0 # List Pods kubectl get pods # Expose Deployment via a Service using LoadBalancer kubectl expose deployment nginx --port 80 --type LoadBalancer # List Service kubectl get services  Pods Pods are the smallest deployable units of computing that can be created and managed in Kubernetes. Pods represent and hold a collection of one or more containers.</description>
+    </item>
+    
+    <item>
+      <title>Teplate Literals</title>
+      <link>http://learn.aayushtuladhar.com/javascript/template-literals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/javascript/template-literals/</guid>
+      <description>Template literals are string literals allowing embedded expressions. You can use multi-line strings and string interpolation features with them.
+const someText = `string text ${expression} string text`  </description>
     </item>
     
   </channel>

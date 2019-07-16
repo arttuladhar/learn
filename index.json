@@ -21,6 +21,13 @@
 	"content": " Learning the Advanced Stuff Finally\n"
 },
 {
+	"uri": "http://learn.aayushtuladhar.com/javascript/es-6/arrowfunctions/",
+	"title": "Arrow Functions",
+	"tags": [],
+	"description": "",
+	"content": " Arrow Function Express allows you to write shorter syntax than it\u0026rsquo;s predecessor Function expression. In addition and more exciting is how the new Arrow function bind their context.\n(param1, param2, param3) =\u0026gt; { statements } singleParam =\u0026gt; { statements } () =\u0026gt; { statements }  Example var materials = [ 'Iron', 'Calcium', 'Sodium', 'Magnanese' ] materials.map(material =\u0026gt; material.length)  An arrow function does not newly define its own this when it\u0026rsquo;s being executed.The value of this is always inherited from the enclosing scope.\n// ES5 function CounterES5(){ this.seconds = 0; window.setInterval(function() { this.seconds++; console.log(seconds); }.bind(this), 1000); } //ES6 function CounterES6(){ this.seconds =0; window.setInterval( () =\u0026gt; { this.seconds++; console.log(seconds) },1000 ); }  "
+},
+{
 	"uri": "http://learn.aayushtuladhar.com/google-cloud-platform/basic-essentials/",
 	"title": "Basic Essentials",
 	"tags": [],
@@ -49,6 +56,13 @@
 	"content": "# Create Kubernetes Cluster gcloud container clusters create jenkins-cd \\ --num-nodes 2 \\ --machine-type n1-standard-2 \\ --scopes \u0026quot;https://www.googleapis.com/auth/projecthosting,cloud-platform\u0026quot; # Update KubeConfig with Cluster credentials gcloud container clusters get-credentials jenkins-cd # Verify Kubernetes can connect to GCP Kubernetes Cluster kubectl cluster-info  "
 },
 {
+	"uri": "http://learn.aayushtuladhar.com/javascript/es-6/destructuring/",
+	"title": "Destructuring JavaScript Objects",
+	"tags": [],
+	"description": "",
+	"content": "const person = { firstName: 'Aayush', lastName: 'Tuladhar', country: 'Nepal', twitter: '@aayushtuladhar' } /* Problem */ const first = person.firstName; const last = person.lastName; console.log(`Hello ${first} ${last}`); /* Solution */ const { firstName, lastName } = person; console.log(`Hello ${firstName} ${lastName}`); /* ------------------ */ const art = { first: 'ART', last: 'Ratna', links: { social: { twitter: 'https://twitter.com/aayushtuladhar', facebook: 'https://facebook.com/aayush.tuladhar', }, web: { blog: 'https://aayushtuladhar.com' } } }; const { twitter, facebook } = art.links.social; console.log(twitter); console.log(facebook);  "
+},
+{
 	"uri": "http://learn.aayushtuladhar.com/",
 	"title": "Digital Learning Notebook",
 	"tags": [],
@@ -63,8 +77,22 @@
 	"content": " Learning the Basics Stuff Starting Server hugo server -D  Documentation Learn\n"
 },
 {
+	"uri": "http://learn.aayushtuladhar.com/reactjs/redux/",
+	"title": "Getting Started with Redux",
+	"tags": [],
+	"description": "",
+	"content": " Redux gives you a store, and lets you keep state in it, and get state out, and respond when the state changes. But that’s all it does.\nIt’s actually react-redux that lets you connect pieces of the state to React components.\n The state is the data, and the store is where it’s kept\n Redux Store Redux Reducer Reducer\u0026rsquo;s job is to take the current state and action and return the new state. It has another job, too. It should return the initial state the first time it\u0026rsquo;s called.\nReducer Rule # 1 = Never return undefined from a reducer Reduce Rule # 2 = Reduces must be a pure functions (They can\u0026rsquo;t modify their arguments, and they can\u0026rsquo;t have side effects)\nRedux Actions An action is Redux-speak for a plain object with a property called type. In order to keep things sane and maintainable, we Redux users usually give our actions types that are plain strings, and often uppercased, to signify that they’re meant to be constant values.\nAn action object describes a change you want to make (like “please increment the counter”) or an event that happenend (like “the request to the server failed with this error”).\nIn order to make an action DO something, you need to dispatch it.\nRedux Dispatch The store we created earlier has a built-in function called dispatch. Call it with an action, and Redux will call your reducer with that action (and then replace the state with whatever your reducer returned).\nReferences "
+},
+{
 	"uri": "http://learn.aayushtuladhar.com/google-cloud-platform/",
 	"title": "Google Cloud Platforms",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/javascript/",
+	"title": "Javascripts",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -77,6 +105,13 @@
 	"content": " Headings # h1 Heading ## h2 Heading ### h3 Heading #### h4 Heading ##### h5 Heading ###### h6 Heading  Renders to:\nh1 Heading h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading Typography I am just being Bold\nI Love my Italics Style\nStrike Through\n I love to give a quotation\n Images ![Minion](https://octodex.github.com/images/minion.png)  Resizing Images ![Minion](https://octodex.github.com/images/minion.png?width=20pc)  Buttons Get Grav  Note / Info/ Tip / Warning A notice disclaimer\n An information disclaimer\n A tip disclaimer\n A warning disclaimer\n Expand   Expand me...   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n  "
 },
 {
+	"uri": "http://learn.aayushtuladhar.com/google-cloud-platform/network-concepts/",
+	"title": "Network Concepts",
+	"tags": [],
+	"description": "",
+	"content": " Projects Projects are the outermost container and are used to group resources that share the same trust boundary. Many developers map Projects to teams since each Project has its own access policy (IAM) and member list. Projects also serve as a collector of billing and quota details reflecting resource consumption. Projects contain Networks which contain Subnetworks, Firewall rules, and Routes (see below architecture diagrams for illustration).\nNetworks Networks directly connect your resources to each other and to the outside world. Networks, using Firewalls, also house the access policies for incoming and outgoing connections. Networks can be Global (offering horizontal scalability across multiple Regions) or Regional (offering low-latency within a single Region).\nSubnetworks Subnetworks allow you to group related resources (Compute Engine instances) into RFC1918 private address spaces. Subnetworks can only be Regional. A subnetwork can be in auto mode or custom mode.\nAn auto mode network has one subnet per region, each with a predetermined IP range and gateway. These subnets are created automatically when you create the auto mode network, and each subnet has the same name as the overall network.\nA custom mode network has no subnets at creation. In order to create an instance in a custom mode network, you must first create a subnetwork in that region and specify its IP range. A custom mode network can have zero, one, or many subnets per region.\nCreate Virtual Private Cloud (VPC) Network and Instances # Creating VPC Network with auto subnet gcloud compute networks create mynetwork --subnet-mode=auto # Creating VPC Network with Custom Subnet gcloud compute networks create privatenet --subnet-mode=custom # Creating Custom Subnet - privatesubnet gcloud compute networks subnets create privatesubnet --network=privatenet \\ --region=us-central1 --range=10.0.0.0/24 --enable-private-ip-google-access  gcloud compute instances create default-us-vm --zone=us-central1-a --network=default gcloud compute instances create mynet-us-vm --zone=us-central1-a --network=mynetwork gcloud compute instances create mynet-eu-vm --zone=europe-west1-b --network=mynetwork gcloud compute instances create privatenet-bastion --zone=us-central1-c \\ --subnet=privatesubnet --can-ip-forward gcloud compute instances create privatenet-us-vm --zone=us-central1-f \\ --subnet=privatesubnet  When any Project is created, a single Network named default is created for you. The default Network has the following 2 firewall rules defined for network traffic:\n default-deny-all-ingress - Deny all incoming traffic\ndefault-allow-all-egress - Allow all outbound traffic\nFirewall Rules The privilege of creating, modifying, and deleting firewall rules is reserved for the compute.securityAdmin role by IAM.\n gcloud beta compute firewall-rules create mynetwork-allow-icmp --network mynetwork \\ --action ALLOW --direction INGRESS --rules icmp gcloud beta compute firewall-rules create mynetwork-allow-ssh --network mynetwork \\ --action ALLOW --direction INGRESS --rules tcp:22 gcloud beta compute firewall-rules create mynetwork-allow-internal --network \\ mynetwork --action ALLOW --direction INGRESS --rules all \\ --source-ranges 10.128.0.0/9 gcloud beta compute firewall-rules list \\ --filter=\u0026quot;network:mynetwork\u0026quot;  Cloud Routes If you want traffic from specific instances to specific ranges to be routed in a specific way, you can use Google Cloud Routes to set up the destination for this traffic.\nYou can route traffic based on instance tags and destination range, and you can set the next hop to either:\n A specific instance (by instance name or IP) A VPN Tunnel The default internet gateway  If multiple routes exist, the more specific route will be used. If there are multiple of those, the lowest priority value is used. Between Subnetworks, routes are automatically created implicitly at lowest priority value. Those routes cannot be changed or deleted.\nConvert to a NAT gateway # Tag Instance gcloud compute instances add-tags privatenet-us-vm --zone us-central1-f --tags nat-me # Create NAT Route gcloud compute routes create nat-route --network privatenet \\ --destination-range 0.0.0.0/0 --next-hop-instance privatenet-bastion \\ --next-hop-instance-zone us-central1-c --tags nat-me --priority 800  "
+},
+{
 	"uri": "http://learn.aayushtuladhar.com/google-cloud-platform/orchestrating-cloud-with-kubernetes/",
 	"title": "Orchestrating Cloud with Kubernetes",
 	"tags": [],
@@ -84,9 +119,23 @@
 	"content": " # Creating Kubernetes Cluster gcloud container clusters create io  Quick Demo # Create Deployment kubectl create deployment nginx --image=nginx:1.10.0 # List Pods kubectl get pods # Expose Deployment via a Service using LoadBalancer kubectl expose deployment nginx --port 80 --type LoadBalancer # List Service kubectl get services  Pods Pods are the smallest deployable units of computing that can be created and managed in Kubernetes. Pods represent and hold a collection of one or more containers. Generally, if you have multiple containers with a hard dependency on each other, you package the containers inside a single pod.\nPods\n# Create Pod kubectl create -f pods/monolith.yaml # List Pods kubectl get pods # Describe Pod kubectl describe pods monolith # Port Forward Pod kubectl port-forward monolith 10080:80  Services An abstract way to expose an application running on a set of Pods as a network service.\nNo need to modify your application to use an unfamiliar service discovery mechanism. Kubernetes gives pods their own IP addresses and a single DNS name for a set of pods, and can load-balance across them.\nPods aren\u0026rsquo;t meant to be persistent. They can be stopped or started for many reasons - like failed liveness or readiness checks - and this leads to a problem\n "
 },
 {
+	"uri": "http://learn.aayushtuladhar.com/reactjs/",
+	"title": "ReactJs",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "http://learn.aayushtuladhar.com/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/javascript/template-literals/",
+	"title": "Teplate Literals",
+	"tags": [],
+	"description": "",
+	"content": "Template literals are string literals allowing embedded expressions. You can use multi-line strings and string interpolation features with them.\nconst someText = `string text ${expression} string text`  "
 }]

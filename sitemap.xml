@@ -16,6 +16,10 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/javascript/es-6/arrowfunctions/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/google-cloud-platform/basic-essentials/</loc>
   </url>
   
@@ -33,6 +37,10 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/javascript/es-6/destructuring/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/</loc>
   </url>
   
@@ -41,7 +49,16 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/reactjs/redux/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/google-cloud-platform/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/javascript/</loc>
     <priority>0</priority>
   </url>
   
@@ -50,12 +67,25 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/google-cloud-platform/network-concepts/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/google-cloud-platform/orchestrating-cloud-with-kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/reactjs/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>http://learn.aayushtuladhar.com/tags/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/javascript/template-literals/</loc>
   </url>
   
 </urlset>
