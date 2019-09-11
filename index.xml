@@ -11,15 +11,6 @@
     
     
     <item>
-      <title>Advanced</title>
-      <link>http://learn.aayushtuladhar.com/02-advanced/advanced_1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/02-advanced/advanced_1/</guid>
-      <description>Learning the Advanced Stuff Finally</description>
-    </item>
-    
-    <item>
       <title>Arrow Functions</title>
       <link>http://learn.aayushtuladhar.com/javascript/es-6/arrowfunctions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -67,19 +58,19 @@
     
     <item>
       <title>Getting Started</title>
-      <link>http://learn.aayushtuladhar.com/01-basics/basic_1/</link>
+      <link>http://learn.aayushtuladhar.com/hugo-basics/basic_1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/01-basics/basic_1/</guid>
+      <guid>http://learn.aayushtuladhar.com/hugo-basics/basic_1/</guid>
       <description>Learning the Basics Stuff Starting Server hugo server -D  Documentation Learn</description>
     </item>
     
     <item>
       <title>Getting Started with Redux</title>
-      <link>http://learn.aayushtuladhar.com/reactjs/redux/</link>
+      <link>http://learn.aayushtuladhar.com/javascript/reactjs/redux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/reactjs/redux/</guid>
+      <guid>http://learn.aayushtuladhar.com/javascript/reactjs/redux/</guid>
       <description>Redux gives you a store, and lets you keep state in it, and get state out, and respond when the state changes. But that’s all it does.
 It’s actually react-redux that lets you connect pieces of the state to React components.
  The state is the data, and the store is where it’s kept
@@ -88,10 +79,10 @@ It’s actually react-redux that lets you connect pieces of the state to React c
     
     <item>
       <title>Layouts</title>
-      <link>http://learn.aayushtuladhar.com/01-basics/basic_2/</link>
+      <link>http://learn.aayushtuladhar.com/hugo-basics/basic_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/01-basics/basic_2/</guid>
+      <guid>http://learn.aayushtuladhar.com/hugo-basics/basic_2/</guid>
       <description>Headings # h1 Heading ## h2 Heading ### h3 Heading #### h4 Heading ##### h5 Heading ###### h6 Heading  Renders to:
 h1 Heading h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading Typography I am just being Bold
 I Love my Italics Style
@@ -108,6 +99,15 @@ Strike Through
       <guid>http://learn.aayushtuladhar.com/google-cloud-platform/network-concepts/</guid>
       <description>Projects Projects are the outermost container and are used to group resources that share the same trust boundary. Many developers map Projects to teams since each Project has its own access policy (IAM) and member list. Projects also serve as a collector of billing and quota details reflecting resource consumption. Projects contain Networks which contain Subnetworks, Firewall rules, and Routes (see below architecture diagrams for illustration).
 Networks Networks directly connect your resources to each other and to the outside world.</description>
+    </item>
+    
+    <item>
+      <title>OpenShift</title>
+      <link>http://learn.aayushtuladhar.com/devops/openshift/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/openshift/</guid>
+      <description></description>
     </item>
     
     <item>

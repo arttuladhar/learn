@@ -1,26 +1,5 @@
 [
 {
-	"uri": "http://learn.aayushtuladhar.com/01-basics/",
-	"title": "01 - Basics",
-	"tags": [],
-	"description": "",
-	"content": " All the basic things "
-},
-{
-	"uri": "http://learn.aayushtuladhar.com/02-advanced/",
-	"title": "02 - Advanceds",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "http://learn.aayushtuladhar.com/02-advanced/advanced_1/",
-	"title": "Advanced",
-	"tags": [],
-	"description": "",
-	"content": " Learning the Advanced Stuff Finally\n"
-},
-{
 	"uri": "http://learn.aayushtuladhar.com/javascript/es-6/arrowfunctions/",
 	"title": "Arrow Functions",
 	"tags": [],
@@ -63,6 +42,13 @@
 	"content": "const person = { firstName: 'Aayush', lastName: 'Tuladhar', country: 'Nepal', twitter: '@aayushtuladhar' } /* Problem */ const first = person.firstName; const last = person.lastName; console.log(`Hello ${first} ${last}`); /* Solution */ const { firstName, lastName } = person; console.log(`Hello ${firstName} ${lastName}`); /* ------------------ */ const art = { first: 'ART', last: 'Ratna', links: { social: { twitter: 'https://twitter.com/aayushtuladhar', facebook: 'https://facebook.com/aayush.tuladhar', }, web: { blog: 'https://aayushtuladhar.com' } } }; const { twitter, facebook } = art.links.social; console.log(twitter); console.log(facebook);  "
 },
 {
+	"uri": "http://learn.aayushtuladhar.com/devops/",
+	"title": "DevOps",
+	"tags": [],
+	"description": "",
+	"content": "All the Things DevOps\n"
+},
+{
 	"uri": "http://learn.aayushtuladhar.com/",
 	"title": "Digital Learning Notebook",
 	"tags": [],
@@ -70,14 +56,14 @@
 	"content": " My Digital Learning Notebook As I learn new things, I will be using this notebook to capture important notes regarding various technical aspects of Software Engineering and Technology in general.\n"
 },
 {
-	"uri": "http://learn.aayushtuladhar.com/01-basics/basic_1/",
+	"uri": "http://learn.aayushtuladhar.com/hugo-basics/basic_1/",
 	"title": "Getting Started",
 	"tags": [],
 	"description": "",
 	"content": " Learning the Basics Stuff Starting Server hugo server -D  Documentation Learn\n"
 },
 {
-	"uri": "http://learn.aayushtuladhar.com/reactjs/redux/",
+	"uri": "http://learn.aayushtuladhar.com/javascript/reactjs/redux/",
 	"title": "Getting Started with Redux",
 	"tags": [],
 	"description": "",
@@ -85,20 +71,20 @@
 },
 {
 	"uri": "http://learn.aayushtuladhar.com/google-cloud-platform/",
-	"title": "Google Cloud Platforms",
+	"title": "Google Cloud Platform",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "All the Google Cloud Platform Stuff\n"
 },
 {
 	"uri": "http://learn.aayushtuladhar.com/javascript/",
-	"title": "Javascripts",
+	"title": "JavaScript",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "All the JavaScript Stuff\n"
 },
 {
-	"uri": "http://learn.aayushtuladhar.com/01-basics/basic_2/",
+	"uri": "http://learn.aayushtuladhar.com/hugo-basics/basic_2/",
 	"title": "Layouts",
 	"tags": [],
 	"description": "",
@@ -112,18 +98,18 @@
 	"content": " Projects Projects are the outermost container and are used to group resources that share the same trust boundary. Many developers map Projects to teams since each Project has its own access policy (IAM) and member list. Projects also serve as a collector of billing and quota details reflecting resource consumption. Projects contain Networks which contain Subnetworks, Firewall rules, and Routes (see below architecture diagrams for illustration).\nNetworks Networks directly connect your resources to each other and to the outside world. Networks, using Firewalls, also house the access policies for incoming and outgoing connections. Networks can be Global (offering horizontal scalability across multiple Regions) or Regional (offering low-latency within a single Region).\nSubnetworks Subnetworks allow you to group related resources (Compute Engine instances) into RFC1918 private address spaces. Subnetworks can only be Regional. A subnetwork can be in auto mode or custom mode.\nAn auto mode network has one subnet per region, each with a predetermined IP range and gateway. These subnets are created automatically when you create the auto mode network, and each subnet has the same name as the overall network.\nA custom mode network has no subnets at creation. In order to create an instance in a custom mode network, you must first create a subnetwork in that region and specify its IP range. A custom mode network can have zero, one, or many subnets per region.\nCreate Virtual Private Cloud (VPC) Network and Instances # Creating VPC Network with auto subnet gcloud compute networks create mynetwork --subnet-mode=auto # Creating VPC Network with Custom Subnet gcloud compute networks create privatenet --subnet-mode=custom # Creating Custom Subnet - privatesubnet gcloud compute networks subnets create privatesubnet --network=privatenet \\ --region=us-central1 --range=10.0.0.0/24 --enable-private-ip-google-access  gcloud compute instances create default-us-vm --zone=us-central1-a --network=default gcloud compute instances create mynet-us-vm --zone=us-central1-a --network=mynetwork gcloud compute instances create mynet-eu-vm --zone=europe-west1-b --network=mynetwork gcloud compute instances create privatenet-bastion --zone=us-central1-c \\ --subnet=privatesubnet --can-ip-forward gcloud compute instances create privatenet-us-vm --zone=us-central1-f \\ --subnet=privatesubnet  When any Project is created, a single Network named default is created for you. The default Network has the following 2 firewall rules defined for network traffic:\n default-deny-all-ingress - Deny all incoming traffic\ndefault-allow-all-egress - Allow all outbound traffic\nFirewall Rules The privilege of creating, modifying, and deleting firewall rules is reserved for the compute.securityAdmin role by IAM.\n gcloud beta compute firewall-rules create mynetwork-allow-icmp --network mynetwork \\ --action ALLOW --direction INGRESS --rules icmp gcloud beta compute firewall-rules create mynetwork-allow-ssh --network mynetwork \\ --action ALLOW --direction INGRESS --rules tcp:22 gcloud beta compute firewall-rules create mynetwork-allow-internal --network \\ mynetwork --action ALLOW --direction INGRESS --rules all \\ --source-ranges 10.128.0.0/9 gcloud beta compute firewall-rules list \\ --filter=\u0026quot;network:mynetwork\u0026quot;  Cloud Routes If you want traffic from specific instances to specific ranges to be routed in a specific way, you can use Google Cloud Routes to set up the destination for this traffic.\nYou can route traffic based on instance tags and destination range, and you can set the next hop to either:\n A specific instance (by instance name or IP) A VPN Tunnel The default internet gateway  If multiple routes exist, the more specific route will be used. If there are multiple of those, the lowest priority value is used. Between Subnetworks, routes are automatically created implicitly at lowest priority value. Those routes cannot be changed or deleted.\nConvert to a NAT gateway # Tag Instance gcloud compute instances add-tags privatenet-us-vm --zone us-central1-f --tags nat-me # Create NAT Route gcloud compute routes create nat-route --network privatenet \\ --destination-range 0.0.0.0/0 --next-hop-instance privatenet-bastion \\ --next-hop-instance-zone us-central1-c --tags nat-me --priority 800  "
 },
 {
+	"uri": "http://learn.aayushtuladhar.com/devops/openshift/",
+	"title": "OpenShift",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "http://learn.aayushtuladhar.com/google-cloud-platform/orchestrating-cloud-with-kubernetes/",
 	"title": "Orchestrating Cloud with Kubernetes",
 	"tags": [],
 	"description": "",
 	"content": " # Creating Kubernetes Cluster gcloud container clusters create io  Quick Demo # Create Deployment kubectl create deployment nginx --image=nginx:1.10.0 # List Pods kubectl get pods # Expose Deployment via a Service using LoadBalancer kubectl expose deployment nginx --port 80 --type LoadBalancer # List Service kubectl get services  Pods Pods are the smallest deployable units of computing that can be created and managed in Kubernetes. Pods represent and hold a collection of one or more containers. Generally, if you have multiple containers with a hard dependency on each other, you package the containers inside a single pod.\nPods\n# Create Pod kubectl create -f pods/monolith.yaml # List Pods kubectl get pods # Describe Pod kubectl describe pods monolith # Port Forward Pod kubectl port-forward monolith 10080:80  Services An abstract way to expose an application running on a set of Pods as a network service.\nNo need to modify your application to use an unfamiliar service discovery mechanism. Kubernetes gives pods their own IP addresses and a single DNS name for a set of pods, and can load-balance across them.\nPods aren\u0026rsquo;t meant to be persistent. They can be stopped or started for many reasons - like failed liveness or readiness checks - and this leads to a problem\n "
-},
-{
-	"uri": "http://learn.aayushtuladhar.com/reactjs/",
-	"title": "ReactJs",
-	"tags": [],
-	"description": "",
-	"content": ""
 },
 {
 	"uri": "http://learn.aayushtuladhar.com/tags/",
@@ -138,4 +124,11 @@
 	"tags": [],
 	"description": "",
 	"content": "Template literals are string literals allowing embedded expressions. You can use multi-line strings and string interpolation features with them.\nconst someText = `string text ${expression} string text`  "
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/hugo-basics/",
+	"title": "Using Hugo",
+	"tags": [],
+	"description": "",
+	"content": " All the Hugo Basics "
 }]
