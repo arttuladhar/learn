@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Continuous Delivery with Jenkins in Kubernetes Engine :: Always Learning; Always Improving</title>
+    <title>03 - Minikube :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1573453257" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/">
+  <body class="" data-url="/introduction-to-kubernetes/kubernetes/03_minikube/">
     <nav id="sidebar" class="">
 
 
@@ -128,7 +128,7 @@
   
     
     <li data-nav-id="/google-cloud-platform/" title="Google Cloud Platform" class="dd-item 
-        parent
+        
         
         
         ">
@@ -190,7 +190,7 @@
  
   
     
-      <li data-nav-id="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/" title="Continuous Delivery with Jenkins in Kubernetes Engine" class="dd-item active">
+      <li data-nav-id="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/" title="Continuous Delivery with Jenkins in Kubernetes Engine" class="dd-item ">
         <a href="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/">
         Continuous Delivery with Jenkins in Kubernetes Engine
         
@@ -255,7 +255,7 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/" title="Introduction to Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -306,7 +306,7 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/kubernetes/" title="Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -368,7 +368,7 @@
  
   
     
-      <li data-nav-id="/introduction-to-kubernetes/kubernetes/03_minikube/" title="03 - Minikube" class="dd-item ">
+      <li data-nav-id="/introduction-to-kubernetes/kubernetes/03_minikube/" title="03 - Minikube" class="dd-item active">
         <a href="/introduction-to-kubernetes/kubernetes/03_minikube/">
         03 - Minikube
         
@@ -662,7 +662,13 @@
             
           
           
-            <a href='/'>Digital Learning Notebook</a> > <a href='/google-cloud-platform/'>Google Cloud Platform</a> > Continuous Delivery with Jenkins in Kubernetes Engine
+            
+            
+          
+          
+            <a href='/'>Digital Learning Notebook</a> > <a href='/introduction-to-kubernetes/'>Introduction to Kubernetes</a> > <a href='/introduction-to-kubernetes/kubernetes/'>Kubernetes</a> > 03 - Minikube
+          
+         
           
          
           
@@ -675,7 +681,23 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#installing-minikube">Installing Minikube</a>
+<ul>
+<li>
+<ul>
+<li><a href="#command-line-interface-cli-tools-and-scripts">Command Line Interface (CLI) tools and scripts</a></li>
+<li><a href="#web-based-user-interface-web-ui-from-a-web-browser">Web-based User Interface (Web UI) from a web browser</a></li>
+<li><a href="#apis-from-cli-or-programmatically">APIs from CLI or programmatically</a></li>
+</ul></li>
+<li><a href="#kubectl-proxy">Kubectl Proxy</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -691,7 +713,7 @@
           
             <h1>
               
-              Continuous Delivery with Jenkins in Kubernetes Engine
+              03 - Minikube
             </h1>
           
 
@@ -699,21 +721,84 @@
 
 
 
-<p><img src="/jenkins-kubernetes-engine.png?width=50pc" alt="Jenkins" /></p>
 
-<pre><code class="language-bash">
-# Create Kubernetes Cluster
-gcloud container clusters create jenkins-cd \
---num-nodes 2 \
---machine-type n1-standard-2 \
---scopes &quot;https://www.googleapis.com/auth/projecthosting,cloud-platform&quot;
 
-# Update KubeConfig with Cluster credentials
-gcloud container clusters get-credentials jenkins-cd
+<ul>
+<li><a href="#installing-minikube">Installing Minikube</a>
 
-# Verify Kubernetes can connect to GCP Kubernetes Cluster
-kubectl cluster-info
+<ul>
+<li><a href="#command-line-interface-cli-tools-and-scripts">Command Line Interface (CLI) tools and scripts</a></li>
+<li><a href="#web-based-user-interface-web-ui-from-a-web-browser">Web-based User Interface (Web UI) from a web browser</a></li>
+<li><a href="#apis-from-cli-or-programmatically">APIs from CLI or programmatically</a></li>
+<li><a href="#kubectl-proxy">Kubectl Proxy</a></li>
+</ul></li>
+</ul>
+
+<h2 id="installing-minikube">Installing Minikube</h2>
+
+<pre><code class="language-bash"># Install Minikube
+brew install minikube
+
+# Starting Minikube
+minikube start
+minikube start --vm-driver=xhyve
+minikube start --vm-driver=hyperkit
+
+minikube status
+minikube stop
 </code></pre>
+
+<p>Any healthy running Kubernetes cluster can be accessed via any one of the following methods:</p>
+
+<h4 id="command-line-interface-cli-tools-and-scripts">Command Line Interface (CLI) tools and scripts</h4>
+
+<p><code>kubectl</code> is the Kubernetes Command Line Interface (CLI) client to manage cluster resources and applications. It can be used standalone, or part of scripts and automation tools. Once all required credentials and cluster access points have been configured for kubectl it can be used remotely from anywhere to access a cluster.</p>
+
+<h4 id="web-based-user-interface-web-ui-from-a-web-browser">Web-based User Interface (Web UI) from a web browser</h4>
+
+<h4 id="apis-from-cli-or-programmatically">APIs from CLI or programmatically</h4>
+
+<pre><code class="language-bash"># Open Minikube Dashboard
+minikube dashboard
+
+# Serving on different Port
+kubectl proxy
+
+#Dashboard URL
+http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/kubernetes-dashboard:/proxy/#!/overview?namespace=default 
+</code></pre>
+
+<h3 id="kubectl-proxy">Kubectl Proxy</h3>
+
+<p>When not using the kubectl proxy, we need to authenticate to the API server when sending API requests. We can authenticate by providing a Bearer Token when issuing a curl, or by providing a set of keys and certificates.</p>
+
+<p>A Bearer Token is an access token which is generated by the authentication server (the API server on the master node) and given back to the client. Using that token, the client can connect back to the Kubernetes API server without providing further authentication details, and then, access resources.</p>
+
+<p><strong>Getting Token</strong></p>
+
+<pre><code class="language-bash">TOKEN=$(kubectl describe secret -n kube-system $(kubectl get secrets -n kube-system | grep default | cut -f1 -d ' ') | grep -E '^token' | cut -f2 -d':' | tr -d '\t' | tr -d &quot; &quot;)
+</code></pre>
+
+<p><strong>Getting API Server Endpoint</strong></p>
+
+<pre><code>APISERVER=$(kubectl config view | grep https | cut -f 2- -d &quot;:&quot; | tr -d &quot; &quot;)
+</code></pre>
+
+<p><strong>Confirm that the APISERVER stored the same IP as the Kubernetes master IP by issuing the following 2 commands and comparing their outputs:</strong></p>
+
+<pre><code>$ echo $APISERVER
+https://192.168.99.100:8443
+
+$ kubectl cluster-info
+Kubernetes master is running at https://192.168.99.100:8443 ...
+</code></pre>
+
+<p><strong>Access the API server using the curl command, as shown below:</strong></p>
+
+<pre><code>curl $APISERVER --header &quot;Authorization: Bearer $TOKEN&quot; --insecure
+</code></pre>
+
+<p>By using the <code>kubectl proxy</code> we are bypassing the authentication for each and every request to the Kubernetes API.</p>
 
 
 <footer class=" footline" >
@@ -787,6 +872,137 @@ kubectl cluster-info
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -855,133 +1071,6 @@ kubectl cluster-info
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1153,10 +1242,10 @@ kubectl cluster-info
 	 
 	 
 		
-			<a class="nav nav-prev" href="/google-cloud-platform/cloud-storage/" title="Cloud Storage"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/introduction-to-kubernetes/kubernetes/02_installing_kubernetes/" title="02 - Installing Kubernetes"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/google-cloud-platform/network-concepts/" title="Network Concepts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/introduction-to-kubernetes/kubernetes/04_kubernetes_building_blocks/" title="04 - Kubernetes Building Blocks" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

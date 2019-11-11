@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Continuous Delivery with Jenkins in Kubernetes Engine :: Always Learning; Always Improving</title>
+    <title>02 - Installing Kubernetes :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1573453257" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/">
+  <body class="" data-url="/introduction-to-kubernetes/kubernetes/02_installing_kubernetes/">
     <nav id="sidebar" class="">
 
 
@@ -128,7 +128,7 @@
   
     
     <li data-nav-id="/google-cloud-platform/" title="Google Cloud Platform" class="dd-item 
-        parent
+        
         
         
         ">
@@ -190,7 +190,7 @@
  
   
     
-      <li data-nav-id="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/" title="Continuous Delivery with Jenkins in Kubernetes Engine" class="dd-item active">
+      <li data-nav-id="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/" title="Continuous Delivery with Jenkins in Kubernetes Engine" class="dd-item ">
         <a href="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/">
         Continuous Delivery with Jenkins in Kubernetes Engine
         
@@ -255,7 +255,7 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/" title="Introduction to Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -306,7 +306,7 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/kubernetes/" title="Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -349,7 +349,7 @@
  
   
     
-      <li data-nav-id="/introduction-to-kubernetes/kubernetes/02_installing_kubernetes/" title="02 - Installing Kubernetes" class="dd-item ">
+      <li data-nav-id="/introduction-to-kubernetes/kubernetes/02_installing_kubernetes/" title="02 - Installing Kubernetes" class="dd-item active">
         <a href="/introduction-to-kubernetes/kubernetes/02_installing_kubernetes/">
         02 - Installing Kubernetes
         
@@ -662,7 +662,13 @@
             
           
           
-            <a href='/'>Digital Learning Notebook</a> > <a href='/google-cloud-platform/'>Google Cloud Platform</a> > Continuous Delivery with Jenkins in Kubernetes Engine
+            
+            
+          
+          
+            <a href='/'>Digital Learning Notebook</a> > <a href='/introduction-to-kubernetes/'>Introduction to Kubernetes</a> > <a href='/introduction-to-kubernetes/kubernetes/'>Kubernetes</a> > 02 - Installing Kubernetes
+          
+         
           
          
           
@@ -675,7 +681,26 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#all-in-one-single-node-installation">All-in-One Single-Node Installation</a></li>
+<li><a href="#single-node-etcd-single-master-and-multi-worker-installation">Single-Node etcd, Single-Master and Multi-Worker Installation</a></li>
+<li><a href="#single-node-etcd-multi-master-and-multi-worker-installation">Single-Node etcd, Multi-Master and Multi-Worker Installation</a></li>
+<li><a href="#multi-node-etcd-multi-master-and-multi-worker-installation">Multi-Node etcd, Multi-Master and Multi-Worker Installation</a></li>
+</ul></li>
+<li><a href="#local-installation">Local Installation</a></li>
+<li><a href="#on-premise-installation">On-Premise Installation</a></li>
+<li><a href="#cloud-installation">Cloud Installation</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -691,7 +716,7 @@
           
             <h1>
               
-              Continuous Delivery with Jenkins in Kubernetes Engine
+              02 - Installing Kubernetes
             </h1>
           
 
@@ -699,21 +724,65 @@
 
 
 
-<p><img src="/jenkins-kubernetes-engine.png?width=50pc" alt="Jenkins" /></p>
 
-<pre><code class="language-bash">
-# Create Kubernetes Cluster
-gcloud container clusters create jenkins-cd \
---num-nodes 2 \
---machine-type n1-standard-2 \
---scopes &quot;https://www.googleapis.com/auth/projecthosting,cloud-platform&quot;
 
-# Update KubeConfig with Cluster credentials
-gcloud container clusters get-credentials jenkins-cd
+<ul>
+<li><a href="#local-installation">Local Installation</a></li>
+<li><a href="#on-premise-installation">On-Premise Installation</a></li>
+<li><a href="#cloud-installation">Cloud Installation</a></li>
+</ul>
 
-# Verify Kubernetes can connect to GCP Kubernetes Cluster
-kubectl cluster-info
-</code></pre>
+<h4 id="all-in-one-single-node-installation">All-in-One Single-Node Installation</h4>
+
+<p>In this setup, all the master and worker components are installed and running on a single-node. While it is useful for learning, development, and testing, and it should not be used in production. Minikube is one such example, and we are going to explore it in future chapters.</p>
+
+<h4 id="single-node-etcd-single-master-and-multi-worker-installation">Single-Node etcd, Single-Master and Multi-Worker Installation</h4>
+
+<p>In this setup, we have a single-master node, which also runs a single-node etcd instance. Multiple worker nodes are connected to the master node.</p>
+
+<h4 id="single-node-etcd-multi-master-and-multi-worker-installation">Single-Node etcd, Multi-Master and Multi-Worker Installation</h4>
+
+<p>In this setup, we have multiple-master nodes configured in HA mode, but we have a single-node etcd instance. Multiple worker nodes are connected to the master nodes.</p>
+
+<h4 id="multi-node-etcd-multi-master-and-multi-worker-installation">Multi-Node etcd, Multi-Master and Multi-Worker Installation</h4>
+
+<p>In this mode, etcd is configured in clustered HA mode, the master nodes are all configured in HA mode, connecting to multiple worker nodes. This is the most advanced and recommended production setup.</p>
+
+<hr />
+
+<h3 id="local-installation">Local Installation</h3>
+
+<ul>
+<li>Minikube - single-node local Kubernetes cluster</li>
+<li>Docker Desktop - single-node local Kubernetes cluster for Windows and Mac</li>
+<li>CDK on LXD - multi-node local cluster with LXD containers.</li>
+</ul>
+
+<h3 id="on-premise-installation">On-Premise Installation</h3>
+
+<ul>
+<li><p>On-Premise VMs
+Kubernetes can be installed on VMs created via Vagrant, VMware vSphere, KVM, or another Configuration Management (CM) tool in conjunction with a hypervisor software. There are different tools available to automate the installation, such as Ansible or kubeadm.</p></li>
+
+<li><p>On-Premise Bare Metal
+Kubernetes can be installed on on-premise bare metal, on top of different operating systems, like RHEL, CoreOS, CentOS, Fedora, Ubuntu, etc. Most of the tools used to install Kubernetes on VMs can be used with bare metal installations as well.</p></li>
+</ul>
+
+<h3 id="cloud-installation">Cloud Installation</h3>
+
+<ul>
+<li>Hosted Solutions
+
+<ul>
+<li>Google Kubernetes Engine (GKE)</li>
+<li>Azure Kubernetes Service (AKS)</li>
+<li>Amazon Elastic Container Service for Kubernetes (EKS)</li>
+<li>DigitalOcean Kubernetes</li>
+<li>OpenShift Dedicated</li>
+</ul></li>
+</ul>
+
+<p><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way">Kubernetes The Hard Way</a></p>
 
 
 <footer class=" footline" >
@@ -787,141 +856,6 @@ kubectl cluster-info
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -966,6 +900,145 @@ kubectl cluster-info
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1153,10 +1226,10 @@ kubectl cluster-info
 	 
 	 
 		
-			<a class="nav nav-prev" href="/google-cloud-platform/cloud-storage/" title="Cloud Storage"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/introduction-to-kubernetes/kubernetes/01_kubernetes-architecture/" title="01 - Kubernetes Architecture"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/google-cloud-platform/network-concepts/" title="Network Concepts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/introduction-to-kubernetes/kubernetes/03_minikube/" title="03 - Minikube" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

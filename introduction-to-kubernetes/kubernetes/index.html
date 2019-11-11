@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Continuous Delivery with Jenkins in Kubernetes Engine :: Always Learning; Always Improving</title>
+    <title>Kubernetes :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1573453257" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/">
+  <body class="" data-url="/introduction-to-kubernetes/kubernetes/">
     <nav id="sidebar" class="">
 
 
@@ -128,7 +128,7 @@
   
     
     <li data-nav-id="/google-cloud-platform/" title="Google Cloud Platform" class="dd-item 
-        parent
+        
         
         
         ">
@@ -190,7 +190,7 @@
  
   
     
-      <li data-nav-id="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/" title="Continuous Delivery with Jenkins in Kubernetes Engine" class="dd-item active">
+      <li data-nav-id="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/" title="Continuous Delivery with Jenkins in Kubernetes Engine" class="dd-item ">
         <a href="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/">
         Continuous Delivery with Jenkins in Kubernetes Engine
         
@@ -255,7 +255,7 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/" title="Introduction to Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -306,8 +306,8 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/kubernetes/" title="Kubernetes" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/introduction-to-kubernetes/kubernetes/">
@@ -662,7 +662,7 @@
             
           
           
-            <a href='/'>Digital Learning Notebook</a> > <a href='/google-cloud-platform/'>Google Cloud Platform</a> > Continuous Delivery with Jenkins in Kubernetes Engine
+            <a href='/'>Digital Learning Notebook</a> > <a href='/introduction-to-kubernetes/'>Introduction to Kubernetes</a> > Kubernetes
           
          
           
@@ -675,7 +675,14 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#features">Features</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -691,7 +698,7 @@
           
             <h1>
               
-              Continuous Delivery with Jenkins in Kubernetes Engine
+              Kubernetes
             </h1>
           
 
@@ -699,27 +706,54 @@
 
 
 
-<p><img src="/jenkins-kubernetes-engine.png?width=50pc" alt="Jenkins" /></p>
 
-<pre><code class="language-bash">
-# Create Kubernetes Cluster
-gcloud container clusters create jenkins-cd \
---num-nodes 2 \
---machine-type n1-standard-2 \
---scopes &quot;https://www.googleapis.com/auth/projecthosting,cloud-platform&quot;
+	
 
-# Update KubeConfig with Cluster credentials
-gcloud container clusters get-credentials jenkins-cd
+<p><img src="https://prod-edxapp.edx-cdn.org/assets/courseware/v1/69f90ad5d78474992e3772219f3bb32a/asset-v1:LinuxFoundationX+LFS158x+2T2019+type@asset+block/kubernetes_logo.png?width=20pc" alt="Kubernetes" /></p>
 
-# Verify Kubernetes can connect to GCP Kubernetes Cluster
-kubectl cluster-info
-</code></pre>
+<p>Kubernetes is a container management technology developed in Google lab to manage containerized applications in different kind of environments such as physical, virtual, and cloud infrastructure. It is an open source system which helps in creating and managing containerization of application. This tutorial provides an overview of different kind of features and functionalities of Kubernetes and teaches how to manage the containerized infrastructure and application deployment.</p>
+
+<h2 id="features">Features</h2>
+
+<p><strong>Automatic bin packing</strong></p>
+
+<p>Kubernetes automatically schedules containers based on resource needs and constraints, to maximize utilization without sacrificing availability.</p>
+
+<p><strong>Self-healing</strong></p>
+
+<p>Kubernetes automatically replaces and reschedules containers from failed nodes. It kills and restarts containers unresponsive to health checks, based on existing rules/policy. It also prevents traffic from being routed to unresponsive containers.</p>
+
+<p><strong>Horizontal scaling</strong></p>
+
+<p>With Kubernetes applications are scaled manually or automatically based on CPU or custom metrics utilization.</p>
+
+<p><strong>Service discovery and Load balancing</strong></p>
+
+<p>Containers receive their own IP addresses from Kubernetes, white it assigns a single Domain Name System (DNS) name to a set of containers to aid in load-balancing requests across the containers of the set.</p>
+
+<p><strong>Automated rollouts and rollbacks</strong></p>
+
+<p>Kubernetes seamlessly rolls out and rolls back application updates and configuration changes, constantly monitoring the application&rsquo;s health to prevent any downtime.</p>
+
+<p><strong>Secret and configuration management</strong></p>
+
+<p>Kubernetes manages secrets and configuration details for an application separately from the container image, in order to avoid a re-build of the respective image. Secrets consist of confidential information passed to the application without revealing the sensitive content to the stack configuration, like on GitHub.</p>
+
+<p><strong>Storage orchestration</strong></p>
+
+<p>Kubernetes automatically mounts software-defined storage (SDS) solutions to containers from local storage, external cloud providers, or network storage systems.</p>
+
+<p><strong>Batch execution</strong></p>
+
+<p>Kubernetes supports batch execution, long-running jobs, and replaces failed containers.</p>
+
+
+
 
 
 <footer class=" footline" >
 	
 </footer>
-
 
         
         </div> 
@@ -787,7 +821,6 @@ kubectl cluster-info
             
                 
                     
-                    
                 
                 
 
@@ -801,8 +834,21 @@ kubectl cluster-info
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -835,26 +881,6 @@ kubectl cluster-info
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -891,6 +917,7 @@ kubectl cluster-info
             
                 
                     
+                    
                 
                 
 
@@ -905,6 +932,9 @@ kubectl cluster-info
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -922,6 +952,7 @@ kubectl cluster-info
             
                 
                     
+                    
                 
                 
 
@@ -934,6 +965,9 @@ kubectl cluster-info
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1153,10 +1187,10 @@ kubectl cluster-info
 	 
 	 
 		
-			<a class="nav nav-prev" href="/google-cloud-platform/cloud-storage/" title="Cloud Storage"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/introduction-to-kubernetes/containers-and-orchestration/" title="Containers and Orchestration"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/google-cloud-platform/network-concepts/" title="Network Concepts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/introduction-to-kubernetes/kubernetes/01_kubernetes-architecture/" title="01 - Kubernetes Architecture" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1187,4 +1221,3 @@ kubectl cluster-info
 
   </body>
 </html>
-

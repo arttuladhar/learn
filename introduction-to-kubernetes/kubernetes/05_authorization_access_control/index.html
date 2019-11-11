@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Continuous Delivery with Jenkins in Kubernetes Engine :: Always Learning; Always Improving</title>
+    <title>05 - Authentication, Authorization, and Admission Control :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1573453257" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/">
+  <body class="" data-url="/introduction-to-kubernetes/kubernetes/05_authorization_access_control/">
     <nav id="sidebar" class="">
 
 
@@ -128,7 +128,7 @@
   
     
     <li data-nav-id="/google-cloud-platform/" title="Google Cloud Platform" class="dd-item 
-        parent
+        
         
         
         ">
@@ -190,7 +190,7 @@
  
   
     
-      <li data-nav-id="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/" title="Continuous Delivery with Jenkins in Kubernetes Engine" class="dd-item active">
+      <li data-nav-id="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/" title="Continuous Delivery with Jenkins in Kubernetes Engine" class="dd-item ">
         <a href="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/">
         Continuous Delivery with Jenkins in Kubernetes Engine
         
@@ -255,7 +255,7 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/" title="Introduction to Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -306,7 +306,7 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/kubernetes/" title="Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -406,7 +406,7 @@
  
   
     
-      <li data-nav-id="/introduction-to-kubernetes/kubernetes/05_authorization_access_control/" title="05 - Authentication, Authorization, and Admission Control" class="dd-item ">
+      <li data-nav-id="/introduction-to-kubernetes/kubernetes/05_authorization_access_control/" title="05 - Authentication, Authorization, and Admission Control" class="dd-item active">
         <a href="/introduction-to-kubernetes/kubernetes/05_authorization_access_control/">
         05 - Authentication, Authorization, and Admission Control
         
@@ -662,7 +662,13 @@
             
           
           
-            <a href='/'>Digital Learning Notebook</a> > <a href='/google-cloud-platform/'>Google Cloud Platform</a> > Continuous Delivery with Jenkins in Kubernetes Engine
+            
+            
+          
+          
+            <a href='/'>Digital Learning Notebook</a> > <a href='/introduction-to-kubernetes/'>Introduction to Kubernetes</a> > <a href='/introduction-to-kubernetes/kubernetes/'>Kubernetes</a> > 05 - Authentication, Authorization, and Admission Control
+          
+         
           
          
           
@@ -675,7 +681,21 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#role-based-access-control-rbac-authorizer">Role-Based Access Control (RBAC) Authorizer</a>
+<ul>
+<li><a href="#types-of-rolebindings">Types of RoleBindings:</a></li>
+</ul></li>
+<li><a href="#admission-control">Admission Control</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -691,7 +711,7 @@
           
             <h1>
               
-              Continuous Delivery with Jenkins in Kubernetes Engine
+              05 - Authentication, Authorization, and Admission Control
             </h1>
           
 
@@ -699,20 +719,48 @@
 
 
 
-<p><img src="/jenkins-kubernetes-engine.png?width=50pc" alt="Jenkins" /></p>
 
-<pre><code class="language-bash">
-# Create Kubernetes Cluster
-gcloud container clusters create jenkins-cd \
---num-nodes 2 \
---machine-type n1-standard-2 \
---scopes &quot;https://www.googleapis.com/auth/projecthosting,cloud-platform&quot;
 
-# Update KubeConfig with Cluster credentials
-gcloud container clusters get-credentials jenkins-cd
+<p>To access and manage any Kubernetes resource or object in the cluster, we need to access a specific API endpoint on the API server. Each access request goes through the following three stages:</p>
 
-# Verify Kubernetes can connect to GCP Kubernetes Cluster
-kubectl cluster-info
+<p><strong>Authentication</strong> - Logs in a user
+<strong>Authorization</strong> - Authorizes the API requests added by the logged-in user.
+<strong>Admission Control</strong> - Software modules that can modify or reject the requests based on some additional checks, like a pre-set Quota.</p>
+
+<h3 id="role-based-access-control-rbac-authorizer">Role-Based Access Control (RBAC) Authorizer</h3>
+
+<p><strong>Role</strong> - With Role, we can grant access to resources within a specific Namespace.
+<strong>ClusterRole</strong> - The ClusterRole can be used to grant the same permissions as Role does, but its scope is cluster-wide.</p>
+
+<pre><code class="language-yaml">kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: lfs158
+  name: pod-reader
+rules:
+- apiGroups: [&quot;&quot;] # &quot;&quot; indicates the core API group
+  resources: [&quot;pods&quot;]
+  verbs: [&quot;get&quot;, &quot;watch&quot;, &quot;list&quot;]
+</code></pre>
+
+<h4 id="types-of-rolebindings">Types of RoleBindings:</h4>
+
+<p><strong>RoleBinding</strong>
+It allows us to bind users to the same namespace as a Role. We could also refer a ClusterRole in RoleBinding, which would grant permissions to Namespace resources defined in the ClusterRole within the RoleBinding’s Namespace.</p>
+
+<p><strong>ClusterRoleBinding</strong>
+It allows us to grant access to resources at a cluster-level and to all Namespaces.</p>
+
+
+<div class="notices info" ><p>To enable the RBAC authorizer, we would need to start the API server with the <strong>&ndash;authorization-mode=RBAC</strong> option</p>
+</div>
+
+
+<h3 id="admission-control">Admission Control</h3>
+
+<p>Admission control is used to specify granular access control policies, which include allowing privileged containers, checking on resource quota, etc. To use admission controls, we must start the Kubernetes API server with the <code>--enable-admission-plugins</code>, which takes a comma-delimited, ordered list of controller names:</p>
+
+<pre><code>--enable-admission-plugins=NamespaceLifecycle,ResourceQuota,PodSecurityPolicy,DefaultStorageClass
 </code></pre>
 
 
@@ -787,141 +835,6 @@ kubectl cluster-info
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -1013,6 +926,38 @@ kubectl cluster-info
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -1020,6 +965,113 @@ kubectl cluster-info
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1153,10 +1205,10 @@ kubectl cluster-info
 	 
 	 
 		
-			<a class="nav nav-prev" href="/google-cloud-platform/cloud-storage/" title="Cloud Storage"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/introduction-to-kubernetes/kubernetes/04_kubernetes_building_blocks/" title="04 - Kubernetes Building Blocks"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/google-cloud-platform/network-concepts/" title="Network Concepts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/javascript/" title="JavaScript" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Continuous Delivery with Jenkins in Kubernetes Engine :: Always Learning; Always Improving</title>
+    <title>04 - Kubernetes Building Blocks :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1573453257" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/">
+  <body class="" data-url="/introduction-to-kubernetes/kubernetes/04_kubernetes_building_blocks/">
     <nav id="sidebar" class="">
 
 
@@ -128,7 +128,7 @@
   
     
     <li data-nav-id="/google-cloud-platform/" title="Google Cloud Platform" class="dd-item 
-        parent
+        
         
         
         ">
@@ -190,7 +190,7 @@
  
   
     
-      <li data-nav-id="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/" title="Continuous Delivery with Jenkins in Kubernetes Engine" class="dd-item active">
+      <li data-nav-id="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/" title="Continuous Delivery with Jenkins in Kubernetes Engine" class="dd-item ">
         <a href="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/">
         Continuous Delivery with Jenkins in Kubernetes Engine
         
@@ -255,7 +255,7 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/" title="Introduction to Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -306,7 +306,7 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/kubernetes/" title="Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -387,7 +387,7 @@
  
   
     
-      <li data-nav-id="/introduction-to-kubernetes/kubernetes/04_kubernetes_building_blocks/" title="04 - Kubernetes Building Blocks" class="dd-item ">
+      <li data-nav-id="/introduction-to-kubernetes/kubernetes/04_kubernetes_building_blocks/" title="04 - Kubernetes Building Blocks" class="dd-item active">
         <a href="/introduction-to-kubernetes/kubernetes/04_kubernetes_building_blocks/">
         04 - Kubernetes Building Blocks
         
@@ -662,7 +662,13 @@
             
           
           
-            <a href='/'>Digital Learning Notebook</a> > <a href='/google-cloud-platform/'>Google Cloud Platform</a> > Continuous Delivery with Jenkins in Kubernetes Engine
+            
+            
+          
+          
+            <a href='/'>Digital Learning Notebook</a> > <a href='/introduction-to-kubernetes/'>Introduction to Kubernetes</a> > <a href='/introduction-to-kubernetes/kubernetes/'>Kubernetes</a> > 04 - Kubernetes Building Blocks
+          
+         
           
          
           
@@ -675,7 +681,22 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#kubernetes-object-model">Kubernetes Object Model</a></li>
+<li><a href="#pods">Pods</a>
+<ul>
+<li><a href="#labels">Labels</a></li>
+</ul></li>
+<li><a href="#replication-controller">Replication Controller</a></li>
+<li><a href="#replica-set">Replica Set</a></li>
+<li><a href="#deployments">Deployments</a></li>
+<li><a href="#namespaces">Namespaces</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -691,7 +712,7 @@
           
             <h1>
               
-              Continuous Delivery with Jenkins in Kubernetes Engine
+              04 - Kubernetes Building Blocks
             </h1>
           
 
@@ -699,21 +720,99 @@
 
 
 
-<p><img src="/jenkins-kubernetes-engine.png?width=50pc" alt="Jenkins" /></p>
 
-<pre><code class="language-bash">
-# Create Kubernetes Cluster
-gcloud container clusters create jenkins-cd \
---num-nodes 2 \
---machine-type n1-standard-2 \
---scopes &quot;https://www.googleapis.com/auth/projecthosting,cloud-platform&quot;
 
-# Update KubeConfig with Cluster credentials
-gcloud container clusters get-credentials jenkins-cd
+<ul>
+<li><a href="#kubernetes-object-model">Kubernetes Object Model</a></li>
+<li><a href="#pods">Pods</a>
 
-# Verify Kubernetes can connect to GCP Kubernetes Cluster
-kubectl cluster-info
+<ul>
+<li><a href="#labels">Labels</a></li>
+</ul></li>
+<li><a href="#replication-controller">Replication Controller</a></li>
+<li><a href="#replica-set">Replica Set</a></li>
+<li><a href="#deployments">Deployments</a></li>
+<li><a href="#namespaces">Namespaces</a></li>
+</ul>
+
+<h2 id="kubernetes-object-model">Kubernetes Object Model</h2>
+
+<p>With each object, we declare our intent or the desired state under the <em>spec</em> section. When creating an object, the object&rsquo;s configuration data section from below the <em>spec</em> field has to be submitted to the Kubernetes API server.</p>
+
+<p>Example of <em>Deployment</em> object configuration in YAML format.</p>
+
+<pre><code class="language-yaml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.15.11
+        ports:
+        - containerPort: 80
 </code></pre>
+
+<h2 id="pods">Pods</h2>
+
+<p>A Pod is the smallest and simplest Kubernetes object. It is the unit of deployment in Kubernetes, which represents a single instance of the application. A Pod is a logical collection of one or more containers, which:</p>
+
+<ul>
+<li>Are scheduled together on the same host with the Pod</li>
+<li>Share the same network namespace</li>
+<li>Have access to mount the same external storage (volumes).</li>
+</ul>
+
+<p>Below is an example of a Pod object&rsquo;s configuration in YAML format:</p>
+
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    app: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.15.11
+    ports:
+    - containerPort: 80
+</code></pre>
+
+<h3 id="labels">Labels</h3>
+
+<p>Labels are key-value pairs attached to Kubernetes objects (e.g. Pods, ReplicaSets). Labels are used to organize and select a subset of objects, based on the requirements in place. Many objects can have the same Label(s). Labels do not provide uniqueness to objects. Controllers use Labels to logically group together decoupled objects, rather than using objects&rsquo; names or IDs.</p>
+
+<h2 id="replication-controller">Replication Controller</h2>
+
+<p>Although no longer a recommended method, a ReplicationController is a controller that ensures a specified number of replicas of a Pod is running at any given time. If there are more Pods than the desired count, a replication controller would terminate the extra Pods, and, if there are fewer Pods, then the replication controller would create more Pods to match the desired count. Generally, we don&rsquo;t deploy a Pod independently, as it would not be able to re-start itself if terminated in error. The recommended method is to use some type of replication controllers to create and manage Pods.</p>
+
+<p>The default controller is a Deployment which configures a ReplicaSet to manage Pods&rsquo; lifecycle.</p>
+
+<h2 id="replica-set">Replica Set</h2>
+
+<p>A ReplicaSet is the next-generation ReplicationController. ReplicaSets support both equality- and set-based selectors, whereas ReplicationControllers only support equality-based Selectors. Currently, this is the only difference.</p>
+
+<p>With the help of the ReplicaSet, we can scale the number of Pods running a specific container application image. Scaling can be accomplished manually or through the use of an autoscaler.</p>
+
+<h2 id="deployments">Deployments</h2>
+
+<p>Deployment objects provide declarative updates to Pods and ReplicaSets. The DeploymentController is part of the master node&rsquo;s controller manager, and it ensures that the current state always matches the desired state. It allows for seamless application updates and downgrades through rollouts and rollbacks, and it directly manages its ReplicaSets for application scaling.</p>
+
+<h2 id="namespaces">Namespaces</h2>
+
+<p>If multiple users and teams use the same Kubernetes cluster we can partition the cluster into virtual sub-clusters using Namespaces. The names of the resources/objects created inside a Namespace are unique, but not across Namespaces in the cluster.</p>
 
 
 <footer class=" footline" >
@@ -787,141 +886,6 @@ kubectl cluster-info
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -998,6 +962,145 @@ kubectl cluster-info
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1153,10 +1256,10 @@ kubectl cluster-info
 	 
 	 
 		
-			<a class="nav nav-prev" href="/google-cloud-platform/cloud-storage/" title="Cloud Storage"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/introduction-to-kubernetes/kubernetes/03_minikube/" title="03 - Minikube"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/google-cloud-platform/network-concepts/" title="Network Concepts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/introduction-to-kubernetes/kubernetes/05_authorization_access_control/" title="05 - Authentication, Authorization, and Admission Control" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

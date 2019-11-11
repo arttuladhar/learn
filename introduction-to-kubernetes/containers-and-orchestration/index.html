@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Continuous Delivery with Jenkins in Kubernetes Engine :: Always Learning; Always Improving</title>
+    <title>Containers and Orchestration :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1573453257" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/">
+  <body class="" data-url="/introduction-to-kubernetes/containers-and-orchestration/">
     <nav id="sidebar" class="">
 
 
@@ -128,7 +128,7 @@
   
     
     <li data-nav-id="/google-cloud-platform/" title="Google Cloud Platform" class="dd-item 
-        parent
+        
         
         
         ">
@@ -190,7 +190,7 @@
  
   
     
-      <li data-nav-id="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/" title="Continuous Delivery with Jenkins in Kubernetes Engine" class="dd-item active">
+      <li data-nav-id="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/" title="Continuous Delivery with Jenkins in Kubernetes Engine" class="dd-item ">
         <a href="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/">
         Continuous Delivery with Jenkins in Kubernetes Engine
         
@@ -255,7 +255,7 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/" title="Introduction to Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -282,8 +282,8 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/containers-and-orchestration/" title="Containers and Orchestration" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/introduction-to-kubernetes/containers-and-orchestration/">
@@ -662,7 +662,7 @@
             
           
           
-            <a href='/'>Digital Learning Notebook</a> > <a href='/google-cloud-platform/'>Google Cloud Platform</a> > Continuous Delivery with Jenkins in Kubernetes Engine
+            <a href='/'>Digital Learning Notebook</a> > <a href='/introduction-to-kubernetes/'>Introduction to Kubernetes</a> > Containers and Orchestration
           
          
           
@@ -675,7 +675,19 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#containers">Containers</a></li>
+<li><a href="#microservices">Microservices</a></li>
+<li><a href="#container-orchestration">Container Orchestration</a>
+<ul>
+<li><a href="#container-orchestrators">Container Orchestrators</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -691,7 +703,7 @@
           
             <h1>
               
-              Continuous Delivery with Jenkins in Kubernetes Engine
+              Containers and Orchestration
             </h1>
           
 
@@ -699,27 +711,49 @@
 
 
 
-<p><img src="/jenkins-kubernetes-engine.png?width=50pc" alt="Jenkins" /></p>
 
-<pre><code class="language-bash">
-# Create Kubernetes Cluster
-gcloud container clusters create jenkins-cd \
---num-nodes 2 \
---machine-type n1-standard-2 \
---scopes &quot;https://www.googleapis.com/auth/projecthosting,cloud-platform&quot;
+	
 
-# Update KubeConfig with Cluster credentials
-gcloud container clusters get-credentials jenkins-cd
+<h2 id="containers">Containers</h2>
 
-# Verify Kubernetes can connect to GCP Kubernetes Cluster
-kubectl cluster-info
-</code></pre>
+<p>Containers are application-centric methods to deliver high-performing, scalable applications on any infrastructure of your choice. Containers are best suited to deliver microservices by providing portable, isolated virtual environments for applications to run without interference from other running applications.</p>
+
+<h2 id="microservices">Microservices</h2>
+
+<p>Microservices are lightweight applications written in various modern programming languages, with specific dependencies, libraries and environmental requirements. To ensure that an application has everything it needs to run successfully it is packaged together with its dependencies.</p>
+
+<h2 id="container-orchestration">Container Orchestration</h2>
+
+<p>Container orchestrators are tools which group systems together to form clusters where containers&rsquo; deployment and management is automated at scale while meeting following requirements.</p>
+
+<ul>
+<li>Fault-tolerance</li>
+<li>On-demand scalability</li>
+<li>Optimal resource usage</li>
+<li>Auto-discovery to automatically discover and communicate with each other</li>
+<li>Accessibility from the outside world</li>
+<li>Seamless updates/rollbacks without any downtime.</li>
+</ul>
+
+<h3 id="container-orchestrators">Container Orchestrators</h3>
+
+<ul>
+<li>Amazon Elastic Container Service</li>
+<li>Azure Container Instances</li>
+<li>Azure Service Fabric</li>
+<li>Kubernetes</li>
+<li>Marathon</li>
+<li>Nomad</li>
+<li>Docker Swarm</li>
+</ul>
+
+
+
 
 
 <footer class=" footline" >
 	
 </footer>
-
 
         
         </div> 
@@ -787,7 +821,6 @@ kubectl cluster-info
             
                 
                     
-                    
                 
                 
 
@@ -801,8 +834,21 @@ kubectl cluster-info
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -835,26 +881,6 @@ kubectl cluster-info
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -891,6 +917,7 @@ kubectl cluster-info
             
                 
                     
+                    
                 
                 
 
@@ -905,6 +932,7 @@ kubectl cluster-info
             
             
                 
+                    
                     
                 
                 
@@ -921,6 +949,9 @@ kubectl cluster-info
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1153,10 +1184,10 @@ kubectl cluster-info
 	 
 	 
 		
-			<a class="nav nav-prev" href="/google-cloud-platform/cloud-storage/" title="Cloud Storage"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/introduction-to-kubernetes/" title="Introduction to Kubernetes"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/google-cloud-platform/network-concepts/" title="Network Concepts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/introduction-to-kubernetes/kubernetes/" title="Kubernetes" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1187,4 +1218,3 @@ kubectl cluster-info
 
   </body>
 </html>
-
