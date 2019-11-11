@@ -12,8 +12,6 @@ gcloud container clusters create jenkins-cd \
 --machine-type n1-standard-2 \
 --scopes "https://www.googleapis.com/auth/projecthosting,cloud-platform"
 
-
-
 # Update KubeConfig with Cluster credentials
 gcloud container clusters get-credentials jenkins-cd
 

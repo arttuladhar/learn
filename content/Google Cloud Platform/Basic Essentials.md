@@ -2,8 +2,6 @@
 title: Basic Essentials
 ---
 
-
-
 ## Creting Instance (Directly)
 
 ```bash
