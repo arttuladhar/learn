@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Categories :: Always Learning; Always Improving</title>
+    <title>07 - Deploying Standalone App :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1573879843" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/categories/">
+  <body class="" data-url="/introduction-to-kubernetes/kubernetes/07_deploying_standalone_app/">
     <nav id="sidebar" class="">
 
 
@@ -255,7 +255,7 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/" title="Introduction to Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -306,7 +306,7 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/kubernetes/" title="Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -444,7 +444,7 @@
  
   
     
-      <li data-nav-id="/introduction-to-kubernetes/kubernetes/07_deploying_standalone_app/" title="07 - Deploying Standalone App" class="dd-item ">
+      <li data-nav-id="/introduction-to-kubernetes/kubernetes/07_deploying_standalone_app/" title="07 - Deploying Standalone App" class="dd-item active">
         <a href="/introduction-to-kubernetes/kubernetes/07_deploying_standalone_app/">
         07 - Deploying Standalone App
         
@@ -692,7 +692,25 @@
                     
           
           
-            Categories
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Digital Learning Notebook</a> > <a href='/introduction-to-kubernetes/'>Introduction to Kubernetes</a> > <a href='/introduction-to-kubernetes/kubernetes/'>Kubernetes</a> > 07 - Deploying Standalone App
+          
+         
+          
+         
+          
+         
           
         
                  
@@ -701,7 +719,20 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#creating-deployment-using-yaml-file">Creating Deployment using YAML File</a></li>
+<li><a href="#exposing-application">Exposing Application</a></li>
+<li><a href="#liveness-and-readiness-probes">Liveness and Readiness Probes</a>
+<ul>
+<li><a href="#liveness-probe">Liveness Probe</a></li>
+<li><a href="#readiness-probe">Readiness Probe</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -717,7 +748,7 @@
           
             <h1>
               
-              Categories
+              07 - Deploying Standalone App
             </h1>
           
 
@@ -727,15 +758,139 @@
 
 
 
+<h2 id="creating-deployment-using-yaml-file">Creating Deployment using YAML File</h2>
+
+<p><em>webserver.yaml</em></p>
+
+<pre><code class="language-yaml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
+</code></pre>
+
+<pre><code class="language-bash">kubectl create -f webserver.yaml
+</code></pre>
+
+<p>This will also create ReplicaSet and Pods as defined in the YAML configuration.</p>
+
+<h2 id="exposing-application">Exposing Application</h2>
+
+<p><em>webserver-svc.yaml</em></p>
+
+<pre><code class="language-yaml">apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+  labels:
+    run: web-service
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: nginx
+</code></pre>
+
+<pre><code class="language-bash">kubectl create -f webserver-svc.yaml
+</code></pre>
+
+<h2 id="liveness-and-readiness-probes">Liveness and Readiness Probes</h2>
+
+<h3 id="liveness-probe">Liveness Probe</h3>
+
+<p>Liveness probe checks on an application&rsquo;s health, and if the health check fails, kubelet restarts the affected container automatically.</p>
+
+<p>Liveness Probes can be set by defining:</p>
 
 <ul>
-	
+<li>Liveness command</li>
 </ul>
+
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    test: liveness
+  name: liveness-exec
+spec:
+  containers:
+  - name: liveness
+    image: k8s.gcr.io/busybox
+    args:
+    - /bin/sh
+    - -c
+    - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
+    livenessProbe:
+      exec:
+        command:
+        - cat
+        - /tmp/healthy
+      initialDelaySeconds: 5
+      periodSeconds: 5
+</code></pre>
+
+<ul>
+<li>Liveness HTTP request</li>
+</ul>
+
+<pre><code class="language-yaml">livenessProbe:
+      httpGet:
+        path: /healthz
+        port: 8080
+        httpHeaders:
+        - name: X-Custom-Header
+          value: Awesome
+      initialDelaySeconds: 3
+      periodSeconds: 3
+</code></pre>
+
+<ul>
+<li>TCP Liveness Probe</li>
+</ul>
+
+<pre><code class="language-yaml">livenessProbe:
+      tcpSocket:
+        port: 8080
+      initialDelaySeconds: 15
+      periodSeconds: 20
+</code></pre>
+
+<h3 id="readiness-probe">Readiness Probe</h3>
+
+<p>Readiness Probe can be used to ensure certain conditions are met before application can serve traffic. These conditions include ensuring that the depending service is ready, or acknowledging that a large dataset needs to be loaded, etc. In such cases, we use Readiness Probes and wait for a certain condition to occur.</p>
+
+<pre><code class="language-yaml">readinessProbe:
+  exec:
+    command:
+    - cat
+    - /tmp/healthy
+  initialDelaySeconds: 5
+  periodSeconds: 5
+</code></pre>
 
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -899,6 +1054,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -913,6 +1069,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -930,6 +1089,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -943,21 +1103,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -1050,6 +1197,23 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1060,6 +1224,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1193,8 +1360,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/introduction-to-kubernetes/kubernetes/06_services/" title="06 - Services"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/devops/" title="DevOps" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/javascript/" title="JavaScript" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1225,3 +1394,4 @@
 
   </body>
 </html>
+
