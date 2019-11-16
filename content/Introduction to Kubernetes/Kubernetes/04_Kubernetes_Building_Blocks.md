@@ -41,6 +41,8 @@ spec:
 
 ## Pods
 
+A pod is the basic unit that Kubernetes deals with. Containers themselves are not assigned to hosts. Instead, closely related containers are grouped together in a pod. A pod generally represents one or more containers that should be controlled as a single “application”.
+
 A Pod is the smallest and simplest Kubernetes object. It is the unit of deployment in Kubernetes, which represents a single instance of the application. A Pod is a logical collection of one or more containers, which:
 
 * Are scheduled together on the same host with the Pod
@@ -64,9 +66,25 @@ spec:
     - containerPort: 80
 ```
 
+```bash
+# List all the Pods
+kubectl get pods
+
+# Displays details of Pod
+kubectl describe pod webserver-74d8bd488f-dwbzz
+```
+
 ### Labels
 
 Labels are key-value pairs attached to Kubernetes objects (e.g. Pods, ReplicaSets). Labels are used to organize and select a subset of objects, based on the requirements in place. Many objects can have the same Label(s). Labels do not provide uniqueness to objects. Controllers use Labels to logically group together decoupled objects, rather than using objects' names or IDs.
+
+```bash
+# Lists Pods with labels
+kubectl get pods -L k8s-app,label2
+
+# Select the Pods with a given Label
+kubectl get pods -l k8s-app=webserver
+```
 
 ## Replication Controller
 
@@ -80,9 +98,30 @@ A ReplicaSet is the next-generation ReplicationController. ReplicaSets support b
 
 With the help of the ReplicaSet, we can scale the number of Pods running a specific container application image. Scaling can be accomplished manually or through the use of an autoscaler.
 
+{{% notice info %}}
+A ReplicaSet ensures that a specified number of pod replicas are running at any given time.
+{{% /notice %}}
+
+```bash
+# List Replica Sets
+kubectl get replicasets
+```
+
 ## Deployments
 
 Deployment objects provide declarative updates to Pods and ReplicaSets. The DeploymentController is part of the master node's controller manager, and it ensures that the current state always matches the desired state. It allows for seamless application updates and downgrades through rollouts and rollbacks, and it directly manages its ReplicaSets for application scaling.
+
+```bash
+# Lists all the Deployments in a given namespace
+kubectl get deployments
+
+# Deleting Deployment (Along with ReplicaSet and Pods)
+kubectl delete deployments webserver
+```
+
+{{% notice note %}}
+Deleting a Deployment also deletes the ReplicaSet and the Pods it created.
+{{% /notice %}}
 
 ## Namespaces
 
