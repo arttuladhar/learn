@@ -8,4 +8,4 @@ At a very high level, Kubernetes has the following main components:
 * One or more worker nodes
 * Distributed key-value store, such as etcd.
 
-![Kubernetes Architecture](static/introduction-to-kubernetes/kubernetes-architecture.jpg)
+![Kubernetes Architecture](/introduction-to-kubernetes/kubernetes-architecture.jpg)
