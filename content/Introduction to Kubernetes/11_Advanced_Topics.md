@@ -12,6 +12,7 @@ With Annotations, we can attach arbitrary non-identifying metadata to any object
   "key2" : "value2"
 }
 ```
+
 Unlike Labels, annotations are not used to identify and select objects. Annotations can be used to:
 
 * Store build/release IDs, PR numbers, git branch, etc.
@@ -29,9 +30,31 @@ metadata:
 
 ## Jobs and CronJobs
 
-A Job creates one or more Pods to perform a given task. The Job object takes the responsibility of Pod failures. It makes sure that the given task is completed successfully. Once the task is complete, all the Pods have terminated automatically. Job configuration options include parallelism - to set the number of pods allowed to run in parallel; completions - to set the number of expected completions; activeDeadlineSeconds - to set the duration of the Job; backoffLimit - to set the number of retries before Job is marked as failed; ttlSecondsAfterFinished - to delay the clean up of the finished Jobs.
+A Job creates one or more Pods to perform a given task. The Job object takes the responsibility of Pod failures. It makes sure that the given task is completed successfully. Once the task is complete, all the Pods have terminated automatically. Job configuration options include
+
+* `parallelism` - to set the number of pods allowed to run in parallel;
+* `completions` - to set the number of expected completions;
+* `activeDeadlineSeconds` - to set the duration of the Job;
+* `backoffLimit` - to set the number of retries before Job is marked as failed;
+* `ttlSecondsAfterFinished` - to delay the clean up of the finished Jobs.
 
 ## Quota Management
+
+## Autoscalling
+
+Autoscaling can be implemented in a Kubernetes cluster via controllers which periodically adjust the number of running objects based on single, multiple, or custom metrics. There are various types of autoscalers available in Kubernetes which can be implemented individually or combined for a more robust autoscaling solution:
+
+### Horizontal Pod Autoscaler (HPA)
+
+HPA is an algorithm based controller API resource which automatically adjusts the number of replicas in a ReplicaSet, Deployment or Replication Controller based on CPU utilization.
+
+### Vertical Pod Autoscaler (VPA)
+
+VPA automatically sets Container resource requirements (CPU and memory) in a Pod and dynamically adjusts them in runtime, based on historical utilization data, current resource availability and real-time events.
+
+### Cluster Autoscaler
+
+Cluster Autoscaler automatically re-sizes the Kubernetes cluster when there are insufficient resources available for new Pods expecting to be scheduled or when there are underutilized nodes in the cluster.
 
 ## DaemonSets
 
@@ -52,3 +75,21 @@ The StatefulSet controller provides identity and guaranteed ordering of deployme
 ## Kubernetes Federation
 
 With Kubernetes Cluster Federation we can manage multiple Kubernetes clusters from a single control plane. We can sync resources across the federated clusters and have cross-cluster discovery. This allows us to perform Deployments across regions, access them using a global DNS record, and achieve High Availability.
+
+## Helm Chart
+
+To deploy an application, we use different Kubernetes manifests, such as Deployments, Services, Volume Claims, Ingress, etc. Sometimes, it can be tiresome to deploy them one by one. We can bundle all those manifests after templatizing them into a well-defined format, along with other metadata. Such a bundle is referred to as Chart. These Charts can then be served via repositories, such as those that we have for rpm and deb packages.
+
+Helm is a package manager (analogous to yum and apt for Linux) for Kubernetes, which can install/update/delete those Charts in the Kubernetes cluster.
+
+Helm has two components:
+
+* A client called **helm**, which runs on your user's workstation
+* A server called **tiller**, which runs inside your Kubernetes cluster.
+
+The client helm connects to the server tiller to manage Charts. Charts submitted for Kubernetes are available here.
+
+## Network Policies
+
+## Monitoring and Logging
+
