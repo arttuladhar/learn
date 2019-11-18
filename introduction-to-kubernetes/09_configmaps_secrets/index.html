@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Categories :: Always Learning; Always Improving</title>
+    <title>09 - ConfigMaps and Secrets :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1574102149" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/categories/">
+  <body class="" data-url="/introduction-to-kubernetes/09_configmaps_secrets/">
     <nav id="sidebar" class="">
 
 
@@ -363,7 +363,7 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/" title="Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -558,7 +558,7 @@
  
   
     
-      <li data-nav-id="/introduction-to-kubernetes/09_configmaps_secrets/" title="09 - ConfigMaps and Secrets" class="dd-item ">
+      <li data-nav-id="/introduction-to-kubernetes/09_configmaps_secrets/" title="09 - ConfigMaps and Secrets" class="dd-item active">
         <a href="/introduction-to-kubernetes/09_configmaps_secrets/">
         09 - ConfigMaps and Secrets
         
@@ -746,7 +746,19 @@
                     
           
           
-            Categories
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Digital Learning Notebook</a> > <a href='/introduction-to-kubernetes/'>Kubernetes</a> > 09 - ConfigMaps and Secrets
+          
+         
+          
+         
           
         
                  
@@ -755,7 +767,36 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#configmaps">ConfigMaps</a>
+<ul>
+<li><a href="#creating-configmaps">Creating ConfigMaps</a>
+<ul>
+<li><a href="#using-commandline">Using CommandLine</a></li>
+<li><a href="#using-configuration-file">Using Configuration File</a></li>
+<li><a href="#using-properties-file">Using Properties File</a></li>
+</ul></li>
+<li><a href="#using-configmaps-inside-pods">Using ConfigMaps Inside Pods</a>
+<ul>
+<li><a href="#as-environment-variable">As Environment Variable</a></li>
+<li><a href="#as-volume">As Volume</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#secrets">Secrets</a>
+<ul>
+<li><a href="#creating-secret">Creating Secret</a></li>
+<li><a href="#create-a-secret-from-literal-and-display-its-details">Create a Secret from Literal and Display Its Details</a></li>
+<li><a href="#create-a-secret-from-yaml-file">Create a Secret from YAML File</a>
+<ul>
+<li><a href="#use-secrets-inside-pods">Use Secrets Inside Pods</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -771,7 +812,7 @@
           
             <h1>
               
-              Categories
+              09 - ConfigMaps and Secrets
             </h1>
           
 
@@ -781,15 +822,208 @@
 
 
 
+<ul>
+<li><a href="#configmaps">ConfigMaps</a>
 
 <ul>
-	
+<li><a href="#creating-configmaps">Creating ConfigMaps</a></li>
+<li><a href="#using-commandline">Using CommandLine</a></li>
+<li><a href="#using-configuration-file">Using Configuration File</a></li>
+<li><a href="#using-properties-file">Using Properties File</a></li>
+<li><a href="#using-configmaps-inside-pods">Using ConfigMaps Inside Pods</a></li>
+<li><a href="#as-environment-variable">As Environment Variable</a></li>
+<li><a href="#as-volume">As Volume</a></li>
+</ul></li>
+<li><a href="#secrets">Secrets</a>
+
+<ul>
+<li><a href="#creating-secret">Creating Secret</a></li>
+<li><a href="#create-a-secret-from-literal-and-display-its-details">Create a Secret from Literal and Display Its Details</a></li>
+<li><a href="#create-a-secret-from-yaml-file">Create a Secret from YAML File</a></li>
+<li><a href="#use-secrets-inside-pods">Use Secrets Inside Pods</a></li>
+</ul></li>
 </ul>
+
+<h2 id="configmaps">ConfigMaps</h2>
+
+<p>ConfigMaps allow us to decouple the configuration details from the container image. Using ConfigMaps, we pass configuration data as key-value pairs, which are consumed by Pods or any other system components and controllers, in the form of environment variables, sets of commands and arguments, or volumes. We can create ConfigMaps from literal values, from configuration files, from one or more files or directories.</p>
+
+<h3 id="creating-configmaps">Creating ConfigMaps</h3>
+
+<h4 id="using-commandline">Using CommandLine</h4>
+
+<pre><code class="language-shell">kubectl create configmap my-config \
+    --from-literal=key1=value1 \
+    --from-literal=key2=value2
+</code></pre>
+
+<h4 id="using-configuration-file">Using Configuration File</h4>
+
+<pre><code class="language-shell">apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: customer1
+data:
+  TEXT1: Customer1_Company
+  TEXT2: Welcomes You
+  COMPANY: Customer1 Company Technology Pct. Ltd.
+</code></pre>
+
+<h4 id="using-properties-file">Using Properties File</h4>
+
+<p><em>permission-reset.properties</em></p>
+
+<pre><code>permission=read-only
+allowed=&quot;true&quot;
+resetCount=3
+</code></pre>
+
+<pre><code>kubectl create configmap permission-config --from-file=&lt;path/to/&gt;permission-reset.properties
+</code></pre>
+
+<h3 id="using-configmaps-inside-pods">Using ConfigMaps Inside Pods</h3>
+
+<h4 id="as-environment-variable">As Environment Variable</h4>
+
+<p>Inside a Container, we can retrieve the key-value data of an entire ConfigMap or the values of specific ConfigMap keys as environment variables.</p>
+
+<pre><code class="language-yaml">  containers:
+  - name: myapp-full-container
+    image: myapp
+    envFrom:
+    - configMapRef:
+      name: full-config-map
+</code></pre>
+
+<pre><code class="language-yaml">  containers:
+  - name: myapp-specific-container
+    image: myapp
+    env:
+    - name: SPECIFIC_ENV_VAR1
+      valueFrom:
+        configMapKeyRef:
+          name: config-map-1
+          key: SPECIFIC_DATA
+    - name: SPECIFIC_ENV_VAR2
+      valueFrom:
+        configMapKeyRef:
+          name: config-map-2
+          key: SPECIFIC_INFO
+</code></pre>
+
+<h4 id="as-volume">As Volume</h4>
+
+<p>We can mount a vol-config-map ConfigMap as a Volume inside a Pod. For each key in the ConfigMap, a file gets created in the mount path (where the file is named with the key name) and the content of that file becomes the respective key&rsquo;s value:</p>
+
+<pre><code class="language-yaml">  containers:
+  - name: myapp-vol-container
+    image: myapp
+    volumeMounts:
+    - name: config-volume
+      mountPath: /etc/config
+  volumes:
+  - name: config-volume
+    configMap:
+      name: vol-config-map
+</code></pre>
+
+<h2 id="secrets">Secrets</h2>
+
+<p>Secret object can help by allowing us to encode the sensitive information before sharing it. With Secrets, we can share sensitive information like passwords, tokens, or keys in the form of key-value pairs, similar to ConfigMaps; thus, we can control how the information in a Secret is used, reducing the risk for accidental exposures. In Deployments or other resources, the Secret object is referenced, without exposing its content.</p>
+
+
+<div class="notices info" ><p>It is important to keep in mind that the Secret data is stored as plain text inside etcd, therefore administrators must limit access to the API server and etcd. A newer feature allows for Secret data to be encrypted at rest while it is stored in etcd; a feature which needs to be enabled at the API server level.</p>
+</div>
+
+
+<h3 id="creating-secret">Creating Secret</h3>
+
+<h3 id="create-a-secret-from-literal-and-display-its-details">Create a Secret from Literal and Display Its Details</h3>
+
+<pre><code class="language-shell"># Create Secret
+kubectl create secret generic my-password --from-literal=password=mysqlpassword
+
+# Get Secret
+kubectl get secret my-password
+
+# Describe Secret
+kubectl describe secret my-password
+</code></pre>
+
+<h3 id="create-a-secret-from-yaml-file">Create a Secret from YAML File</h3>
+
+<pre><code>echo mysqlpassword | base64
+bXlzcWxwYXNzd29yZAo=
+</code></pre>
+
+<p><em>mypass.yaml</em></p>
+
+<pre><code class="language-yaml">apiVersion: v1
+kind: Secret
+metadata:
+  name: my-password
+type: Opaque
+data:
+  password: bXlzcWxwYXNzd29yZAo=
+</code></pre>
+
+
+<div class="notices warning" ><p>Please note that base64 encoding does not mean encryption, and anyone can easily decode our encoded data</p>
+</div>
+
+
+<p><em>mypass.yaml</em></p>
+
+<pre><code class="language-yaml">apiVersion: v1
+kind: Secret
+metadata:
+  name: my-password
+type: Opaque
+stringData:
+  password: mysqlpassword
+</code></pre>
+
+<pre><code class="language-shell"># Create Secret from YAML
+kubectl create -f mypass.yaml
+</code></pre>
+
+<h4 id="use-secrets-inside-pods">Use Secrets Inside Pods</h4>
+
+<p><strong>Using Secrets as Environment Variables</strong></p>
+
+<pre><code class="language-yaml">spec:
+  containers:
+  - image: wordpress:4.7.3-apache
+    name: wordpress
+    env:
+    - name: WORDPRESS_DB_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: my-password
+          key: password
+</code></pre>
+
+<p><strong>Using Secrets as Files from a Pod</strong></p>
+
+<pre><code class="language-yaml">spec:
+  containers:
+  - image: wordpress:4.7.3-apache
+    name: wordpress
+    volumeMounts:
+    - name: secret-volume
+      mountPath: &quot;/etc/secret-data&quot;
+      readOnly: true
+  volumes:
+  - name: secret-volume
+    secret:
+      secretName: my-password
+</code></pre>
 
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -1033,6 +1267,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1045,6 +1280,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1190,6 +1428,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1205,6 +1444,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1309,8 +1551,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/introduction-to-kubernetes/08_kubernetes_volume_management/" title="08 - Kubernetes Volume Management"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/devops/" title="DevOps" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/introduction-to-kubernetes/10_ingress/" title="10 - Ingress" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1341,3 +1585,4 @@
 
   </body>
 </html>
+

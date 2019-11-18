@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Categories :: Always Learning; Always Improving</title>
+    <title>01 - Kubernetes Architecture :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1574102149" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/categories/">
+  <body class="" data-url="/introduction-to-kubernetes/01_kubernetes-architecture/">
     <nav id="sidebar" class="">
 
 
@@ -363,7 +363,7 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/" title="Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -406,7 +406,7 @@
  
   
     
-      <li data-nav-id="/introduction-to-kubernetes/01_kubernetes-architecture/" title="01 - Kubernetes Architecture" class="dd-item ">
+      <li data-nav-id="/introduction-to-kubernetes/01_kubernetes-architecture/" title="01 - Kubernetes Architecture" class="dd-item active">
         <a href="/introduction-to-kubernetes/01_kubernetes-architecture/">
         01 - Kubernetes Architecture
         
@@ -746,7 +746,19 @@
                     
           
           
-            Categories
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Digital Learning Notebook</a> > <a href='/introduction-to-kubernetes/'>Kubernetes</a> > 01 - Kubernetes Architecture
+          
+         
+          
+         
           
         
                  
@@ -755,7 +767,41 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#master-node">Master Node</a>
+<ul>
+<li><a href="#master-node-components">Master Node Components</a>
+<ul>
+<li><a href="#master-node-components-api-server">Master Node Components: API Server</a></li>
+<li><a href="#master-node-components-scheduler">Master Node Components: Scheduler</a></li>
+<li><a href="#master-node-componets-controller-managers">Master Node Componets: Controller Managers</a></li>
+<li><a href="#master-node-components-etcd">Master Node Components: etcd</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#worker-node">Worker Node</a>
+<ul>
+<li><a href="#worker-node-components">Worker Node Components</a>
+<ul>
+<li><a href="#worker-node-component-container-runtime">Worker Node Component: Container Runtime</a></li>
+<li><a href="#worker-node-components-kubelet">Worker Node Components: kubelet</a></li>
+<li><a href="#worker-node-components-kube-proxy">Worker Node Components: kube-proxy</a></li>
+<li><a href="#worker-node-components-addons">Worker Node Components: Addons</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#networking-challenges">Networking Challenges</a>
+<ul>
+<li><a href="#container-to-container-communication-inside-pods">Container to Container Communication inside Pods</a>
+<ul>
+<li><a href="#pod-to-pod-communication-across-nodes">Pod-to-Pod Communication Across Nodes</a></li>
+<li><a href="#pod-to-external-world-communication">Pod-to-External World Communication</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -771,7 +817,7 @@
           
             <h1>
               
-              Categories
+              01 - Kubernetes Architecture
             </h1>
           
 
@@ -781,15 +827,142 @@
 
 
 
+<ul>
+<li><a href="#master-node">Master Node</a>
 
 <ul>
-	
+<li><a href="#master-node-components">Master Node Components</a></li>
+<li><a href="#master-node-components-api-server">Master Node Components: API Server</a></li>
+<li><a href="#master-node-components-scheduler">Master Node Components: Scheduler</a></li>
+<li><a href="#master-node-componets-controller-managers">Master Node Componets: Controller Managers</a></li>
+<li><a href="#master-node-components-etcd">Master Node Components: etcd</a></li>
+</ul></li>
+<li><a href="#worker-node">Worker Node</a>
+
+<ul>
+<li><a href="#worker-node-components">Worker Node Components</a></li>
+<li><a href="#worker-node-component-container-runtime">Worker Node Component: Container Runtime</a></li>
+<li><a href="#worker-node-components-kubelet">Worker Node Components: kubelet</a></li>
+<li><a href="#worker-node-components-kube-proxy">Worker Node Components: kube-proxy</a></li>
+<li><a href="#worker-node-components-addons">Worker Node Components: Addons</a></li>
+</ul></li>
+<li><a href="#networking-challenges">Networking Challenges</a>
+
+<ul>
+<li><a href="#container-to-container-communication-inside-pods">Container to Container Communication inside Pods</a></li>
+<li><a href="#pod-to-pod-communication-across-nodes">Pod-to-Pod Communication Across Nodes</a></li>
+<li><a href="#pod-to-external-world-communication">Pod-to-External World Communication</a></li>
+</ul></li>
 </ul>
+
+<p><img src="/introduction-to-kubernetes/kubernetes-architecture.jpg" alt="Kubernetes Architecture" /></p>
+
+<p>At a very high level, Kubernetes has the following main components</p>
+
+<ul>
+<li>One ore more <strong>master nodes</strong></li>
+<li>One or more <strong>worker nodes</strong></li>
+<li>Distributed key-value store, such as <strong>etcd</strong></li>
+</ul>
+
+<h2 id="master-node">Master Node</h2>
+
+<p>The master node provides a running environment for the control plane responsible for managing the state of a Kubernetes cluster, and it is the brain behind all operations inside the cluster. The control plane components are agents with very distinct roles in the cluster&rsquo;s management. In order to communicate with the Kubernetes cluster, users send requests to the master node via a Command Line Interface (CLI) tool, a Web User-Interface (Web UI) Dashboard, or Application Programming Interface (API).</p>
+
+<h3 id="master-node-components">Master Node Components</h3>
+
+<ul>
+<li>API Server</li>
+<li>Scheduler</li>
+<li>Controller managers</li>
+<li>etcd</li>
+</ul>
+
+<h4 id="master-node-components-api-server">Master Node Components: API Server</h4>
+
+<p>All the administrative tasks are coordinated by the <strong>kube-apiserver</strong>, a central control plane component running on the master node. The API server intercepts RESTful calls from users, operators and external agents, then validates and processes them. During processing the API server reads the Kubernetes cluster&rsquo;s current state from the etcd, and after a call&rsquo;s execution, the resulting state of the Kubernetes cluster is saved in the distributed key-value data store for persistence. The API server is the only master plane component to talk to the etcd data store, both to read and to save Kubernetes cluster state information from/to it - acting as a middle-man interface for any other control plane agent requiring to access the cluster&rsquo;s data store.</p>
+
+<p>The API server is highly configurable and customizable. It also supports the addition of custom API servers, when the primary API server becomes a proxy to all secondary custom API servers and routes all incoming RESTful calls to them based on custom defined rules.</p>
+
+<h4 id="master-node-components-scheduler">Master Node Components: Scheduler</h4>
+
+<p>The role of the <strong>kube-scheduler</strong> is to assign new objects, such as pods, to nodes. During the scheduling process, decisions are made based on current Kubernetes cluster state and new object&rsquo;s requirements. The scheduler obtains from etcd, via the API server, resource usage data for each worker node in the cluster. The scheduler also receives from the API server the new object&rsquo;s requirements which are part of its configuration data. Requirements may include constraints that users and operators set, such as scheduling work on a node labeled with disk==ssd key/value pair. The scheduler also takes into account Quality of Service (QoS) requirements, data locality, affinity, anti-affinity, taints, toleration, etc.</p>
+
+<h4 id="master-node-componets-controller-managers">Master Node Componets: Controller Managers</h4>
+
+<p>The controller managers are control plane components on the master node running controllers to regulate the state of the Kubernetes cluster. Controllers are watch-loops continuously running and comparing the cluster&rsquo;s desired state (provided by objects&rsquo; configuration data) with its current state (obtained from etcd data store via the API server). In case of a mismatch corrective action is taken in the cluster until its current state matches the desired state.</p>
+
+<h4 id="master-node-components-etcd">Master Node Components: etcd</h4>
+
+<p>etcd is a distributed key-value data store used to persist a Kubernetes cluster&rsquo;s state. New data is written to the data store only by appending to it, data is never replaced in the data store. Obsolete data is compacted periodically to minimize the size of the data store.</p>
+
+<p>Out of all the control plane components, only the API server is able to communicate with the etcd data store.</p>
+
+<h2 id="worker-node">Worker Node</h2>
+
+<p>A <strong>worker node</strong> provides a running environment for client applications. Though containerized microservices, these applications are encapsulated in Pods, controlled by the cluster control plane agents running on the master node. Pods are scheduled on worker nodes, where they find required compute, memory and storage resources to run, and networking to talk to each other and the outside world. A Pod is the smallest scheduling unit in Kubernetes. It is a logical collection of one or more containers scheduled together.</p>
+
+<h3 id="worker-node-components">Worker Node Components</h3>
+
+<p>A worker node has the following components:</p>
+
+<ul>
+<li>Container runtime</li>
+<li>kubelet</li>
+<li>kube-proxy</li>
+<li>Addons for DNS, Dashboard, cluster-level monitoring and logging.</li>
+</ul>
+
+<h4 id="worker-node-component-container-runtime">Worker Node Component: Container Runtime</h4>
+
+<p>Although Kubernetes is described as &ldquo;container orchestration engine&rdquo;, it does not have the capability to directly handle containers. In order to run and manage a container&rsquo;s lifecycle, Kubernetes requires a <strong>container runtime</strong> on the node where a Pod and its containers are to be scheduled. Docker is the most widely used container runtime with Kubernetes.</p>
+
+<h4 id="worker-node-components-kubelet">Worker Node Components: kubelet</h4>
+
+<p>The <strong>kubelet</strong> is an agent running on each node and communicates with the control plane components from the master node. It receives Pod definitions, primarily from the API server, and interacts with the container runtime on the node to run containers associated with the Pod. It also monitors the health of the Pod&rsquo;s running containers.</p>
+
+<p>The kubelet connects to the container runtime using Container Runtime Interface (CRI). CRI consists of protocol buffers, gRPC API and libraries.</p>
+
+<p><img src="/introduction-to-kubernetes/CRI.png" alt="CRI Shim" /></p>
+
+<h4 id="worker-node-components-kube-proxy">Worker Node Components: kube-proxy</h4>
+
+<p>The kube-proxy is the network agent which runs on each node responsible for dynamic updates and maintenance of all networking rules on the node. It abstracts the details of Pods networking and forwards connection requests to Pods.</p>
+
+<h4 id="worker-node-components-addons">Worker Node Components: Addons</h4>
+
+<p>Addons are cluster features and functionality not yet available in Kubernetes, therefore implemented through 3rd-party pods and services.</p>
+
+<ul>
+<li><strong>DNS</strong> - cluster DNS is a DNS server required to assign DNS records to Kubernetes objects and resources</li>
+<li><strong>Dashboard</strong> - a general purposed web-based user interface for cluster management</li>
+<li><strong>Monitoring</strong> - collects cluster-level container metrics and saves them to a central data store</li>
+<li><strong>Logging</strong> - collects cluster-level container logs and saves them to a central log store for analysis.</li>
+</ul>
+
+<h2 id="networking-challenges">Networking Challenges</h2>
+
+<h3 id="container-to-container-communication-inside-pods">Container to Container Communication inside Pods</h3>
+
+<p>Making use of the underlying host operating system&rsquo;s kernel features, a container runtime creates an isolated network space for each container it starts. On Linux, that isolated network space is referred to as a network namespace. A network namespace is shared across containers, or with the host operating system.</p>
+
+<p>When a Pod is started, a network namespace is created inside the Pod, and all containers running inside the Pod will share that network namespace so that they can talk to each other via localhost.</p>
+
+<h4 id="pod-to-pod-communication-across-nodes">Pod-to-Pod Communication Across Nodes</h4>
+
+<p>Kubernetes uses &ldquo;IP-per-Pod&rdquo; model to ensure Pod-to-Pod communication, just as VM are able to communicate with each other. Containers are integrated with the overall Kubernetes networking model through the use of the <strong>Container Network Interface (CNI)</strong></p>
+
+<p><img src="/introduction-to-kubernetes/Container_Network_Interface_CNI.png" alt="Container_Network_Interface_CNI" /></p>
+
+<h4 id="pod-to-external-world-communication">Pod-to-External World Communication</h4>
+
+<p>Kubernetes enables external accessibility through services, complex constructs which encapsulate networking rules definitions on cluster nodes. By exposing services to the external world with kube-proxy, applications become accessible from outside the cluster over a virtual IP.</p>
 
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -1033,6 +1206,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1045,6 +1219,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1062,6 +1239,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1077,6 +1255,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1309,8 +1490,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/introduction-to-kubernetes/00_containers_and_orchestration/" title="00 - Containers and Orchestration"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/devops/" title="DevOps" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/introduction-to-kubernetes/02_installing_kubernetes/" title="02 - Installing Kubernetes" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1341,3 +1524,4 @@
 
   </body>
 </html>
+

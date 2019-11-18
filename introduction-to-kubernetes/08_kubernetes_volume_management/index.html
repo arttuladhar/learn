@@ -9,21 +9,21 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>03 - Minikube :: Always Learning; Always Improving</title>
+    <title>08 - Kubernetes Volume Management :: Always Learning; Always Improving</title>
 
     
-    <link href="/css/nucleus.css?1573880110" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1573880110" rel="stylesheet">
-    <link href="/css/hybrid.css?1573880110" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1573880110" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1573880110" rel="stylesheet">
-    <link href="/css/auto-complete.css?1573880110" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1573880110" rel="stylesheet">
-    <link href="/css/theme.css?1573880110" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1573880110" rel="stylesheet">
+    <link href="/css/nucleus.css?1574102149" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1574102149" rel="stylesheet">
+    <link href="/css/hybrid.css?1574102149" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1574102149" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1574102149" rel="stylesheet">
+    <link href="/css/auto-complete.css?1574102149" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1574102149" rel="stylesheet">
+    <link href="/css/theme.css?1574102149" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1574102149" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1573880110"></script>
+    <script src="/js/jquery-3.3.1.min.js?1574102149"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/introduction-to-kubernetes/kubernetes/03_minikube/">
+  <body class="" data-url="/introduction-to-kubernetes/08_kubernetes_volume_management/">
     <nav id="sidebar" class="">
 
 
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1573880110"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1573880110"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1574102149"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1574102149"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/learn.aayushtuladhar.com";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1573880110"></script>
+<script type="text/javascript" src="/js/search.js?1574102149"></script>
 
     
   </div>
@@ -254,231 +254,6 @@
  
   
     
-    <li data-nav-id="/introduction-to-kubernetes/" title="Introduction to Kubernetes" class="dd-item 
-        parent
-        
-        
-        ">
-      <a href="/introduction-to-kubernetes/">
-          Introduction to Kubernetes
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/introduction-to-kubernetes/containers-and-orchestration/" title="Containers and Orchestration" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/introduction-to-kubernetes/containers-and-orchestration/">
-          Containers and Orchestration
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/introduction-to-kubernetes/kubernetes/" title="Kubernetes" class="dd-item 
-        parent
-        
-        
-        ">
-      <a href="/introduction-to-kubernetes/kubernetes/">
-          Kubernetes
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/introduction-to-kubernetes/kubernetes/01_kubernetes-architecture/" title="01 - Kubernetes Architecture" class="dd-item ">
-        <a href="/introduction-to-kubernetes/kubernetes/01_kubernetes-architecture/">
-        01 - Kubernetes Architecture
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/introduction-to-kubernetes/kubernetes/02_installing_kubernetes/" title="02 - Installing Kubernetes" class="dd-item ">
-        <a href="/introduction-to-kubernetes/kubernetes/02_installing_kubernetes/">
-        02 - Installing Kubernetes
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/introduction-to-kubernetes/kubernetes/03_minikube/" title="03 - Minikube" class="dd-item active">
-        <a href="/introduction-to-kubernetes/kubernetes/03_minikube/">
-        03 - Minikube
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/introduction-to-kubernetes/kubernetes/04_kubernetes_building_blocks/" title="04 - Kubernetes Building Blocks" class="dd-item ">
-        <a href="/introduction-to-kubernetes/kubernetes/04_kubernetes_building_blocks/">
-        04 - Kubernetes Building Blocks
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/introduction-to-kubernetes/kubernetes/05_authorization_access_control/" title="05 - Authentication, Authorization, and Admission Control" class="dd-item ">
-        <a href="/introduction-to-kubernetes/kubernetes/05_authorization_access_control/">
-        05 - Authentication, Authorization, and Admission Control
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/introduction-to-kubernetes/kubernetes/06_services/" title="06 - Services" class="dd-item ">
-        <a href="/introduction-to-kubernetes/kubernetes/06_services/">
-        06 - Services
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/introduction-to-kubernetes/kubernetes/07_deploying_standalone_app/" title="07 - Deploying Standalone App" class="dd-item ">
-        <a href="/introduction-to-kubernetes/kubernetes/07_deploying_standalone_app/">
-        07 - Deploying Standalone App
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
- 
-  
-    
     <li data-nav-id="/javascript/" title="JavaScript" class="dd-item 
         
         
@@ -564,6 +339,285 @@
       <li data-nav-id="/javascript/template-literals/" title="Teplate Literals" class="dd-item ">
         <a href="/javascript/template-literals/">
         Teplate Literals
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction-to-kubernetes/" title="Kubernetes" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/introduction-to-kubernetes/">
+          Kubernetes
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction-to-kubernetes/00_containers_and_orchestration/" title="00 - Containers and Orchestration" class="dd-item ">
+        <a href="/introduction-to-kubernetes/00_containers_and_orchestration/">
+        00 - Containers and Orchestration
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction-to-kubernetes/01_kubernetes-architecture/" title="01 - Kubernetes Architecture" class="dd-item ">
+        <a href="/introduction-to-kubernetes/01_kubernetes-architecture/">
+        01 - Kubernetes Architecture
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction-to-kubernetes/02_installing_kubernetes/" title="02 - Installing Kubernetes" class="dd-item ">
+        <a href="/introduction-to-kubernetes/02_installing_kubernetes/">
+        02 - Installing Kubernetes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction-to-kubernetes/03_minikube/" title="03 - Minikube" class="dd-item ">
+        <a href="/introduction-to-kubernetes/03_minikube/">
+        03 - Minikube
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction-to-kubernetes/04_kubernetes_building_blocks/" title="04 - Kubernetes Building Blocks" class="dd-item ">
+        <a href="/introduction-to-kubernetes/04_kubernetes_building_blocks/">
+        04 - Kubernetes Building Blocks
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction-to-kubernetes/05_authorization_access_control/" title="05 - Authentication, Authorization, and Admission Control" class="dd-item ">
+        <a href="/introduction-to-kubernetes/05_authorization_access_control/">
+        05 - Authentication, Authorization, and Admission Control
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction-to-kubernetes/06_services/" title="06 - Services" class="dd-item ">
+        <a href="/introduction-to-kubernetes/06_services/">
+        06 - Services
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction-to-kubernetes/07_deploying_standalone_app/" title="07 - Deploying Standalone App" class="dd-item ">
+        <a href="/introduction-to-kubernetes/07_deploying_standalone_app/">
+        07 - Deploying Standalone App
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction-to-kubernetes/08_kubernetes_volume_management/" title="08 - Kubernetes Volume Management" class="dd-item active">
+        <a href="/introduction-to-kubernetes/08_kubernetes_volume_management/">
+        08 - Kubernetes Volume Management
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction-to-kubernetes/09_configmaps_secrets/" title="09 - ConfigMaps and Secrets" class="dd-item ">
+        <a href="/introduction-to-kubernetes/09_configmaps_secrets/">
+        09 - ConfigMaps and Secrets
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction-to-kubernetes/10_ingress/" title="10 - Ingress" class="dd-item ">
+        <a href="/introduction-to-kubernetes/10_ingress/">
+        10 - Ingress
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction-to-kubernetes/11_advanced_topics/" title="11 - Advanced Topics" class="dd-item ">
+        <a href="/introduction-to-kubernetes/11_advanced_topics/">
+        11 - Advanced Topics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction-to-kubernetes/12_resources/" title="12 - Resources" class="dd-item ">
+        <a href="/introduction-to-kubernetes/12_resources/">
+        12 - Resources
         
         </a>
     </li>
@@ -700,13 +754,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'>Digital Learning Notebook</a> > <a href='/introduction-to-kubernetes/'>Introduction to Kubernetes</a> > <a href='/introduction-to-kubernetes/kubernetes/'>Kubernetes</a> > 03 - Minikube
-          
-         
+            <a href='/'>Digital Learning Notebook</a> > <a href='/introduction-to-kubernetes/'>Kubernetes</a> > 08 - Kubernetes Volume Management
           
          
           
@@ -723,16 +771,10 @@
 <ul>
 <li>
 <ul>
-<li><a href="#installing-minikube">Installing Minikube</a>
-<ul>
-<li>
-<ul>
-<li><a href="#command-line-interface-cli-tools-and-scripts">Command Line Interface (CLI) tools and scripts</a></li>
-<li><a href="#web-based-user-interface-web-ui-from-a-web-browser">Web-based User Interface (Web UI) from a web browser</a></li>
-<li><a href="#apis-from-cli-or-programmatically">APIs from CLI or programmatically</a></li>
-</ul></li>
-<li><a href="#kubectl-proxy">Kubectl Proxy</a></li>
-</ul></li>
+<li><a href="#volumes">Volumes</a></li>
+<li><a href="#volume-types">Volume Types</a></li>
+<li><a href="#persistentvolumeclaims">PersistentVolumeClaims</a></li>
+<li><a href="#using-a-shared-hostpath-volume-type">Using a Shared hostPath Volume Type</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -751,7 +793,7 @@
           
             <h1>
               
-              03 - Minikube
+              08 - Kubernetes Volume Management
             </h1>
           
 
@@ -762,81 +804,76 @@
 
 
 <ul>
-<li><a href="#installing-minikube">Installing Minikube</a>
-
-<ul>
-<li><a href="#command-line-interface-cli-tools-and-scripts">Command Line Interface (CLI) tools and scripts</a></li>
-<li><a href="#web-based-user-interface-web-ui-from-a-web-browser">Web-based User Interface (Web UI) from a web browser</a></li>
-<li><a href="#apis-from-cli-or-programmatically">APIs from CLI or programmatically</a></li>
-<li><a href="#kubectl-proxy">Kubectl Proxy</a></li>
-</ul></li>
+<li><a href="#volumes">Volumes</a></li>
+<li><a href="#volume-types">Volume Types</a></li>
+<li><a href="#persistentvolumeclaims">PersistentVolumeClaims</a></li>
+<li><a href="#using-a-shared-hostpath-volume-type">Using a Shared hostPath Volume Type</a></li>
 </ul>
 
-<h2 id="installing-minikube">Installing Minikube</h2>
+<h2 id="volumes">Volumes</h2>
 
-<pre><code class="language-bash"># Install Minikube
-brew install minikube
+<p>As we know, containers running in Pods are ephemeral in nature. All data stored inside a container is deleted if the container crashes. However, the kubelet will restart it with a clean slate, which means that it will not have any of the old data.</p>
 
-# Starting Minikube
-minikube start
-minikube start --vm-driver=xhyve
-minikube start --vm-driver=hyperkit
+<p>To overcome this problem, Kubernetes uses <strong>Volumes</strong>. A Volume is essentially a directory backed by a storage medium. The storage medium, content and access mode are determined by the Volume Type. In Kubernetes, a Volume is attached to a Pod and can be shared among the containers of that Pod. The Volume has the same life span as the Pod, and it outlives the containers of the Pod - this allows data to be preserved across container restarts.</p>
 
-minikube status
-minikube stop
+<p><img src="/introduction-to-kubernetes/podvolume.png?width=25pc" alt="Volume attached to Pod" /></p>
+
+
+<div class="notices info" ><p>In Kubernetes, a Volume is attached to a Pod and can be shared among the containers of that Pod. The Volume has the same life span as the Pod, and it outlives the containers of the Pod - this allows data to be preserved across container restarts.</p>
+</div>
+
+
+<h2 id="volume-types">Volume Types</h2>
+
+<ul>
+<li><em>emptyDir</em> - An empty Volume is created for the Pod as soon as it is scheduled on the worker node. The Volume&rsquo;s life is tightly coupled with the Pod. If the Pod is terminated, the content of emptyDir is deleted forever.<br /></li>
+<li>hostPath - With the hostPath Volume Type, we can share a directory from the host to the Pod. If the Pod is terminated, the content of the Volume is still available on the host.</li>
+<li>gcePersistentDisk - With the gcePersistentDisk Volume Type, we can mount a Google Compute Engine (GCE) persistent disk into a Pod.</li>
+<li>awsElasticBlockStore - With the awsElasticBlockStore Volume Type, we can mount an AWS EBS Volume into a Pod.</li>
+<li>azureDisk - With azureDisk we can mount a Microsoft Azure Data Disk into a Pod.</li>
+<li>azureFile - With azureFile we can mount a Microsoft Azure File Volume into a Pod.</li>
+<li>cephfs - With cephfs, an existing CephFS volume can be mounted into a Pod. When a Pod terminates, the volume is unmounted and the contents of the volume are preserved.</li>
+<li>nfs - With nfs, we can mount an NFS share into a Pod.</li>
+<li>iscsi - With iscsi, we can mount an iSCSI share into a Pod.</li>
+<li>secret - With the secret Volume Type, we can pass sensitive information, such as passwords, to Pods. We will take a look at an example in a later chapter.</li>
+<li>configMap - With configMap objects, we can provide configuration data, or shell commands and arguments into a Pod.</li>
+<li>persistentVolumeClaim - We can attach a PersistentVolume to a Pod using a persistentVolumeClaim. We will cover this in our next section.</li>
+</ul>
+
+<h2 id="persistentvolumeclaims">PersistentVolumeClaims</h2>
+
+<p>A PersistentVolumeClaim (PVC) is a request for storage by a user. Users request for PersistentVolume resources based on type, access mode, and size. There are three access modes: ReadWriteOnce (read-write by a single node), ReadOnlyMany (read-only by many nodes), and ReadWriteMany (read-write by many nodes). Once a suitable PersistentVolume is found, it is bound to a PersistentVolumeClaim.</p>
+
+<p><img src="/introduction-to-kubernetes/pvc2.png" alt="PVC" /></p>
+
+<h2 id="using-a-shared-hostpath-volume-type">Using a Shared hostPath Volume Type</h2>
+
+<pre><code class="language-bash">apiVersion: v1
+kind: Pod
+metadata:
+  name: share-pod
+  labels:
+    app: share-pod
+spec:
+  volumes:
+    - name: &quot;host-volume&quot;
+      hostPath:
+        path: &quot;/home/docker/pod-volume&quot;
+  containers:
+    - image: nginx
+      name: nginx
+      volumeMounts:
+        - mountPath: &quot;/usr/share/nginx/html&quot;
+          name: &quot;host-volume&quot;
+      ports:
+        - containerPort: 80
+    - image: debian
+      name: debian
+      volumeMounts:
+        - mountPath: /host-vol
+          name: &quot;host-volume&quot;
+      command: [&quot;/bin/sh&quot;, &quot;-c&quot;, &quot;echo Hello Kubernetes &gt; /host-vol/index.html; sleep 3600&quot;]
 </code></pre>
-
-<p>Any healthy running Kubernetes cluster can be accessed via any one of the following methods:</p>
-
-<h4 id="command-line-interface-cli-tools-and-scripts">Command Line Interface (CLI) tools and scripts</h4>
-
-<p><code>kubectl</code> is the Kubernetes Command Line Interface (CLI) client to manage cluster resources and applications. It can be used standalone, or part of scripts and automation tools. Once all required credentials and cluster access points have been configured for kubectl it can be used remotely from anywhere to access a cluster.</p>
-
-<h4 id="web-based-user-interface-web-ui-from-a-web-browser">Web-based User Interface (Web UI) from a web browser</h4>
-
-<h4 id="apis-from-cli-or-programmatically">APIs from CLI or programmatically</h4>
-
-<pre><code class="language-bash"># Open Minikube Dashboard
-minikube dashboard
-
-# Serving on different Port
-kubectl proxy
-
-#Dashboard URL
-http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/kubernetes-dashboard:/proxy/#!/overview?namespace=default 
-</code></pre>
-
-<h3 id="kubectl-proxy">Kubectl Proxy</h3>
-
-<p>When not using the kubectl proxy, we need to authenticate to the API server when sending API requests. We can authenticate by providing a Bearer Token when issuing a curl, or by providing a set of keys and certificates.</p>
-
-<p>A Bearer Token is an access token which is generated by the authentication server (the API server on the master node) and given back to the client. Using that token, the client can connect back to the Kubernetes API server without providing further authentication details, and then, access resources.</p>
-
-<p><strong>Getting Token</strong></p>
-
-<pre><code class="language-bash">TOKEN=$(kubectl describe secret -n kube-system $(kubectl get secrets -n kube-system | grep default | cut -f1 -d ' ') | grep -E '^token' | cut -f2 -d':' | tr -d '\t' | tr -d &quot; &quot;)
-</code></pre>
-
-<p><strong>Getting API Server Endpoint</strong></p>
-
-<pre><code>APISERVER=$(kubectl config view | grep https | cut -f 2- -d &quot;:&quot; | tr -d &quot; &quot;)
-</code></pre>
-
-<p><strong>Confirm that the APISERVER stored the same IP as the Kubernetes master IP by issuing the following 2 commands and comparing their outputs:</strong></p>
-
-<pre><code>$ echo $APISERVER
-https://192.168.99.100:8443
-
-$ kubectl cluster-info
-Kubernetes master is running at https://192.168.99.100:8443 ...
-</code></pre>
-
-<p><strong>Access the API server using the curl command, as shown below:</strong></p>
-
-<pre><code>curl $APISERVER --header &quot;Authorization: Bearer $TOKEN&quot; --insecure
-</code></pre>
-
-<p>By using the <code>kubectl proxy</code> we are bypassing the authentication for each and every request to the Kubernetes API.</p>
 
 
 <footer class=" footline" >
@@ -1006,42 +1043,6 @@ Kubernetes master is running at https://192.168.99.100:8443 ...
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
                 
                 
 
@@ -1054,61 +1055,6 @@ Kubernetes master is running at https://192.168.99.100:8443 ...
             
             
                 
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1172,6 +1118,36 @@ Kubernetes master is running at https://192.168.99.100:8443 ...
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -1188,10 +1164,129 @@ Kubernetes master is running at https://192.168.99.100:8443 ...
                     
 
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1312,10 +1407,10 @@ Kubernetes master is running at https://192.168.99.100:8443 ...
 	 
 	 
 		
-			<a class="nav nav-prev" href="/introduction-to-kubernetes/kubernetes/02_installing_kubernetes/" title="02 - Installing Kubernetes"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/introduction-to-kubernetes/07_deploying_standalone_app/" title="07 - Deploying Standalone App"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/introduction-to-kubernetes/kubernetes/04_kubernetes_building_blocks/" title="04 - Kubernetes Building Blocks" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/introduction-to-kubernetes/09_configmaps_secrets/" title="09 - ConfigMaps and Secrets" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1325,20 +1420,20 @@ Kubernetes master is running at https://192.168.99.100:8443 ...
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1573880110"></script>
-    <script src="/js/perfect-scrollbar.min.js?1573880110"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1573880110"></script>
-    <script src="/js/jquery.sticky.js?1573880110"></script>
-    <script src="/js/featherlight.min.js?1573880110"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1573880110"></script>
-    <script src="/js/highlight.pack.js?1573880110"></script>
+    <script src="/js/clipboard.min.js?1574102149"></script>
+    <script src="/js/perfect-scrollbar.min.js?1574102149"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1574102149"></script>
+    <script src="/js/jquery.sticky.js?1574102149"></script>
+    <script src="/js/featherlight.min.js?1574102149"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1574102149"></script>
+    <script src="/js/highlight.pack.js?1574102149"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1573880110"></script>
-    <script src="/js/learn.js?1573880110"></script>
-    <script src="/js/hugo-learn.js?1573880110"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1574102149"></script>
+    <script src="/js/learn.js?1574102149"></script>
+    <script src="/js/hugo-learn.js?1574102149"></script>
 
-    <link href="/mermaid/mermaid.css?1573880110" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1573880110"></script>
+    <link href="/mermaid/mermaid.css?1574102149" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1574102149"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

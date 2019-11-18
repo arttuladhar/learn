@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Categories :: Always Learning; Always Improving</title>
+    <title>11 - Advanced Topics :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1574102149" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/categories/">
+  <body class="" data-url="/introduction-to-kubernetes/11_advanced_topics/">
     <nav id="sidebar" class="">
 
 
@@ -363,7 +363,7 @@
   
     
     <li data-nav-id="/introduction-to-kubernetes/" title="Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -596,7 +596,7 @@
  
   
     
-      <li data-nav-id="/introduction-to-kubernetes/11_advanced_topics/" title="11 - Advanced Topics" class="dd-item ">
+      <li data-nav-id="/introduction-to-kubernetes/11_advanced_topics/" title="11 - Advanced Topics" class="dd-item active">
         <a href="/introduction-to-kubernetes/11_advanced_topics/">
         11 - Advanced Topics
         
@@ -746,7 +746,19 @@
                     
           
           
-            Categories
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Digital Learning Notebook</a> > <a href='/introduction-to-kubernetes/'>Kubernetes</a> > 11 - Advanced Topics
+          
+         
+          
+         
           
         
                  
@@ -755,7 +767,19 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#annotations">Annotations</a></li>
+<li><a href="#jobs-and-cronjobs">Jobs and CronJobs</a></li>
+<li><a href="#quota-management">Quota Management</a></li>
+<li><a href="#daemonsets">DaemonSets</a></li>
+<li><a href="#statefulsets">StatefulSets</a></li>
+<li><a href="#kubernetes-federation">Kubernetes Federation</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -771,7 +795,7 @@
           
             <h1>
               
-              Categories
+              11 - Advanced Topics
             </h1>
           
 
@@ -781,15 +805,65 @@
 
 
 
+<h2 id="annotations">Annotations</h2>
+
+<p>With Annotations, we can attach arbitrary non-identifying metadata to any objects, in a key-value format:</p>
+
+<pre><code class="language-json">&quot;annotations&quot;: {
+  &quot;key1&quot; : &quot;value1&quot;,
+  &quot;key2&quot; : &quot;value2&quot;
+}
+</code></pre>
+
+<p>Unlike Labels, annotations are not used to identify and select objects. Annotations can be used to:</p>
 
 <ul>
-	
+<li>Store build/release IDs, PR numbers, git branch, etc.</li>
+<li>Phone/pager numbers of people responsible, or directory entries specifying where such information can be found</li>
+<li>Pointers to logging, monitoring, analytics, audit repositories, debugging tools, etc.</li>
 </ul>
+
+<pre><code class="language-yaml">apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: webserver
+  annotations:
+    description: Deployment based PoC dates 2nd May'2019
+</code></pre>
+
+<h2 id="jobs-and-cronjobs">Jobs and CronJobs</h2>
+
+<p>A Job creates one or more Pods to perform a given task. The Job object takes the responsibility of Pod failures. It makes sure that the given task is completed successfully. Once the task is complete, all the Pods have terminated automatically. Job configuration options include parallelism - to set the number of pods allowed to run in parallel; completions - to set the number of expected completions; activeDeadlineSeconds - to set the duration of the Job; backoffLimit - to set the number of retries before Job is marked as failed; ttlSecondsAfterFinished - to delay the clean up of the finished Jobs.</p>
+
+<h2 id="quota-management">Quota Management</h2>
+
+<h2 id="daemonsets">DaemonSets</h2>
+
+<p>A DaemonSet ensures that all (or some) Nodes run a copy of a Pod. As nodes are added to the cluster, Pods are added to them. As nodes are removed from the cluster, those Pods are garbage collected. Deleting a DaemonSet will clean up the Pods it created.</p>
+
+<p>Some typical uses of a DaemonSet are:</p>
+
+<ul>
+<li>running a cluster storage daemon, such as glusterd, ceph, on each node.</li>
+<li>running a logs collection daemon on every node, such as fluentd or logstash.</li>
+<li>running a node monitoring daemon on every node, such as Prometheus Node Exporter, Sysdig Agent, collectd, Dynatrace OneAgent, AppDynamics Agent, Datadog agent, New Relic agent, Ganglia gmond or Instana Agent.</li>
+</ul>
+
+<h2 id="statefulsets">StatefulSets</h2>
+
+<p>The StatefulSet controller is used for stateful applications which require a unique identity, such as name, network identifications, strict ordering, etc. For example, MySQL cluster, etcd cluster.</p>
+
+<p>The StatefulSet controller provides identity and guaranteed ordering of deployment and scaling to Pods. Similar to Deployments, StatefulSets use ReplicaSets as intermediary Pod controllers and support rolling updates and rollbacks.</p>
+
+<h2 id="kubernetes-federation">Kubernetes Federation</h2>
+
+<p>With Kubernetes Cluster Federation we can manage multiple Kubernetes clusters from a single control plane. We can sync resources across the federated clusters and have cross-cluster discovery. This allows us to perform Deployments across regions, access them using a global DNS record, and achieve High Availability.</p>
 
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -1033,6 +1107,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1045,6 +1120,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1222,6 +1300,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1237,6 +1316,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1309,8 +1391,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/introduction-to-kubernetes/10_ingress/" title="10 - Ingress"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/devops/" title="DevOps" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/introduction-to-kubernetes/12_resources/" title="12 - Resources" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1341,3 +1425,4 @@
 
   </body>
 </html>
+

@@ -1,14 +1,142 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Introduction to Kubernetes on Always Learning; Always Improving</title>
+    <title>Kubernetes on Always Learning; Always Improving</title>
     <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/</link>
-    <description>Recent content in Introduction to Kubernetes on Always Learning; Always Improving</description>
+    <description>Recent content in Kubernetes on Always Learning; Always Improving</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
 	<atom:link href="http://learn.aayushtuladhar.com/introduction-to-kubernetes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>00 - Containers and Orchestration</title>
+      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/00_containers_and_orchestration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/00_containers_and_orchestration/</guid>
+      <description>Containers Microservices Container Orchestration  Container Orchestrators   Containers Containers are application-centric methods to deliver high-performing, scalable applications on any infrastructure of your choice. Containers are best suited to deliver microservices by providing portable, isolated virtual environments for applications to run without interference from other running applications.
+Microservices Microservices are lightweight applications written in various modern programming languages, with specific dependencies, libraries and environmental requirements. To ensure that an application has everything it needs to run successfully it is packaged together with its dependencies.</description>
+    </item>
+    
+    <item>
+      <title>01 - Kubernetes Architecture</title>
+      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/01_kubernetes-architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/01_kubernetes-architecture/</guid>
+      <description>Master Node  Master Node Components Master Node Components: API Server Master Node Components: Scheduler Master Node Componets: Controller Managers Master Node Components: etcd  Worker Node  Worker Node Components Worker Node Component: Container Runtime Worker Node Components: kubelet Worker Node Components: kube-proxy Worker Node Components: Addons  Networking Challenges  Container to Container Communication inside Pods Pod-to-Pod Communication Across Nodes Pod-to-External World Communication   At a very high level, Kubernetes has the following main components</description>
+    </item>
+    
+    <item>
+      <title>02 - Installing Kubernetes</title>
+      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/02_installing_kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/02_installing_kubernetes/</guid>
+      <description>Local Installation On-Premise Installation Cloud Installation  All-in-One Single-Node Installation In this setup, all the master and worker components are installed and running on a single-node. While it is useful for learning, development, and testing, and it should not be used in production. Minikube is one such example, and we are going to explore it in future chapters.
+Single-Node etcd, Single-Master and Multi-Worker Installation In this setup, we have a single-master node, which also runs a single-node etcd instance.</description>
+    </item>
+    
+    <item>
+      <title>03 - Minikube</title>
+      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/03_minikube/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/03_minikube/</guid>
+      <description>Installing Minikube  Command Line Interface (CLI) tools and scripts Web-based User Interface (Web UI) from a web browser APIs from CLI or programmatically Kubectl Proxy   Installing Minikube # Install Minikube brew install minikube # Starting Minikube minikube start minikube start --vm-driver=xhyve minikube start --vm-driver=hyperkit minikube status minikube stop  Any healthy running Kubernetes cluster can be accessed via any one of the following methods:
+Command Line Interface (CLI) tools and scripts kubectl is the Kubernetes Command Line Interface (CLI) client to manage cluster resources and applications.</description>
+    </item>
+    
+    <item>
+      <title>04 - Kubernetes Building Blocks</title>
+      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/04_kubernetes_building_blocks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/04_kubernetes_building_blocks/</guid>
+      <description>Kubernetes Object Model Pods  Labels  Replication Controller Replica Set Deployments Namespaces  Kubernetes Object Model With each object, we declare our intent or the desired state under the spec section. When creating an object, the object&amp;rsquo;s configuration data section from below the spec field has to be submitted to the Kubernetes API server.
+Example of Deployment object configuration in YAML format.
+apiVersion: apps/v1 kind: Deployment metadata: name: nginx-deployment labels: app: nginx spec: replicas: 3 selector: matchLabels: app: nginx template: metadata: labels: app: nginx spec: containers: - name: nginx image: nginx:1.</description>
+    </item>
+    
+    <item>
+      <title>05 - Authentication, Authorization, and Admission Control</title>
+      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/05_authorization_access_control/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/05_authorization_access_control/</guid>
+      <description>Authentication Authorization  Types of RoleBindings Admission Control  Demo - Authentication and Authorization  To access and manage any Kubernetes resource or object in the cluster, we need to access a specific API endpoint on the API server. Each access request goes through the following three stages:
+ Authentication - Logs in a user Authorization - Authorizes the API requests added by the logged-in user. Admission Control - Software modules that can modify or reject the requests based on some additional checks, like a pre-set Quota.</description>
+    </item>
+    
+    <item>
+      <title>06 - Services</title>
+      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/06_services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/06_services/</guid>
+      <description>Services Service Object Example kube-proxy Service Discovery Servie Type  Cluster IP NodePort LoadBalancer ExternalIP ExternalName   Services  An abstract way to expose an application running on a set of Pods as a network service. With Kubernetes you don’t need to modify your application to use an unfamiliar service discovery mechanism. Kubernetes gives Pods their own IP addresses and a single DNS name for a set of Pods, and can load-balance across them.</description>
+    </item>
+    
+    <item>
+      <title>07 - Deploying Standalone App</title>
+      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/07_deploying_standalone_app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/07_deploying_standalone_app/</guid>
+      <description>Creating Deployment using YAML File Exposing Application Liveness and Readiness Probes  Liveness Probe Readiness Probe   Creating Deployment using YAML File webserver.yaml
+apiVersion: apps/v1 kind: Deployment metadata: name: webserver labels: app: nginx spec: replicas: 3 selector: matchLabels: app: nginx template: metadata: labels: app: nginx spec: containers: - name: nginx image: nginx:alpine ports: - containerPort: 80  kubectl create -f webserver.yaml  This will also create ReplicaSet and Pods as defined in the YAML configuration.</description>
+    </item>
+    
+    <item>
+      <title>08 - Kubernetes Volume Management</title>
+      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/08_kubernetes_volume_management/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/08_kubernetes_volume_management/</guid>
+      <description>Volumes Volume Types PersistentVolumeClaims Using a Shared hostPath Volume Type  Volumes As we know, containers running in Pods are ephemeral in nature. All data stored inside a container is deleted if the container crashes. However, the kubelet will restart it with a clean slate, which means that it will not have any of the old data.
+To overcome this problem, Kubernetes uses Volumes. A Volume is essentially a directory backed by a storage medium.</description>
+    </item>
+    
+    <item>
+      <title>09 - ConfigMaps and Secrets</title>
+      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/09_configmaps_secrets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/09_configmaps_secrets/</guid>
+      <description>ConfigMaps  Creating ConfigMaps Using CommandLine Using Configuration File Using Properties File Using ConfigMaps Inside Pods As Environment Variable As Volume  Secrets  Creating Secret Create a Secret from Literal and Display Its Details Create a Secret from YAML File Use Secrets Inside Pods   ConfigMaps ConfigMaps allow us to decouple the configuration details from the container image. Using ConfigMaps, we pass configuration data as key-value pairs, which are consumed by Pods or any other system components and controllers, in the form of environment variables, sets of commands and arguments, or volumes.</description>
+    </item>
+    
+    <item>
+      <title>10 - Ingress</title>
+      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/10_ingress/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/10_ingress/</guid>
+      <description>With Services, routing rules are associated with a given Service. They exist for as long as the Service exists, and there are many rules because there are many Services in the cluster. If we can somehow decouple the routing rules from the application and centralize the rules management, we can then update our application without worrying about its external access. This can be done using the Ingress resource.
+ An Ingress is a collection of rules that allow inbound connections to reach the cluster Services.</description>
+    </item>
+    
+    <item>
+      <title>11 - Advanced Topics</title>
+      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/11_advanced_topics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/11_advanced_topics/</guid>
+      <description>Annotations With Annotations, we can attach arbitrary non-identifying metadata to any objects, in a key-value format:
+&amp;quot;annotations&amp;quot;: { &amp;quot;key1&amp;quot; : &amp;quot;value1&amp;quot;, &amp;quot;key2&amp;quot; : &amp;quot;value2&amp;quot; }  Unlike Labels, annotations are not used to identify and select objects. Annotations can be used to:
+ Store build/release IDs, PR numbers, git branch, etc. Phone/pager numbers of people responsible, or directory entries specifying where such information can be found Pointers to logging, monitoring, analytics, audit repositories, debugging tools, etc.</description>
+    </item>
+    
+    <item>
+      <title>12 - Resources</title>
+      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/12_resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/12_resources/</guid>
+      <description> Labs)  </description>
+    </item>
     
   </channel>
 </rss>

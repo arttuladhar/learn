@@ -3,31 +3,55 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/kubernetes/01_kubernetes-architecture/</loc>
+    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/00_containers_and_orchestration/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/kubernetes/02_installing_kubernetes/</loc>
+    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/01_kubernetes-architecture/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/kubernetes/03_minikube/</loc>
+    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/02_installing_kubernetes/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/kubernetes/04_kubernetes_building_blocks/</loc>
+    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/03_minikube/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/kubernetes/05_authorization_access_control/</loc>
+    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/04_kubernetes_building_blocks/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/kubernetes/06_services/</loc>
+    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/05_authorization_access_control/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/kubernetes/07_deploying_standalone_app/</loc>
+    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/06_services/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/07_deploying_standalone_app/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/08_kubernetes_volume_management/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/09_configmaps_secrets/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/10_ingress/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/11_advanced_topics/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/12_resources/</loc>
   </url>
   
   <url>
@@ -45,10 +69,6 @@
   
   <url>
     <loc>http://learn.aayushtuladhar.com/google-cloud-platform/cloud-storage/</loc>
-  </url>
-  
-  <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/containers-and-orchestration/</loc>
   </url>
   
   <url>
@@ -80,15 +100,11 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/</loc>
-  </url>
-  
-  <url>
     <loc>http://learn.aayushtuladhar.com/javascript/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/kubernetes/</loc>
+    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/</loc>
   </url>
   
   <url>
