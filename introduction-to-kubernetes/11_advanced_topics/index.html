@@ -12,18 +12,18 @@
     <title>11 - Advanced Topics :: Always Learning; Always Improving</title>
 
     
-    <link href="/css/nucleus.css?1574102149" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1574102149" rel="stylesheet">
-    <link href="/css/hybrid.css?1574102149" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1574102149" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1574102149" rel="stylesheet">
-    <link href="/css/auto-complete.css?1574102149" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1574102149" rel="stylesheet">
-    <link href="/css/theme.css?1574102149" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1574102149" rel="stylesheet">
+    <link href="/css/nucleus.css?1574106456" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1574106456" rel="stylesheet">
+    <link href="/css/hybrid.css?1574106456" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1574106456" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1574106456" rel="stylesheet">
+    <link href="/css/auto-complete.css?1574106456" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1574106456" rel="stylesheet">
+    <link href="/css/theme.css?1574106456" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1574106456" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1574102149"></script>
+    <script src="/js/jquery-3.3.1.min.js?1574106456"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1574102149"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1574102149"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1574106456"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1574106456"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/learn.aayushtuladhar.com";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1574102149"></script>
+<script type="text/javascript" src="/js/search.js?1574106456"></script>
 
     
   </div>
@@ -774,9 +774,18 @@
 <li><a href="#annotations">Annotations</a></li>
 <li><a href="#jobs-and-cronjobs">Jobs and CronJobs</a></li>
 <li><a href="#quota-management">Quota Management</a></li>
+<li><a href="#autoscalling">Autoscalling</a>
+<ul>
+<li><a href="#horizontal-pod-autoscaler-hpa">Horizontal Pod Autoscaler (HPA)</a></li>
+<li><a href="#vertical-pod-autoscaler-vpa">Vertical Pod Autoscaler (VPA)</a></li>
+<li><a href="#cluster-autoscaler">Cluster Autoscaler</a></li>
+</ul></li>
 <li><a href="#daemonsets">DaemonSets</a></li>
 <li><a href="#statefulsets">StatefulSets</a></li>
 <li><a href="#kubernetes-federation">Kubernetes Federation</a></li>
+<li><a href="#helm-chart">Helm Chart</a></li>
+<li><a href="#network-policies">Network Policies</a></li>
+<li><a href="#monitoring-and-logging">Monitoring and Logging</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -833,9 +842,33 @@ metadata:
 
 <h2 id="jobs-and-cronjobs">Jobs and CronJobs</h2>
 
-<p>A Job creates one or more Pods to perform a given task. The Job object takes the responsibility of Pod failures. It makes sure that the given task is completed successfully. Once the task is complete, all the Pods have terminated automatically. Job configuration options include parallelism - to set the number of pods allowed to run in parallel; completions - to set the number of expected completions; activeDeadlineSeconds - to set the duration of the Job; backoffLimit - to set the number of retries before Job is marked as failed; ttlSecondsAfterFinished - to delay the clean up of the finished Jobs.</p>
+<p>A Job creates one or more Pods to perform a given task. The Job object takes the responsibility of Pod failures. It makes sure that the given task is completed successfully. Once the task is complete, all the Pods have terminated automatically. Job configuration options include</p>
+
+<ul>
+<li><code>parallelism</code> - to set the number of pods allowed to run in parallel;</li>
+<li><code>completions</code> - to set the number of expected completions;</li>
+<li><code>activeDeadlineSeconds</code> - to set the duration of the Job;</li>
+<li><code>backoffLimit</code> - to set the number of retries before Job is marked as failed;</li>
+<li><code>ttlSecondsAfterFinished</code> - to delay the clean up of the finished Jobs.</li>
+</ul>
 
 <h2 id="quota-management">Quota Management</h2>
+
+<h2 id="autoscalling">Autoscalling</h2>
+
+<p>Autoscaling can be implemented in a Kubernetes cluster via controllers which periodically adjust the number of running objects based on single, multiple, or custom metrics. There are various types of autoscalers available in Kubernetes which can be implemented individually or combined for a more robust autoscaling solution:</p>
+
+<h3 id="horizontal-pod-autoscaler-hpa">Horizontal Pod Autoscaler (HPA)</h3>
+
+<p>HPA is an algorithm based controller API resource which automatically adjusts the number of replicas in a ReplicaSet, Deployment or Replication Controller based on CPU utilization.</p>
+
+<h3 id="vertical-pod-autoscaler-vpa">Vertical Pod Autoscaler (VPA)</h3>
+
+<p>VPA automatically sets Container resource requirements (CPU and memory) in a Pod and dynamically adjusts them in runtime, based on historical utilization data, current resource availability and real-time events.</p>
+
+<h3 id="cluster-autoscaler">Cluster Autoscaler</h3>
+
+<p>Cluster Autoscaler automatically re-sizes the Kubernetes cluster when there are insufficient resources available for new Pods expecting to be scheduled or when there are underutilized nodes in the cluster.</p>
 
 <h2 id="daemonsets">DaemonSets</h2>
 
@@ -858,6 +891,25 @@ metadata:
 <h2 id="kubernetes-federation">Kubernetes Federation</h2>
 
 <p>With Kubernetes Cluster Federation we can manage multiple Kubernetes clusters from a single control plane. We can sync resources across the federated clusters and have cross-cluster discovery. This allows us to perform Deployments across regions, access them using a global DNS record, and achieve High Availability.</p>
+
+<h2 id="helm-chart">Helm Chart</h2>
+
+<p>To deploy an application, we use different Kubernetes manifests, such as Deployments, Services, Volume Claims, Ingress, etc. Sometimes, it can be tiresome to deploy them one by one. We can bundle all those manifests after templatizing them into a well-defined format, along with other metadata. Such a bundle is referred to as Chart. These Charts can then be served via repositories, such as those that we have for rpm and deb packages.</p>
+
+<p>Helm is a package manager (analogous to yum and apt for Linux) for Kubernetes, which can install/update/delete those Charts in the Kubernetes cluster.</p>
+
+<p>Helm has two components:</p>
+
+<ul>
+<li>A client called <strong>helm</strong>, which runs on your user&rsquo;s workstation</li>
+<li>A server called <strong>tiller</strong>, which runs inside your Kubernetes cluster.</li>
+</ul>
+
+<p>The client helm connects to the server tiller to manage Charts. Charts submitted for Kubernetes are available here.</p>
+
+<h2 id="network-policies">Network Policies</h2>
+
+<h2 id="monitoring-and-logging">Monitoring and Logging</h2>
 
 
 <footer class=" footline" >
@@ -1404,20 +1456,20 @@ metadata:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1574102149"></script>
-    <script src="/js/perfect-scrollbar.min.js?1574102149"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1574102149"></script>
-    <script src="/js/jquery.sticky.js?1574102149"></script>
-    <script src="/js/featherlight.min.js?1574102149"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1574102149"></script>
-    <script src="/js/highlight.pack.js?1574102149"></script>
+    <script src="/js/clipboard.min.js?1574106456"></script>
+    <script src="/js/perfect-scrollbar.min.js?1574106456"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1574106456"></script>
+    <script src="/js/jquery.sticky.js?1574106456"></script>
+    <script src="/js/featherlight.min.js?1574106456"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1574106456"></script>
+    <script src="/js/highlight.pack.js?1574106456"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1574102149"></script>
-    <script src="/js/learn.js?1574102149"></script>
-    <script src="/js/hugo-learn.js?1574102149"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1574106456"></script>
+    <script src="/js/learn.js?1574106456"></script>
+    <script src="/js/hugo-learn.js?1574106456"></script>
 
-    <link href="/mermaid/mermaid.css?1574102149" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1574102149"></script>
+    <link href="/mermaid/mermaid.css?1574106456" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1574106456"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
