@@ -2,6 +2,23 @@
 title: 01 - Kubernetes Architecture
 ---
 
+- [Master Node](#master-node)
+  - [Master Node Components](#master-node-components)
+    - [Master Node Components: API Server](#master-node-components-api-server)
+    - [Master Node Components: Scheduler](#master-node-components-scheduler)
+    - [Master Node Componets: Controller Managers](#master-node-componets-controller-managers)
+    - [Master Node Components: etcd](#master-node-components-etcd)
+- [Worker Node](#worker-node)
+  - [Worker Node Components](#worker-node-components)
+    - [Worker Node Component: Container Runtime](#worker-node-component-container-runtime)
+    - [Worker Node Components: kubelet](#worker-node-components-kubelet)
+    - [Worker Node Components: kube-proxy](#worker-node-components-kube-proxy)
+    - [Worker Node Components: Addons](#worker-node-components-addons)
+- [Networking Challenges](#networking-challenges)
+  - [Container to Container Communication inside Pods](#container-to-container-communication-inside-pods)
+    - [Pod-to-Pod Communication Across Nodes](#pod-to-pod-communication-across-nodes)
+    - [Pod-to-External World Communication](#pod-to-external-world-communication)
+
 ![Kubernetes Architecture](/introduction-to-kubernetes/kubernetes-architecture.jpg)
 
 At a very high level, Kubernetes has the following main components
@@ -10,11 +27,11 @@ At a very high level, Kubernetes has the following main components
 * One or more **worker nodes**
 * Distributed key-value store, such as **etcd**
 
-### Master Node
+## Master Node
 
 The master node provides a running environment for the control plane responsible for managing the state of a Kubernetes cluster, and it is the brain behind all operations inside the cluster. The control plane components are agents with very distinct roles in the cluster's management. In order to communicate with the Kubernetes cluster, users send requests to the master node via a Command Line Interface (CLI) tool, a Web User-Interface (Web UI) Dashboard, or Application Programming Interface (API).
 
-#### Master Node Components
+### Master Node Components
 
 * API Server
 * Scheduler
@@ -41,11 +58,11 @@ etcd is a distributed key-value data store used to persist a Kubernetes cluster'
 
 Out of all the control plane components, only the API server is able to communicate with the etcd data store.
 
-### Worker Node
+## Worker Node
 
 A **worker node** provides a running environment for client applications. Though containerized microservices, these applications are encapsulated in Pods, controlled by the cluster control plane agents running on the master node. Pods are scheduled on worker nodes, where they find required compute, memory and storage resources to run, and networking to talk to each other and the outside world. A Pod is the smallest scheduling unit in Kubernetes. It is a logical collection of one or more containers scheduled together.
 
-#### Worker Node Components
+### Worker Node Components
 
 A worker node has the following components:
 

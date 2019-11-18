@@ -1,6 +1,16 @@
 ---
 title: 06 - Services
 ---
+- [Services](#services)
+- [Service Object Example](#service-object-example)
+- [kube-proxy](#kube-proxy)
+- [Service Discovery](#service-discovery)
+- [Servie Type](#servie-type)
+  - [Cluster IP](#cluster-ip)
+  - [NodePort](#nodeport)
+  - [LoadBalancer](#loadbalancer)
+  - [ExternalIP](#externalip)
+  - [ExternalName](#externalname)
 
 ## Services
 
@@ -36,11 +46,11 @@ The user/client now connects to a Service via its ClusterIP, which forwards traf
 While the Service forwards traffic to Pods, we can select the targetPort on the Pod which receives the traffic. If the targetPort is not defined explicitly, then traffic will be forwarded to Pods on the port on which the Service receives traffic.
 {{% /notice %}}
 
-### kube-proxy
+## kube-proxy
 
 All worker nodes run a daemon called kube-proxy, which watches the API server on the master node for the addition and removal of Services and endpoints.
 
-### Service Discovery
+## Service Discovery
 
 As Services are the primary mode of communication in Kubernetes, we need a way to discover them at runtime. Kubernetes supports two methods for discovering Services:
 
@@ -49,7 +59,7 @@ As Services are the primary mode of communication in Kubernetes, we need a way t
 
 Kubernetes has an add-on for DNS, which creates a DNS record for each Service and its format is `my-svc.my-namespace.svc.cluster.local.`
 
-### Servie Type
+## Servie Type
 
 While defining a Service, we can also choose its access scope. We can decide whether the Service:
 
@@ -61,13 +71,17 @@ While defining a Service, we can also choose its access scope. We can decide whe
 Access scope is decided by ServiceType, which can be configured when creating the Service.
 {{% /notice %}}
 
-#### Cluster IP
+### Cluster IP
 
 ClusterIP is the default ServiceType. A Service receives a Virtual IP address, known as its ClusterIP. This Virtual IP address is used for communicating with the Service and is accessible only within the cluster.
 
-#### NodePort
+### NodePort
 
 The NodePort ServiceType is useful when we want to make our Services accessible from the external world. The end-user connects to any worker node on the specified high-port, which proxies the request internally to the ClusterIP of the Service, then the request is forwarded to the applications running inside the cluster. To access multiple applications from the external world, administrators can configure a reverse proxy - an ingress, and define rules that target Services within the cluster.
+
+```shell
+kubectl expose pod <podname> --type=NodePort --port=80
+```
 
 ### LoadBalancer
 
@@ -88,4 +102,3 @@ A Service can be mapped to an ExternalIP address if it can route to one or more 
 ### ExternalName
 
 ExternalName is a special ServiceType, that has no Selectors and does not define any endpoints. When accessed within the cluster, it returns a CNAME record of an externally configured Service.
-

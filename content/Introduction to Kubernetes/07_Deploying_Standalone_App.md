@@ -1,6 +1,12 @@
 ---
 title: 07 - Deploying Standalone App
 ---
+- [Creating Deployment using YAML File](#creating-deployment-using-yaml-file)
+- [Exposing Application](#exposing-application)
+- [Liveness and Readiness Probes](#liveness-and-readiness-probes)
+  - [Liveness Probe](#liveness-probe)
+  - [Readiness Probe](#readiness-probe)
+
 
 ## Creating Deployment using YAML File
 
