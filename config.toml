@@ -8,6 +8,7 @@ theme = "hugo-theme-learn"
   GitHubUser = "arttuladhar"
   SidebarRecentLimit = 5
   Subtitle = "Always Learning; Always Improving"
+  themeVariant = "green"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]

@@ -4,7 +4,7 @@ title: Arrow Functions
 
 Arrow Function Express allows you to write shorter syntax than it's predecessor Function expression. In addition and more exciting is how the new Arrow function bind their context.
 
-```javascript
+{{< highlight javascript>}}
 (param1, param2, param3) => {
     statements
 }
@@ -12,21 +12,21 @@ Arrow Function Express allows you to write shorter syntax than it's predecessor 
 singleParam => { statements }
 
 () => { statements }
-```
+{{< / highlight >}}
 
 ### Example
 
-```javascript
+{{< highlight javascript>}}
 var materials = [
     'Iron', 'Calcium', 'Sodium', 'Magnanese'
 ]
 
 materials.map(material => material.length)
-```
+{{< / highlight >}}
 
 An arrow function does not newly define its own this when it's being executed.The value of this is always inherited from the enclosing scope.
 
-```javascript
+{{< highlight javascript>}}
 // ES5
 function CounterES5(){
    this.seconds = 0;
@@ -43,4 +43,4 @@ function CounterES6(){
      console.log(seconds)
    },1000 );
 }
-```
+{{< / highlight >}}

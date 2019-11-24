@@ -4,4 +4,4 @@ title: Digital Learning Notebook
 
 ## My Digital Learning Notebook
 
-As I learn new things, I will be using this notebook to capture important notes regarding various technical aspects of Software Engineering and Technology in general.
+Welcome to my digital notebook that I am sharing my learnings to capture important notes regarding various aspects of Software Engineering, Web Development and Cloud Engineering and other miscellenious topics.

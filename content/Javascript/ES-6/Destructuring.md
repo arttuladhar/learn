@@ -2,7 +2,7 @@
 title: Destructuring JavaScript Objects
 ---
 
-```javascript
+{{< highlight javascript>}}
 const person = {
   firstName: 'Aayush',
   lastName: 'Tuladhar',
@@ -44,4 +44,4 @@ const {
 } = art.links.social;
 console.log(twitter);
 console.log(facebook);
-```
+{{< / highlight >}}
