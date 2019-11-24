@@ -17,7 +17,7 @@
       
       <guid>http://learn.aayushtuladhar.com/javascript/es-6/arrowfunctions/</guid>
       <description>Arrow Function Express allows you to write shorter syntax than it&amp;rsquo;s predecessor Function expression. In addition and more exciting is how the new Arrow function bind their context.
-(param1, param2, param3) =&amp;gt; { statements } singleParam =&amp;gt; { statements } () =&amp;gt; { statements }  Example var materials = [ &#39;Iron&#39;, &#39;Calcium&#39;, &#39;Sodium&#39;, &#39;Magnanese&#39; ] materials.map(material =&amp;gt; material.length)  An arrow function does not newly define its own this when it&amp;rsquo;s being executed.</description>
+(param1, param2, param3) =&amp;gt; { statements } singleParam =&amp;gt; { statements } () =&amp;gt; { statements }  Example var materials = [ &amp;#39;Iron&amp;#39;, &amp;#39;Calcium&amp;#39;, &amp;#39;Sodium&amp;#39;, &amp;#39;Magnanese&amp;#39; ] materials.map(material =&amp;gt; material.length)  An arrow function does not newly define its own this when it&amp;rsquo;s being executed.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://learn.aayushtuladhar.com/javascript/es-6/destructuring/</guid>
-      <description>const person = { firstName: &#39;Aayush&#39;, lastName: &#39;Tuladhar&#39;, country: &#39;Nepal&#39;, twitter: &#39;@aayushtuladhar&#39; } /* Problem */ const first = person.firstName; const last = person.lastName; console.log(`Hello ${first} ${last}`); /* Solution */ const { firstName, lastName } = person; console.log(`Hello ${firstName} ${lastName}`); /* ------------------ */ const art = { first: &#39;ART&#39;, last: &#39;Ratna&#39;, links: { social: { twitter: &#39;https://twitter.com/aayushtuladhar&#39;, facebook: &#39;https://facebook.com/aayush.tuladhar&#39;, }, web: { blog: &#39;https://aayushtuladhar.com&#39; } } }; const { twitter, facebook } = art.</description>
+      <description>const person = { firstName: &amp;#39;Aayush&amp;#39;, lastName: &amp;#39;Tuladhar&amp;#39;, country: &amp;#39;Nepal&amp;#39;, twitter: &amp;#39;@aayushtuladhar&amp;#39; } /* Problem */ const first = person.firstName; const last = person.lastName; console.log(`Hello ${first}${last}`); /* Solution */ const { firstName, lastName } = person; console.log(`Hello ${firstName}${lastName}`); /* ------------------ */ const art = { first: &amp;#39;ART&amp;#39;, last: &amp;#39;Ratna&amp;#39;, links: { social: { twitter: &amp;#39;https://twitter.com/aayushtuladhar&amp;#39;, facebook: &amp;#39;https://facebook.com/aayush.tuladhar&amp;#39;, }, web: { blog: &amp;#39;https://aayushtuladhar.com&amp;#39; } } }; const { twitter, facebook } = art.</description>
     </item>
     
     <item>

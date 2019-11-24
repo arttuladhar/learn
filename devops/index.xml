@@ -11,12 +11,250 @@
     
     
     <item>
-      <title>OpenShift</title>
-      <link>http://learn.aayushtuladhar.com/devops/openshift/</link>
+      <title>Backup and Restore Ubuntu Packages</title>
+      <link>http://learn.aayushtuladhar.com/devops/2016-11-28-ubuntu-packages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/openshift/</guid>
-      <description></description>
+      <guid>http://learn.aayushtuladhar.com/devops/2016-11-28-ubuntu-packages/</guid>
+      <description> List Packages Installed dpkg -l
+Create Backup of What Packages Installed dpkg --get-selection &amp;gt; list.txt
+Restore dpkg --clear-selections sudo dpkg --set-selections &amp;lt; list.txt sudo apt-get autoremove sudo apt-get dselect-upgrade  </description>
+    </item>
+    
+    <item>
+      <title>DNS Basics</title>
+      <link>http://learn.aayushtuladhar.com/devops/2017-01-29-dns-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2017-01-29-dns-basics/</guid>
+      <description>DNS (Domain Name System) is essential component of modern internet communication. It allows us to reference computers by human friendly names instead of IP Addresses.
+Terminologies  Domain Name IP Address  DNS Lookup using Dig Dig is a flexible tool for interrogating DNS name servers. It performs DNS lookup and is very helpful to troubleshoot DNS problems.
+dig &amp;lt;serverName&amp;gt; +nostats +nocomments +nocmd  $ dig google.com +nostats ; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.</description>
+    </item>
+    
+    <item>
+      <title>Docker Compose</title>
+      <link>http://learn.aayushtuladhar.com/devops/2019-09-17-docker-compose/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2019-09-17-docker-compose/</guid>
+      <description> Docker Compose is used to run multiple containers as a single service.
+# docker-compose.yml version: &#39;2&#39; services: web: build: . # build from Dockerfile context: ./Path dockerfile: Dockerfile ports: - &amp;quot;5000:5000&amp;quot; volumes: - .:/code redis: image: redis  Command Line # Start Service docker-compose start # Stop Service docker-compose stop # Pause Service docker-compose pause # UnPause Service docker-compose unpause # List containers docker-compose ps # Create and start containers docker-compose up # Stop and remove containers, networks, images, and volumes docker-compose down  </description>
+    </item>
+    
+    <item>
+      <title>Drone</title>
+      <link>http://learn.aayushtuladhar.com/devops/2018-04-19-drone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2018-04-19-drone/</guid>
+      <description>Creating Pipeline  Images Cloning Commands Services Plugins  Running Drone Locally Drone Secrets  Repo Level Secrets Org Level Secrets Using Secrets in Pipeline   Drone is a CI/CD platform built on Docker and written in Go.
+Creating Pipeline Drone pipeline are written in .drone.yml file in the root of the repository.
+ Pipelines are event based, which can be triggered via push, pull_request, tag and deployment events</description>
+    </item>
+    
+    <item>
+      <title>Gradle Wrapper</title>
+      <link>http://learn.aayushtuladhar.com/devops/2016-07-06-gradle-wrapper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2016-07-06-gradle-wrapper/</guid>
+      <description>Gradle Wrapper The Gradle wrapper allows you to run a Gradle task without requiring that Gradle is installed on your system.
+Creating Gradle Wrapper task wrapper(type: Wrapper) { gradleVersion = &#39;2.10&#39; //we want gradle 2.10 to run this project }  Running Gradle Wrapper gradle wrapper
+Following files will be created:
+|-gradle |--- wrapper |--- gradle-wrapper.jar |--- gradle-wrapper.properties |-gradlew |-gradlew.bat  Gradle wrapper are useful when you want to run gradle command without installing gradle</description>
+    </item>
+    
+    <item>
+      <title>Installing Docker CE on Centos 7</title>
+      <link>http://learn.aayushtuladhar.com/devops/2017-09-22-install-docker-centos-7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2017-09-22-install-docker-centos-7/</guid>
+      <description>  Install Docker Community Edition Verify  Install Docker Community Edition sudo yum install -y yum-utils device-mapper-persistent-data lvm2 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo sudo yum makecache fast sudo yum install docker-ce sudo systemctl start docker  Verify sudo docker run hello-world  </description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>http://learn.aayushtuladhar.com/devops/2019-08-20-jenkins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2019-08-20-jenkins/</guid>
+      <description>Installing Plugins  Pipeline Script   Installing Jenkins docker pull jenkins/jenkins # Persist Jenkins Data within the Docker Container docker volume create jenkins-data docker run --name jenkins-production \ --detach \ -p 50000:50000 \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ jenkins/jenkins:2.164.2  Access Jenkins at http://localhost:8080/
+Installing Plugins  Blueocean plugin  Manage Jenkins &amp;gt; Manage Plugins
+Pipeline Script Hello World Pipeline Script
+pipeline { agent none environment { APPLICATION_NAME = &#39;hello-jenkins-pipeline&#39; } stages { stage(&#39;build&#39;) { steps { echo &amp;quot;Hello World&amp;quot; } } } }  Pipeline script to Build Another Jenkins Job</description>
+    </item>
+    
+    <item>
+      <title>Jenkins Shared Library</title>
+      <link>http://learn.aayushtuladhar.com/devops/2019-09-13-jenkins-shared-libs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2019-09-13-jenkins-shared-libs/</guid>
+      <description>Jenkins Shared library is the concept of having a common pipeline code in the version control system that can be used by any number of pipeline just by referencing it. In fact, multiple teams can use the same library for their pipelines. Pipeline has support for creating &amp;ldquo;Shared Libraries&amp;rdquo; which can be defined in external source control repositories and loaded into existing Pipelines.
+ A shared library is a collection of independent Groovy scripts which you pull into your Jenkinsfile at runtime.</description>
+    </item>
+    
+    <item>
+      <title>Linux Command Line Hacks</title>
+      <link>http://learn.aayushtuladhar.com/devops/2016-11-27-issue-remote-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2016-11-27-issue-remote-commands/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Mqtt</title>
+      <link>http://learn.aayushtuladhar.com/devops/2019-02-26-mqtt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2019-02-26-mqtt/</guid>
+      <description>Introduction  MQTT is a featherweight, ISO complaint PUB-SUB messaging protocol. Designed for low powered devices PRAM consistent: Guaranteed in-order delivery per-publisher Multiple Transport: TCP, TLS, Websockets Flexible: Arbitrary message up to 256 MB Topics can also be used for Key-Value storage  Topic based Pub/Sub  Decouples Publisher and Subscribers  Quality of Service  QoS 0 - &amp;ldquo;Fire and Forget&amp;rdquo; Q0S 1 - &amp;ldquo;At least once&amp;rdquo; QoS 2 - &amp;ldquo;Exactly once; 2 phase commit&amp;rdquo;  Ideal for intermittent connectivity; Sessions may last weeks or months Supports Disconnect &amp;amp; Last Will &amp;amp; Testament message</description>
+    </item>
+    
+    <item>
+      <title>Network Tools / Command Essentials</title>
+      <link>http://learn.aayushtuladhar.com/devops/2016-10-01-network-command-essentials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2016-10-01-network-command-essentials/</guid>
+      <description> Must Know Network Tools / Commands NetStat netstat stands for network statistics. This command displays incoming and outgoing network connections as well as other network information. The netstat utility can show you the open connections on your computer, which programs are making which connections, how much data is being transmitted, and other information.
+## List all connections netstat -a ## List TCP or UDP Connections netstat -at //TCP Connections netstat -au //UDP Connections ## List all Ports being Listened to netstat -an | grep &amp;quot;LISTEN &amp;quot;  IpTables ## Open 9001 Port sudo iptables -A INPUT -p tcp --dport 9001 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT sudo iptables -A OUTPUT -p tcp --sport 9001 -m conntrack --ctstate ESTABLISHED -j ACCEPT sudo iptables -A INPUT -p tcp --dport 3306 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT sudo iptables -A OUTPUT -p tcp --sport 3306 -m conntrack --ctstate ESTABLISHED -j ACCEPT  </description>
+    </item>
+    
+    <item>
+      <title>OWASP Dependency Check</title>
+      <link>http://learn.aayushtuladhar.com/devops/2019-10-8-owasp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2019-10-8-owasp/</guid>
+      <description>OWASP dependency-check is an open source solution that can be used to scan Java and .NET applications to identify the use of known vulnerable components.
+Link
+Adding OWASP Check to Gradle Projects Adding following fragments to build.gradle
+buildscript { repositories { mavenCentral() } dependencies { classpath &#39;org.owasp:dependency-check-gradle:5.2.2&#39; } } plugins { id &#39;org.owasp.dependencycheck&#39; version &#39;5.2.2&#39; }  Gradle Task
+./gradlew dependencyCheckAggregate  Configuring DependencyCheck dependencyCheck { format=&#39;ALL&#39; cveValidForHours=1 outputDirectory = file(&amp;quot;$project.</description>
+    </item>
+    
+    <item>
+      <title>OpenShift Cheatsheet</title>
+      <link>http://learn.aayushtuladhar.com/devops/2019-10-3-openshift-cheatsheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2019-10-3-openshift-cheatsheet/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>OpenStack</title>
+      <link>http://learn.aayushtuladhar.com/devops/2016-03-24-open-stack-cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2016-03-24-open-stack-cli/</guid>
+      <description>Getting Started with OpenStack What is OpenStack OpenStack is elastic cloud software that provides software developers with the ability to control the virtual infrastructure on which to deploy their applications. It is a set of software tools for building and managing cloud computing platforms for public and private clouds.
+It accelerates time-to-market by dramatically reducing application provisioning times, giving companies full control of their software development lifecycle and ultimately giving them a significant competitive advantage.</description>
+    </item>
+    
+    <item>
+      <title>Openshift</title>
+      <link>http://learn.aayushtuladhar.com/devops/2019-08-16-openshift/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2019-08-16-openshift/</guid>
+      <description>Architecture Containers and Image  Container Registries  Pods and Services  Pods Services Labels  Builds and Image Streams  Builds Image Stream Image stream tag Image stream image Image stream trigger Templates  References  Architecture OpenShift is a layered system designed to expose underlying Docker-formatted container image and Kubernetes concepts as acurately as possible, with a focus on easy composition of applications by a developer.</description>
+    </item>
+    
+    <item>
+      <title>Setting Apache Virtual Host</title>
+      <link>http://learn.aayushtuladhar.com/devops/2016-11-26-setting-apache-virtual-host/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2016-11-26-setting-apache-virtual-host/</guid>
+      <description>Install Apache WebServer (Pre-Req) sudo apt-get update sudo apt-get install apache2  Apache Virtual Host To run more than one site on a single machine, you need to setup virtual hosts for sites your plan to host on an apache server.
+Name Based Virtual Hosts (Most Common)  The server relies on the client to report the hostname as part of the HTTP headers. Using this technique, many different hosts can share the same IP address.</description>
+    </item>
+    
+    <item>
+      <title>Setting FQDN</title>
+      <link>http://learn.aayushtuladhar.com/devops/2016-03-01-setting-fqdn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2016-03-01-setting-fqdn/</guid>
+      <description>FQDN  Finding FQDN  Hostname  Finding Hostname  Setting hostname and FQDN  FQDN FQDN stands for Fully Qualified Domain Name. It is a domain name that specifies its exact location in the tree hierarhcy of the Domain Name System (DNS). It specifies all domain levels, including the top-level domain and the root zone.
+Example, somehost.example.com
+Finding FQDN hostname -f  Hostname A hostname is a label that is assigned to a device connected to a computer network and that is used to identify the device.</description>
+    </item>
+    
+    <item>
+      <title>Setting Selenium Grid</title>
+      <link>http://learn.aayushtuladhar.com/devops/2017-02-05-setting-selenium-grid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2017-02-05-setting-selenium-grid/</guid>
+      <description>Selenium Grid enables you to spread your tests across multiple machines and multiple browsers, which allows your to run tests in parallel. Also having Hub as central point of communication handles all the driver configuration and runs them automatically.
+Downloading Selenium http://docs.seleniumhq.org/download/
+Setting up Hub Once you have the jarfile downloaded from the Selenium Website,
+java -jar selenium-server-standalone-2.x.x.jar –role hub
+This starts up a jetty server on default port 4444.</description>
+    </item>
+    
+    <item>
+      <title>Setting up Jekyll Website</title>
+      <link>http://learn.aayushtuladhar.com/devops/2019-09-17-setting-up-jekyll-website/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2019-09-17-setting-up-jekyll-website/</guid>
+      <description> Pre-Requires  Ruby  # Verify Ruby is Installed ruby --version  Installation gem install jekyll bundler  Create New Site jekyll new myblog  Run Blog Locally bundle exec jekyll serve  Reference  https://github.com/arttuladhar/my-jekyll-blog  </description>
+    </item>
+    
+    <item>
+      <title>Spring Cloud Slueth</title>
+      <link>http://learn.aayushtuladhar.com/devops/2018-09-18-spring-cloud-slueth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2018-09-18-spring-cloud-slueth/</guid>
+      <description>A powerful tool for enhancing logs in any application, but especially in a system built up of multiple services. This is where spring-cloud-starter-sleuth comes into play to help you enhance your logging and traceability across multiple systems. Just including the spring-cloud-starter-sluth in your project.
+Few concepts you need to be familiar with when using Spring Cloud Slueth are concepts of Trace and Spans. Trace can though as single request or job that is triggered in an application.</description>
+    </item>
+    
+    <item>
+      <title>Supervisor</title>
+      <link>http://learn.aayushtuladhar.com/devops/2016-04-10-setting-up-supervisord/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2016-04-10-setting-up-supervisord/</guid>
+      <description>Installation Configuration Running Supervisor  Supervisor Configuration Structure  Controller Processes  Reread Configuration and Reload It Controlling Tool Start / Stop Processess   It&amp;rsquo;s been a while I have been using Supervisor to run my application. It&amp;rsquo;s a great little tool for running and monitoring processes on UNIX-like operating systems. It provides you simple simple, centralized interface to all your applications running on a box. Using Web Interface, you can see health and logs of the applications without even logging in in the box.</description>
+    </item>
+    
+    <item>
+      <title>The Twelve Factor App</title>
+      <link>http://learn.aayushtuladhar.com/devops/2019-01-23-nginx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2019-01-23-nginx/</guid>
+      <description>12factor.net - Link Introduction Methodology for building software-as-a-service app that:
+ Use Declarative formats for setup automation, to minimize time and cost for new developers joining the project. Have a Clean Contract with the underlying operation system, offering Maximum Portability between execution environments Are suitable for Deployment on modern Cloud platforms, obviating the need for servers and system administrators Minimize divergence between deployment and production, enabling Continuous deployment for maximum agility And can Scale up without significant changes to tooling, architecture, or development practices.</description>
+    </item>
+    
+    <item>
+      <title>Understanding SSH Keys</title>
+      <link>http://learn.aayushtuladhar.com/devops/2016-07-07-ssh-keys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2016-07-07-ssh-keys/</guid>
+      <description>SSH is the most common way of connecting to remove Linux Server. It stands for Secure Shell. It provide a safe and secure way of executing commands, making changes and configuring service remotely. SSH connecting is implemented using client-server model. For a client machine to connect to a remote machine using SSH, SSH daemon must be running on the remote machine.
+Clients generally authenticate either using passwords or by SSH Keys.</description>
+    </item>
+    
+    <item>
+      <title>Using Apache Server Benchmarking</title>
+      <link>http://learn.aayushtuladhar.com/devops/2017-03-15-using-apache-server-benchmarking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/2017-03-15-using-apache-server-benchmarking/</guid>
+      <description>Apache Benchmark is a single-threaded command line tool for measuring the performance of a HTTP web server. It gives you an impression of how many requests per second your server is capable of serving.
+Installation sudo apt-get install apache2-utils.  Usage -p POST Message -H Message Header -T Content Type -c Concurrent Clients -n Number of Requests to Run in the Test  GET REQUEST $ ab -n200 -c100 -H &amp;quot;APP-TOKEN: Q977quNeXjFsNjLNlmC9MK1HuRP+fFKmwDX9KSD6Y=&amp;quot; \ http://test-api.</description>
     </item>
     
   </channel>

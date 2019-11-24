@@ -55,11 +55,31 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/aws/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/aws/2018-05-30-aws/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/javascript/es-6/arrowfunctions/</loc>
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-11-28-ubuntu-packages/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/google-cloud-platform/basic-essentials/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/chef/2016-02-29-berks/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/bookmarks/</loc>
   </url>
   
   <url>
@@ -68,11 +88,23 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/chef/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/chef/2018-01-30-chef-databags/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/google-cloud-platform/cloud-storage/</loc>
   </url>
   
   <url>
     <loc>http://learn.aayushtuladhar.com/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2017-01-29-dns-basics/</loc>
   </url>
   
   <url>
@@ -88,6 +120,14 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-09-17-docker-compose/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2018-04-19-drone/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/hugo-basics/basic_1/</loc>
   </url>
   
@@ -100,7 +140,31 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-07-06-gradle-wrapper/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2017-09-22-install-docker-centos-7/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/java/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/javascript/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-08-20-jenkins/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-09-13-jenkins-shared-libs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/chef/2016-04-05-chef-knife-commands/</loc>
   </url>
   
   <url>
@@ -108,19 +172,67 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/java/the-basics/lambda_expressions/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/hugo-basics/basic_2/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/google-cloud-platform/network-concepts/</loc>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-11-27-issue-remote-commands/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/devops/openshift/</loc>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-02-26-mqtt/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-10-01-network-command-essentials/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-10-8-owasp/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-10-3-openshift-cheatsheet/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-03-24-open-stack-cli/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-08-16-openshift/</loc>
   </url>
   
   <url>
     <loc>http://learn.aayushtuladhar.com/google-cloud-platform/orchestrating-cloud-with-kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-11-26-setting-apache-virtual-host/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-03-01-setting-fqdn/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2017-02-05-setting-selenium-grid/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-09-17-setting-up-jekyll-website/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2018-09-18-spring-cloud-slueth/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-04-10-setting-up-supervisord/</loc>
   </url>
   
   <url>
@@ -133,7 +245,24 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-01-23-nginx/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-07-07-ssh-keys/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2017-03-15-using-apache-server-benchmarking/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/hugo-basics/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/categories/devops/</loc>
+    <priority>0</priority>
   </url>
   
 </urlset>
