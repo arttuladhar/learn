@@ -180,10 +180,10 @@ Restore dpkg --clear-selections sudo dpkg --set-selections &amp;lt; list.txt sud
     
     <item>
       <title>Berkshelf</title>
-      <link>http://learn.aayushtuladhar.com/chef/2016-02-29-berks/</link>
+      <link>http://learn.aayushtuladhar.com/devops/chef/2016-02-29-berks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/chef/2016-02-29-berks/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/chef/2016-02-29-berks/</guid>
       <description>Berkshelf Reference External Dependent Cookbooks so that it can download those cookbooks rather than manually downloading via knife cookbook command.
 knife cookbook site
 Berkshelf lets you treat your cookbooks the way you treat gem in a Ruby project. When external cookbooks are used, Berkshelf doesn&amp;rsquo;t requite knife cookbook site to install community cookbooks.
@@ -194,10 +194,10 @@ Upload berks to Chef Server berks upload &amp;lt;cookbook&amp;gt;</description>
     
     <item>
       <title>Chef Databags</title>
-      <link>http://learn.aayushtuladhar.com/chef/2018-01-30-chef-databags/</link>
+      <link>http://learn.aayushtuladhar.com/devops/chef/2018-01-30-chef-databags/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/chef/2018-01-30-chef-databags/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/chef/2018-01-30-chef-databags/</guid>
       <description>Databags are global variables that is stored as JSON Data and is accessible from Chef Server. A data bag is indexed for searching and can be loaded by recipe or accessed during a search.
 Creating Data Bag (Using Knife) $ knife data bag create DATA_BAG_NAME (DATA_BAG_ITEM) knife data bag create TEST_BAG  Adding File to Data Bag knife data bag from file TEST_BAG test.json  Data Bag Items A data bag is container of related data bag items, where each individual data bag item is a JSON file.</description>
     </item>
@@ -295,6 +295,35 @@ Following files will be created:
     </item>
     
     <item>
+      <title>HCL Basics</title>
+      <link>http://learn.aayushtuladhar.com/terraform/hcl_basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/terraform/hcl_basics/</guid>
+      <description>Terraform CLI Commands Terraform Syntax Resources Console and Outputs Variables  Passing Variable  Terraform Workspaces NullResources and Local-exec  Terraform CLI Commands    Command Description     init Initializes a new or existing Terraform configuration   validate Validates the Terraform files   plan Generates ans shows an execution plan   apply Builds or Change Infrastructure   output Reads an output from a state file   show Inspects Terraform State or Plan   providers Print a tree of the providers using the configuration   destory Destorys Terraform-managed infrastructure    Terraform Syntax  Single line comments start with # Multi line comments are wrapped with /* and */ Values are assigned with the syntax key=value Strings are double quoted Strings can interpolate other values using the syntax ${}  Resources Resosurces are the Objects manged by Terraform such as VM or S3 Buckets.</description>
+    </item>
+    
+    <item>
+      <title>Hive Query Optimizations</title>
+      <link>http://learn.aayushtuladhar.com/bigdata/2017-05-18-hive-query-optimizations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/bigdata/2017-05-18-hive-query-optimizations/</guid>
+      <description>Changing Engine for Hive Queries In general, Tez provides increased performance over Map Reduce specially where JOINS are required resulting in intermediate output being written to disk.
+set hive.execution.engine=tez  Using Partitions Partitions separate date in Hive tables by HDFS directories. If data is distributed based on partitions on certain fields, Using those fields to access data allows speeding up Hive queries. In other words, querying without partitions equates to full table scan.</description>
+    </item>
+    
+    <item>
+      <title>Hive Tables [Best Practices]</title>
+      <link>http://learn.aayushtuladhar.com/bigdata/2018-01-02-hive-tables-best-practices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/bigdata/2018-01-02-hive-tables-best-practices/</guid>
+      <description>Hive Table Storage Formats Avoid using TEXT format, Sequence file format or complex storage format such as JSON. Ideally, RCFile (Row Columnar File) or Parquet files are best suited. If you are building data warehouse on Hive, for better performance use Parquet file format.
+CREATE TABLE IF NOT EXISTS test_table ( col1 int, col2 string ) ROW FORMAT DELIMITED FIELDS TERMINATED BY &#39;,&#39; STORED AS PARQUET;  Compression Techniques Try to split compression algorithms provided by Hadoop &amp;amp; Hive like Snappy.</description>
+    </item>
+    
+    <item>
       <title>Installing Docker CE on Centos 7</title>
       <link>http://learn.aayushtuladhar.com/devops/2017-09-22-install-docker-centos-7/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -326,11 +355,21 @@ pipeline { agent none environment { APPLICATION_NAME = &#39;hello-jenkins-pipeli
     </item>
     
     <item>
-      <title>Knife Commands</title>
-      <link>http://learn.aayushtuladhar.com/chef/2016-04-05-chef-knife-commands/</link>
+      <title>Jupyter NoteBook - Shortcuts</title>
+      <link>http://learn.aayushtuladhar.com/bigdata/2018-05-10-jupyter-notebooks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/chef/2016-04-05-chef-knife-commands/</guid>
+      <guid>http://learn.aayushtuladhar.com/bigdata/2018-05-10-jupyter-notebooks/</guid>
+      <description> Jupyter Shortcuts Command Mode gives to the ability to create, copy, paste, move, and execute cells. A few keys to know: To enter Command Mode (control + m)
+   Keywork Description     h Bring up help (ESC to dismiss)   b Create cell below   a Create cell above   c Copy cell   v Paste cell below   Enter Go into Edit Mode   m Change cell type to Markdown   y Change cell type to code   ii Interrupt kernel   oo Restart kernel    </description>
+    </item>
+    
+    <item>
+      <title>Knife Commands</title>
+      <link>http://learn.aayushtuladhar.com/devops/chef/2016-04-05-chef-knife-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/chef/2016-04-05-chef-knife-commands/</guid>
       <description> </description>
     </item>
     
@@ -471,6 +510,16 @@ This starts up a jetty server on default port 4444.</description>
     </item>
     
     <item>
+      <title>Setting up Apache Storm</title>
+      <link>http://learn.aayushtuladhar.com/bigdata/2018-01-02-setting-up-storm-in-5-minutes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/bigdata/2018-01-02-setting-up-storm-in-5-minutes/</guid>
+      <description>Apache Storm is free and open source distributed real-time computation system. Storm provides reliable real-time data processing what Hadoop did for batch processing. It provides real-time, robust, user friendly, reliable data processing capability with operational Intelligence.
+This post is more about setting up your Storm Environment from ground up in less than 5 Minutes. Yes, you heard it right less than 5 Minutes. Without any delay, let&amp;rsquo;s get it running.</description>
+    </item>
+    
+    <item>
       <title>Setting up Jekyll Website</title>
       <link>http://learn.aayushtuladhar.com/devops/2019-09-17-setting-up-jekyll-website/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -509,6 +558,17 @@ const someText = `string text ${expression} string text`  </description>
     </item>
     
     <item>
+      <title>Terraform Modules</title>
+      <link>http://learn.aayushtuladhar.com/terraform/modules/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/terraform/modules/</guid>
+      <description>Module is a container for multiple resources that are going to be used together.
+Main goal of module is logical grouping of resources to it&amp;rsquo;s cohesive unit that can be reused and shared across different systems. Modules can also be shared across multiple teams or via public registry such as GitHub or Terraform Cloud registry.
+Using Terraform Modules # Download the image module &amp;quot;image&amp;quot; { source = &amp;quot;./image&amp;quot; image_name = &amp;quot;${var.</description>
+    </item>
+    
+    <item>
       <title>The Twelve Factor App</title>
       <link>http://learn.aayushtuladhar.com/devops/2019-01-23-nginx/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -536,6 +596,25 @@ Clients generally authenticate either using passwords or by SSH Keys.</descripti
       <guid>http://learn.aayushtuladhar.com/devops/2017-03-15-using-apache-server-benchmarking/</guid>
       <description>Apache Benchmark is a single-threaded command line tool for measuring the performance of a HTTP web server. It gives you an impression of how many requests per second your server is capable of serving.
 Installation sudo apt-get install apache2-utils.  Usage -p POST Message -H Message Header -T Content Type -c Concurrent Clients -n Number of Requests to Run in the Test  GET REQUEST $ ab -n200 -c100 -H &amp;quot;APP-TOKEN: Q977quNeXjFsNjLNlmC9MK1HuRP+fFKmwDX9KSD6Y=&amp;quot; \ http://test-api.</description>
+    </item>
+    
+    <item>
+      <title>Using Pandas</title>
+      <link>http://learn.aayushtuladhar.com/data-analytics/2018-05-01-pandas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/data-analytics/2018-05-01-pandas/</guid>
+      <description>Explore, Visualize, and Predict using Pandas &amp;amp; Jupyter  Explore, Visualize, and Predict using Pandas &amp;amp; Jupyter Pandas Intro Load Data Inspecting Data Summarize Data Reference  Setup
+%matplotlib inline import pandas as pd import matplotlib import numpy as np  pd.__version__, matplotlib.__version__, np.__version__  Pandas Intro The pandas library is very popular among data scientists, quants, Excel junkies, and Python developers because it allows you to perform data ingestion, exporting, transformation, and visualization with ease.</description>
+    </item>
+    
+    <item>
+      <title>Using Terraform With Docker</title>
+      <link>http://learn.aayushtuladhar.com/terraform/terraform_docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/terraform/terraform_docker/</guid>
+      <description>Installing Docker on the Swarm Manager and Worker # Update the Operating System sudo yum update -y # Uninstall Old Versions sudo yum remove -y docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine # Install Docker CE sudo yum install -y yum-utils \ device-mapper-persistent-data \ lvm2 # Add Docker Repository sudo yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo sudo yum -y install docker-ce # Start Docker and Enable sudo systemctl start docker &amp;amp;&amp;amp; sudo systemctl enable docker # Add `cloud_user` to the `docker` group sudo usermod -aG docker cloud_user docker --version # Configure Swarm Manager Node docker swarm init --advertise-addr [PRIVATE_IP] On the worker node, add the worker to the cluster: docker swarm join --token [TOKEN] [PRIVATE_IP]:2377 # Verify Swarm cluster docker node ls  Installing Terraform # Install Terraform 0.</description>
     </item>
     
   </channel>

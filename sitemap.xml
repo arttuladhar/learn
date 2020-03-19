@@ -75,7 +75,11 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/chef/2016-02-29-berks/</loc>
+    <loc>http://learn.aayushtuladhar.com/devops/chef/2016-02-29-berks/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/bigdata/</loc>
   </url>
   
   <url>
@@ -88,11 +92,11 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/chef/</loc>
+    <loc>http://learn.aayushtuladhar.com/devops/chef/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/chef/2018-01-30-chef-databags/</loc>
+    <loc>http://learn.aayushtuladhar.com/devops/chef/2018-01-30-chef-databags/</loc>
   </url>
   
   <url>
@@ -105,6 +109,11 @@
   
   <url>
     <loc>http://learn.aayushtuladhar.com/devops/2017-01-29-dns-basics/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/data-analytics/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -144,6 +153,18 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/terraform/hcl_basics/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/bigdata/2017-05-18-hive-query-optimizations/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/bigdata/2018-01-02-hive-tables-best-practices/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/devops/2017-09-22-install-docker-centos-7/</loc>
   </url>
   
@@ -164,7 +185,11 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/chef/2016-04-05-chef-knife-commands/</loc>
+    <loc>http://learn.aayushtuladhar.com/bigdata/2018-05-10-jupyter-notebooks/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/chef/2016-04-05-chef-knife-commands/</loc>
   </url>
   
   <url>
@@ -224,6 +249,10 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/bigdata/2018-01-02-setting-up-storm-in-5-minutes/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/devops/2019-09-17-setting-up-jekyll-website/</loc>
   </url>
   
@@ -245,6 +274,14 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/terraform/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/terraform/modules/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/devops/2019-01-23-nginx/</loc>
   </url>
   
@@ -261,7 +298,40 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/data-analytics/2018-05-01-pandas/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/terraform/terraform_docker/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/tags/aws/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/categories/bigdata/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/tags/bigdata/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/categories/devops/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/tags/devops/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/tags/hive/</loc>
     <priority>0</priority>
   </url>
   

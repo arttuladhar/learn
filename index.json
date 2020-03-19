@@ -100,7 +100,7 @@
 {
 	"uri": "http://learn.aayushtuladhar.com/aws/2018-05-30-aws/",
 	"title": "Amazon Web Services (AWS)",
-	"tags": [],
+	"tags": ["aws", "devops"],
 	"description": "",
 	"content": " IAM Identity and Access Management\n Add User  AWS Mobile Hub  A dashboard for easily manage multiple AWS services Provides a graphical abstraction over DynamoDB, Cognito, Pinpoint and other services.  Features  Secure Authentication (Amazon Cognito) Database (Amazon DynamoDB) Storage (Amazon S3) Cloud API (API Gateway) (Amazon Lambda) Hosting \u0026amp; Streaming (S3 \u0026amp; Cloudfront) Analytics and Notifications (Pinpoint)  AWS Mobile CLI  A command line tool for setting up new projects using AWS Mobile Hub  Install AWS Mobile CLI npm install -g awsmoible -cli  Configure the CLI with your AWS credentials awsmobile configure  Setup Backend with your App awsmobile init  Connect your app with configured AWS feautures import Amplify from 'aws-amplify'; import awsmobile from './YOUR-PATH-TO/aws-exports'; Amplify.configure(awsmobile);  Add User Sign In awsmobile user-signin enable awsmobile push awsmobile run  Add NoSQL Database awsmobile database enable --prompt awsmobile push awsmobile run  Console awsmobile console  Hosting and Streaming awsmobile publish  AWS Amplify  A javascript library with a bunch of helper functions for working with AWS Mobile Hub  AWS AppSync  GraphQL as a service  References  https://docs.aws.amazon.com/aws-mobile/latest/developerguide/aws-mobile-cli-reference.html  "
 },
@@ -126,11 +126,18 @@
 	"content": " Creting Instance (Directly) # Create Compute Instance gcloud compute instances create gcelab2 --machine-type n1-standard-2 \\ --zone us-central1-c  Using Instance Templates / Instance Groups # Create Instance Template gcloud compute instance-templates create nginx-template \\ --metadata-from-file startup-script=startup.sh # Create Target Pool gcloud compute target-pools create nginx-pool # Create Instance Group gcloud compute instance-groups managed create nginx-group \\ --base-instance-name nginx \\ --size 2 \\ --template nginx-template \\ --target-pool nginx-pool # List Instances gcloud compute instances list  Create Filewall # Create Filewall rule to Allow 80 gcloud compute firewall-rules create www-firewall --allow tcp:80  SSH Instance gcloud compute ssh gcelab2 --zone us-central1-c   gcloud is a command-line tool for Google Cloud Platform\n  gsutil is a command-line tool to mange Cloud Storage resources\n Config # List Config gcloud config list # Sets Default Zone to us-central1-a gcloud config set compute/zone us-central1-a  Kubernetes Cluster Engine A cluster consists of at least one cluster master machine and multiple worker machines called nodes. Nodes are Compute Engine virtual machine (VM) instances that run the Kubernetes processes necessary to make them part of the cluster.\n# Create Cluster gcloud container clusters create my-precious-cluster # Updates a kubeconfig file with appropriate credentials to point kubectl at a specific cluster in GKE gcloud container cluster get-credentials my-precious-cluster # Delete Cluster gcloud container clusters delete my-precious-cluster  Network Load Balancer Network load balancing allows you to balance the load of your systems based on incoming IP protocol data, such as address, port, and protocol type. You also get some options that are not available, with HTTP(S) load balancing. For example, you can load balance additional TCP/UDP-based protocols such as SMTP traffic. And if your application is interested in TCP-connection-related characteristics, network load balancing allows your app to inspect the packets, where HTTP(S) load balancing does not.\n# Create Forwarding Rules gcloud compute forwarding-rules create nginx-lab \\ --region us-central1 --port=80 --target-pool nginx-pool # List Forwarding Rules gcloud compute forwarding-rules list  Creating HTTP(s) Load Balancer # Create Health Check gcloud compute http-health-checks create http-basic-check # Defining a HTTP service and map a port name to the relevant port gcloud compute instance-groups manged set-named-ports nginx-group --named-ports http:80 # Creating Backend Service gcloud compute backend-services create nginx-backend \\ --protocol HTTP \\ --http-health-checks http-basic-check \\ --global # Adding instance group to the backend services gcloud compute backend-services add-backend nginx-backend \\ --instance-group nginx-group \\ --instance-group-zone us-central1-a \\ --global # Create a default URL map that directs all incoming requests to all your instances gcloud compute url-maps create web-map --default-service nginx-backend # Create a target HTTP proxy to route requests to URL map gcloud compute target-http-proxies create http-lb-proxy --url-map web-map # Create global forwarding rule to handle and route incoming requests gcloud compute forwarding-rules create http-content-rule \\ --global --target-http-proxy http-lb-proxy --ports 80  "
 },
 {
-	"uri": "http://learn.aayushtuladhar.com/chef/2016-02-29-berks/",
+	"uri": "http://learn.aayushtuladhar.com/devops/chef/2016-02-29-berks/",
 	"title": "Berkshelf",
 	"tags": [],
 	"description": "",
 	"content": " Berkshelf Reference External Dependent Cookbooks so that it can download those cookbooks rather than manually downloading via knife cookbook command.\nknife cookbook site\nBerkshelf lets you treat your cookbooks the way you treat gem in a Ruby project. When external cookbooks are used, Berkshelf doesn\u0026rsquo;t requite knife cookbook site to install community cookbooks.\nImplementing Berkshelf gem install berkshelf\nInstall Cookbooks via Berks berks install\nUpload berks to Chef Server berks upload \u0026lt;cookbook\u0026gt;\n"
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/bigdata/",
+	"title": "Big Data",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "http://learn.aayushtuladhar.com/bookmarks/",
@@ -147,14 +154,14 @@
 	"content": ""
 },
 {
-	"uri": "http://learn.aayushtuladhar.com/chef/",
+	"uri": "http://learn.aayushtuladhar.com/devops/chef/",
 	"title": "Chef",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://learn.aayushtuladhar.com/chef/2018-01-30-chef-databags/",
+	"uri": "http://learn.aayushtuladhar.com/devops/chef/2018-01-30-chef-databags/",
 	"title": "Chef Databags",
 	"tags": [],
 	"description": "",
@@ -180,6 +187,13 @@
 	"tags": [],
 	"description": "",
 	"content": " DNS (Domain Name System) is essential component of modern internet communication. It allows us to reference computers by human friendly names instead of IP Addresses.\nTerminologies  Domain Name IP Address  DNS Lookup using Dig Dig is a flexible tool for interrogating DNS name servers. It performs DNS lookup and is very helpful to troubleshoot DNS problems.\ndig \u0026lt;serverName\u0026gt; +nostats +nocomments +nocmd  $ dig google.com +nostats ; \u0026lt;\u0026lt;\u0026gt;\u0026gt; DiG 9.10.6 \u0026lt;\u0026lt;\u0026gt;\u0026gt; google.com +nostats ;; global options: +cmd ;; Got answer: ;; -\u0026gt;\u0026gt;HEADER\u0026lt;\u0026lt;- opcode: QUERY, status: NOERROR, id: 9995 ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 4096 ;; QUESTION SECTION: ;google.com.\tIN\tA ;; ANSWER SECTION: google.com.\t142\tIN\tA\t172.217.8.206   The first line tell us the version of dig (9.10.6) command Next, dig shows the header of the response it received from the DNS server The question section tells us about the A Record and IN means this is an internet lookup The answer section tells us that google.com has IP address of 172.217.8.206  References  DNS Concepts  "
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/data-analytics/",
+	"title": "Data Analytics",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "http://learn.aayushtuladhar.com/javascript/es-6/destructuring/",
@@ -245,6 +259,27 @@
 	"content": " Gradle Wrapper The Gradle wrapper allows you to run a Gradle task without requiring that Gradle is installed on your system.\nCreating Gradle Wrapper task wrapper(type: Wrapper) { gradleVersion = '2.10' //we want gradle 2.10 to run this project }  Running Gradle Wrapper gradle wrapper\nFollowing files will be created:\n|-gradle |--- wrapper |--- gradle-wrapper.jar |--- gradle-wrapper.properties |-gradlew |-gradlew.bat  Gradle wrapper are useful when you want to run gradle command without installing gradle\n"
 },
 {
+	"uri": "http://learn.aayushtuladhar.com/terraform/hcl_basics/",
+	"title": "HCL Basics",
+	"tags": [],
+	"description": "",
+	"content": "  Terraform CLI Commands Terraform Syntax Resources Console and Outputs Variables  Passing Variable  Terraform Workspaces NullResources and Local-exec  Terraform CLI Commands    Command Description     init Initializes a new or existing Terraform configuration   validate Validates the Terraform files   plan Generates ans shows an execution plan   apply Builds or Change Infrastructure   output Reads an output from a state file   show Inspects Terraform State or Plan   providers Print a tree of the providers using the configuration   destory Destorys Terraform-managed infrastructure    Terraform Syntax  Single line comments start with # Multi line comments are wrapped with /* and */ Values are assigned with the syntax key=value Strings are double quoted Strings can interpolate other values using the syntax ${}  Resources Resosurces are the Objects manged by Terraform such as VM or S3 Buckets. Declaring a Resource tells Terraform that it should CREATE and MANAGE the resource described. If the resource already exists it must be imported into Terraform\u0026rsquo;s State.\nSyntax\nresource \u0026lt;Resource_Type\u0026gt; \u0026lt;Resource_Name\u0026gt; { // Meta Parameters }  Example\n# Example # Download the latest Ghost image resource \u0026quot;docker_image\u0026quot; \u0026quot;image_id\u0026quot; { name = \u0026quot;ghost:latest\u0026quot; } # Start the Container resource \u0026quot;docker_container\u0026quot; \u0026quot;container_id\u0026quot; { name = \u0026quot;ghost_blog\u0026quot; image = \u0026quot;${docker_image.image_id.latest}\u0026quot; ports { internal = \u0026quot;2368\u0026quot; external = \u0026quot;80\u0026quot; } }  Console and Outputs Outputs are printed by the CLI after apply. These can reveal calculated values.\n#Output the IP Address of the Container output \u0026quot;ip_address\u0026quot; { value = \u0026quot;${docker_container.container_id.ip_address}\u0026quot; description = \u0026quot;The IP for the container.\u0026quot; } #Output the Name of the Container output \u0026quot;container_name\u0026quot; { value = \u0026quot;${docker_container.container_id.name}\u0026quot; description = \u0026quot;The name of the container.\u0026quot; }  Variables Input variables serve as parameters for a Terraform file. A variable block configures a single input variable for a Terraform module. Each block declares a single variable.\nSyntax\nvariable [NAME] { [OPTION] = \u0026quot;[VALUE]\u0026quot; }  Variables can be used using interpolation syntax \u0026quot;${var.name}\u0026quot;\nExample\nvariable \u0026quot;image_name\u0026quot; { description = \u0026quot;Image for container.\u0026quot; default = \u0026quot;ghost:latest\u0026quot; } resource \u0026quot;docker_image\u0026quot; \u0026quot;image_id\u0026quot; { name = \u0026quot;${var.image_name}\u0026quot; }  Passing Variable Variables can be specified on the command line with -var bucket_name=my-bucket or in file using terraform.tfvars\nterraform apply -var 'foo=bar' terraform apply -var 'container_name=ghost_blog' -var 'ext_port=8080'  We can set the variabl using Environment Variables\nexport TF_VAR_container_name=ghost_blog export TF_VAR_ext_port=8080  Terraform Workspaces Each Terraform configuration has an associated backend that defines how operations are executed and where persistent data such as Terraform State are stored. Terraform supports multiple workspace to isolate different terraform plans and their respective state files.\n# Creates Dev Workspace terraform workspace new dev # List Workspaces terraform workspace list # Switch to default Workspace terraform workspace select default  NullResources and Local-exec # Download the latest Ghost Image resource \u0026quot;docker_image\u0026quot; \u0026quot;image_id\u0026quot; { name = \u0026quot;${lookup(var.image_name, var.env)}\u0026quot; } # Start the Container resource \u0026quot;docker_container\u0026quot; \u0026quot;container_id\u0026quot; { name = \u0026quot;${lookup(var.container_name, var.env)}\u0026quot; image = \u0026quot;${docker_image.image_id.latest}\u0026quot; ports { internal = \u0026quot;${var.int_port}\u0026quot; external = \u0026quot;${lookup(var.ext_port, var.env)}\u0026quot; } } # Using Null Resource and Local Exec to Write Container Name and Container Address to TextFile resource \u0026quot;null_resource\u0026quot; \u0026quot;null_id\u0026quot; { provisioner \u0026quot;local-exec\u0026quot; { command = \u0026quot;echo ${docker_container.container_id.name}:${docker_container.container_id.ip_address} \u0026gt;\u0026gt; container.txt\u0026quot; } }  "
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/bigdata/2017-05-18-hive-query-optimizations/",
+	"title": "Hive Query Optimizations",
+	"tags": ["hive", "bigdata"],
+	"description": "",
+	"content": " Changing Engine for Hive Queries In general, Tez provides increased performance over Map Reduce specially where JOINS are required resulting in intermediate output being written to disk.\nset hive.execution.engine=tez  Using Partitions Partitions separate date in Hive tables by HDFS directories. If data is distributed based on partitions on certain fields, Using those fields to access data allows speeding up Hive queries. In other words, querying without partitions equates to full table scan.\nSplits and Number of Files Considering splits and number of files created while doing joins helps to analyze query performance.\nPerformance Considerations for using JOINS Joins are important aspects of the SQL queries. Avoid using correlated queries and in-line tables. Create temporary tables and try to use inner join wherever possible. You can also use the Hive WITH clause instead of temporary tables\nAlso you should avoid any queries that leads to CARTESIAN JOINS.\nAvoid loading Too Many Small Files Hadoop works well with large files and it applies to Hive as well. You should avoid ingestion process that produces large number of small files. When producing outside Hive, use Text file format. Once you have data into Hive tables, then you can convert that to ORC or Parquet file format.\nChoose Appropriate File Format for the Data Choosing right file format will improve the Hive performance. Hive supports ORCfile, a new table storage format that sports fantastic speed improvements through techniques like predicate push-down, compression etc. ORC file increases esponse times for your HIVE queries.\n"
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/bigdata/2018-01-02-hive-tables-best-practices/",
+	"title": "Hive Tables [Best Practices]",
+	"tags": ["hive", "bigdata"],
+	"description": "",
+	"content": " Hive Table Storage Formats Avoid using TEXT format, Sequence file format or complex storage format such as JSON. Ideally, RCFile (Row Columnar File) or Parquet files are best suited. If you are building data warehouse on Hive, for better performance use Parquet file format.\nCREATE TABLE IF NOT EXISTS test_table ( col1 int, col2 string ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS PARQUET;  Compression Techniques Try to split compression algorithms provided by Hadoop \u0026amp; Hive like Snappy. Also you should avoid Gzip because it is not splittable and is CPU intensive.\nCREATE TABLE IF NOT EXISTS test_table ( col1 int, col2 string ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS PARQUET TBLPROPERTIES (\u0026quot;parquet.compress\u0026quot;=\u0026quot;SNAPPY\u0026quot;) \u0026quot;;  set hive.exec.compress.output=true; set hive.exec.compress.intermediate=true;  Partition Tables Partition will significantly reduce the table scan time. You should partition large Hive tables if you are collecting time series data. Hive Partition will store data in subdirectories like year/month/day. When you query the data, instead of scanning entire table, Hive will go to particular subdirectory and get you required data.\nBucketing Tables Hadoop Hive bucket concept is dividing Hive partition into number of equal clusters or buckets. Hive Buckets distribute the data load into user defined set of clusters. Hive distribute on hash code of key mentioned in query. Bucketing is useful when it is difficult to create partition on a column as it would be having huge variety of data in that column on which we want to run queries.\n"
+},
+{
 	"uri": "http://learn.aayushtuladhar.com/devops/2017-09-22-install-docker-centos-7/",
 	"title": "Installing Docker CE on Centos 7",
 	"tags": [],
@@ -280,7 +315,14 @@
 	"content": " Jenkins Shared library is the concept of having a common pipeline code in the version control system that can be used by any number of pipeline just by referencing it. In fact, multiple teams can use the same library for their pipelines. Pipeline has support for creating \u0026ldquo;Shared Libraries\u0026rdquo; which can be defined in external source control repositories and loaded into existing Pipelines.\n A shared library is a collection of independent Groovy scripts which you pull into your Jenkinsfile at runtime.\n Getting Started with Shared Library A Shared Library is defined with a name, a source code retrieval method such as by SCM, and optionally a default version. The name should be a short identifier as it will be used in scripts.\nDirectory structure jenkins-shared-library |____vars |____src |____resources  Resources  https://devopscube.com/create-jenkins-shared-library/ https://tomd.xyz/articles/jenkins-shared-library/ https://dev.to/kuperadrian/how-to-setup-a-unit-testable-jenkins-shared-pipeline-library-2e62 https://tomd.xyz/articles/jenkins-shared-library/  "
 },
 {
-	"uri": "http://learn.aayushtuladhar.com/chef/2016-04-05-chef-knife-commands/",
+	"uri": "http://learn.aayushtuladhar.com/bigdata/2018-05-10-jupyter-notebooks/",
+	"title": "Jupyter NoteBook - Shortcuts",
+	"tags": [],
+	"description": "",
+	"content": " Jupyter Shortcuts Command Mode gives to the ability to create, copy, paste, move, and execute cells. A few keys to know: To enter Command Mode (control + m)\n   Keywork Description     h Bring up help (ESC to dismiss)   b Create cell below   a Create cell above   c Copy cell   v Paste cell below   Enter Go into Edit Mode   m Change cell type to Markdown   y Change cell type to code   ii Interrupt kernel   oo Restart kernel    "
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/devops/chef/2016-04-05-chef-knife-commands/",
 	"title": "Knife Commands",
 	"tags": [],
 	"description": "",
@@ -385,6 +427,13 @@
 	"content": " Selenium Grid enables you to spread your tests across multiple machines and multiple browsers, which allows your to run tests in parallel. Also having Hub as central point of communication handles all the driver configuration and runs them automatically.\nDownloading Selenium http://docs.seleniumhq.org/download/\nSetting up Hub Once you have the jarfile downloaded from the Selenium Website,\njava -jar selenium-server-standalone-2.x.x.jar –role hub\nThis starts up a jetty server on default port 4444. Grid Console can be viewed at http://localhost:4444/grid/console\nSetting up Nodes Nodes are the actual machine which performs the tests,\njava –jar selenium-server-standalone-2.x.x.jar –role node –hub http://hubIP:4444/grid/register\nIE, Chrome, Safari \u0026amp; firefox selenium NODE java -Dwebdriver.ie.driver=C:/eclipse/IEDriverServer/IEDriverServer.exe -Dwebdriver.chrome.driver=C:/eclipse/chromedriver/chromedriver.exe -jar selenium-server-standalone-2.48.2.jar -port 5555 -role node -hub http://localhost:4444/grid/register -browser \u0026quot;browserName=firefox, maxInstances=10, platform=ANY, seleniumProtocol=WebDriver\u0026quot; -browser \u0026quot;browserName=internet explorer, version=11, platform=WINDOWS, maxInstances=10\u0026quot; -browser \u0026quot;browserName=chrome,version=ANY,maxInstances=10,platform=WINDOWS\u0026quot;  IE Node Setup java -Dwebdriver.ie.driver=C:/eclipse/IEDriverServer/IEDriverServer.exe -jar selenium-server-standalone-2.48.2.jar -port 5555 -role node -hub http://localhost:4444/grid/register -browser \u0026quot;browserName=internet explorer,version=11,platform=WINDOWS,maxInstances=10\u0026quot;  Chrome Node Setup java -Dwebdriver.chrome.driver=C:/eclipse/chromedriver/chromedriver.exe -jar selenium-server-standalone-2.48.2.jar -port 5556 -role node -hub http://localhost:4444/grid/register -browser \u0026quot;browserName=chrome, version=ANY, maxInstances=10, platform=WINDOWS\u0026quot;  FireFox Node Setup java -jar selenium-server-standalone-2.48.2.jar -port 5557 -role node -hub http://localhost:4444/grid/register -browser \u0026quot;browserName=firefox, maxInstances=10, platform=ANY, seleniumProtocol=WebDriver\u0026quot;  "
 },
 {
+	"uri": "http://learn.aayushtuladhar.com/bigdata/2018-01-02-setting-up-storm-in-5-minutes/",
+	"title": "Setting up Apache Storm",
+	"tags": [],
+	"description": "",
+	"content": "Apache Storm is free and open source distributed real-time computation system. Storm provides reliable real-time data processing what Hadoop did for batch processing. It provides real-time, robust, user friendly, reliable data processing capability with operational Intelligence.\nThis post is more about setting up your Storm Environment from ground up in less than 5 Minutes. Yes, you heard it right less than 5 Minutes. Without any delay, let\u0026rsquo;s get it running.\n# Installing Zookeeper and Storm brew install zookeeper brew install storm  # Starting Zookeeper brew services start zookeeper # Starting Storm cd /usr/local/bin/ ./storm nimbus ./storm supervisor ./storm ui  Here you go, Storm Cluster is up and you are ready to deploy your Storm Topology\nhttp://localhost:8080/index.html  "
+},
+{
 	"uri": "http://learn.aayushtuladhar.com/devops/2019-09-17-setting-up-jekyll-website/",
 	"title": "Setting up Jekyll Website",
 	"tags": [],
@@ -420,6 +469,20 @@
 	"content": "Template literals are string literals allowing embedded expressions. You can use multi-line strings and string interpolation features with them.\nconst someText = `string text ${expression} string text`  "
 },
 {
+	"uri": "http://learn.aayushtuladhar.com/terraform/",
+	"title": "Terraform",
+	"tags": [],
+	"description": "",
+	"content": " Introduction Terraform is the infrastructure as code offering from HashiCorp. It is a tool for building, changing, and managing infrastructure in a safe, repeatable way.\nUsing HCL as High Level Language, Terraform support Infrastrucre as Code by automating creation of those resources. Terraform provides support for desired resources on almost any provider (AWS, GCP, GitHub, Docker etc)\nFeature of Terraform Infrastructue as Code  Idempotent Uses High Level Language (HCL) Code Reusability using Modules  Execution Plan  Show the intent of the deploy Can help ensure everything in the development is intentional  Resource Graph  Illustrates all changes and dependencies  Use Cases for Terraform  Hybrid Cloud Multi-tier Architecture Software Defined Networking  "
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/terraform/modules/",
+	"title": "Terraform Modules",
+	"tags": [],
+	"description": "",
+	"content": " Module is a container for multiple resources that are going to be used together.\nMain goal of module is logical grouping of resources to it\u0026rsquo;s cohesive unit that can be reused and shared across different systems. Modules can also be shared across multiple teams or via public registry such as GitHub or Terraform Cloud registry.\nUsing Terraform Modules # Download the image module \u0026quot;image\u0026quot; { source = \u0026quot;./image\u0026quot; image_name = \u0026quot;${var.image_name}\u0026quot; } # Start the container module \u0026quot;container\u0026quot; { source = \u0026quot;./container\u0026quot; image = \u0026quot;${module.image.image_out}\u0026quot; container_name = \u0026quot;${var.container_name}\u0026quot; int_port = \u0026quot;${var.int_port}\u0026quot; ext_port = \u0026quot;${var.ext_port}\u0026quot; }  "
+},
+{
 	"uri": "http://learn.aayushtuladhar.com/devops/2019-01-23-nginx/",
 	"title": "The Twelve Factor App",
 	"tags": [],
@@ -448,8 +511,57 @@
 	"content": " All the Hugo Basics "
 },
 {
+	"uri": "http://learn.aayushtuladhar.com/data-analytics/2018-05-01-pandas/",
+	"title": "Using Pandas",
+	"tags": [],
+	"description": "",
+	"content": " Explore, Visualize, and Predict using Pandas \u0026amp; Jupyter  Explore, Visualize, and Predict using Pandas \u0026amp; Jupyter Pandas Intro Load Data Inspecting Data Summarize Data Reference  Setup\n%matplotlib inline import pandas as pd import matplotlib import numpy as np  pd.__version__, matplotlib.__version__, np.__version__  Pandas Intro The pandas library is very popular among data scientists, quants, Excel junkies, and Python developers because it allows you to perform data ingestion, exporting, transformation, and visualization with ease. But if you are only familiar with Python, pandas may present some challenges. Since pandas is inspired by Numpy, its syntax conventions can be confusing to Python developers.\nPandas has two main datatypes: a Series and a DataFrame\n A Series is like a column from a spreadsheet  s = pd.Series([0, 4, 6, 7]) temps = [30, 40, 60, 90] temp_series = pd.Series(temps) temp_series.sum() # Boolean Arrays hot = pd.Series([False, False, True, True]) temp_series[hot] # Masking mask1 = temp_series \u0026gt; 30 mask2 = temp_series \u0026lt; 60 result = temp_series[mask1 \u0026amp; mask2] dates = pd.date_range('20160101', periods=4) temp3 = pd.Series(temps, index=dates)  A DataFrame is like a spreadsheet\ndf = pd.DataFrame({'name': ['Fred', 'Johh', 'Joe', 'Abe'], 'age': s})  Load Data %ls data/ nyc = pd.read_csv('data/central-park-raw.csv', parse_dates=[0])  Inspecting Data # Columns for DataFrame nyc.columns # Get Datatypes for Columns nyc.dtypes # DataFrame Info nyc.info # Show Only First Bit nyc.head(10)  Summarize Data  df['w'].value_counts() - Count number of rows with unique value of variable df.describe()  Reference  https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf  "
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/terraform/terraform_docker/",
+	"title": "Using Terraform With Docker",
+	"tags": [],
+	"description": "",
+	"content": " Installing Docker on the Swarm Manager and Worker # Update the Operating System sudo yum update -y # Uninstall Old Versions sudo yum remove -y docker \\ docker-client \\ docker-client-latest \\ docker-common \\ docker-latest \\ docker-latest-logrotate \\ docker-logrotate \\ docker-engine # Install Docker CE sudo yum install -y yum-utils \\ device-mapper-persistent-data \\ lvm2 # Add Docker Repository sudo yum-config-manager \\ --add-repo \\ https://download.docker.com/linux/centos/docker-ce.repo sudo yum -y install docker-ce # Start Docker and Enable sudo systemctl start docker \u0026amp;\u0026amp; sudo systemctl enable docker # Add `cloud_user` to the `docker` group sudo usermod -aG docker cloud_user docker --version # Configure Swarm Manager Node docker swarm init --advertise-addr [PRIVATE_IP] On the worker node, add the worker to the cluster: docker swarm join --token [TOKEN] [PRIVATE_IP]:2377 # Verify Swarm cluster docker node ls  Installing Terraform # Install Terraform 0.11.13 on the Swarm manager sudo curl -O https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip sudo yum install -y unzip sudo unzip terraform_0.11.13_linux_amd64.zip -d /usr/local/bin/ # Test the Terraform installation terraform version  "
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/tags/aws/",
+	"title": "aws",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/categories/bigdata/",
+	"title": "bigdata",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/tags/bigdata/",
+	"title": "bigdata",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "http://learn.aayushtuladhar.com/categories/devops/",
 	"title": "devops",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/tags/devops/",
+	"title": "devops",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://learn.aayushtuladhar.com/tags/hive/",
+	"title": "hive",
 	"tags": [],
 	"description": "",
 	"content": ""

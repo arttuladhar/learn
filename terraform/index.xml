@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Terraform on Always Learning; Always Improving</title>
+    <link>http://learn.aayushtuladhar.com/terraform/</link>
+    <description>Recent content in Terraform on Always Learning; Always Improving</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://learn.aayushtuladhar.com/terraform/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HCL Basics</title>
+      <link>http://learn.aayushtuladhar.com/terraform/hcl_basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/terraform/hcl_basics/</guid>
+      <description>Terraform CLI Commands Terraform Syntax Resources Console and Outputs Variables  Passing Variable  Terraform Workspaces NullResources and Local-exec  Terraform CLI Commands    Command Description     init Initializes a new or existing Terraform configuration   validate Validates the Terraform files   plan Generates ans shows an execution plan   apply Builds or Change Infrastructure   output Reads an output from a state file   show Inspects Terraform State or Plan   providers Print a tree of the providers using the configuration   destory Destorys Terraform-managed infrastructure    Terraform Syntax  Single line comments start with # Multi line comments are wrapped with /* and */ Values are assigned with the syntax key=value Strings are double quoted Strings can interpolate other values using the syntax ${}  Resources Resosurces are the Objects manged by Terraform such as VM or S3 Buckets.</description>
+    </item>
+    
+    <item>
+      <title>Terraform Modules</title>
+      <link>http://learn.aayushtuladhar.com/terraform/modules/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/terraform/modules/</guid>
+      <description>Module is a container for multiple resources that are going to be used together.
+Main goal of module is logical grouping of resources to it&amp;rsquo;s cohesive unit that can be reused and shared across different systems. Modules can also be shared across multiple teams or via public registry such as GitHub or Terraform Cloud registry.
+Using Terraform Modules # Download the image module &amp;quot;image&amp;quot; { source = &amp;quot;./image&amp;quot; image_name = &amp;quot;${var.</description>
+    </item>
+    
+    <item>
+      <title>Using Terraform With Docker</title>
+      <link>http://learn.aayushtuladhar.com/terraform/terraform_docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/terraform/terraform_docker/</guid>
+      <description>Installing Docker on the Swarm Manager and Worker # Update the Operating System sudo yum update -y # Uninstall Old Versions sudo yum remove -y docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine # Install Docker CE sudo yum install -y yum-utils \ device-mapper-persistent-data \ lvm2 # Add Docker Repository sudo yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo sudo yum -y install docker-ce # Start Docker and Enable sudo systemctl start docker &amp;amp;&amp;amp; sudo systemctl enable docker # Add `cloud_user` to the `docker` group sudo usermod -aG docker cloud_user docker --version # Configure Swarm Manager Node docker swarm init --advertise-addr [PRIVATE_IP] On the worker node, add the worker to the cluster: docker swarm join --token [TOKEN] [PRIVATE_IP]:2377 # Verify Swarm cluster docker node ls  Installing Terraform # Install Terraform 0.</description>
+    </item>
+    
+  </channel>
+</rss>

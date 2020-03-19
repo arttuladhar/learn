@@ -11,16 +11,6 @@
     
     
     <item>
-      <title>Amazon Web Services (AWS)</title>
-      <link>http://learn.aayushtuladhar.com/aws/2018-05-30-aws/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/aws/2018-05-30-aws/</guid>
-      <description>IAM Identity and Access Management
- Add User  AWS Mobile Hub  A dashboard for easily manage multiple AWS services Provides a graphical abstraction over DynamoDB, Cognito, Pinpoint and other services.  Features  Secure Authentication (Amazon Cognito) Database (Amazon DynamoDB) Storage (Amazon S3) Cloud API (API Gateway) (Amazon Lambda) Hosting &amp;amp; Streaming (S3 &amp;amp; Cloudfront) Analytics and Notifications (Pinpoint)  AWS Mobile CLI  A command line tool for setting up new projects using AWS Mobile Hub  Install AWS Mobile CLI npm install -g awsmoible -cli  Configure the CLI with your AWS credentials awsmobile configure  Setup Backend with your App awsmobile init  Connect your app with configured AWS feautures import Amplify from &#39;aws-amplify&#39;; import awsmobile from &#39;.</description>
-    </item>
-    
-    <item>
       <title>Backup and Restore Ubuntu Packages</title>
       <link>http://learn.aayushtuladhar.com/devops/2016-11-28-ubuntu-packages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -33,10 +23,10 @@ Restore dpkg --clear-selections sudo dpkg --set-selections &amp;lt; list.txt sud
     
     <item>
       <title>Berkshelf</title>
-      <link>http://learn.aayushtuladhar.com/chef/2016-02-29-berks/</link>
+      <link>http://learn.aayushtuladhar.com/devops/chef/2016-02-29-berks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/chef/2016-02-29-berks/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/chef/2016-02-29-berks/</guid>
       <description>Berkshelf Reference External Dependent Cookbooks so that it can download those cookbooks rather than manually downloading via knife cookbook command.
 knife cookbook site
 Berkshelf lets you treat your cookbooks the way you treat gem in a Ruby project. When external cookbooks are used, Berkshelf doesn&amp;rsquo;t requite knife cookbook site to install community cookbooks.
@@ -47,10 +37,10 @@ Upload berks to Chef Server berks upload &amp;lt;cookbook&amp;gt;</description>
     
     <item>
       <title>Chef Databags</title>
-      <link>http://learn.aayushtuladhar.com/chef/2018-01-30-chef-databags/</link>
+      <link>http://learn.aayushtuladhar.com/devops/chef/2018-01-30-chef-databags/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/chef/2018-01-30-chef-databags/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/chef/2018-01-30-chef-databags/</guid>
       <description>Databags are global variables that is stored as JSON Data and is accessible from Chef Server. A data bag is indexed for searching and can be loaded by recipe or accessed during a search.
 Creating Data Bag (Using Knife) $ knife data bag create DATA_BAG_NAME (DATA_BAG_ITEM) knife data bag create TEST_BAG  Adding File to Data Bag knife data bag from file TEST_BAG test.json  Data Bag Items A data bag is container of related data bag items, where each individual data bag item is a JSON file.</description>
     </item>
@@ -109,10 +99,10 @@ Following files will be created:
     
     <item>
       <title>Knife Commands</title>
-      <link>http://learn.aayushtuladhar.com/chef/2016-04-05-chef-knife-commands/</link>
+      <link>http://learn.aayushtuladhar.com/devops/chef/2016-04-05-chef-knife-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/chef/2016-04-05-chef-knife-commands/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/chef/2016-04-05-chef-knife-commands/</guid>
       <description> </description>
     </item>
     
