@@ -3,55 +3,63 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/00_containers_and_orchestration/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/00_containers_and_orchestration/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/01_kubernetes-architecture/</loc>
+    <loc>http://learn.aayushtuladhar.com/terraform/hcl_basics/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/02_installing_kubernetes/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/01_kubernetes-architecture/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/03_minikube/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/02_installing_kubernetes/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/04_kubernetes_building_blocks/</loc>
+    <loc>http://learn.aayushtuladhar.com/terraform/modules/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/05_authorization_access_control/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/03_minikube/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/06_services/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/04_kubernetes_building_blocks/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/07_deploying_standalone_app/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/05_authorization_access_control/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/08_kubernetes_volume_management/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/06_services/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/09_configmaps_secrets/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/07_deploying_standalone_app/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/10_ingress/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/08_kubernetes_volume_management/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/11_advanced_topics/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/09_configmaps_secrets/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/12_resources/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/10_ingress/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/11_advanced_topics/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/12_resources/</loc>
   </url>
   
   <url>
@@ -84,6 +92,10 @@
   
   <url>
     <loc>http://learn.aayushtuladhar.com/bookmarks/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/</loc>
   </url>
   
   <url>
@@ -153,10 +165,6 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/terraform/hcl_basics/</loc>
-  </url>
-  
-  <url>
     <loc>http://learn.aayushtuladhar.com/bigdata/2017-05-18-hive-query-optimizations/</loc>
   </url>
   
@@ -193,7 +201,7 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/introduction-to-kubernetes/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/</loc>
   </url>
   
   <url>
@@ -257,6 +265,22 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/terraform/jenkins_setup_terraform/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/setting_up_k8_cluster/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/terraform/terraform_kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/terraform/terraform_docker/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/devops/2018-09-18-spring-cloud-slueth/</loc>
   </url>
   
@@ -278,7 +302,7 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/terraform/modules/</loc>
+    <loc>http://learn.aayushtuladhar.com/terraform/terraform_state/</loc>
   </url>
   
   <url>
@@ -299,10 +323,6 @@
   
   <url>
     <loc>http://learn.aayushtuladhar.com/data-analytics/2018-05-01-pandas/</loc>
-  </url>
-  
-  <url>
-    <loc>http://learn.aayushtuladhar.com/terraform/terraform_docker/</loc>
   </url>
   
   <url>

@@ -1,0 +1,3375 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>05 - Authentication, Authorization, and Admission Control :: Always Learning; Always Improving</title>
+
+    
+    <link href="/css/nucleus.css?1584980301" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1584980301" rel="stylesheet">
+    <link href="/css/hybrid.css?1584980301" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1584980301" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1584980301" rel="stylesheet">
+    <link href="/css/auto-complete.css?1584980301" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1584980301" rel="stylesheet">
+    <link href="/css/theme.css?1584980301" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1584980301" rel="stylesheet">
+    
+      <link href="/css/theme-green.css?1584980301" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1584980301"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/kubernetes/05_authorization_access_control/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <img width="33%" src="/images/art-logo.svg">
+<h4>Always Learning, Always Improving</h4>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1584980301"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1584980301"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/learn.aayushtuladhar.com";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1584980301"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/aws/" title="AWS" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/aws/">
+          AWS
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/aws/2018-05-30-aws/" title="Amazon Web Services (AWS)" class="dd-item ">
+        <a href="/aws/2018-05-30-aws/">
+        Amazon Web Services (AWS)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/bigdata/" title="Big Data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/bigdata/">
+          Big Data
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bigdata/2017-05-18-hive-query-optimizations/" title="Hive Query Optimizations" class="dd-item ">
+        <a href="/bigdata/2017-05-18-hive-query-optimizations/">
+        Hive Query Optimizations
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bigdata/2018-01-02-hive-tables-best-practices/" title="Hive Tables [Best Practices]" class="dd-item ">
+        <a href="/bigdata/2018-01-02-hive-tables-best-practices/">
+        Hive Tables [Best Practices]
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bigdata/2018-05-10-jupyter-notebooks/" title="Jupyter NoteBook - Shortcuts" class="dd-item ">
+        <a href="/bigdata/2018-05-10-jupyter-notebooks/">
+        Jupyter NoteBook - Shortcuts
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bigdata/2018-01-02-setting-up-storm-in-5-minutes/" title="Setting up Apache Storm" class="dd-item ">
+        <a href="/bigdata/2018-01-02-setting-up-storm-in-5-minutes/">
+        Setting up Apache Storm
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/bookmarks/" title="Bookmarks" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/bookmarks/">
+          Bookmarks
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/data-analytics/" title="Data Analytics" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/data-analytics/">
+          Data Analytics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/data-analytics/2018-05-01-pandas/" title="Using Pandas" class="dd-item ">
+        <a href="/data-analytics/2018-05-01-pandas/">
+        Using Pandas
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/" title="DevOps" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/">
+          DevOps
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2016-11-28-ubuntu-packages/" title="Backup and Restore Ubuntu Packages" class="dd-item ">
+        <a href="/devops/2016-11-28-ubuntu-packages/">
+        Backup and Restore Ubuntu Packages
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/chef/" title="Chef" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/chef/">
+          Chef
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/chef/2016-02-29-berks/" title="Berkshelf" class="dd-item ">
+        <a href="/devops/chef/2016-02-29-berks/">
+        Berkshelf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/chef/2018-01-30-chef-databags/" title="Chef Databags" class="dd-item ">
+        <a href="/devops/chef/2018-01-30-chef-databags/">
+        Chef Databags
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/chef/2016-04-05-chef-knife-commands/" title="Knife Commands" class="dd-item ">
+        <a href="/devops/chef/2016-04-05-chef-knife-commands/">
+        Knife Commands
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2017-01-29-dns-basics/" title="DNS Basics" class="dd-item ">
+        <a href="/devops/2017-01-29-dns-basics/">
+        DNS Basics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2019-09-17-docker-compose/" title="Docker Compose" class="dd-item ">
+        <a href="/devops/2019-09-17-docker-compose/">
+        Docker Compose
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2018-04-19-drone/" title="Drone" class="dd-item ">
+        <a href="/devops/2018-04-19-drone/">
+        Drone
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2016-07-06-gradle-wrapper/" title="Gradle Wrapper" class="dd-item ">
+        <a href="/devops/2016-07-06-gradle-wrapper/">
+        Gradle Wrapper
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2017-09-22-install-docker-centos-7/" title="Installing Docker CE on Centos 7" class="dd-item ">
+        <a href="/devops/2017-09-22-install-docker-centos-7/">
+        Installing Docker CE on Centos 7
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2019-08-20-jenkins/" title="Jenkins" class="dd-item ">
+        <a href="/devops/2019-08-20-jenkins/">
+        Jenkins
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2019-09-13-jenkins-shared-libs/" title="Jenkins Shared Library" class="dd-item ">
+        <a href="/devops/2019-09-13-jenkins-shared-libs/">
+        Jenkins Shared Library
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2016-11-27-issue-remote-commands/" title="Linux Command Line Hacks" class="dd-item ">
+        <a href="/devops/2016-11-27-issue-remote-commands/">
+        Linux Command Line Hacks
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2019-02-26-mqtt/" title="Mqtt" class="dd-item ">
+        <a href="/devops/2019-02-26-mqtt/">
+        Mqtt
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2016-10-01-network-command-essentials/" title="Network Tools / Command Essentials" class="dd-item ">
+        <a href="/devops/2016-10-01-network-command-essentials/">
+        Network Tools / Command Essentials
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2019-10-8-owasp/" title="OWASP Dependency Check" class="dd-item ">
+        <a href="/devops/2019-10-8-owasp/">
+        OWASP Dependency Check
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2019-10-3-openshift-cheatsheet/" title="OpenShift Cheatsheet" class="dd-item ">
+        <a href="/devops/2019-10-3-openshift-cheatsheet/">
+        OpenShift Cheatsheet
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2016-03-24-open-stack-cli/" title="OpenStack" class="dd-item ">
+        <a href="/devops/2016-03-24-open-stack-cli/">
+        OpenStack
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2019-08-16-openshift/" title="Openshift" class="dd-item ">
+        <a href="/devops/2019-08-16-openshift/">
+        Openshift
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2016-11-26-setting-apache-virtual-host/" title="Setting Apache Virtual Host" class="dd-item ">
+        <a href="/devops/2016-11-26-setting-apache-virtual-host/">
+        Setting Apache Virtual Host
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2016-03-01-setting-fqdn/" title="Setting FQDN" class="dd-item ">
+        <a href="/devops/2016-03-01-setting-fqdn/">
+        Setting FQDN
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2017-02-05-setting-selenium-grid/" title="Setting Selenium Grid" class="dd-item ">
+        <a href="/devops/2017-02-05-setting-selenium-grid/">
+        Setting Selenium Grid
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2019-09-17-setting-up-jekyll-website/" title="Setting up Jekyll Website" class="dd-item ">
+        <a href="/devops/2019-09-17-setting-up-jekyll-website/">
+        Setting up Jekyll Website
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2018-09-18-spring-cloud-slueth/" title="Spring Cloud Slueth" class="dd-item ">
+        <a href="/devops/2018-09-18-spring-cloud-slueth/">
+        Spring Cloud Slueth
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2016-04-10-setting-up-supervisord/" title="Supervisor" class="dd-item ">
+        <a href="/devops/2016-04-10-setting-up-supervisord/">
+        Supervisor
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2019-01-23-nginx/" title="The Twelve Factor App" class="dd-item ">
+        <a href="/devops/2019-01-23-nginx/">
+        The Twelve Factor App
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2016-07-07-ssh-keys/" title="Understanding SSH Keys" class="dd-item ">
+        <a href="/devops/2016-07-07-ssh-keys/">
+        Understanding SSH Keys
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/2017-03-15-using-apache-server-benchmarking/" title="Using Apache Server Benchmarking" class="dd-item ">
+        <a href="/devops/2017-03-15-using-apache-server-benchmarking/">
+        Using Apache Server Benchmarking
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/google-cloud-platform/" title="Google Cloud Platform" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/google-cloud-platform/">
+          Google Cloud Platform
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/google-cloud-platform/basic-essentials/" title="Basic Essentials" class="dd-item ">
+        <a href="/google-cloud-platform/basic-essentials/">
+        Basic Essentials
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/google-cloud-platform/cloud-storage/" title="Cloud Storage" class="dd-item ">
+        <a href="/google-cloud-platform/cloud-storage/">
+        Cloud Storage
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/" title="Continuous Delivery with Jenkins in Kubernetes Engine" class="dd-item ">
+        <a href="/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/">
+        Continuous Delivery with Jenkins in Kubernetes Engine
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/google-cloud-platform/orchestrating-cloud-with-kubernetes/" title="Orchestrating Cloud with Kubernetes" class="dd-item ">
+        <a href="/google-cloud-platform/orchestrating-cloud-with-kubernetes/">
+        Orchestrating Cloud with Kubernetes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/java/" title="Java" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/java/">
+          Java
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/java/the-basics/lambda_expressions/" title="Lambda Expressions" class="dd-item ">
+        <a href="/java/the-basics/lambda_expressions/">
+        Lambda Expressions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/javascript/" title="JavaScript" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/javascript/">
+          JavaScript
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/javascript/es-6/arrowfunctions/" title="Arrow Functions" class="dd-item ">
+        <a href="/javascript/es-6/arrowfunctions/">
+        Arrow Functions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/javascript/es-6/destructuring/" title="Destructuring JavaScript Objects" class="dd-item ">
+        <a href="/javascript/es-6/destructuring/">
+        Destructuring JavaScript Objects
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/javascript/reactjs/redux/" title="Getting Started with Redux" class="dd-item ">
+        <a href="/javascript/reactjs/redux/">
+        Getting Started with Redux
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/javascript/template-literals/" title="Teplate Literals" class="dd-item ">
+        <a href="/javascript/template-literals/">
+        Teplate Literals
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/kubernetes/" title="Kubernetes" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/kubernetes/">
+          Kubernetes
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/00_containers_and_orchestration/" title="00 - Containers and Orchestration" class="dd-item ">
+        <a href="/kubernetes/00_containers_and_orchestration/">
+        00 - Containers and Orchestration
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/01_kubernetes-architecture/" title="01 - Kubernetes Architecture" class="dd-item ">
+        <a href="/kubernetes/01_kubernetes-architecture/">
+        01 - Kubernetes Architecture
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/02_installing_kubernetes/" title="02 - Installing Kubernetes" class="dd-item ">
+        <a href="/kubernetes/02_installing_kubernetes/">
+        02 - Installing Kubernetes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/03_minikube/" title="03 - Minikube" class="dd-item ">
+        <a href="/kubernetes/03_minikube/">
+        03 - Minikube
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/04_kubernetes_building_blocks/" title="04 - Kubernetes Building Blocks" class="dd-item ">
+        <a href="/kubernetes/04_kubernetes_building_blocks/">
+        04 - Kubernetes Building Blocks
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/05_authorization_access_control/" title="05 - Authentication, Authorization, and Admission Control" class="dd-item active">
+        <a href="/kubernetes/05_authorization_access_control/">
+        05 - Authentication, Authorization, and Admission Control
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/06_services/" title="06 - Services" class="dd-item ">
+        <a href="/kubernetes/06_services/">
+        06 - Services
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/07_deploying_standalone_app/" title="07 - Deploying Standalone App" class="dd-item ">
+        <a href="/kubernetes/07_deploying_standalone_app/">
+        07 - Deploying Standalone App
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/08_kubernetes_volume_management/" title="08 - Kubernetes Volume Management" class="dd-item ">
+        <a href="/kubernetes/08_kubernetes_volume_management/">
+        08 - Kubernetes Volume Management
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/09_configmaps_secrets/" title="09 - ConfigMaps and Secrets" class="dd-item ">
+        <a href="/kubernetes/09_configmaps_secrets/">
+        09 - ConfigMaps and Secrets
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/10_ingress/" title="10 - Ingress" class="dd-item ">
+        <a href="/kubernetes/10_ingress/">
+        10 - Ingress
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/11_advanced_topics/" title="11 - Advanced Topics" class="dd-item ">
+        <a href="/kubernetes/11_advanced_topics/">
+        11 - Advanced Topics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/12_resources/" title="12 - Resources" class="dd-item ">
+        <a href="/kubernetes/12_resources/">
+        12 - Resources
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/kubernetes/ckad/" title="CKAD Notes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/kubernetes/ckad/">
+          CKAD Notes
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/ckad/setting_up_k8_cluster/" title="Setting up Kubernetes Cluster" class="dd-item ">
+        <a href="/kubernetes/ckad/setting_up_k8_cluster/">
+        Setting up Kubernetes Cluster
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/terraform/" title="Terraform" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/terraform/">
+          Terraform
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform/hcl_basics/" title="01 - HCL Basics" class="dd-item ">
+        <a href="/terraform/hcl_basics/">
+        01 - HCL Basics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform/modules/" title="02 - Terraform Modules" class="dd-item ">
+        <a href="/terraform/modules/">
+        02 - Terraform Modules
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform/jenkins_setup_terraform/" title="Setting up Jenkins using Terraform" class="dd-item ">
+        <a href="/terraform/jenkins_setup_terraform/">
+        Setting up Jenkins using Terraform
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform/terraform_kubernetes/" title="Setting up Kubernetes and Terraform" class="dd-item ">
+        <a href="/terraform/terraform_kubernetes/">
+        Setting up Kubernetes and Terraform
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform/terraform_docker/" title="Setting up Terraform With Docker" class="dd-item ">
+        <a href="/terraform/terraform_docker/">
+        Setting up Terraform With Docker
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform/terraform_state/" title="Terraform State" class="dd-item ">
+        <a href="/terraform/terraform_state/">
+        Terraform State
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/hugo-basics/" title="Using Hugo" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/hugo-basics/">
+          Using Hugo
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/hugo-basics/basic_1/" title="Getting Started" class="dd-item ">
+        <a href="/hugo-basics/basic_1/">
+        Getting Started
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/hugo-basics/basic_2/" title="Layouts" class="dd-item ">
+        <a href="/hugo-basics/basic_2/">
+        Layouts
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="http://learn.aayushtuladhar.com/tags"><i class='fas fa-tags'></i> Tags</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Digital Learning Notebook</a> > <a href='/kubernetes/'>Kubernetes</a> > 05 - Authentication, Authorization, and Admission Control
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#authentication">Authentication</a></li>
+<li><a href="#authorization">Authorization</a>
+<ul>
+<li>
+<ul>
+<li><a href="#types-of-rolebindings">Types of RoleBindings</a></li>
+</ul></li>
+<li><a href="#admission-control">Admission Control</a></li>
+</ul></li>
+<li><a href="#demo-authentication-and-authorization">Demo - Authentication and Authorization</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              05 - Authentication, Authorization, and Admission Control
+            </h1>
+          
+
+        
+
+
+
+
+
+<ul>
+<li><a href="#authentication">Authentication</a></li>
+<li><a href="#authorization">Authorization</a>
+
+<ul>
+<li><a href="#types-of-rolebindings">Types of RoleBindings</a></li>
+<li><a href="#admission-control">Admission Control</a></li>
+</ul></li>
+<li><a href="#demo---authentication-and-authorization">Demo - Authentication and Authorization</a></li>
+</ul>
+
+<p>To access and manage any Kubernetes resource or object in the cluster, we need to access a specific API endpoint on the API server. Each access request goes through the following three stages:</p>
+
+<ul>
+<li><strong>Authentication</strong> - Logs in a user</li>
+<li><strong>Authorization</strong> - Authorizes the API requests added by the logged-in user.</li>
+<li><strong>Admission Control</strong> - Software modules that can modify or reject the requests based on some additional checks, like a pre-set Quota.</li>
+</ul>
+
+<h2 id="authentication">Authentication</h2>
+
+<p>Kubernetes does not have an object called user, nor does it store usernames or other related details in its object store. However, even without that, Kubernetes can use usernames for access control and request logging.</p>
+
+<p>Kubernetes has two kinds of users:</p>
+
+<ul>
+<li><p><strong>Normal Users</strong>
+They are managed outside of the Kubernetes cluster via independent services like User/Client Certificates, a file listing usernames/passwords, Google accounts, etc.</p></li>
+
+<li><p><strong>Service Accounts</strong>
+With Service Account users, in-cluster processes communicate with the API server to perform different operations. Most of the Service Account users are created automatically via the API server, but they can also be created manually. The Service Account users are tied to a given Namespace and mount the respective credentials to communicate with the API server as Secrets.</p></li>
+</ul>
+
+<p>For authentication, Kubernetes uses different authentication modules:</p>
+
+<ul>
+<li><p><strong>Client Certificates</strong>
+To enable client certificate authentication, we need to reference a file containing one or more certificate authorities by passing the <code>--client-ca-file=SOMEFILE</code> option to the API server. The certificate authorities mentioned in the file would validate the client certificates presented to the API server. A demonstration video covering this topic is also available at the end of this chapter.</p></li>
+
+<li><p><strong>Static Token File</strong>
+We can pass a file containing pre-defined bearer tokens with the <code>--token-auth-file=SOMEFILE</code> option to the API server. Currently, these tokens would last indefinitely, and they cannot be changed without restarting the API server.</p></li>
+
+<li><p><strong>Bootstrap Tokens</strong>
+This feature is currently in beta status and is mostly used for bootstrapping a new Kubernetes cluster.</p></li>
+
+<li><p><strong>Static Password File</strong>
+It is similar to Static Token File. We can pass a file containing basic authentication details with the <code>--basic-auth-file=SOMEFILE</code> option. These credentials would last indefinitely, and passwords cannot be changed without restarting the API server.</p></li>
+
+<li><p><strong>Service Account Tokens</strong>
+This is an automatically enabled authenticator that uses signed bearer tokens to verify the requests. These tokens get attached to Pods using the ServiceAccount Admission Controller, which allows in-cluster processes to talk to the API server.</p></li>
+
+<li><p><strong>OpenID Connect Tokens</strong>
+OpenID Connect helps us connect with OAuth2 providers, such as Azure Active Directory, Salesforce, Google, etc., to offload the authentication to external services.</p></li>
+
+<li><p><strong>Webhook Token Authentication</strong>
+With Webhook-based authentication, verification of bearer tokens can be offloaded to a remote service.</p></li>
+
+<li><p><strong>Authenticating Proxy</strong>
+If we want to program additional authentication logic, we can use an authenticating proxy.</p></li>
+</ul>
+
+<h2 id="authorization">Authorization</h2>
+
+<p>After a successful authentication, users can send the API requests to perform different operations. Then, those API requests get authorized by Kubernetes using various authorization modules.</p>
+
+<ul>
+<li>Node Authorizer</li>
+<li>Attribute-Based Access Control (ABAC) Authorizer</li>
+<li>Webhook Authorizer</li>
+<li>Role-Based Access Control (RBAC) Authorizer</li>
+</ul>
+
+<p><strong>Role</strong> - With Role, we can grant access to resources within a specific Namespace.</p>
+
+<p><strong>ClusterRole</strong> - The ClusterRole can be used to grant the same permissions as Role does, but its scope is cluster-wide.</p>
+
+<pre><code class="language-yaml">kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: lfs158
+  name: pod-reader
+rules:
+- apiGroups: [&quot;&quot;] # &quot;&quot; indicates the core API group
+  resources: [&quot;pods&quot;]
+  verbs: [&quot;get&quot;, &quot;watch&quot;, &quot;list&quot;]
+</code></pre>
+
+<h4 id="types-of-rolebindings">Types of RoleBindings</h4>
+
+<p><strong>RoleBinding</strong></p>
+
+<p>It allows us to bind users to the same namespace as a Role. We could also refer a ClusterRole in RoleBinding, which would grant permissions to Namespace resources defined in the ClusterRole within the RoleBinding’s Namespace.</p>
+
+<p><strong>ClusterRoleBinding</strong></p>
+
+<p>It allows us to grant access to resources at a cluster-level and to all Namespaces.</p>
+
+
+<div class="notices info" ><p>To enable the RBAC authorizer, we would need to start the API server with the <strong>&ndash;authorization-mode=RBAC</strong> option</p>
+</div>
+
+
+<h3 id="admission-control">Admission Control</h3>
+
+<p>Admission control is used to specify granular access control policies, which include allowing privileged containers, checking on resource quota, etc. To use admission controls, we must start the Kubernetes API server with the <code>--enable-admission-plugins</code>, which takes a comma-delimited, ordered list of controller names:</p>
+
+<pre><code>--enable-admission-plugins=NamespaceLifecycle,ResourceQuota,PodSecurityPolicy,DefaultStorageClass
+</code></pre>
+
+<hr />
+
+<h2 id="demo-authentication-and-authorization">Demo - Authentication and Authorization</h2>
+
+<ul>
+<li>Configuring User by assigning key and certificate</li>
+<li>Create Context with newly created User</li>
+<li>Add RBAC Role and rolebindings to namespace</li>
+</ul>
+
+<pre><code class="language-bash">minikube start
+
+kubectl config view
+
+# Create New Namespace for Demo
+kubectl create namespace lfs158
+
+mkdir rbac &amp;&amp; cd rbac
+
+# Create a private key for the student user with openssl tool, then create a certificate signing request for the student user with openssl tool
+openssl genrsa -out student.key 2048
+openssl req -new -key student.key -out student.csr -subj &quot;/CN=student/O=learner&quot;
+
+cat student.csr | base64 | tr -d '\n'
+
+touch signing-request.yaml
+
+apiVersion: certificates.k8s.io/v1beta1
+kind: CertificateSigningRequest
+metadata:
+  name: student-csr
+spec:
+  groups:
+  - system:authenticated
+  request: &lt;assign encoded value from cat command&gt;
+  usages:
+  - digital signature
+  - key encipherment
+  - client auth
+
+
+kubectl create -f signing-request.yaml
+kubectl get csr
+kubectl certificate approve student-csr
+kubectl get csr
+
+# Generating User Certificate
+kubectl get csr student-csr -o jsonpath='{.status.certificate}' | base64 --decode &gt; student.crt
+
+cat student.crt
+
+# Configuring Student User by assigning the key and certificate
+kubectl config set-credentials student --client-certificate=student.crt --client-key=student.key
+
+# Create Student Context with Selected User
+kubectl config set-context student-context --cluster=minikube --namespace=lfs158 --user=student
+
+kubectl config view
+
+# Creating a Deployment with Nginx Image
+kubectl -n lfs158 create deployment nginx --image=nginx:alpine
+</code></pre>
+
+<p>From the new context student-context try to list pods. The attempt fails because the student user has no permissions configured for the student-context:</p>
+
+<pre><code>kubectl --context=student-context get pods
+</code></pre>
+
+<p>Error from server (Forbidden): pods is forbidden: User &ldquo;student&rdquo; cannot list resource &ldquo;pods&rdquo; in API group &ldquo;&rdquo; in the namespace &ldquo;lfs158&rdquo;</p>
+
+<pre><code class="language-bash"># Create RBAC Role to allow only get, watch, list actions in lfs158 namespace
+~/rbac$ vim role.yaml
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: pod-reader
+  namespace: lfs158
+rules:
+- apiGroups: [&quot;&quot;]
+  resources: [&quot;pods&quot;]
+  verbs: [&quot;get&quot;, &quot;watch&quot;, &quot;list&quot;]
+
+~/rbac$ kubectl create -f role.yaml
+~/rbac$ kubectl -n lfs158 get roles
+
+NAME         AGE
+pod-reader   57s
+</code></pre>
+
+<p>Create a YAML configuration file for a rolebinding object, which assigns the permissions of the pod-reader role to the student user. Then create the rolebinding object and list it from the default minikube context, but from the lfs158 namespace:</p>
+
+<pre><code class="language-bash"># Create RBAC Role Binding to the User
+~/rbac$ vim rolebinding.yaml
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: pod-read-access
+  namespace: lfs158
+subjects:
+- kind: User
+  name: student
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: pod-reader
+  apiGroup: rbac.authorization.k8s.io
+
+~/rbac$ kubectl create -f rolebinding.yaml
+
+rolebinding.rbac.authorization.k8s.io/pod-read-access created
+
+~/rbac$ kubectl -n lfs158 get rolebindings
+
+NAME              AGE
+pod-read-access   23s
+</code></pre>
+
+<p>Now that we have assigned permissions to the student user, we can successfully list pods from the new context student-context.</p>
+
+<pre><code class="language-bash">~/rbac$ kubectl --context=student-context get pods
+
+NAME                    READY   STATUS    RESTARTS   AGE
+nginx-77595c695-f2xmd   1/1     Running   0          7m41s
+</code></pre>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/kubernetes/04_kubernetes_building_blocks/" title="04 - Kubernetes Building Blocks"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/kubernetes/06_services/" title="06 - Services" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1584980301"></script>
+    <script src="/js/perfect-scrollbar.min.js?1584980301"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1584980301"></script>
+    <script src="/js/jquery.sticky.js?1584980301"></script>
+    <script src="/js/featherlight.min.js?1584980301"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1584980301"></script>
+    <script src="/js/highlight.pack.js?1584980301"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1584980301"></script>
+    <script src="/js/learn.js?1584980301"></script>
+    <script src="/js/hugo-learn.js?1584980301"></script>
+
+    <link href="/mermaid/mermaid.css?1584980301" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1584980301"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

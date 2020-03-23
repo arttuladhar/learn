@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CKAD Notes on Always Learning; Always Improving</title>
+    <link>http://learn.aayushtuladhar.com/kubernetes/ckad/</link>
+    <description>Recent content in CKAD Notes on Always Learning; Always Improving</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://learn.aayushtuladhar.com/kubernetes/ckad/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setting up Kubernetes Cluster</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/setting_up_k8_cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/setting_up_k8_cluster/</guid>
+      <description>Using Ubuntu Distribution (Ubuntu Xenial LTS 16.04) as Base Image for the Virtual Machine. We will be building a Kubernetes Cluster
+Setup Docker and Kubernetes Repositories curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable&amp;quot; curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - cat &amp;lt;&amp;lt; EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list deb https://apt.kubernetes.io/ kubernetes-xenial main EOF  Install Docker, Kubelet, KubeAdm and KubeCtl sudo apt-get update sudo apt-get install -y docker-ce=18.</description>
+    </item>
+    
+  </channel>
+</rss>

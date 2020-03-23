@@ -12,49 +12,69 @@
     
     <item>
       <title>00 - Containers and Orchestration</title>
-      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/00_containers_and_orchestration/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/00_containers_and_orchestration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/00_containers_and_orchestration/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/00_containers_and_orchestration/</guid>
       <description>Containers Microservices Container Orchestration  Container Orchestrators   Containers Containers are application-centric methods to deliver high-performing, scalable applications on any infrastructure of your choice. Containers are best suited to deliver microservices by providing portable, isolated virtual environments for applications to run without interference from other running applications.
 Microservices Microservices are lightweight applications written in various modern programming languages, with specific dependencies, libraries and environmental requirements. To ensure that an application has everything it needs to run successfully it is packaged together with its dependencies.</description>
     </item>
     
     <item>
-      <title>01 - Kubernetes Architecture</title>
-      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/01_kubernetes-architecture/</link>
+      <title>01 - HCL Basics</title>
+      <link>http://learn.aayushtuladhar.com/terraform/hcl_basics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/01_kubernetes-architecture/</guid>
+      <guid>http://learn.aayushtuladhar.com/terraform/hcl_basics/</guid>
+      <description>Terraform CLI Commands Terraform Syntax Resources Console and Outputs Variables  Passing Variable  DataSources Terraform Workspaces NullResources and Local-exec  Terraform CLI Commands    Command Description     init Initializes a new or existing Terraform configuration   validate Validates the Terraform files   plan Generates ans shows an execution plan   apply Builds or Change Infrastructure   output Reads an output from a state file   show Inspects Terraform State or Plan   providers Print a tree of the providers using the configuration   destory Destorys Terraform-managed infrastructure    Terraform Syntax  Single line comments start with # Multi line comments are wrapped with /* and */ Values are assigned with the syntax key=value Strings are double quoted Strings can interpolate other values using the syntax ${}  Resources Resosurces are the Objects manged by Terraform such as VM or S3 Buckets.</description>
+    </item>
+    
+    <item>
+      <title>01 - Kubernetes Architecture</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/01_kubernetes-architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/01_kubernetes-architecture/</guid>
       <description>Master Node  Master Node Components Master Node Components: API Server Master Node Components: Scheduler Master Node Componets: Controller Managers Master Node Components: etcd  Worker Node  Worker Node Components Worker Node Component: Container Runtime Worker Node Components: kubelet Worker Node Components: kube-proxy Worker Node Components: Addons  Networking Challenges  Container to Container Communication inside Pods Pod-to-Pod Communication Across Nodes Pod-to-External World Communication   At a very high level, Kubernetes has the following main components</description>
     </item>
     
     <item>
       <title>02 - Installing Kubernetes</title>
-      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/02_installing_kubernetes/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/02_installing_kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/02_installing_kubernetes/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/02_installing_kubernetes/</guid>
       <description>Local Installation On-Premise Installation Cloud Installation  All-in-One Single-Node Installation In this setup, all the master and worker components are installed and running on a single-node. While it is useful for learning, development, and testing, and it should not be used in production. Minikube is one such example, and we are going to explore it in future chapters.
 Single-Node etcd, Single-Master and Multi-Worker Installation In this setup, we have a single-master node, which also runs a single-node etcd instance.</description>
     </item>
     
     <item>
-      <title>03 - Minikube</title>
-      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/03_minikube/</link>
+      <title>02 - Terraform Modules</title>
+      <link>http://learn.aayushtuladhar.com/terraform/modules/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/03_minikube/</guid>
+      <guid>http://learn.aayushtuladhar.com/terraform/modules/</guid>
+      <description>Module is a container for multiple resources that are going to be used together.
+Main goal of module is logical grouping of resources to it&amp;rsquo;s cohesive unit that can be reused and shared across different systems. Modules can also be shared across multiple teams or via public registry such as GitHub or Terraform Cloud registry.
+Using Terraform Modules # Download the image module &amp;quot;image&amp;quot; { source = &amp;quot;./image&amp;quot; image_name = &amp;quot;${var.</description>
+    </item>
+    
+    <item>
+      <title>03 - Minikube</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/03_minikube/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/03_minikube/</guid>
       <description>Installing Minikube  Command Line Interface (CLI) tools and scripts Web-based User Interface (Web UI) from a web browser APIs from CLI or programmatically Kubectl Proxy   Installing Minikube # Install Minikube brew install minikube # Starting Minikube minikube start minikube start --vm-driver=xhyve minikube start --vm-driver=hyperkit minikube status minikube stop  Any healthy running Kubernetes cluster can be accessed via any one of the following methods:
 Command Line Interface (CLI) tools and scripts kubectl is the Kubernetes Command Line Interface (CLI) client to manage cluster resources and applications.</description>
     </item>
     
     <item>
       <title>04 - Kubernetes Building Blocks</title>
-      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/04_kubernetes_building_blocks/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/04_kubernetes_building_blocks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/04_kubernetes_building_blocks/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/04_kubernetes_building_blocks/</guid>
       <description>Kubernetes Object Model Pods  Labels  Replication Controller Replica Set Deployments Namespaces  Kubernetes Object Model With each object, we declare our intent or the desired state under the spec section. When creating an object, the object&amp;rsquo;s configuration data section from below the spec field has to be submitted to the Kubernetes API server.
 Example of Deployment object configuration in YAML format.
 apiVersion: apps/v1 kind: Deployment metadata: name: nginx-deployment labels: app: nginx spec: replicas: 3 selector: matchLabels: app: nginx template: metadata: labels: app: nginx spec: containers: - name: nginx image: nginx:1.</description>
@@ -62,68 +82,68 @@ apiVersion: apps/v1 kind: Deployment metadata: name: nginx-deployment labels: ap
     
     <item>
       <title>05 - Authentication, Authorization, and Admission Control</title>
-      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/05_authorization_access_control/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/05_authorization_access_control/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/05_authorization_access_control/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/05_authorization_access_control/</guid>
       <description>Authentication Authorization  Types of RoleBindings Admission Control  Demo - Authentication and Authorization  To access and manage any Kubernetes resource or object in the cluster, we need to access a specific API endpoint on the API server. Each access request goes through the following three stages:
  Authentication - Logs in a user Authorization - Authorizes the API requests added by the logged-in user. Admission Control - Software modules that can modify or reject the requests based on some additional checks, like a pre-set Quota.</description>
     </item>
     
     <item>
       <title>06 - Services</title>
-      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/06_services/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/06_services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/06_services/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/06_services/</guid>
       <description>Services Service Object Example kube-proxy Service Discovery Servie Type  Cluster IP NodePort LoadBalancer ExternalIP ExternalName   Services  An abstract way to expose an application running on a set of Pods as a network service. With Kubernetes you don’t need to modify your application to use an unfamiliar service discovery mechanism. Kubernetes gives Pods their own IP addresses and a single DNS name for a set of Pods, and can load-balance across them.</description>
     </item>
     
     <item>
       <title>07 - Deploying Standalone App</title>
-      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/07_deploying_standalone_app/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/07_deploying_standalone_app/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/07_deploying_standalone_app/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/07_deploying_standalone_app/</guid>
       <description>Creating Deployment using YAML File Exposing Application Liveness and Readiness Probes  Liveness Probe Readiness Probe   Creating Deployment using YAML File webserver.yaml
 apiVersion: apps/v1 kind: Deployment metadata: name: webserver labels: app: nginx spec: replicas: 3 selector: matchLabels: app: nginx template: metadata: labels: app: nginx spec: containers: - name: nginx image: nginx:alpine ports: - containerPort: 80  kubectl create -f webserver.yaml  This will also create ReplicaSet and Pods as defined in the YAML configuration.</description>
     </item>
     
     <item>
       <title>08 - Kubernetes Volume Management</title>
-      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/08_kubernetes_volume_management/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/08_kubernetes_volume_management/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/08_kubernetes_volume_management/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/08_kubernetes_volume_management/</guid>
       <description>Volumes Volume Types PersistentVolumeClaims Using a Shared hostPath Volume Type  Volumes As we know, containers running in Pods are ephemeral in nature. All data stored inside a container is deleted if the container crashes. However, the kubelet will restart it with a clean slate, which means that it will not have any of the old data.
 To overcome this problem, Kubernetes uses Volumes. A Volume is essentially a directory backed by a storage medium.</description>
     </item>
     
     <item>
       <title>09 - ConfigMaps and Secrets</title>
-      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/09_configmaps_secrets/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/09_configmaps_secrets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/09_configmaps_secrets/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/09_configmaps_secrets/</guid>
       <description>ConfigMaps  Creating ConfigMaps Using CommandLine Using Configuration File Using Properties File Using ConfigMaps Inside Pods As Environment Variable As Volume  Secrets  Creating Secret Create a Secret from Literal and Display Its Details Create a Secret from YAML File Use Secrets Inside Pods   ConfigMaps ConfigMaps allow us to decouple the configuration details from the container image. Using ConfigMaps, we pass configuration data as key-value pairs, which are consumed by Pods or any other system components and controllers, in the form of environment variables, sets of commands and arguments, or volumes.</description>
     </item>
     
     <item>
       <title>10 - Ingress</title>
-      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/10_ingress/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/10_ingress/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/10_ingress/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/10_ingress/</guid>
       <description>With Services, routing rules are associated with a given Service. They exist for as long as the Service exists, and there are many rules because there are many Services in the cluster. If we can somehow decouple the routing rules from the application and centralize the rules management, we can then update our application without worrying about its external access. This can be done using the Ingress resource.
  An Ingress is a collection of rules that allow inbound connections to reach the cluster Services.</description>
     </item>
     
     <item>
       <title>11 - Advanced Topics</title>
-      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/11_advanced_topics/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/11_advanced_topics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/11_advanced_topics/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/11_advanced_topics/</guid>
       <description>Annotations With Annotations, we can attach arbitrary non-identifying metadata to any objects, in a key-value format:
 &amp;quot;annotations&amp;quot;: { &amp;quot;key1&amp;quot; : &amp;quot;value1&amp;quot;, &amp;quot;key2&amp;quot; : &amp;quot;value2&amp;quot; }  Unlike Labels, annotations are not used to identify and select objects. Annotations can be used to:
  Store build/release IDs, PR numbers, git branch, etc. Phone/pager numbers of people responsible, or directory entries specifying where such information can be found Pointers to logging, monitoring, analytics, audit repositories, debugging tools, etc.</description>
@@ -131,10 +151,10 @@ To overcome this problem, Kubernetes uses Volumes. A Volume is essentially a dir
     
     <item>
       <title>12 - Resources</title>
-      <link>http://learn.aayushtuladhar.com/introduction-to-kubernetes/12_resources/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/12_resources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/introduction-to-kubernetes/12_resources/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/12_resources/</guid>
       <description> Labs CKA Curriculum   </description>
     </item>
     
@@ -292,15 +312,6 @@ It’s actually react-redux that lets you connect pieces of the state to React c
 Creating Gradle Wrapper task wrapper(type: Wrapper) { gradleVersion = &#39;2.10&#39; //we want gradle 2.10 to run this project }  Running Gradle Wrapper gradle wrapper
 Following files will be created:
 |-gradle |--- wrapper |--- gradle-wrapper.jar |--- gradle-wrapper.properties |-gradlew |-gradlew.bat  Gradle wrapper are useful when you want to run gradle command without installing gradle</description>
-    </item>
-    
-    <item>
-      <title>HCL Basics</title>
-      <link>http://learn.aayushtuladhar.com/terraform/hcl_basics/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/terraform/hcl_basics/</guid>
-      <description>Terraform CLI Commands Terraform Syntax Resources Console and Outputs Variables  Passing Variable  Terraform Workspaces NullResources and Local-exec  Terraform CLI Commands    Command Description     init Initializes a new or existing Terraform configuration   validate Validates the Terraform files   plan Generates ans shows an execution plan   apply Builds or Change Infrastructure   output Reads an output from a state file   show Inspects Terraform State or Plan   providers Print a tree of the providers using the configuration   destory Destorys Terraform-managed infrastructure    Terraform Syntax  Single line comments start with # Multi line comments are wrapped with /* and */ Values are assigned with the syntax key=value Strings are double quoted Strings can interpolate other values using the syntax ${}  Resources Resosurces are the Objects manged by Terraform such as VM or S3 Buckets.</description>
     </item>
     
     <item>
@@ -529,6 +540,49 @@ This post is more about setting up your Storm Environment from ground up in less
     </item>
     
     <item>
+      <title>Setting up Jenkins using Terraform</title>
+      <link>http://learn.aayushtuladhar.com/terraform/jenkins_setup_terraform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/terraform/jenkins_setup_terraform/</guid>
+      <description>Building a Custom Jenkins Image Create Dockerfile with contents:
+FROM jenkins/jenkins:lts USER root RUN apt-get update -y &amp;amp;&amp;amp; apt-get -y install apt-transport-https ca-certificates curl gnupg-agent software-properties-common RUN curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo &amp;quot;$ID&amp;quot;)/gpg &amp;gt; /tmp/dkey; apt-key add /tmp/dkey RUN add-apt-repository &amp;quot;deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo &amp;quot;$ID&amp;quot;) $(lsb_release -cs) stable&amp;quot; RUN apt-get update -y RUN apt-get install -y docker-ce docker-ce-cli containerd.io RUN curl -O https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip &amp;amp;&amp;amp; unzip terraform_0.11.13_linux_amd64.zip -d /usr/local/bin/ USER ${user}  Build the Image</description>
+    </item>
+    
+    <item>
+      <title>Setting up Kubernetes Cluster</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/setting_up_k8_cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/setting_up_k8_cluster/</guid>
+      <description>Using Ubuntu Distribution (Ubuntu Xenial LTS 16.04) as Base Image for the Virtual Machine. We will be building a Kubernetes Cluster
+Setup Docker and Kubernetes Repositories curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable&amp;quot; curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - cat &amp;lt;&amp;lt; EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list deb https://apt.kubernetes.io/ kubernetes-xenial main EOF  Install Docker, Kubelet, KubeAdm and KubeCtl sudo apt-get update sudo apt-get install -y docker-ce=18.</description>
+    </item>
+    
+    <item>
+      <title>Setting up Kubernetes and Terraform</title>
+      <link>http://learn.aayushtuladhar.com/terraform/terraform_kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/terraform/terraform_kubernetes/</guid>
+      <description>Create kube-config.yml
+apiVersion: kubeadm.k8s.io/v1beta2 kind: ClusterConfiguration networking: podSubnet: 10.244.0.0/16 apiServer: extraArgs: service-node-port-range: 8000-31274  Initialize Kubernetes
+sudo kubeadm init --config kube-config.yml  Copy admin.conf to your home directory
+mkdir -p $HOME/.kube sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config sudo chown $(id -u):$(id -g) $HOME/.kube/config  Install Flannel:
+sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml  Untaint Kubernetes Master
+kubectl taint nodes --all node-role.kubernetes.io/master-  </description>
+    </item>
+    
+    <item>
+      <title>Setting up Terraform With Docker</title>
+      <link>http://learn.aayushtuladhar.com/terraform/terraform_docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/terraform/terraform_docker/</guid>
+      <description>Installing Docker on the Swarm Manager and Worker # Update the Operating System sudo yum update -y # Uninstall Old Versions sudo yum remove -y docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine # Install Docker CE sudo yum install -y yum-utils \ device-mapper-persistent-data \ lvm2 # Add Docker Repository sudo yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo sudo yum -y install docker-ce # Start Docker and Enable sudo systemctl start docker &amp;amp;&amp;amp; sudo systemctl enable docker # Add `cloud_user` to the `docker` group sudo usermod -aG docker cloud_user docker --version # Configure Swarm Manager Node docker swarm init --advertise-addr [PRIVATE_IP] On the worker node, add the worker to the cluster: docker swarm join --token [TOKEN] [PRIVATE_IP]:2377 # Verify Swarm cluster docker node ls  Installing Terraform # Install Terraform 0.</description>
+    </item>
+    
+    <item>
       <title>Spring Cloud Slueth</title>
       <link>http://learn.aayushtuladhar.com/devops/2018-09-18-spring-cloud-slueth/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -558,14 +612,16 @@ const someText = `string text ${expression} string text`  </description>
     </item>
     
     <item>
-      <title>Terraform Modules</title>
-      <link>http://learn.aayushtuladhar.com/terraform/modules/</link>
+      <title>Terraform State</title>
+      <link>http://learn.aayushtuladhar.com/terraform/terraform_state/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/terraform/modules/</guid>
-      <description>Module is a container for multiple resources that are going to be used together.
-Main goal of module is logical grouping of resources to it&amp;rsquo;s cohesive unit that can be reused and shared across different systems. Modules can also be shared across multiple teams or via public registry such as GitHub or Terraform Cloud registry.
-Using Terraform Modules # Download the image module &amp;quot;image&amp;quot; { source = &amp;quot;./image&amp;quot; image_name = &amp;quot;${var.</description>
+      <guid>http://learn.aayushtuladhar.com/terraform/terraform_state/</guid>
+      <description>Create a S3 Bucket in AWS that we will be using to store the Remote State.
+Set the Environment Variables:
+export AWS_ACCESS_KEY_ID=&amp;quot;[ACCESS_KEY]&amp;quot; export AWS_SECRET_ACCESS_KEY=&amp;quot;[SECRET_KEY]]&amp;quot; export AWS_DEFAULT_REGION=&amp;quot;us-east-1&amp;quot;  Add the Remote Backend Configuration
+terraform { backend &amp;quot;s3&amp;quot; { key = &amp;quot;terraform-aws/terraform.tfstate&amp;quot; } }  Initialize Terraform
+terraform init -backend-config &amp;quot;bucket=[BUCKET_NAME]&amp;quot;  </description>
     </item>
     
     <item>
@@ -606,15 +662,6 @@ Installation sudo apt-get install apache2-utils.  Usage -p POST Message -H Messa
       <guid>http://learn.aayushtuladhar.com/data-analytics/2018-05-01-pandas/</guid>
       <description>Explore, Visualize, and Predict using Pandas &amp;amp; Jupyter  Explore, Visualize, and Predict using Pandas &amp;amp; Jupyter Pandas Intro Load Data Inspecting Data Summarize Data Reference  Setup
 %matplotlib inline import pandas as pd import matplotlib import numpy as np  pd.__version__, matplotlib.__version__, np.__version__  Pandas Intro The pandas library is very popular among data scientists, quants, Excel junkies, and Python developers because it allows you to perform data ingestion, exporting, transformation, and visualization with ease.</description>
-    </item>
-    
-    <item>
-      <title>Using Terraform With Docker</title>
-      <link>http://learn.aayushtuladhar.com/terraform/terraform_docker/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/terraform/terraform_docker/</guid>
-      <description>Installing Docker on the Swarm Manager and Worker # Update the Operating System sudo yum update -y # Uninstall Old Versions sudo yum remove -y docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine # Install Docker CE sudo yum install -y yum-utils \ device-mapper-persistent-data \ lvm2 # Add Docker Repository sudo yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo sudo yum -y install docker-ce # Start Docker and Enable sudo systemctl start docker &amp;amp;&amp;amp; sudo systemctl enable docker # Add `cloud_user` to the `docker` group sudo usermod -aG docker cloud_user docker --version # Configure Swarm Manager Node docker swarm init --advertise-addr [PRIVATE_IP] On the worker node, add the worker to the cluster: docker swarm join --token [TOKEN] [PRIVATE_IP]:2377 # Verify Swarm cluster docker node ls  Installing Terraform # Install Terraform 0.</description>
     </item>
     
   </channel>
