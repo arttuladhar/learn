@@ -1,5 +1,5 @@
 ---
-title: HCL Basics
+title: 01 - HCL Basics
 ---
 - [Terraform CLI Commands](#terraform-cli-commands)
 - [Terraform Syntax](#terraform-syntax)
@@ -7,6 +7,7 @@ title: HCL Basics
 - [Console and Outputs](#console-and-outputs)
 - [Variables](#variables)
     - [Passing Variable](#passing-variable)
+- [DataSources](#datasources)
 - [Terraform Workspaces](#terraform-workspaces)
 - [NullResources and Local-exec](#nullresources-and-local-exec)
 
@@ -115,6 +116,12 @@ We can set the variabl using Environment Variables
 export TF_VAR_container_name=ghost_blog
 export TF_VAR_ext_port=8080
 ```
+
+## DataSources
+
+Data sources allow data to be fetched or computed for use elsewhere in Terraform configuration. Use of data sources allows a Terraform configuration to make use of information defined outside of Terraform, or defined by another separate Terraform configuration.
+
+Each provider may offer data sources alongside its set of resource types.
 
 ## Terraform Workspaces
 Each Terraform configuration has an associated backend that defines how operations are executed and where persistent data such as Terraform State are stored. Terraform supports multiple workspace to isolate different terraform plans and their respective state files.

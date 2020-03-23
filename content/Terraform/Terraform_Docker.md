@@ -1,5 +1,5 @@
 ---
-title: Using Terraform With Docker
+title: Setting up Terraform With Docker
 ---
 
 ## Installing Docker on the Swarm Manager and Worker

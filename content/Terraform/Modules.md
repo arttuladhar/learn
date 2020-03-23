@@ -1,5 +1,5 @@
 ---
-title: Terraform Modules
+title: 02 - Terraform Modules
 ---
 Module is a container for multiple resources that are going to be used together.
 
