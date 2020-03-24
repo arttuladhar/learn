@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Amazon Web Services (AWS) :: Always Learning; Always Improving</title>
+    <title>05 - Observability :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1585030397" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/aws/2018-05-30-aws/">
+  <body class="" data-url="/kubernetes/ckad/05_observability/">
     <nav id="sidebar" class="">
 
 
@@ -76,7 +76,7 @@
   
     
     <li data-nav-id="/aws/" title="AWS" class="dd-item 
-        parent
+        
         
         
         ">
@@ -100,7 +100,7 @@
  
   
     
-      <li data-nav-id="/aws/2018-05-30-aws/" title="Amazon Web Services (AWS)" class="dd-item active">
+      <li data-nav-id="/aws/2018-05-30-aws/" title="Amazon Web Services (AWS)" class="dd-item ">
         <a href="/aws/2018-05-30-aws/">
         Amazon Web Services (AWS)
         
@@ -1156,7 +1156,7 @@
   
     
     <li data-nav-id="/kubernetes/" title="Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1430,7 +1430,7 @@
   
     
     <li data-nav-id="/kubernetes/ckad/" title="CKAD Notes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1530,7 +1530,7 @@
  
   
     
-      <li data-nav-id="/kubernetes/ckad/05_observability/" title="05 - Observability" class="dd-item ">
+      <li data-nav-id="/kubernetes/ckad/05_observability/" title="05 - Observability" class="dd-item active">
         <a href="/kubernetes/ckad/05_observability/">
         05 - Observability
         
@@ -1854,7 +1854,13 @@
             
           
           
-            <a href='/'>Digital Learning Notebook</a> > <a href='/aws/'>AWS</a> > Amazon Web Services (AWS)
+            
+            
+          
+          
+            <a href='/'>Digital Learning Notebook</a> > <a href='/kubernetes/'>Kubernetes</a> > <a href='/kubernetes/ckad/'>CKAD Notes</a> > 05 - Observability
+          
+         
           
          
           
@@ -1869,31 +1875,19 @@
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
-<li><a href="#aws-mobile-hub">AWS Mobile Hub</a>
+<li>
+<ul>
+<li><a href="#liveness-and-readiness-probes">Liveness and Readiness Probes</a>
 <ul>
 <li>
 <ul>
-<li><a href="#features">Features</a></li>
-<li><a href="#aws-mobile-cli">AWS Mobile CLI</a>
-<ul>
-<li><a href="#install-aws-mobile-cli">Install AWS Mobile CLI</a></li>
-<li><a href="#configure-the-cli-with-your-aws-credentials">Configure the CLI with your AWS credentials</a></li>
-<li><a href="#setup-backend-with-your-app">Setup Backend with your App</a></li>
-<li><a href="#connect-your-app-with-configured-aws-feautures">Connect your app with configured AWS feautures</a></li>
-<li><a href="#add-user-sign-in">Add User Sign In</a></li>
-<li><a href="#add-nosql-database">Add NoSQL Database</a></li>
-</ul></li>
-<li><a href="#console">Console</a></li>
-<li><a href="#hosting-and-streaming">Hosting and Streaming</a></li>
+<li><a href="#liveness-probe">Liveness probe</a></li>
+<li><a href="#readiness-probe">Readiness Probe</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#aws-amplify">AWS Amplify</a></li>
-<li><a href="#aws-appsync">AWS AppSync</a>
-<ul>
-<li>
-<ul>
-<li><a href="#references">References</a></li>
-</ul></li>
+<li><a href="#container-logging">Container Logging</a></li>
+<li><a href="#installing-metrics-server">Installing Metrics Server</a></li>
+<li><a href="#monitoring-applications">Monitoring Applications</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -1906,21 +1900,13 @@
             
         <div id="head-tags">
         
-<div class="tags">
-
-  <a class="tag-link" href="/tags/aws">aws</a>
-
-  <a class="tag-link" href="/tags/devops">devops</a>
-
-</div>
-
         </div>
         
         <div id="body-inner">
           
             <h1>
               
-              Amazon Web Services (AWS)
+              05 - Observability
             </h1>
           
 
@@ -1930,106 +1916,109 @@
 
 
 
-<p>IAM Identity and Access Management</p>
+<ul>
+<li><a href="#liveness-and-readiness-probes">Liveness and Readiness Probes</a>
 
 <ul>
-<li>Add User</li>
+<li><a href="#liveness-probe">Liveness probe</a></li>
+<li><a href="#readiness-probe">Readiness Probe</a></li>
+</ul></li>
+<li><a href="#container-logging">Container Logging</a></li>
+<li><a href="#installing-metrics-server">Installing Metrics Server</a></li>
+<li><a href="#monitoring-applications">Monitoring Applications</a></li>
 </ul>
 
-<hr />
+<h2 id="liveness-and-readiness-probes">Liveness and Readiness Probes</h2>
 
-<h1 id="aws-mobile-hub">AWS Mobile Hub</h1>
+<p><strong>Probes</strong> - Allow you to customize how Kubernetes determines the status of your containers</p>
 
-<ul>
-<li>A dashboard for easily manage multiple AWS services</li>
-<li>Provides a graphical abstraction over DynamoDB, Cognito, Pinpoint and other services.</li>
-</ul>
+<h4 id="liveness-probe">Liveness probe</h4>
 
-<h3 id="features">Features</h3>
+<p>Indicates whether the container is running properly, and governs whether the cluster will automatically stop or restart the container. Liveness probes can be created by including them in the container spec. This probe runs a command to test the container&rsquo;s liveness.</p>
 
-<ul>
-<li>Secure Authentication <a href="https://aws.amazon.com/cognito/pricing/">(Amazon Cognito)</a></li>
-<li>Database <a href="https://aws.amazon.com/dynamodb/pricing/">(Amazon DynamoDB)</a></li>
-<li>Storage <a href="https://aws.amazon.com/s3/pricing/">(Amazon S3)</a></li>
-<li>Cloud API <a href="https://aws.amazon.com/api-gateway/pricing/">(API Gateway)</a> <a href="https://aws.amazon.com/lambda/pricing/">(Amazon Lambda)</a></li>
-<li>Hosting &amp; Streaming (S3 &amp; Cloudfront)</li>
-<li>Analytics and Notifications (Pinpoint)</li>
-</ul>
-
-<h3 id="aws-mobile-cli">AWS Mobile CLI</h3>
-
-<ul>
-<li>A command line tool for setting up new projects using AWS Mobile Hub</li>
-</ul>
-
-<h4 id="install-aws-mobile-cli">Install AWS Mobile CLI</h4>
-
-<pre><code>npm install -g awsmoible -cli
+<pre><code class="language-yml">apiVersion: v1
+kind: Pod
+metadata:
+  name: my-liveness-pod
+spec:
+  containers:
+  - name: myapp-container
+    image: busybox
+    command: ['sh', '-c', &quot;echo Hello, Kubernetes! &amp;&amp; sleep 3600&quot;]
+    livenessProbe:
+      exec:
+        command:
+        - echo
+        - testing
+      initialDelaySeconds: 5
+      periodSeconds: 5
 </code></pre>
 
-<h4 id="configure-the-cli-with-your-aws-credentials">Configure the CLI with your AWS credentials</h4>
+<h4 id="readiness-probe">Readiness Probe</h4>
 
-<pre><code>awsmobile configure
+<p>Indicates whether the container is ready to service requests, and governs whether request will be forwarded to the pod.</p>
+
+<p>Liveness and readiness probes can determine container status by doing things like <strong>running a command</strong> or <strong>making an http request</strong></p>
+
+<pre><code class="language-yml">apiVersion: v1
+kind: Pod
+metadata:
+  name: my-readiness-pod
+spec:
+  containers:
+  - name: myapp-container
+    image: nginx
+    readinessProbe:
+      httpGet:
+        path: /
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 5
 </code></pre>
 
-<h4 id="setup-backend-with-your-app">Setup Backend with your App</h4>
+<h2 id="container-logging">Container Logging</h2>
 
-<pre><code>awsmobile init
+<p>A container&rsquo;s normal console output goes into the container log. You can access container logs using the <code>kubectl logs</code> command. For example, create a pod that generates some output every second:</p>
+
+<pre><code class="language-yml">apiVersion: v1
+kind: Pod
+metadata:
+  name: counter
+spec:
+  containers:
+  - name: count
+    image: busybox
+    args: [/bin/sh, -c, 'i=0; while true; do echo &quot;$i: $(date)&quot;; i=$((i+1)); sleep 1; done']
 </code></pre>
 
-<h4 id="connect-your-app-with-configured-aws-feautures">Connect your app with configured AWS feautures</h4>
+<p>If a pod has more than one container, you must specify which container to get logs from using the <code>-c</code> flag.</p>
 
-<pre><code class="language-javascript">import Amplify from 'aws-amplify';
-import awsmobile from './YOUR-PATH-TO/aws-exports';
-
-Amplify.configure(awsmobile);
+<pre><code class="language-yml">kubectl logs my-pod -c my-container
 </code></pre>
 
-<h4 id="add-user-sign-in">Add User Sign In</h4>
+<h2 id="installing-metrics-server">Installing Metrics Server</h2>
 
-<pre><code>awsmobile user-signin enable
-awsmobile push
-awsmobile run
+<p>The Kubernetes metrics server provides an API which allows you to access data about your pods, and nodes, such as CPU and memory usage.</p>
+
+<pre><code>cd ~/
+git clone https://github.com/linuxacademy/metrics-server
+kubectl apply -f ~/metrics-server/deploy/1.8+/
 </code></pre>
 
-<h4 id="add-nosql-database">Add NoSQL Database</h4>
+<p>Verify</p>
 
-<pre><code>awsmobile database enable --prompt
-awsmobile push
-awsmobile run
+<pre><code>kubectl get --raw /apis/metrics.k8s.io/
 </code></pre>
 
-<h3 id="console">Console</h3>
+<h2 id="monitoring-applications">Monitoring Applications</h2>
 
-<pre><code>awsmobile console
+<p>With a working metrics server, you can use the <code>kubectl top</code> to gather information about resource usage within the cluster.</p>
+
+<pre><code>kubectl top pods
+kubectl top pod resource-consumer-big
+kubectl top pods -n kube-system
+kubectl top nodes
 </code></pre>
-
-<h3 id="hosting-and-streaming">Hosting and Streaming</h3>
-
-<pre><code>awsmobile publish
-</code></pre>
-
-<h1 id="aws-amplify">AWS Amplify</h1>
-
-<ul>
-<li>A javascript library with a bunch of helper functions for working with AWS Mobile Hub</li>
-</ul>
-
-<hr />
-
-<h1 id="aws-appsync">AWS AppSync</h1>
-
-<ul>
-<li>GraphQL as a service</li>
-</ul>
-
-<hr />
-
-<h3 id="references">References</h3>
-
-<ul>
-<li><a href="https://docs.aws.amazon.com/aws-mobile/latest/developerguide/aws-mobile-cli-reference.html">https://docs.aws.amazon.com/aws-mobile/latest/developerguide/aws-mobile-cli-reference.html</a></li>
-</ul>
 
 
 <footer class=" footline" >
@@ -2068,6 +2057,8 @@ awsmobile run
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -2082,7 +2073,6 @@ awsmobile run
             
                 
                     
-                    
                 
                 
 
@@ -2101,9 +2091,6 @@ awsmobile run
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2891,6 +2878,7 @@ awsmobile run
             
                 
                     
+                    
                 
                 
 
@@ -2905,6 +2893,9 @@ awsmobile run
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3113,6 +3104,7 @@ awsmobile run
             
             
                 
+                    
                     
                 
                 
@@ -3126,6 +3118,9 @@ awsmobile run
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3190,6 +3185,7 @@ awsmobile run
             
             
                 
+                    
                     
                 
                 
@@ -3206,6 +3202,9 @@ awsmobile run
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3393,10 +3392,10 @@ awsmobile run
 	 
 	 
 		
-			<a class="nav nav-prev" href="/aws/" title="AWS"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/kubernetes/ckad/04_multi_container_pods/" title="04 - Multi Container Pods"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/bigdata/" title="Big Data" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/kubernetes/ckad/06_pod-design/" title="06 - Pod Design" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

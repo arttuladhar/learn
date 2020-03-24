@@ -15,11 +15,23 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/01_setting_up_k8_cluster/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/02_core_concepts/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/kubernetes/02_installing_kubernetes/</loc>
   </url>
   
   <url>
     <loc>http://learn.aayushtuladhar.com/terraform/modules/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/03_configuration/</loc>
   </url>
   
   <url>
@@ -31,7 +43,19 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/04_multi_container_pods/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/kubernetes/05_authorization_access_control/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/05_observability/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/06_pod-design/</loc>
   </url>
   
   <url>
@@ -266,10 +290,6 @@
   
   <url>
     <loc>http://learn.aayushtuladhar.com/terraform/jenkins_setup_terraform/</loc>
-  </url>
-  
-  <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/setting_up_k8_cluster/</loc>
   </url>
   
   <url>

@@ -39,6 +39,28 @@ Microservices Microservices are lightweight applications written in various mode
     </item>
     
     <item>
+      <title>01 - Setting up Kubernetes Cluster</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/01_setting_up_k8_cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/01_setting_up_k8_cluster/</guid>
+      <description>Using Ubuntu Distribution (Ubuntu Xenial LTS 16.04) as Base Image for the Virtual Machine. We will be building a Kubernetes Cluster
+Setup Docker and Kubernetes Repositories curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable&amp;quot; curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - cat &amp;lt;&amp;lt; EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list deb https://apt.kubernetes.io/ kubernetes-xenial main EOF  Install Docker, Kubelet, KubeAdm and KubeCtl sudo apt-get update sudo apt-get install -y docker-ce=18.</description>
+    </item>
+    
+    <item>
+      <title>02 - Core Concepts</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/02_core_concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/02_core_concepts/</guid>
+      <description>Kubernetes API Primitives Pods Namespaces Basic Container Configuration  Kubernetes API Primitives Kubernetes API Primitives are also called Kubernetes Objects. These are data objects that represent the state of the cluster. Example of Kubernetes Objects:
+ Pod Node Service Service Account  The kubectl api-resource command will list the object types currently available to the cluster.
+Every object has a spec and status:
+ Spec - You provide the spec.</description>
+    </item>
+    
+    <item>
       <title>02 - Installing Kubernetes</title>
       <link>http://learn.aayushtuladhar.com/kubernetes/02_installing_kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -57,6 +79,17 @@ Single-Node etcd, Single-Master and Multi-Worker Installation In this setup, we 
       <description>Module is a container for multiple resources that are going to be used together.
 Main goal of module is logical grouping of resources to it&amp;rsquo;s cohesive unit that can be reused and shared across different systems. Modules can also be shared across multiple teams or via public registry such as GitHub or Terraform Cloud registry.
 Using Terraform Modules # Download the image module &amp;quot;image&amp;quot; { source = &amp;quot;./image&amp;quot; image_name = &amp;quot;${var.</description>
+    </item>
+    
+    <item>
+      <title>03 - Configuration</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/03_configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/03_configuration/</guid>
+      <description>ConfigMaps SecurityContexts Resource Requirements Secrets Service Accounts   ConfigMaps A ConfigMap is a Kubernetes Object that stores configuration data in a key-value format. This configuration data can then be used to configure software running in a container, by referencing the ConfigMap in the Pod spec.
+myconfigmap.yml
+apiVersion: v1 kind: ConfigMap metadata: name: my-config-map data: myKey: myValue anotherKey: anotherValue  Passing ConfigMap data to a pod&amp;rsquo;s container as an environment variable:</description>
     </item>
     
     <item>
@@ -81,6 +114,18 @@ apiVersion: apps/v1 kind: Deployment metadata: name: nginx-deployment labels: ap
     </item>
     
     <item>
+      <title>04 - Multi Container Pods</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/04_multi_container_pods/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/04_multi_container_pods/</guid>
+      <description>Multi-container pods are simply pods with more than one container that all work together as a single unit.
+It is often a good idea to keep containers separate by keeping them in their own seperate pods, but there are several cases where multi-continer pods can be beneficial.
+You can create multi-continer pods by listing multiple containers in the pod definition.
+apiVersion: v1 kind: Pod metadata: name: multi-container-pod spec: containers: - name: nginx image: nginx:1.</description>
+    </item>
+    
+    <item>
       <title>05 - Authentication, Authorization, and Admission Control</title>
       <link>http://learn.aayushtuladhar.com/kubernetes/05_authorization_access_control/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -88,6 +133,26 @@ apiVersion: apps/v1 kind: Deployment metadata: name: nginx-deployment labels: ap
       <guid>http://learn.aayushtuladhar.com/kubernetes/05_authorization_access_control/</guid>
       <description>Authentication Authorization  Types of RoleBindings Admission Control  Demo - Authentication and Authorization  To access and manage any Kubernetes resource or object in the cluster, we need to access a specific API endpoint on the API server. Each access request goes through the following three stages:
  Authentication - Logs in a user Authorization - Authorizes the API requests added by the logged-in user. Admission Control - Software modules that can modify or reject the requests based on some additional checks, like a pre-set Quota.</description>
+    </item>
+    
+    <item>
+      <title>05 - Observability</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/05_observability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/05_observability/</guid>
+      <description>Liveness and Readiness Probes  Liveness probe Readiness Probe  Container Logging Installing Metrics Server Monitoring Applications  Liveness and Readiness Probes Probes - Allow you to customize how Kubernetes determines the status of your containers
+Liveness probe Indicates whether the container is running properly, and governs whether the cluster will automatically stop or restart the container. Liveness probes can be created by including them in the container spec.</description>
+    </item>
+    
+    <item>
+      <title>06 - Pod Design</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/06_pod-design/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/06_pod-design/</guid>
+      <description>Labels, Selectors, and Annotations Deployments Rolling Updates and Rollbacks  Rolling Updates and Rollbacks  Jobs and CronJobs  Labels, Selectors, and Annotations Labels are key-value pairs attached to Kubernetes objects. They are used for identifying various attributes of objects which can in turn be used to select and group various subsets of those objects.
+We can attach labels to objects by listing them in the metadata.labels section of an object descriptor.</description>
     </item>
     
     <item>
@@ -547,16 +612,6 @@ This post is more about setting up your Storm Environment from ground up in less
       <guid>http://learn.aayushtuladhar.com/terraform/jenkins_setup_terraform/</guid>
       <description>Building a Custom Jenkins Image Create Dockerfile with contents:
 FROM jenkins/jenkins:lts USER root RUN apt-get update -y &amp;amp;&amp;amp; apt-get -y install apt-transport-https ca-certificates curl gnupg-agent software-properties-common RUN curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo &amp;quot;$ID&amp;quot;)/gpg &amp;gt; /tmp/dkey; apt-key add /tmp/dkey RUN add-apt-repository &amp;quot;deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo &amp;quot;$ID&amp;quot;) $(lsb_release -cs) stable&amp;quot; RUN apt-get update -y RUN apt-get install -y docker-ce docker-ce-cli containerd.io RUN curl -O https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip &amp;amp;&amp;amp; unzip terraform_0.11.13_linux_amd64.zip -d /usr/local/bin/ USER ${user}  Build the Image</description>
-    </item>
-    
-    <item>
-      <title>Setting up Kubernetes Cluster</title>
-      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/setting_up_k8_cluster/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/setting_up_k8_cluster/</guid>
-      <description>Using Ubuntu Distribution (Ubuntu Xenial LTS 16.04) as Base Image for the Virtual Machine. We will be building a Kubernetes Cluster
-Setup Docker and Kubernetes Repositories curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable&amp;quot; curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - cat &amp;lt;&amp;lt; EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list deb https://apt.kubernetes.io/ kubernetes-xenial main EOF  Install Docker, Kubelet, KubeAdm and KubeCtl sudo apt-get update sudo apt-get install -y docker-ce=18.</description>
     </item>
     
     <item>

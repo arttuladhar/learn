@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Amazon Web Services (AWS) :: Always Learning; Always Improving</title>
+    <title>03 - Configuration :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1585030397" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/aws/2018-05-30-aws/">
+  <body class="" data-url="/kubernetes/ckad/03_configuration/">
     <nav id="sidebar" class="">
 
 
@@ -76,7 +76,7 @@
   
     
     <li data-nav-id="/aws/" title="AWS" class="dd-item 
-        parent
+        
         
         
         ">
@@ -100,7 +100,7 @@
  
   
     
-      <li data-nav-id="/aws/2018-05-30-aws/" title="Amazon Web Services (AWS)" class="dd-item active">
+      <li data-nav-id="/aws/2018-05-30-aws/" title="Amazon Web Services (AWS)" class="dd-item ">
         <a href="/aws/2018-05-30-aws/">
         Amazon Web Services (AWS)
         
@@ -1156,7 +1156,7 @@
   
     
     <li data-nav-id="/kubernetes/" title="Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1430,7 +1430,7 @@
   
     
     <li data-nav-id="/kubernetes/ckad/" title="CKAD Notes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1492,7 +1492,7 @@
  
   
     
-      <li data-nav-id="/kubernetes/ckad/03_configuration/" title="03 - Configuration" class="dd-item ">
+      <li data-nav-id="/kubernetes/ckad/03_configuration/" title="03 - Configuration" class="dd-item active">
         <a href="/kubernetes/ckad/03_configuration/">
         03 - Configuration
         
@@ -1854,7 +1854,13 @@
             
           
           
-            <a href='/'>Digital Learning Notebook</a> > <a href='/aws/'>AWS</a> > Amazon Web Services (AWS)
+            
+            
+          
+          
+            <a href='/'>Digital Learning Notebook</a> > <a href='/kubernetes/'>Kubernetes</a> > <a href='/kubernetes/ckad/'>CKAD Notes</a> > 03 - Configuration
+          
+         
           
          
           
@@ -1869,30 +1875,15 @@
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
-<li><a href="#aws-mobile-hub">AWS Mobile Hub</a>
+<li>
 <ul>
 <li>
 <ul>
-<li><a href="#features">Features</a></li>
-<li><a href="#aws-mobile-cli">AWS Mobile CLI</a>
-<ul>
-<li><a href="#install-aws-mobile-cli">Install AWS Mobile CLI</a></li>
-<li><a href="#configure-the-cli-with-your-aws-credentials">Configure the CLI with your AWS credentials</a></li>
-<li><a href="#setup-backend-with-your-app">Setup Backend with your App</a></li>
-<li><a href="#connect-your-app-with-configured-aws-feautures">Connect your app with configured AWS feautures</a></li>
-<li><a href="#add-user-sign-in">Add User Sign In</a></li>
-<li><a href="#add-nosql-database">Add NoSQL Database</a></li>
-</ul></li>
-<li><a href="#console">Console</a></li>
-<li><a href="#hosting-and-streaming">Hosting and Streaming</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#aws-amplify">AWS Amplify</a></li>
-<li><a href="#aws-appsync">AWS AppSync</a>
-<ul>
-<li>
-<ul>
-<li><a href="#references">References</a></li>
+<li><a href="#configmaps">ConfigMaps</a></li>
+<li><a href="#securitycontexts">SecurityContexts</a></li>
+<li><a href="#resource-requirements">Resource Requirements</a></li>
+<li><a href="#secrets">Secrets</a></li>
+<li><a href="#service-accounts">Service Accounts</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1906,21 +1897,13 @@
             
         <div id="head-tags">
         
-<div class="tags">
-
-  <a class="tag-link" href="/tags/aws">aws</a>
-
-  <a class="tag-link" href="/tags/devops">devops</a>
-
-</div>
-
         </div>
         
         <div id="body-inner">
           
             <h1>
               
-              Amazon Web Services (AWS)
+              03 - Configuration
             </h1>
           
 
@@ -1930,106 +1913,176 @@
 
 
 
-<p>IAM Identity and Access Management</p>
-
 <ul>
-<li>Add User</li>
+<li><a href="#configmaps">ConfigMaps</a></li>
+<li><a href="#securitycontexts">SecurityContexts</a></li>
+<li><a href="#resource-requirements">Resource Requirements</a></li>
+<li><a href="#secrets">Secrets</a></li>
+<li><a href="#service-accounts">Service Accounts</a>
+<br /></li>
 </ul>
 
-<hr />
+<h3 id="configmaps">ConfigMaps</h3>
 
-<h1 id="aws-mobile-hub">AWS Mobile Hub</h1>
+<p>A ConfigMap is a Kubernetes Object that stores configuration data in a key-value format. This configuration data can then be used to configure software running in a container, by referencing the ConfigMap in the Pod spec.</p>
 
-<ul>
-<li>A dashboard for easily manage multiple AWS services</li>
-<li>Provides a graphical abstraction over DynamoDB, Cognito, Pinpoint and other services.</li>
-</ul>
+<p><em>myconfigmap.yml</em></p>
 
-<h3 id="features">Features</h3>
-
-<ul>
-<li>Secure Authentication <a href="https://aws.amazon.com/cognito/pricing/">(Amazon Cognito)</a></li>
-<li>Database <a href="https://aws.amazon.com/dynamodb/pricing/">(Amazon DynamoDB)</a></li>
-<li>Storage <a href="https://aws.amazon.com/s3/pricing/">(Amazon S3)</a></li>
-<li>Cloud API <a href="https://aws.amazon.com/api-gateway/pricing/">(API Gateway)</a> <a href="https://aws.amazon.com/lambda/pricing/">(Amazon Lambda)</a></li>
-<li>Hosting &amp; Streaming (S3 &amp; Cloudfront)</li>
-<li>Analytics and Notifications (Pinpoint)</li>
-</ul>
-
-<h3 id="aws-mobile-cli">AWS Mobile CLI</h3>
-
-<ul>
-<li>A command line tool for setting up new projects using AWS Mobile Hub</li>
-</ul>
-
-<h4 id="install-aws-mobile-cli">Install AWS Mobile CLI</h4>
-
-<pre><code>npm install -g awsmoible -cli
+<pre><code class="language-yaml">apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: my-config-map
+data:
+    myKey: myValue
+    anotherKey: anotherValue
 </code></pre>
 
-<h4 id="configure-the-cli-with-your-aws-credentials">Configure the CLI with your AWS credentials</h4>
+<p>Passing ConfigMap data to a pod&rsquo;s container as an environment variable:</p>
 
-<pre><code>awsmobile configure
+<p><em>myconfigmap-pod.yml</em></p>
+
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+    name: my-configmap-pod
+spec:
+    containers:
+    - name: myapp-container
+      image: busybox
+      command: ['sh', '-c', &quot;echo $(MY_VAR) &amp;&amp; SLEEP 3600&quot;]
+      env:
+        - name: MY_VAR
+          valueFrom:
+            configMapKeyRef:
+                name: my-config-map
+                key: myKey
 </code></pre>
 
-<h4 id="setup-backend-with-your-app">Setup Backend with your App</h4>
+<p>It&rsquo;s also possible to pass ConfigMap data to container, in the form of file using a mount volume.</p>
 
-<pre><code>awsmobile init
+<pre><code class="language-yml">apiVersion: v1
+kind: Pod
+metadata:
+  name: my-configmap-volume-pod
+spec:
+  containers:
+  - name: myapp-container
+    image: busybox
+    command: ['sh', '-c', &quot;echo $(cat /etc/config/myKey) &amp;&amp; sleep 3600&quot;]
+    volumeMounts:
+      - name: config-volume
+        mountPath: /etc/config
+  volumes:
+    - name: config-volume
+      configMap:
+        name: my-config-map
 </code></pre>
 
-<h4 id="connect-your-app-with-configured-aws-feautures">Connect your app with configured AWS feautures</h4>
+<h3 id="securitycontexts">SecurityContexts</h3>
 
-<pre><code class="language-javascript">import Amplify from 'aws-amplify';
-import awsmobile from './YOUR-PATH-TO/aws-exports';
+<p>A Pod&rsquo;s <strong>Security Context</strong> defines privilege and access control settings for a pod. If a container needs special operating system-level permissions, we can provide them using the securityContext.</p>
 
-Amplify.configure(awsmobile);
+<p>The securityContext is defined as part of a Pod&rsquo;s spec.</p>
+
+<p>This spec will cause the container to run as the OS user with an ID of 1000, and the containers will run as the group with and ID of 2000.</p>
+
+<pre><code class="language-yml">apiVersion: v1
+kind: Pod
+metadat:
+    name: my-securitycontext-pod
+spec:
+    securityContext:
+        runAsUser: 2000
+        fsGroup: 3000
+    containers:
+    - name: myapp-container
+      image: busybox
+      command: ['sh', '-c', &quot;cat /message/message.txt &amp;&amp; sleep 3600s&quot;]
 </code></pre>
 
-<h4 id="add-user-sign-in">Add User Sign In</h4>
+<h3 id="resource-requirements">Resource Requirements</h3>
 
-<pre><code>awsmobile user-signin enable
-awsmobile push
-awsmobile run
+<p>Kubernetes allows us to specify the resource requirements of a container in the pod spec. A container&rsquo;s memory and CPU requirements are defined in terms of <strong>resource requests</strong> and <strong>limits</strong>.</p>
+
+<p><strong>Resoruce request</strong>: The amount of resource necessary to run a container. A pod will only be a run on a node that has enough available resources to run the pod&rsquo;s containeers.</p>
+
+<p><strong>Resource limit</strong>: A maximum value for the resource usage of a container</p>
+
+<p>Resource requests and limits are defined as part of a pod&rsquo;s spec.</p>
+
+<pre><code class="language-yml">apiVersion: v1
+kind: Pod
+metadata:
+  name: my-resource-pod
+spec:
+  containers:
+  - name: myapp-container
+    image: busybox
+    command: ['sh', '-c', 'echo Hello Kubernetes! &amp;&amp; sleep 3600']
+    resources:
+      requests:
+        memory: &quot;64Mi&quot;
+        cpu: &quot;250m&quot;
+      limits:
+        memory: &quot;128Mi&quot;
+        cpu: &quot;500m&quot;
 </code></pre>
 
-<h4 id="add-nosql-database">Add NoSQL Database</h4>
+<p>Memory is measured in bytes. 128Mi means 128 Mebibytes
+CPU is measured in &ldquo;cores&rdquo;. 500m means 500 milliCPU or 0.5 CPU cores</p>
 
-<pre><code>awsmobile database enable --prompt
-awsmobile push
-awsmobile run
+<h3 id="secrets">Secrets</h3>
+
+<p><strong>Secrets</strong> are pieces of sensitive information store in the Kubernetes cluster, such as passwords, tokens and keys. If a container needs a sensitive piece of information, such as password, it is more secure to store it as a <em>secret</em> than storing it in a pod spec or in the container itself.</p>
+
+<p><em>my-secret.yml</em></p>
+
+<pre><code class="language-yml">apiVersion: v1
+kind: Secret
+metadata:
+    name: my-secret
+stringData:
+    myKey: myPassword    
 </code></pre>
 
-<h3 id="console">Console</h3>
-
-<pre><code>awsmobile console
+<pre><code class="language-yml">apiVersion: v1
+kind: Pod
+metadata:
+  name: my-secret-pod
+spec:
+  containers:
+  - name: myapp-container
+    image: busybox
+    command: ['sh', '-c', &quot;echo Hello, Kubernetes! $(MY_PASSWORD) &amp;&amp; sleep 3600&quot;]
+    env:
+    - name: MY_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: my-secret
+          key: myKey
 </code></pre>
 
-<h3 id="hosting-and-streaming">Hosting and Streaming</h3>
+<h3 id="service-accounts">Service Accounts</h3>
 
-<pre><code>awsmobile publish
+<p><strong>ServiceAccounts</strong> allow containers running in pods to access the Kubernetes API. Some applications may need to interact with the cluster itself, and service accounts provide a way to let them to do it securely, with properly limited permissions.</p>
+
+<p>You can determine the ServiceAccount that a pod will use by specifying a <code>serviceAccountName</code> in the pod spec:</p>
+
+<pre><code># Createing Service Account
+kubectl create serviceaccount my-serviceaccount
 </code></pre>
 
-<h1 id="aws-amplify">AWS Amplify</h1>
-
-<ul>
-<li>A javascript library with a bunch of helper functions for working with AWS Mobile Hub</li>
-</ul>
-
-<hr />
-
-<h1 id="aws-appsync">AWS AppSync</h1>
-
-<ul>
-<li>GraphQL as a service</li>
-</ul>
-
-<hr />
-
-<h3 id="references">References</h3>
-
-<ul>
-<li><a href="https://docs.aws.amazon.com/aws-mobile/latest/developerguide/aws-mobile-cli-reference.html">https://docs.aws.amazon.com/aws-mobile/latest/developerguide/aws-mobile-cli-reference.html</a></li>
-</ul>
+<pre><code class="language-yml">apiVersion: v1
+kind: Pod
+metadata:
+  name: my-serviceaccount-pod
+spec:
+  serviceAccountName: my-serviceaccount
+  containers:
+  - name: myapp-container
+    image: busybox
+    command: ['sh', '-c', &quot;echo Hello, Kubernetes! &amp;&amp; sleep 3600&quot;]
+</code></pre>
 
 
 <footer class=" footline" >
@@ -2068,6 +2121,8 @@ awsmobile run
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -2082,7 +2137,6 @@ awsmobile run
             
                 
                     
-                    
                 
                 
 
@@ -2101,9 +2155,6 @@ awsmobile run
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2891,6 +2942,7 @@ awsmobile run
             
                 
                     
+                    
                 
                 
 
@@ -2905,6 +2957,9 @@ awsmobile run
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3113,6 +3168,7 @@ awsmobile run
             
             
                 
+                    
                     
                 
                 
@@ -3126,6 +3182,9 @@ awsmobile run
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3158,6 +3217,7 @@ awsmobile run
             
             
                 
+                    
                     
                 
                 
@@ -3174,6 +3234,9 @@ awsmobile run
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3393,10 +3456,10 @@ awsmobile run
 	 
 	 
 		
-			<a class="nav nav-prev" href="/aws/" title="AWS"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/kubernetes/ckad/02_core_concepts/" title="02 - Core Concepts"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/bigdata/" title="Big Data" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/kubernetes/ckad/04_multi_container_pods/" title="04 - Multi Container Pods" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Amazon Web Services (AWS) :: Always Learning; Always Improving</title>
+    <title>06 - Pod Design :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1585030397" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/aws/2018-05-30-aws/">
+  <body class="" data-url="/kubernetes/ckad/06_pod-design/">
     <nav id="sidebar" class="">
 
 
@@ -76,7 +76,7 @@
   
     
     <li data-nav-id="/aws/" title="AWS" class="dd-item 
-        parent
+        
         
         
         ">
@@ -100,7 +100,7 @@
  
   
     
-      <li data-nav-id="/aws/2018-05-30-aws/" title="Amazon Web Services (AWS)" class="dd-item active">
+      <li data-nav-id="/aws/2018-05-30-aws/" title="Amazon Web Services (AWS)" class="dd-item ">
         <a href="/aws/2018-05-30-aws/">
         Amazon Web Services (AWS)
         
@@ -1156,7 +1156,7 @@
   
     
     <li data-nav-id="/kubernetes/" title="Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1430,7 +1430,7 @@
   
     
     <li data-nav-id="/kubernetes/ckad/" title="CKAD Notes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1549,7 +1549,7 @@
  
   
     
-      <li data-nav-id="/kubernetes/ckad/06_pod-design/" title="06 - Pod Design" class="dd-item ">
+      <li data-nav-id="/kubernetes/ckad/06_pod-design/" title="06 - Pod Design" class="dd-item active">
         <a href="/kubernetes/ckad/06_pod-design/">
         06 - Pod Design
         
@@ -1854,7 +1854,13 @@
             
           
           
-            <a href='/'>Digital Learning Notebook</a> > <a href='/aws/'>AWS</a> > Amazon Web Services (AWS)
+            
+            
+          
+          
+            <a href='/'>Digital Learning Notebook</a> > <a href='/kubernetes/'>Kubernetes</a> > <a href='/kubernetes/ckad/'>CKAD Notes</a> > 06 - Pod Design
+          
+         
           
          
           
@@ -1869,31 +1875,15 @@
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
-<li><a href="#aws-mobile-hub">AWS Mobile Hub</a>
-<ul>
 <li>
 <ul>
-<li><a href="#features">Features</a></li>
-<li><a href="#aws-mobile-cli">AWS Mobile CLI</a>
+<li><a href="#labels-selectors-and-annotations">Labels, Selectors, and Annotations</a></li>
+<li><a href="#deployments">Deployments</a></li>
+<li><a href="#rolling-updates-and-rollbacks">Rolling Updates and Rollbacks</a>
 <ul>
-<li><a href="#install-aws-mobile-cli">Install AWS Mobile CLI</a></li>
-<li><a href="#configure-the-cli-with-your-aws-credentials">Configure the CLI with your AWS credentials</a></li>
-<li><a href="#setup-backend-with-your-app">Setup Backend with your App</a></li>
-<li><a href="#connect-your-app-with-configured-aws-feautures">Connect your app with configured AWS feautures</a></li>
-<li><a href="#add-user-sign-in">Add User Sign In</a></li>
-<li><a href="#add-nosql-database">Add NoSQL Database</a></li>
+<li><a href="#rolling-updates-and-rollbacks-1">Rolling Updates and Rollbacks</a></li>
 </ul></li>
-<li><a href="#console">Console</a></li>
-<li><a href="#hosting-and-streaming">Hosting and Streaming</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#aws-amplify">AWS Amplify</a></li>
-<li><a href="#aws-appsync">AWS AppSync</a>
-<ul>
-<li>
-<ul>
-<li><a href="#references">References</a></li>
-</ul></li>
+<li><a href="#jobs-and-cronjobs">Jobs and CronJobs</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -1906,21 +1896,13 @@
             
         <div id="head-tags">
         
-<div class="tags">
-
-  <a class="tag-link" href="/tags/aws">aws</a>
-
-  <a class="tag-link" href="/tags/devops">devops</a>
-
-</div>
-
         </div>
         
         <div id="body-inner">
           
             <h1>
               
-              Amazon Web Services (AWS)
+              06 - Pod Design
             </h1>
           
 
@@ -1930,106 +1912,251 @@
 
 
 
-<p>IAM Identity and Access Management</p>
+<ul>
+<li><a href="#labels-selectors-and-annotations">Labels, Selectors, and Annotations</a></li>
+<li><a href="#deployments">Deployments</a></li>
+<li><a href="#rolling-updates-and-rollbacks">Rolling Updates and Rollbacks</a>
 
 <ul>
-<li>Add User</li>
+<li><a href="#rolling-updates-and-rollbacks-1">Rolling Updates and Rollbacks</a></li>
+</ul></li>
+<li><a href="#jobs-and-cronjobs">Jobs and CronJobs</a></li>
 </ul>
 
-<hr />
+<h2 id="labels-selectors-and-annotations">Labels, Selectors, and Annotations</h2>
 
-<h1 id="aws-mobile-hub">AWS Mobile Hub</h1>
+<p><strong>Labels</strong> are key-value pairs attached to Kubernetes objects. They are used for identifying various attributes of objects which can in turn be used to select and group various subsets of those objects.</p>
 
-<ul>
-<li>A dashboard for easily manage multiple AWS services</li>
-<li>Provides a graphical abstraction over DynamoDB, Cognito, Pinpoint and other services.</li>
-</ul>
+<p>We can attach labels to objects by listing them in the <code>metadata.labels</code> section of an object descriptor.</p>
 
-<h3 id="features">Features</h3>
-
-<ul>
-<li>Secure Authentication <a href="https://aws.amazon.com/cognito/pricing/">(Amazon Cognito)</a></li>
-<li>Database <a href="https://aws.amazon.com/dynamodb/pricing/">(Amazon DynamoDB)</a></li>
-<li>Storage <a href="https://aws.amazon.com/s3/pricing/">(Amazon S3)</a></li>
-<li>Cloud API <a href="https://aws.amazon.com/api-gateway/pricing/">(API Gateway)</a> <a href="https://aws.amazon.com/lambda/pricing/">(Amazon Lambda)</a></li>
-<li>Hosting &amp; Streaming (S3 &amp; Cloudfront)</li>
-<li>Analytics and Notifications (Pinpoint)</li>
-</ul>
-
-<h3 id="aws-mobile-cli">AWS Mobile CLI</h3>
-
-<ul>
-<li>A command line tool for setting up new projects using AWS Mobile Hub</li>
-</ul>
-
-<h4 id="install-aws-mobile-cli">Install AWS Mobile CLI</h4>
-
-<pre><code>npm install -g awsmoible -cli
+<pre><code class="language-yml">apiVersion: v1
+kind: Pod
+metadata:
+  name: my-production-label-pod
+  labels:
+    app: my-app
+    environment: production
+spec:
+  containers:
+  - name: nginx
+    image: nginx
 </code></pre>
 
-<h4 id="configure-the-cli-with-your-aws-credentials">Configure the CLI with your AWS credentials</h4>
-
-<pre><code>awsmobile configure
+<pre><code>kubectl get pods --show-labels
 </code></pre>
 
-<h4 id="setup-backend-with-your-app">Setup Backend with your App</h4>
+<p>Selectors are used for identifying and selecting a specific group of objects using their labels. One way to use selectors is to use them with <code>kubectl get</code> to retrieve a specific list of objects. We can specify a selector using the <code>-l</code> flag.</p>
 
-<pre><code>awsmobile init
+<pre><code># Equality Based Selector
+kubectl get pods -l app=my-app
+
+# InEquality Based Selector
+kubectl get pods -l env!=prod
+
+# Set Based Selector
+kubectl get pods -l 'env in (dev, qa)'
+
+# Chain Multiple Selectors
+kubectl get pods -l app=myapp, env=prod
 </code></pre>
 
-<h4 id="connect-your-app-with-configured-aws-feautures">Connect your app with configured AWS feautures</h4>
+<p>Annotations are similar to labels in that they can be used to store custom metadata about objects.</p>
 
-<pre><code class="language-javascript">import Amplify from 'aws-amplify';
-import awsmobile from './YOUR-PATH-TO/aws-exports';
 
-Amplify.configure(awsmobile);
+<div class="notices warning" ><p>However, unline labels, annotations cannot be used to select or group objects in Kubernetes. External tools can read, write and interact with anootations.</p>
+</div>
+
+
+<p>We can attach annotations to objects using the <code>metadata.annotations</code> section of the object descriptors:</p>
+
+<pre><code class="language-yml">apiVersion: v1
+kind: Pod
+metadata:
+  name: my-annotation-pod
+  annotations:
+    owner: bob@homeoffice.com
+    git-commit: bd7833kjgll20xj3
+spec:
+  containers:
+  - name: nginx
+    image: nginx
 </code></pre>
 
-<h4 id="add-user-sign-in">Add User Sign In</h4>
+<p>Like labels, existing annotations can also be viewed using <code>kubectl describe</code></p>
 
-<pre><code>awsmobile user-signin enable
-awsmobile push
-awsmobile run
+<h2 id="deployments">Deployments</h2>
+
+<p><strong>Deployments</strong> provide a way to declaratively manage a dynamic set of replica pods. They provide powerful functionality such as scalling and rolling updates.</p>
+
+<p>A deployment define a desired state for the replica pods. The cluster will constantly work to maintain the desired state, creating, removing, and modifying the replica pods accordingly.</p>
+
+<p>A deployment is a Kubernetes object that can be created using a descriptor:</p>
+
+<p><em>nginx-deployment.yml</em></p>
+
+<pre><code class="language-yml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: nginx-deployment
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            app: nginx
+    template:
+        metadata:
+            labels:
+                app: nginx
+        spec:
+            containers:
+            - name: nginx
+              image: nginx:1.7.9
+              ports:
+              - containerPort: 80
 </code></pre>
 
-<h4 id="add-nosql-database">Add NoSQL Database</h4>
+<p>Note the following:
+* <strong>spec.replicas</strong> - The number of replica pods
+* <strong>spec.template</strong> - A template pod descriptor which defines the pods which will be created
+* <strong>spec.selector</strong> - The deployment will manage all pods whose label match this selector</p>
 
-<pre><code>awsmobile database enable --prompt
-awsmobile push
-awsmobile run
+<pre><code>kubectl get deployments
+
+kubectl get deployment &lt;deployment_name&gt;
+
+kubectl describe deployment &lt;deployment_name&gt;
+
+kubectl edit deployment &lt;deployment_name&gt;
+
+kubectl delete deployment &lt;deployment_name&gt;
 </code></pre>
 
-<h3 id="console">Console</h3>
+<h2 id="rolling-updates-and-rollbacks">Rolling Updates and Rollbacks</h2>
 
-<pre><code>awsmobile console
+<p>Rolling updates provide a way to update a deployment to a new container version by gradually updating replicas so that there is no downtime.</p>
+
+<p><em>rolling-deployment-nginx.yml</em></p>
+
+<pre><code class="language-yml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rolling-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.1
+        ports:
+        - containerPort: 80
 </code></pre>
 
-<h3 id="hosting-and-streaming">Hosting and Streaming</h3>
+<pre><code># Set New Image for the Deployment
+kubectl set image deployment/rolling-deployment nginx=nginx:1.7.9 --record
 
-<pre><code>awsmobile publish
+# Perform Rollout
+kubectl rollout history deployment/rolling-deployment
 </code></pre>
 
-<h1 id="aws-amplify">AWS Amplify</h1>
 
-<ul>
-<li>A javascript library with a bunch of helper functions for working with AWS Mobile Hub</li>
-</ul>
+<div class="notices info" ><p>The &ndash;record flag records information about the update so that it can be rolled back later.</p>
+</div>
 
-<hr />
 
-<h1 id="aws-appsync">AWS AppSync</h1>
+<h3 id="rolling-updates-and-rollbacks-1">Rolling Updates and Rollbacks</h3>
 
-<ul>
-<li>GraphQL as a service</li>
-</ul>
+<p>Rollbacks allow us to revert to a previous state. For example, if a rolling update breaks something, we can quickly recover by using a rollback.</p>
 
-<hr />
+<pre><code># Get Rollout History for Deployment
+kubectl rollout history deployment/rolling-deployment
+</code></pre>
 
-<h3 id="references">References</h3>
 
-<ul>
-<li><a href="https://docs.aws.amazon.com/aws-mobile/latest/developerguide/aws-mobile-cli-reference.html">https://docs.aws.amazon.com/aws-mobile/latest/developerguide/aws-mobile-cli-reference.html</a></li>
-</ul>
+<div class="notices info" ><p>The &ndash;revision flag will give more information on a specific revision number</p>
+</div>
+
+
+<pre><code># Perform Rollback to previous revision
+kubectl rollout undo deployment/rolling-deployment
+kubectl rollout undo deployment/rolling-deployment --to-revision=1
+</code></pre>
+
+<p>You can also control how rolling update are performed by setting <code>maxSurge</code> and <code>maxUnavailable</code> in the deployment spec:</p>
+
+<pre><code class="language-yml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rolling-deployment
+spec:
+  strategy:
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 2
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.1
+        ports:
+        - containerPort: 80
+</code></pre>
+
+<h2 id="jobs-and-cronjobs">Jobs and CronJobs</h2>
+
+<p>Jobs can be used to reliably execute a workload until it completes. The job will create one or more pods. When the job is finished, the container(s) will exit and pods(s) will enter the Completed state.</p>
+
+<p><em>batch-job.yml</em></p>
+
+<pre><code class="language-yml">apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pi
+spec:
+  template:
+    spec:
+      containers:
+      - name: pi
+        image: perl
+        command: [&quot;perl&quot;,  &quot;-Mbignum=bpi&quot;, &quot;-wle&quot;, &quot;print bpi(2000)&quot;]
+      restartPolicy: Never
+  backoffLimit: 4
+</code></pre>
+
+<p><em>hello-cron-job.yml</em></p>
+
+<pre><code class="language-yml">apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: &quot;*/1 * * * *&quot;
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: busybox
+            args:
+            - /bin/sh
+            - -c
+            - date; echo Hello from the Kubernetes cluster
+          restartPolicy: OnFailure
+</code></pre>
 
 
 <footer class=" footline" >
@@ -2068,6 +2195,8 @@ awsmobile run
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -2082,7 +2211,6 @@ awsmobile run
             
                 
                     
-                    
                 
                 
 
@@ -2101,9 +2229,6 @@ awsmobile run
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2891,6 +3016,7 @@ awsmobile run
             
                 
                     
+                    
                 
                 
 
@@ -2905,6 +3031,9 @@ awsmobile run
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3113,6 +3242,7 @@ awsmobile run
             
             
                 
+                    
                     
                 
                 
@@ -3126,6 +3256,9 @@ awsmobile run
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3206,6 +3339,7 @@ awsmobile run
             
             
                 
+                    
                     
                 
                 
@@ -3228,6 +3362,9 @@ awsmobile run
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3393,10 +3530,10 @@ awsmobile run
 	 
 	 
 		
-			<a class="nav nav-prev" href="/aws/" title="AWS"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/kubernetes/ckad/05_observability/" title="05 - Observability"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/bigdata/" title="Big Data" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/terraform/" title="Terraform" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

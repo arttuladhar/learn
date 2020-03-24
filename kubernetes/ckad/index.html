@@ -12,20 +12,20 @@
     <title>CKAD Notes :: Always Learning; Always Improving</title>
 
     
-    <link href="/css/nucleus.css?1584980301" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1584980301" rel="stylesheet">
-    <link href="/css/hybrid.css?1584980301" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1584980301" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1584980301" rel="stylesheet">
-    <link href="/css/auto-complete.css?1584980301" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1584980301" rel="stylesheet">
-    <link href="/css/theme.css?1584980301" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1584980301" rel="stylesheet">
+    <link href="/css/nucleus.css?1585030397" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1585030397" rel="stylesheet">
+    <link href="/css/hybrid.css?1585030397" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1585030397" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1585030397" rel="stylesheet">
+    <link href="/css/auto-complete.css?1585030397" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1585030397" rel="stylesheet">
+    <link href="/css/theme.css?1585030397" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1585030397" rel="stylesheet">
     
-      <link href="/css/theme-green.css?1584980301" rel="stylesheet">
+      <link href="/css/theme-green.css?1585030397" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1584980301"></script>
+    <script src="/js/jquery-3.3.1.min.js?1585030397"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1584980301"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1584980301"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1585030397"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1585030397"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/learn.aayushtuladhar.com";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1584980301"></script>
+<script type="text/javascript" src="/js/search.js?1585030397"></script>
 
     
   </div>
@@ -1454,9 +1454,104 @@
  
   
     
-      <li data-nav-id="/kubernetes/ckad/setting_up_k8_cluster/" title="Setting up Kubernetes Cluster" class="dd-item ">
-        <a href="/kubernetes/ckad/setting_up_k8_cluster/">
-        Setting up Kubernetes Cluster
+      <li data-nav-id="/kubernetes/ckad/01_setting_up_k8_cluster/" title="01 - Setting up Kubernetes Cluster" class="dd-item ">
+        <a href="/kubernetes/ckad/01_setting_up_k8_cluster/">
+        01 - Setting up Kubernetes Cluster
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/ckad/02_core_concepts/" title="02 - Core Concepts" class="dd-item ">
+        <a href="/kubernetes/ckad/02_core_concepts/">
+        02 - Core Concepts
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/ckad/03_configuration/" title="03 - Configuration" class="dd-item ">
+        <a href="/kubernetes/ckad/03_configuration/">
+        03 - Configuration
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/ckad/04_multi_container_pods/" title="04 - Multi Container Pods" class="dd-item ">
+        <a href="/kubernetes/ckad/04_multi_container_pods/">
+        04 - Multi Container Pods
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/ckad/05_observability/" title="05 - Observability" class="dd-item ">
+        <a href="/kubernetes/ckad/05_observability/">
+        05 - Observability
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/kubernetes/ckad/06_pod-design/" title="06 - Pod Design" class="dd-item ">
+        <a href="/kubernetes/ckad/06_pod-design/">
+        06 - Pod Design
         
         </a>
     </li>
@@ -1776,24 +1871,6 @@
 <ul>
 <li>
 <ul>
-<li><a href="#core-concepts">Core Concepts</a>
-<ul>
-<li><a href="#kubernetes-api-primitives">Kubernetes API Primitives</a></li>
-<li><a href="#creating-pods">Creating Pods</a>
-<ul>
-<li><a href="#delete-pod">Delete Pod</a></li>
-</ul></li>
-<li><a href="#namespaces">Namespaces</a></li>
-<li><a href="#basic-container-configuration">Basic Container Configuration</a></li>
-</ul></li>
-<li><a href="#configuration">Configuration</a>
-<ul>
-<li><a href="#configmaps">ConfigMaps</a></li>
-<li><a href="#securitycontexts">SecurityContexts</a></li>
-<li><a href="#resource-requirements">Resource Requirements</a></li>
-<li><a href="#secrets">Secrets</a></li>
-<li><a href="#service-accounts">Service Accounts</a></li>
-</ul></li>
 <li><a href="#reference">Reference</a></li>
 </ul></li>
 </ul>
@@ -1824,183 +1901,11 @@
 
 	
 
-<h2 id="core-concepts">Core Concepts</h2>
-
-<h3 id="kubernetes-api-primitives">Kubernetes API Primitives</h3>
-
-<p>Kubernetes API Primitives are also called Kubernetes Objects. These are data objects that represent the state of the cluster. Example of Kubernetes Objects:
-* Pod
-* Node
-* Service
-* Service Account</p>
-
-<p>The <code>kubectl api-resource</code> command will list the object types currently available to the cluster.</p>
-
-<p>Every object has a spec and status:</p>
-
-<ul>
-<li><strong>Spec</strong> - You provide the spec. This defines the desired state of the object</li>
-<li><strong>Status</strong> - This is provided by the Kubernetes cluster and contains information about the current state of the object.</li>
-</ul>
-
-<p>Kubernetes objects are often represented in the <code>yaml</code> format, so you can create an object by providing the cluster with yaml, defining the object and it&rsquo;s spec.</p>
-
-<p>You can get information about an object&rsquo;s spec and status using the <code>kubectl describe</code> command:</p>
-
-<pre><code>kubectl describe $object_type $object_name
-</code></pre>
-
-<h3 id="creating-pods">Creating Pods</h3>
-
-<p><strong>Pods</strong> are the basic building blocks of any application running in Kubernetes.</p>
-
-<p>A <strong>Pod</strong> consists of one or more containers and a set of resources shared by those containers. All containers managed by Kubenernetes cluster are part of a pod.</p>
-
-<p>A basic pod in yaml format:</p>
-
-<pre><code class="language-yaml">apiVersion: v1
-kind: Pod
-metadata:
-    name: my-pod
-    labels:
-        app: myapp
-spec:
-    containers:
-    - name: myapp-container
-      image: busybox
-      command: ['sh', '-c', 'echo Hello K8s! &amp;&amp; sleep 3600'] 
-</code></pre>
-
-<p>Save the pod&rsquo;s yaml definition to a file <code>my-pod.yml</code>, then create the pod using</p>
-
-<pre><code>kubectl create -f my-pod.yml
-</code></pre>
-
-<p>Similarly, you can change existing objects using:</p>
-
-<pre><code>kubectl apply -f my-pod.yaml
-# Or
-kubectl edit pod my-pod
-</code></pre>
-
-<h4 id="delete-pod">Delete Pod</h4>
-
-<pre><code>kubectl delete pod my-pod
-</code></pre>
-
-<h3 id="namespaces">Namespaces</h3>
-
-<p>Namespaces provide a way to keep your objects organized within the cluster. Every object belongs to a namespace. When no namespace is specified, the cluster will assume the <code>default</code> namespace.</p>
-
-<p>When creating an object, you can assign it to a namespace by specifying a namespace in the metadata:</p>
-
-<p><em>mypod-ckad-ns.yml</em></p>
-
-<pre><code>apiVersion: v1
-kind: Pod
-metadata:
-    name: my-pod
-    namespace: my-ckad
-    labels:
-        app: myapp
-spec:
-    containers:
-    - name: myapp-container
-      image: busybox
-      command: ['sh', '-c', 'echo Hello Kubernetes! &amp;&amp; sleep 60s']
-</code></pre>
-
-<p>When working with objects using kubectl use the <code>-n</code> flag to specify the namespace. For example,</p>
-
-<pre><code>kubectl get pods -n my-ckad
-</code></pre>
-
-<h3 id="basic-container-configuration">Basic Container Configuration</h3>
-
-<p>You can specify the <code>command</code> that will be used to run a container in the Pod spec. Thiw will override any built-in default command specified by the container image.</p>
-
-<pre><code class="language-yaml">apiVersion: v1
-kind: Pod
-metadata:
-    name: my-command-pod
-    labels:
-        app: myapp
-spec:
-    containers:
-    - name: myapp-container
-      image: busybox
-      command: ['echo']
-      args: ['Hello World']
-    restartPolicy: Never
-</code></pre>
-
-<p>Ports are another important part of container configuration. If you need a poart that the container is listening on to be exposed to the cluster, you can specify a <code>containerPort</code></p>
-
-<p><em>my-containerport-pod.yml</em></p>
-
-<pre><code class="language-yaml">apiVersion: v1
-kind: Pod
-metadata:
-    name: my-containerport-pod
-    labels:
-        app: myapp
-spec:
-    containers:
-        - name: myapp-container
-          image: nginx
-          ports:
-            - containerPort: 80
-</code></pre>
-
-<h2 id="configuration">Configuration</h2>
-
-<h3 id="configmaps">ConfigMaps</h3>
-
-<p>A ConfigMap is a Kubernetes Object that stores configuration data in a key-value format. This configuration data can then be used to configure software running in a container, by referencing the ConfigMap in the Pod spec.</p>
-
-<p><em>myconfigmap.yml</em></p>
-
-<pre><code>apiVersion: v1
-kind: ConfigMap
-metadata:
-    name: my-config-map
-data:
-    key: myValue
-    anotherKey: anotherValue
-</code></pre>
-
-<p>Passing ConfigMap data to a pod&rsquo;s container as an environment variable:</p>
-
-<p><em>myconfigmap-pod.yml</em></p>
-
-<pre><code class="language-yaml">apiVersion: v1
-kind: Pod
-metadata:
-    name: my-configmap-pod
-spec:
-    containers:
-    - name: myapp-container
-      image: busybox
-      command: ['sh', '-c', &quot;echo $(MY_VAR) &amp;&amp; SLEEP 3600&quot;]
-      env:
-        - name: MY_VAR
-          valueFrom:
-            configMapKeyRef:
-                name: my-config-map
-                key: key
-</code></pre>
-
-<h3 id="securitycontexts">SecurityContexts</h3>
-
-<h3 id="resource-requirements">Resource Requirements</h3>
-
-<h3 id="secrets">Secrets</h3>
-
-<h3 id="service-accounts">Service Accounts</h3>
-
 <h2 id="reference">Reference</h2>
 
-<p><a href="/pdf/ckad-study-guide.pdf">Linux Academy - CKAD Study Guide</a></p>
+<ul>
+<li><a href="/pdf/ckad-study-guide.pdf">Linux Academy - CKAD Study Guide</a></li>
+</ul>
 
 
 
@@ -3117,6 +3022,86 @@ spec:
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -3295,7 +3280,7 @@ spec:
 			<a class="nav nav-prev" href="/kubernetes/12_resources/" title="12 - Resources"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/kubernetes/ckad/setting_up_k8_cluster/" title="Setting up Kubernetes Cluster" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/kubernetes/ckad/01_setting_up_k8_cluster/" title="01 - Setting up Kubernetes Cluster" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -3305,20 +3290,20 @@ spec:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1584980301"></script>
-    <script src="/js/perfect-scrollbar.min.js?1584980301"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1584980301"></script>
-    <script src="/js/jquery.sticky.js?1584980301"></script>
-    <script src="/js/featherlight.min.js?1584980301"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1584980301"></script>
-    <script src="/js/highlight.pack.js?1584980301"></script>
+    <script src="/js/clipboard.min.js?1585030397"></script>
+    <script src="/js/perfect-scrollbar.min.js?1585030397"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1585030397"></script>
+    <script src="/js/jquery.sticky.js?1585030397"></script>
+    <script src="/js/featherlight.min.js?1585030397"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1585030397"></script>
+    <script src="/js/highlight.pack.js?1585030397"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1584980301"></script>
-    <script src="/js/learn.js?1584980301"></script>
-    <script src="/js/hugo-learn.js?1584980301"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1585030397"></script>
+    <script src="/js/learn.js?1585030397"></script>
+    <script src="/js/hugo-learn.js?1585030397"></script>
 
-    <link href="/mermaid/mermaid.css?1584980301" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1584980301"></script>
+    <link href="/mermaid/mermaid.css?1585030397" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1585030397"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

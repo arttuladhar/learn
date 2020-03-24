@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Amazon Web Services (AWS) :: Always Learning; Always Improving</title>
+    <title>01 - Setting up Kubernetes Cluster :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1585030397" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/aws/2018-05-30-aws/">
+  <body class="" data-url="/kubernetes/ckad/01_setting_up_k8_cluster/">
     <nav id="sidebar" class="">
 
 
@@ -76,7 +76,7 @@
   
     
     <li data-nav-id="/aws/" title="AWS" class="dd-item 
-        parent
+        
         
         
         ">
@@ -100,7 +100,7 @@
  
   
     
-      <li data-nav-id="/aws/2018-05-30-aws/" title="Amazon Web Services (AWS)" class="dd-item active">
+      <li data-nav-id="/aws/2018-05-30-aws/" title="Amazon Web Services (AWS)" class="dd-item ">
         <a href="/aws/2018-05-30-aws/">
         Amazon Web Services (AWS)
         
@@ -1156,7 +1156,7 @@
   
     
     <li data-nav-id="/kubernetes/" title="Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1430,7 +1430,7 @@
   
     
     <li data-nav-id="/kubernetes/ckad/" title="CKAD Notes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1454,7 +1454,7 @@
  
   
     
-      <li data-nav-id="/kubernetes/ckad/01_setting_up_k8_cluster/" title="01 - Setting up Kubernetes Cluster" class="dd-item ">
+      <li data-nav-id="/kubernetes/ckad/01_setting_up_k8_cluster/" title="01 - Setting up Kubernetes Cluster" class="dd-item active">
         <a href="/kubernetes/ckad/01_setting_up_k8_cluster/">
         01 - Setting up Kubernetes Cluster
         
@@ -1854,7 +1854,13 @@
             
           
           
-            <a href='/'>Digital Learning Notebook</a> > <a href='/aws/'>AWS</a> > Amazon Web Services (AWS)
+            
+            
+          
+          
+            <a href='/'>Digital Learning Notebook</a> > <a href='/kubernetes/'>Kubernetes</a> > <a href='/kubernetes/ckad/'>CKAD Notes</a> > 01 - Setting up Kubernetes Cluster
+          
+         
           
          
           
@@ -1869,30 +1875,19 @@
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
-<li><a href="#aws-mobile-hub">AWS Mobile Hub</a>
+<li>
 <ul>
 <li>
 <ul>
-<li><a href="#features">Features</a></li>
-<li><a href="#aws-mobile-cli">AWS Mobile CLI</a>
-<ul>
-<li><a href="#install-aws-mobile-cli">Install AWS Mobile CLI</a></li>
-<li><a href="#configure-the-cli-with-your-aws-credentials">Configure the CLI with your AWS credentials</a></li>
-<li><a href="#setup-backend-with-your-app">Setup Backend with your App</a></li>
-<li><a href="#connect-your-app-with-configured-aws-feautures">Connect your app with configured AWS feautures</a></li>
-<li><a href="#add-user-sign-in">Add User Sign In</a></li>
-<li><a href="#add-nosql-database">Add NoSQL Database</a></li>
-</ul></li>
-<li><a href="#console">Console</a></li>
-<li><a href="#hosting-and-streaming">Hosting and Streaming</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#aws-amplify">AWS Amplify</a></li>
-<li><a href="#aws-appsync">AWS AppSync</a>
-<ul>
 <li>
 <ul>
-<li><a href="#references">References</a></li>
+<li><a href="#setup-docker-and-kubernetes-repositories">Setup Docker and Kubernetes Repositories</a></li>
+<li><a href="#install-docker-kubelet-kubeadm-and-kubectl">Install Docker, Kubelet, KubeAdm and KubeCtl</a></li>
+<li><a href="#enable-iptable-bridge-call">Enable IPTable Bridge Call</a></li>
+<li><a href="#initailize-cluster-on-kube-master">Initailize Cluster on Kube Master</a></li>
+<li><a href="#install-flannel-networking">Install Flannel Networking</a></li>
+<li><a href="#join-master-node">Join Master Node</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1906,21 +1901,13 @@
             
         <div id="head-tags">
         
-<div class="tags">
-
-  <a class="tag-link" href="/tags/aws">aws</a>
-
-  <a class="tag-link" href="/tags/devops">devops</a>
-
-</div>
-
         </div>
         
         <div id="body-inner">
           
             <h1>
               
-              Amazon Web Services (AWS)
+              01 - Setting up Kubernetes Cluster
             </h1>
           
 
@@ -1930,106 +1917,66 @@
 
 
 
-<p>IAM Identity and Access Management</p>
+<p>Using Ubuntu Distribution (Ubuntu Xenial LTS 16.04) as Base Image for the Virtual Machine. We will be building a Kubernetes Cluster</p>
 
-<ul>
-<li>Add User</li>
-</ul>
+<h4 id="setup-docker-and-kubernetes-repositories">Setup Docker and Kubernetes Repositories</h4>
+
+<pre><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository    &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable&quot;
+
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+cat &lt;&lt; EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
+deb https://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+</code></pre>
+
+<h4 id="install-docker-kubelet-kubeadm-and-kubectl">Install Docker, Kubelet, KubeAdm and KubeCtl</h4>
+
+<pre><code>sudo apt-get update
+
+sudo apt-get install -y docker-ce=18.06.1~ce~3-0~ubuntu kubelet=1.17.0-00 kubeadm=1.17.0-00 kubectl=1.17.0-00
+
+sudo apt-mark hold docker-ce kubelet kubeadm kubectl
+</code></pre>
+
+<h4 id="enable-iptable-bridge-call">Enable IPTable Bridge Call</h4>
+
+<pre><code>echo &quot;net.bridge.bridge-nf-call-iptables=1&quot; | sudo tee -a /etc/sysctl.conf
+
+sudo sysctl -p
+</code></pre>
 
 <hr />
 
-<h1 id="aws-mobile-hub">AWS Mobile Hub</h1>
+<h4 id="initailize-cluster-on-kube-master">Initailize Cluster on Kube Master</h4>
 
-<ul>
-<li>A dashboard for easily manage multiple AWS services</li>
-<li>Provides a graphical abstraction over DynamoDB, Cognito, Pinpoint and other services.</li>
-</ul>
+<pre><code># Initialize Kube Cluster
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 
-<h3 id="features">Features</h3>
-
-<ul>
-<li>Secure Authentication <a href="https://aws.amazon.com/cognito/pricing/">(Amazon Cognito)</a></li>
-<li>Database <a href="https://aws.amazon.com/dynamodb/pricing/">(Amazon DynamoDB)</a></li>
-<li>Storage <a href="https://aws.amazon.com/s3/pricing/">(Amazon S3)</a></li>
-<li>Cloud API <a href="https://aws.amazon.com/api-gateway/pricing/">(API Gateway)</a> <a href="https://aws.amazon.com/lambda/pricing/">(Amazon Lambda)</a></li>
-<li>Hosting &amp; Streaming (S3 &amp; Cloudfront)</li>
-<li>Analytics and Notifications (Pinpoint)</li>
-</ul>
-
-<h3 id="aws-mobile-cli">AWS Mobile CLI</h3>
-
-<ul>
-<li>A command line tool for setting up new projects using AWS Mobile Hub</li>
-</ul>
-
-<h4 id="install-aws-mobile-cli">Install AWS Mobile CLI</h4>
-
-<pre><code>npm install -g awsmoible -cli
+# Setup Local KubeConfig
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
 </code></pre>
 
-<h4 id="configure-the-cli-with-your-aws-credentials">Configure the CLI with your AWS credentials</h4>
+<h4 id="install-flannel-networking">Install Flannel Networking</h4>
 
-<pre><code>awsmobile configure
+<pre><code>kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/2140ac876ef134e0ed5af15c65e414cf26827915/Documentation/kube-flannel.yml
 </code></pre>
 
-<h4 id="setup-backend-with-your-app">Setup Backend with your App</h4>
+<h4 id="join-master-node">Join Master Node</h4>
 
-<pre><code>awsmobile init
+<pre><code>sudo kubeadm join 172.31.47.84:6443 --token c06upw.nhz4qqqifxmqdzaf     --discovery-token-ca-cert-hash sha256:970ac46eb8847181b2ff5cf911836ef73c3ac103508739f3679e4933a1795775
 </code></pre>
 
-<h4 id="connect-your-app-with-configured-aws-feautures">Connect your app with configured AWS feautures</h4>
 
-<pre><code class="language-javascript">import Amplify from 'aws-amplify';
-import awsmobile from './YOUR-PATH-TO/aws-exports';
+<div class="notices tip" ><p>You can use <code>kubeadm token create --print-join-command</code> to get the join command.</p>
+</div>
 
-Amplify.configure(awsmobile);
-</code></pre>
-
-<h4 id="add-user-sign-in">Add User Sign In</h4>
-
-<pre><code>awsmobile user-signin enable
-awsmobile push
-awsmobile run
-</code></pre>
-
-<h4 id="add-nosql-database">Add NoSQL Database</h4>
-
-<pre><code>awsmobile database enable --prompt
-awsmobile push
-awsmobile run
-</code></pre>
-
-<h3 id="console">Console</h3>
-
-<pre><code>awsmobile console
-</code></pre>
-
-<h3 id="hosting-and-streaming">Hosting and Streaming</h3>
-
-<pre><code>awsmobile publish
-</code></pre>
-
-<h1 id="aws-amplify">AWS Amplify</h1>
-
-<ul>
-<li>A javascript library with a bunch of helper functions for working with AWS Mobile Hub</li>
-</ul>
-
-<hr />
-
-<h1 id="aws-appsync">AWS AppSync</h1>
-
-<ul>
-<li>GraphQL as a service</li>
-</ul>
-
-<hr />
-
-<h3 id="references">References</h3>
-
-<ul>
-<li><a href="https://docs.aws.amazon.com/aws-mobile/latest/developerguide/aws-mobile-cli-reference.html">https://docs.aws.amazon.com/aws-mobile/latest/developerguide/aws-mobile-cli-reference.html</a></li>
-</ul>
 
 
 <footer class=" footline" >
@@ -2068,6 +2015,8 @@ awsmobile run
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -2081,7 +2030,6 @@ awsmobile run
             
             
                 
-                    
                     
                 
                 
@@ -2102,9 +2050,6 @@ awsmobile run
             
                 
                     
-                        
-                        
-                    
                 
                 
 
@@ -2890,6 +2835,7 @@ awsmobile run
             
             
                 
+                    
                     
                 
                 
@@ -2906,6 +2852,9 @@ awsmobile run
             
                 
                     
+                        
+                        
+                    
                 
                 
 
@@ -3113,6 +3062,7 @@ awsmobile run
             
             
                 
+                    
                     
                 
                 
@@ -3127,6 +3077,7 @@ awsmobile run
             
                 
                     
+                    
                 
                 
 
@@ -3142,6 +3093,9 @@ awsmobile run
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3393,10 +3347,10 @@ awsmobile run
 	 
 	 
 		
-			<a class="nav nav-prev" href="/aws/" title="AWS"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/kubernetes/ckad/" title="CKAD Notes"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/bigdata/" title="Big Data" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/kubernetes/ckad/02_core_concepts/" title="02 - Core Concepts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
