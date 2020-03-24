@@ -1,5 +1,5 @@
 ---
-title: Setting up Kubernetes Cluster
+title: 01 - Setting up Kubernetes Cluster
 ---
 
 Using Ubuntu Distribution (Ubuntu Xenial LTS 16.04) as Base Image for the Virtual Machine. We will be building a Kubernetes Cluster
