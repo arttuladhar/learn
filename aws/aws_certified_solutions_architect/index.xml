@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS Certified Solutions Architect on Always Learning; Always Improving</title>
+    <link>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/</link>
+    <description>Recent content in AWS Certified Solutions Architect on Always Learning; Always Improving</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>01 - AWS Fundamentals</title>
+      <link>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/01-aws-fundamentals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/01-aws-fundamentals/</guid>
+      <description>Architecture 101  Access Management Basics AWS Account  Authentication Authorization Billing  AWS Physical and Networking Layer Well-Architected Framework Elasticity Introduction to S3 - (Simple Storage Service)   Architecture 101 Access Management Basics AWS Account AWS accounts are more than just a way to log in and access AWS services — they are a crucial AWS feature that AWS solutions architects can use to implement secure and high-performance systems.</description>
+    </item>
+    
+    <item>
+      <title>02 - Identity and Access Control</title>
+      <link>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/02-identity_access_control/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/02-identity_access_control/</guid>
+      <description>Identity and Access Control  IAM Policy IAM Policy Notes IAM Users IAM Groups IAM Access Keys  Multi-Account Management and Organizations  AWS Organizations Role Switching Between Accounts   Identity and Access Control Identity and Access Management, known as IAM, is one of the key services within AWS. It controls access to the AWS API endpoints that are used by the console UI, command line tools, and any applications wanting to utilize AWS.</description>
+    </item>
+    
+    <item>
+      <title>03 - Compute</title>
+      <link>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/03-compute/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/03-compute/</guid>
+      <description>Elastic Cloud Compute (EC2) Elastic Block Storage (EBS)  EBS Types  EBS Snapshots Security Groups Instance Metadata AMI Bootstrap Private Instance and Public Instance EC2 Instance Roles  Elastic Cloud Compute (EC2) EC2 is one of the most widely used services within AWS. As an Infrastructure as a Service (IaaS) product, it&amp;rsquo;s responsible for providing long-running compute as a service.
+EC2 instances are grouped into families, which are designed for a specific broad type workload.</description>
+    </item>
+    
+  </channel>
+</rss>

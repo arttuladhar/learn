@@ -21,6 +21,15 @@ Microservices Microservices are lightweight applications written in various mode
     </item>
     
     <item>
+      <title>01 - AWS Fundamentals</title>
+      <link>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/01-aws-fundamentals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/01-aws-fundamentals/</guid>
+      <description>Architecture 101  Access Management Basics AWS Account  Authentication Authorization Billing  AWS Physical and Networking Layer Well-Architected Framework Elasticity Introduction to S3 - (Simple Storage Service)   Architecture 101 Access Management Basics AWS Account AWS accounts are more than just a way to log in and access AWS services — they are a crucial AWS feature that AWS solutions architects can use to implement secure and high-performance systems.</description>
+    </item>
+    
+    <item>
       <title>01 - HCL Basics</title>
       <link>http://learn.aayushtuladhar.com/terraform/hcl_basics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -61,6 +70,15 @@ Every object has a spec and status:
     </item>
     
     <item>
+      <title>02 - Identity and Access Control</title>
+      <link>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/02-identity_access_control/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/02-identity_access_control/</guid>
+      <description>Identity and Access Control  IAM Policy IAM Policy Notes IAM Users IAM Groups IAM Access Keys  Multi-Account Management and Organizations  AWS Organizations Role Switching Between Accounts   Identity and Access Control Identity and Access Management, known as IAM, is one of the key services within AWS. It controls access to the AWS API endpoints that are used by the console UI, command line tools, and any applications wanting to utilize AWS.</description>
+    </item>
+    
+    <item>
       <title>02 - Installing Kubernetes</title>
       <link>http://learn.aayushtuladhar.com/kubernetes/02_installing_kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -79,6 +97,16 @@ Single-Node etcd, Single-Master and Multi-Worker Installation In this setup, we 
       <description>Module is a container for multiple resources that are going to be used together.
 Main goal of module is logical grouping of resources to it&amp;rsquo;s cohesive unit that can be reused and shared across different systems. Modules can also be shared across multiple teams or via public registry such as GitHub or Terraform Cloud registry.
 Using Terraform Modules # Download the image module &amp;quot;image&amp;quot; { source = &amp;quot;./image&amp;quot; image_name = &amp;quot;${var.</description>
+    </item>
+    
+    <item>
+      <title>03 - Compute</title>
+      <link>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/03-compute/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/03-compute/</guid>
+      <description>Elastic Cloud Compute (EC2) Elastic Block Storage (EBS)  EBS Types  EBS Snapshots Security Groups Instance Metadata AMI Bootstrap Private Instance and Public Instance EC2 Instance Roles  Elastic Cloud Compute (EC2) EC2 is one of the most widely used services within AWS. As an Infrastructure as a Service (IaaS) product, it&amp;rsquo;s responsible for providing long-running compute as a service.
+EC2 instances are grouped into families, which are designed for a specific broad type workload.</description>
     </item>
     
     <item>
@@ -221,16 +249,6 @@ To overcome this problem, Kubernetes uses Volumes. A Volume is essentially a dir
       
       <guid>http://learn.aayushtuladhar.com/kubernetes/12_resources/</guid>
       <description> Labs CKA Curriculum   </description>
-    </item>
-    
-    <item>
-      <title>Amazon Web Services (AWS)</title>
-      <link>http://learn.aayushtuladhar.com/aws/2018-05-30-aws/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/aws/2018-05-30-aws/</guid>
-      <description>IAM Identity and Access Management
- Add User  AWS Mobile Hub  A dashboard for easily manage multiple AWS services Provides a graphical abstraction over DynamoDB, Cognito, Pinpoint and other services.  Features  Secure Authentication (Amazon Cognito) Database (Amazon DynamoDB) Storage (Amazon S3) Cloud API (API Gateway) (Amazon Lambda) Hosting &amp;amp; Streaming (S3 &amp;amp; Cloudfront) Analytics and Notifications (Pinpoint)  AWS Mobile CLI  A command line tool for setting up new projects using AWS Mobile Hub  Install AWS Mobile CLI npm install -g awsmoible -cli  Configure the CLI with your AWS credentials awsmobile configure  Setup Backend with your App awsmobile init  Connect your app with configured AWS feautures import Amplify from &#39;aws-amplify&#39;; import awsmobile from &#39;.</description>
     </item>
     
     <item>

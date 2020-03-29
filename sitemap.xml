@@ -7,6 +7,10 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/01-aws-fundamentals/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/terraform/hcl_basics/</loc>
   </url>
   
@@ -23,11 +27,19 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/02-identity_access_control/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/kubernetes/02_installing_kubernetes/</loc>
   </url>
   
   <url>
     <loc>http://learn.aayushtuladhar.com/terraform/modules/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/03-compute/</loc>
   </url>
   
   <url>
@@ -91,7 +103,7 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/aws/2018-05-30-aws/</loc>
+    <loc>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/</loc>
   </url>
   
   <url>
@@ -346,11 +358,6 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/tags/aws/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://learn.aayushtuladhar.com/categories/bigdata/</loc>
     <priority>0</priority>
   </url>
@@ -362,11 +369,6 @@
   
   <url>
     <loc>http://learn.aayushtuladhar.com/categories/devops/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://learn.aayushtuladhar.com/tags/devops/</loc>
     <priority>0</priority>
   </url>
   
