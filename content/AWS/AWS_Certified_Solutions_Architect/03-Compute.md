@@ -12,6 +12,13 @@ title: 03 - Compute
 - [Bootstrap](#bootstrap)
 - [Private Instance and Public Instance](#private-instance-and-public-instance)
 - [EC2 Instance Roles](#ec2-instance-roles)
+- [EBS Volume and Snapshot Encryption](#ebs-volume-and-snapshot-encryption)
+- [EBS Optimized, Enhanced Networking, and Placement Group](#ebs-optimized-enhanced-networking-and-placement-group)
+  - [EBS optimization](#ebs-optimization)
+  - [Enhanced networking](#enhanced-networking)
+  - [Cluster, partition, and spread placement groups](#cluster-partition-and-spread-placement-groups)
+- [EC2 Billing Models](#ec2-billing-models)
+- [Dedicated Hosts](#dedicated-hosts)
 
 ![Identity And Access Management - Users](/images/AWS_Certified_Solutions_Architect/EC2.jpg)
 
@@ -143,3 +150,115 @@ In EC2, user data can be used to run **shell scripts** or run **cloud-init** dir
 EC2 instance roles are IAM roles that can be "assumed" by EC2 using an itermediary called an **instance profile**. An instance profile is either created automatically when using the console UI or manually when using the CLI. It's a container for the role that is associated with an EC2 instance.
 
 The instance profile allows application on the EC2 instance to access the credentials fromt he role using the **instance metadata**.
+
+---
+### EBS Volume and Snapshot Encryption
+
+![Identity And Access Management - Users](/images/AWS_Certified_Solutions_Architect/EBS-Encryption.jpg)
+
+Volume encryption uses EC2 host hardware to encrypt data at rest and in transit between EBS and EC2 instances. Encryption generates a data encryption key (DEK) from a customer master key (CMK) in each region. A unique DEK encrypts each volume. Snapshots of that volume are encrypted with the same DEK, as are any volumes created from that snapshot.
+
+Encrypted DEKs stored with volume are decrypted by KMS using a CMK and given to the EC2 host.
+
+Plaintext DEKs stored in EC2 memory and used to encrypt and decrypt data. The EC2 instance and OS see plaintext data as normal - no performance impact.
+
+### EBS Optimized, Enhanced Networking, and Placement Group
+
+#### EBS optimization
+EBS-optimized mode, which was historically optional is now the default, adds optimizations and dedicated communcation paths for storage and traditional data networking. This allows consistent utilization of both - and is one required feature to support higher performance storage.
+
+#### Enhanced networking
+Traditionally, virtual networking meant a virtual host (EC2 host) arranging access for n virtual machines to access one physical network card - this multitasking is done in software and is typically slow.
+
+Enhanced networking uses **SR-IOV**, which allows a single physical network card to appear as multiple physical devices. Each instance can be given one of these (fake) physical devices. This results in **faster transfer rate, lower CPU usage**, and **lower consistent latency**. EC2 delivers this via the Elastic Network Adapter (ENA) or Intel 82599 Virtual Function (VF) interface.
+
+#### Cluster, partition, and spread placement groups
+
+* **Cluster Placement Group**
+Cluster placement groups place instances physically near each other in a single **AZ**. Every instance can talk to each other instance at the same time at full speed. Works with enhanced networking for peak performance.
+
+Use Cluster Placement Group for maximum performance
+
+* **Partition Placement Group**
+
+Use Partition Placement Group if you have large infrastructe platform and provides visibility on placement.
+
+* **Spread Placement Group**
+
+Use Spread Placement Group for maximum availability.
+
+### EC2 Billing Models
+
+On-Demand Billing (Default)
+
+**Spot Instances**
+
+Spot instance allow consumption of spare AWS capacity for a given instance type and size in a specific AZ. Instances are provided for as long as your bid price is above the spot price, and you ony ever pay the spot price. If your bid is exceeded, instances are terminated with a two-minute warning.
+
+Spot fleets are a container for "capacity needs". You can specify pools of instances of certain types/sizes aiming for a given "capacity". A minimum percentage of on-demand can be set to ensure the fleet is always active.
+
+Spot instances are perfect for non-critical workloads, burst workloads or consistent non-critical jobs that can tolerate interruptions without impacting functionality.
+
+Spot is not suitable for long-running workloads that require stability and cannot tolerate interruptions.
+
+{{% notice tip %}}
+Spot Pricing can save you more than 90% than on-demand application.
+{{% /notice %}}
+
+* **Reserved Instances**
+
+Reserved instance lock in a reduced rate for one or three years. Zonal reserved instance include a capacity reservation. Your commitment incurs costs even if instance aren't launched. Reserved purchases are used for long-running, understood, and consistent workloads.
+
+**When to Use Reserved Purchases***
+
+* Base / Consistent Load
+* Known and Understood Growth
+* Critical Systems / Components
+
+**When to Use Spot Instances / Fleets**
+
+* Burst-y workloads
+* Cost-critial, when can cope with interruptions
+
+**When to Use On-Demand**
+
+* Default or unknown demand
+* Anything in between reserved/spot
+* Short-term workloads that cannot tolerate interruptions
+
+### Dedicated Hosts
+
+EC2 dedicated hosts are a feature of EC2, giving you complete control over physical instance placement and dedicated hardware free from other customer interaction.
+
+## Serverless Compute
+
+### Lambda Essentials
+
+Lambda is a FaaS product. Function are code, which run in a runtime. Functions are invoked by events, perform actions for **upto 15 minutes** and terminate. Functions are also stateless - each run is clean.
+
+### API Gateway
+
+API Gateway is a managed API endpoint service. It can be used to create, publish, monitor and secure APIs "As a Service". API Gateway can use other AWS services for compute (FaaS/IaaS) as well as to store and recall data.
+
+### Step Functions
+
+Step Functions is a serverless visual workflow servcie that provides state machines. A state machine can orchestrate other AWS services with simple logic, branching, and parallel execution, and it maintains a state. Workflow steps are known as states, and they can perform work via tasks. Step Functions allows for long-running serverless workflows. A state machine can be defined by using Amazon State Language (ASL).
+
+## Container Based Compute
+
+### ECS 
+ECS is a managed container engine. It allows Docker containers to be deployed and managed within AWS environments. ECS can use infrastructure clsutes based on EC2 or Fargate where AWS manages the backing infrastructure.
+
+With EC2 launch type utilizes your own EC2 instances. AWS Fargate is a managed service, so tasks are auto placed.
+
+**Cluster** - A logical collection of ECS resources - either ECS EC2 instances or a logical representation of managed Fargate infrastructure
+
+**Task Definition** - Defines your application. Similar to Dockerfile but for running containers in ECS. Task definition can contain multiple containers.
+
+**Container Definition** - Inside a task definition, a container definition defines the individual containers a task uses. It controls the CPU and memory each container has, in addition to port mappings for the container
+
+**Task** - A single running copy of any containers defined by a task definition. One working copy of an application
+
+**Services** - Allows task definitions to be scaled by adding additional tasks. Define minimum and maximum values.
+
+**Registry** - Storage for container images. (eg. ECS Container Registry or Dockerhub). Used to download image to create containers.
