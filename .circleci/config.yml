@@ -15,8 +15,9 @@ jobs:
 workflows:
   main:
     jobs:
-      - hugo/build
-          version: '0.55'
+      - hugo/build:
+          html-proofer: true
+          version: '0.55
       - deploy
         requires:
           - hugo/build
