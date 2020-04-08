@@ -1,3 +1,4 @@
+--- 
 jobs: 
   deploy: 
     docker: 
@@ -18,3 +19,8 @@ workflows:
       - 
         hugo/build: 
           html-proofer: true
+          version: "0.55"
+      - 
+        deploy: 
+          requires: 
+            - hugo/build
