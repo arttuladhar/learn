@@ -1,23 +1,20 @@
-version: 2.1
-orbs:
-  hugo: circleci/hugo@0.4.1  
-
-jobs:
-  deploy:
-    docker:
-      - image: cibuilds/base
-    steps:
-      - attach_workspace:
+jobs: 
+  deploy: 
+    docker: 
+      - 
+        image: cibuilds/base
+    steps: 
+      - 
+        attach_workspace: 
           at: my-site
-      - run: ls -lah my-site
-
-
-workflows:
-  main:
-    jobs:
-      - hugo/build:
+      - 
+        run: "ls -lah my-site"
+orbs: 
+  hugo: circleci/hugo@0.4.1
+version: 2.1
+workflows: 
+  main: 
+    jobs: 
+      - 
+        hugo/build: 
           html-proofer: true
-          version: '0.55'
-      - deploy
-          requires:
-            - hugo/build
