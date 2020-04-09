@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/00_containers_and_orchestration/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/01-aws-fundamentals/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/terraform/hcl_basics/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/01_kubernetes-architecture/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/01_setting_up_k8_cluster/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/02_core_concepts/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/02-identity_access_control/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/02_installing_kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/terraform/modules/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/03-compute/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/03_configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/03_minikube/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/04_kubernetes_building_blocks/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/04_multi_container_pods/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/04-networking/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/05_authorization_access_control/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/05_observability/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/06_pod-design/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/06_services/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/07_deploying_standalone_app/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/08_kubernetes_volume_management/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/09_configmaps_secrets/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/10_ingress/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/11_advanced_topics/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/12_resources/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/aws/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/javascript/es-6/arrowfunctions/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-11-28-ubuntu-packages/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/google-cloud-platform/basic-essentials/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/chef/2016-02-29-berks/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/bigdata/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/bookmarks/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/chef/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/chef/2018-01-30-chef-databags/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/cloud-devops-engineer/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/google-cloud-platform/cloud-storage/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/google-cloud-platform/continuous-delivery-with-jenkins-in-kubernetes-engine/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2017-01-29-dns-basics/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/data-analytics/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/javascript/es-6/destructuring/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-09-17-docker-compose/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2018-04-19-drone/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/hugo-basics/basic_1/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/javascript/reactjs/redux/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/google-cloud-platform/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-07-06-gradle-wrapper/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/bigdata/2017-05-18-hive-query-optimizations/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/bigdata/2018-01-02-hive-tables-best-practices/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2017-09-22-install-docker-centos-7/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/java/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/javascript/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-08-20-jenkins/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-09-13-jenkins-shared-libs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/bigdata/2018-05-10-jupyter-notebooks/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/chef/2016-04-05-chef-knife-commands/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/java/the-basics/lambda_expressions/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/hugo-basics/basic_2/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-11-27-issue-remote-commands/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-02-26-mqtt/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-10-01-network-command-essentials/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-10-8-owasp/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-10-3-openshift-cheatsheet/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-03-24-open-stack-cli/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-08-16-openshift/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/google-cloud-platform/orchestrating-cloud-with-kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-11-26-setting-apache-virtual-host/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-03-01-setting-fqdn/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2017-02-05-setting-selenium-grid/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/bigdata/2018-01-02-setting-up-storm-in-5-minutes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-09-17-setting-up-jekyll-website/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/terraform/jenkins_setup_terraform/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/terraform/terraform_kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/terraform/terraform_docker/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2018-09-18-spring-cloud-slueth/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-04-10-setting-up-supervisord/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/javascript/template-literals/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/terraform/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/terraform/terraform_state/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2019-01-23-nginx/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-07-07-ssh-keys/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/2017-03-15-using-apache-server-benchmarking/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/hugo-basics/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/data-analytics/2018-05-01-pandas/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/categories/bigdata/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/tags/bigdata/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/categories/devops/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/tags/hive/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

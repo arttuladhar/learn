@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bigdata on Always Learning; Always Improving</title>
+    <link>http://learn.aayushtuladhar.com/tags/bigdata/</link>
+    <description>Recent content in bigdata on Always Learning; Always Improving</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://learn.aayushtuladhar.com/tags/bigdata/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hive Query Optimizations</title>
+      <link>http://learn.aayushtuladhar.com/bigdata/2017-05-18-hive-query-optimizations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/bigdata/2017-05-18-hive-query-optimizations/</guid>
+      <description>Changing Engine for Hive Queries In general, Tez provides increased performance over Map Reduce specially where JOINS are required resulting in intermediate output being written to disk.
+set hive.execution.engine=tez  Using Partitions Partitions separate date in Hive tables by HDFS directories. If data is distributed based on partitions on certain fields, Using those fields to access data allows speeding up Hive queries. In other words, querying without partitions equates to full table scan.</description>
+    </item>
+    
+    <item>
+      <title>Hive Tables [Best Practices]</title>
+      <link>http://learn.aayushtuladhar.com/bigdata/2018-01-02-hive-tables-best-practices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/bigdata/2018-01-02-hive-tables-best-practices/</guid>
+      <description>Hive Table Storage Formats Avoid using TEXT format, Sequence file format or complex storage format such as JSON. Ideally, RCFile (Row Columnar File) or Parquet files are best suited. If you are building data warehouse on Hive, for better performance use Parquet file format.
+CREATE TABLE IF NOT EXISTS test_table ( col1 int, col2 string ) ROW FORMAT DELIMITED FIELDS TERMINATED BY &#39;,&#39; STORED AS PARQUET;  Compression Techniques Try to split compression algorithms provided by Hadoop &amp;amp; Hive like Snappy.</description>
+    </item>
+    
+  </channel>
+</rss>
