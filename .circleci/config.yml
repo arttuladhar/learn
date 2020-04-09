@@ -1,8 +1,7 @@
---- 
 jobs:
   prep:
     docker:
-      - image: cibuilds/hugo:latest
+      - image: cibuilds/hugo:0.55.6
     steps:
       - checkout
       - run: "./deploy.sh"
