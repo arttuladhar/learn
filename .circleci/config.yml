@@ -1,6 +1,8 @@
 --- 
 jobs:
   prep:
+    docker:
+      - image: cibuilds/hugo:latest
     steps:
       - checkout
       - run: "./deploy.sh"
@@ -11,13 +13,11 @@ jobs:
       - attach_workspace: 
           at: my-site
       - run: "ls -lah my-site"
-orbs: 
-  hugo: circleci/hugo@0.4.1
 version: 2.1
 workflows: 
   main: 
     jobs: 
-      - prep         
+      - prep
       - deploy: 
           requires: 
             - prep
