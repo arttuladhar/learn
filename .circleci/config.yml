@@ -1,22 +1,12 @@
 jobs:
-  prep:
-    docker:
-      - image: cibuilds/hugo:0.55.6
-    steps:
-      - checkout
-      - run: "./deploy.sh"
-  deploy:
+  sayHello:
     docker: 
       - image: cibuilds/base
     steps: 
-      - attach_workspace: 
-          at: my-site
-      - run: "ls -lah my-site"
+      - checkout
+      - run: "ls -lah public"
 version: 2.1
 workflows: 
   main: 
     jobs: 
-      - prep
-      - deploy: 
-          requires: 
-            - prep
+      - sayHello: 
