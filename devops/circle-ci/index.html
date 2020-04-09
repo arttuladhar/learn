@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>11 - Advanced Topics :: Always Learning; Always Improving</title>
+    <title>Circle CI :: Always Learning; Always Improving</title>
 
     
     <link href="/css/nucleus.css?1586400362" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/kubernetes/11_advanced_topics/">
+  <body class="" data-url="/devops/circle-ci/">
     <nav id="sidebar" class="">
 
 
@@ -431,7 +431,7 @@
   
     
     <li data-nav-id="/devops/" title="DevOps" class="dd-item 
-        
+        parent
         
         
         ">
@@ -579,7 +579,7 @@
  
   
     
-      <li data-nav-id="/devops/circle-ci/" title="Circle CI" class="dd-item ">
+      <li data-nav-id="/devops/circle-ci/" title="Circle CI" class="dd-item active">
         <a href="/devops/circle-ci/">
         Circle CI
         
@@ -1408,7 +1408,7 @@
   
     
     <li data-nav-id="/kubernetes/" title="Kubernetes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -1667,7 +1667,7 @@
  
   
     
-      <li data-nav-id="/kubernetes/11_advanced_topics/" title="11 - Advanced Topics" class="dd-item active">
+      <li data-nav-id="/kubernetes/11_advanced_topics/" title="11 - Advanced Topics" class="dd-item ">
         <a href="/kubernetes/11_advanced_topics/">
         11 - Advanced Topics
         
@@ -2165,7 +2165,7 @@
             
           
           
-            <a href='/'>Digital Learning Notebook</a> > <a href='/kubernetes/'>Kubernetes</a> > 11 - Advanced Topics
+            <a href='/'>Digital Learning Notebook</a> > <a href='/devops/'>DevOps</a> > Circle CI
           
          
           
@@ -2182,22 +2182,14 @@
 <ul>
 <li>
 <ul>
-<li><a href="#annotations">Annotations</a></li>
-<li><a href="#jobs-and-cronjobs">Jobs and CronJobs</a></li>
-<li><a href="#quota-management">Quota Management</a></li>
-<li><a href="#autoscalling">Autoscalling</a>
+<li><a href="#concepts">Concepts</a>
 <ul>
-<li><a href="#horizontal-pod-autoscaler-hpa">Horizontal Pod Autoscaler (HPA)</a></li>
-<li><a href="#vertical-pod-autoscaler-vpa">Vertical Pod Autoscaler (VPA)</a></li>
-<li><a href="#cluster-autoscaler">Cluster Autoscaler</a></li>
+<li><a href="#workflows">Workflows</a></li>
 </ul></li>
-<li><a href="#daemonsets">DaemonSets</a></li>
-<li><a href="#statefulsets">StatefulSets</a></li>
-<li><a href="#kubernetes-federation">Kubernetes Federation</a></li>
-<li><a href="#helm-chart">Helm Chart</a></li>
-<li><a href="#security-contexts-and-pod-security-policies">Security Contexts and Pod Security Policies</a></li>
-<li><a href="#network-policies">Network Policies</a></li>
-<li><a href="#monitoring-and-logging">Monitoring and Logging</a></li>
+<li><a href="#jobs">Jobs</a></li>
+<li><a href="#steps">Steps</a></li>
+<li><a href="#image">Image</a></li>
+<li><a href="#example">Example</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -2210,13 +2202,19 @@
             
         <div id="head-tags">
         
+<div class="tags">
+
+  <a class="tag-link" href="/tags/devops">devops</a>
+
+</div>
+
         </div>
         
         <div id="body-inner">
           
             <h1>
               
-              11 - Advanced Topics
+              Circle CI
             </h1>
           
 
@@ -2226,127 +2224,68 @@
 
 
 
-<h2 id="annotations">Annotations</h2>
+<h2 id="concepts">Concepts</h2>
 
-<p>With Annotations, we can attach arbitrary non-identifying metadata to any objects, in a key-value format:</p>
+<h3 id="workflows">Workflows</h3>
 
-<pre><code class="language-json">&quot;annotations&quot;: {
-  &quot;key1&quot; : &quot;value1&quot;,
-  &quot;key2&quot; : &quot;value2&quot;
-}
+<p>Workflows define a list of jobs and their run order. It is possible to run jobs concurrently, sequentially, on a schedule, or with a manual gate using an approval job.</p>
+
+<h2 id="jobs">Jobs</h2>
+
+<p>Jobs are a collection of Steps. All of the steps in the job are executed in a single unit which consumes a CircleCI container from your plan while it’s running. Each job must declare an executor that is either docker, machine, windows or macos. machine includes a default image if not specified, for docker you must specify an image to use for the primary container, for macos you must specify an Xcode version, and for windows you must use the Windows orb.</p>
+
+<h2 id="steps">Steps</h2>
+
+<p>Steps are actions that need to be taken to perform your job. Steps are usually a collection of executable commands. For example, the checkout step checks out the source code for a job over SSH. Then, the run step executes the make test command using a non-login shell by default.</p>
+
+<h2 id="image">Image</h2>
+
+<p>An image is a packaged system that has the instructions for creating a running container. The Primary Container is defined by the first image listed in .circleci/config.yml file. This is where commands are executed for jobs using the Docker or machine executor. The Docker executor spins up a container with a Docker image. The machine executor spins up a complete Ubuntu virtual machine image. See Choosing an Executor Type document for a comparison table and considerations.</p>
+
+<h2 id="example">Example</h2>
+
+<pre><code class="language-yml">version: 2
+
+jobs:
+  one:
+    docker:
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: echo &quot;Hello Ruby&quot;
+      - run: mkdir -p my_workspace
+      - run: echo &quot;Trying out workspaces&quot; &gt; my_workspace/echo-output
+      - persist_to_workspace:
+            root: my_workspace
+            paths:
+                - echo-output
+      - run: sleep 25
+  two:
+    docker:
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: echo &quot;A more familiar Hi&quot;
+      - attach_workspace:
+          at: my_workspace
+      - run: |
+          if [[ $(cat my_workspace/echo-output) == &quot;Trying out workspaces&quot; ]]; then
+            echo &quot;It worked!&quot;;
+          else
+            echo &quot;Nope!&quot;; exit 1
+          fi
+      - run: sleep 15
+    
+
+workflows:
+  version: 2
+  one_two_wf:
+    jobs:
+      - one
+      - two:
+          requires:
+            - one
 </code></pre>
-
-<p>Unlike Labels, annotations are not used to identify and select objects. Annotations can be used to:</p>
-
-<ul>
-<li>Store build/release IDs, PR numbers, git branch, etc.</li>
-<li>Phone/pager numbers of people responsible, or directory entries specifying where such information can be found</li>
-<li>Pointers to logging, monitoring, analytics, audit repositories, debugging tools, etc.</li>
-</ul>
-
-<pre><code class="language-yaml">apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: webserver
-  annotations:
-    description: Deployment based PoC dates 2nd May'2019
-</code></pre>
-
-<h2 id="jobs-and-cronjobs">Jobs and CronJobs</h2>
-
-<p>A Job creates one or more Pods to perform a given task. The Job object takes the responsibility of Pod failures. It makes sure that the given task is completed successfully. Once the task is complete, all the Pods have terminated automatically. Job configuration options include</p>
-
-<ul>
-<li><code>parallelism</code> - to set the number of pods allowed to run in parallel;</li>
-<li><code>completions</code> - to set the number of expected completions;</li>
-<li><code>activeDeadlineSeconds</code> - to set the duration of the Job;</li>
-<li><code>backoffLimit</code> - to set the number of retries before Job is marked as failed;</li>
-<li><code>ttlSecondsAfterFinished</code> - to delay the clean up of the finished Jobs.</li>
-</ul>
-
-<h2 id="quota-management">Quota Management</h2>
-
-<h2 id="autoscalling">Autoscalling</h2>
-
-<p>Autoscaling can be implemented in a Kubernetes cluster via controllers which periodically adjust the number of running objects based on single, multiple, or custom metrics. There are various types of autoscalers available in Kubernetes which can be implemented individually or combined for a more robust autoscaling solution:</p>
-
-<h3 id="horizontal-pod-autoscaler-hpa">Horizontal Pod Autoscaler (HPA)</h3>
-
-<p>HPA is an algorithm based controller API resource which automatically adjusts the number of replicas in a ReplicaSet, Deployment or Replication Controller based on CPU utilization.</p>
-
-<h3 id="vertical-pod-autoscaler-vpa">Vertical Pod Autoscaler (VPA)</h3>
-
-<p>VPA automatically sets Container resource requirements (CPU and memory) in a Pod and dynamically adjusts them in runtime, based on historical utilization data, current resource availability and real-time events.</p>
-
-<h3 id="cluster-autoscaler">Cluster Autoscaler</h3>
-
-<p>Cluster Autoscaler automatically re-sizes the Kubernetes cluster when there are insufficient resources available for new Pods expecting to be scheduled or when there are underutilized nodes in the cluster.</p>
-
-<h2 id="daemonsets">DaemonSets</h2>
-
-<p>A DaemonSet ensures that all (or some) Nodes run a copy of a Pod. As nodes are added to the cluster, Pods are added to them. As nodes are removed from the cluster, those Pods are garbage collected. Deleting a DaemonSet will clean up the Pods it created.</p>
-
-<p>Some typical uses of a DaemonSet are:</p>
-
-<ul>
-<li>running a cluster storage daemon, such as glusterd, ceph, on each node.</li>
-<li>running a logs collection daemon on every node, such as fluentd or logstash.</li>
-<li>running a node monitoring daemon on every node, such as Prometheus Node Exporter, Sysdig Agent, collectd, Dynatrace OneAgent, AppDynamics Agent, Datadog agent, New Relic agent, Ganglia gmond or Instana Agent.</li>
-</ul>
-
-<h2 id="statefulsets">StatefulSets</h2>
-
-<p>The StatefulSet controller is used for stateful applications which require a unique identity, such as name, network identifications, strict ordering, etc. For example, MySQL cluster, etcd cluster.</p>
-
-<p>The StatefulSet controller provides identity and guaranteed ordering of deployment and scaling to Pods. Similar to Deployments, StatefulSets use ReplicaSets as intermediary Pod controllers and support rolling updates and rollbacks.</p>
-
-<h2 id="kubernetes-federation">Kubernetes Federation</h2>
-
-<p>With Kubernetes Cluster Federation we can manage multiple Kubernetes clusters from a single control plane. We can sync resources across the federated clusters and have cross-cluster discovery. This allows us to perform Deployments across regions, access them using a global DNS record, and achieve High Availability.</p>
-
-<h2 id="helm-chart">Helm Chart</h2>
-
-<p>To deploy an application, we use different Kubernetes manifests, such as Deployments, Services, Volume Claims, Ingress, etc. Sometimes, it can be tiresome to deploy them one by one. We can bundle all those manifests after templatizing them into a well-defined format, along with other metadata. Such a bundle is referred to as Chart. These Charts can then be served via repositories, such as those that we have for rpm and deb packages.</p>
-
-<p>Helm is a package manager (analogous to yum and apt for Linux) for Kubernetes, which can install/update/delete those Charts in the Kubernetes cluster.</p>
-
-<p>Helm has two components:</p>
-
-<ul>
-<li>A client called <strong>helm</strong>, which runs on your user&rsquo;s workstation</li>
-<li>A server called <strong>tiller</strong>, which runs inside your Kubernetes cluster.</li>
-</ul>
-
-<p>The client helm connects to the server tiller to manage Charts.</p>
-
-<h2 id="security-contexts-and-pod-security-policies">Security Contexts and Pod Security Policies</h2>
-
-<p>At times we need to define specific privileges and access control settings for Pods and Containers. Security Contexts allow us to set Discretionary Access Control for object access permissions, privileged running, capabilities, security labels, etc. However, their effect is limited to the individual Pods and Containers where such context configuration settings are incorporated in the spec section.</p>
-
-<p>In order to apply security settings to multiple Pods and Containers cluster-wide, we can define Pod Security Policies. They allow more fine-grained security settings to control the usage of the host namespace, host networking and ports, file system groups, usage of volume types, enforce Container user and group ID, root privilege escalation, etc.</p>
-
-<h2 id="network-policies">Network Policies</h2>
-
-<p>Kubernetes was designed to allow all Pods to communicate freely, without restrictions, with all other Pods in cluster Namespaces. In time it became clear that it was not an ideal design, and mechanisms needed to be put in place in order to restrict communication between certain Pods and applications in the cluster Namespace. <strong><a href="https://kubernetes.io/docs/concepts/services-networking/network-policies/">Network Policies</a></strong> are sets of rules which define how Pods are allowed to talk to other Pods and resources inside and outside the cluster. Pods not covered by any <strong>Network Policy</strong> will continue to receive unrestricted traffic from any endpoint. </p>
-
-<p><strong>Network Policies</strong> are very similar to typical Firewalls. They are designed to protect mostly assets located inside the Firewall but can restrict outgoing traffic as well based on sets of rules and policies.</p>
-
-<p>The <strong>Network Policy</strong> API resource specifies <strong>podSelectors</strong>, *Ingress* and/or *Egress* <strong>policyTypes</strong>, and rules based on source and destination <strong>ipBlocks</strong> and <strong>ports</strong>. Very simplistic default allow or default deny policies can be defined as well. As a good practice, it is recommended to define a default deny policy to block all traffic to and from the Namespace, and then define sets of rules for specific traffic to be allowed in and out of the Namespace. </p>
-
-<p>Let&rsquo;s keep in mind that not all the networking solutions available for Kubernetes support Network Policies. Review the Pod-to-Pod Communication section from the Kubernetes Architecture chapter if needed. By default, <strong>Network Policies</strong> are namespaced API resources, but certain network plugins provide additional features so that Network Policies can be applied cluster-wide.</p>
-
-<h2 id="monitoring-and-logging">Monitoring and Logging</h2>
-
-<p>In Kubernetes, we have to collect resource usage data by Pods, Services, nodes, etc., to understand the overall resource consumption and to make decisions for scaling a given application. Two popular Kubernetes monitoring solutions are the Kubernetes Metrics Server and Prometheus.</p>
-
-<ul>
-<li><strong>Metrics Server</strong><br />
-<a href="https://kubernetes.io/docs/tasks/debug-application-cluster/resource-metrics-pipeline/#metrics-server">Metrics Server</a> is a cluster-wide aggregator of resource usage data - a relatively new feature in Kubernetes. </li>
-<li><strong>Prometheus<a href="https://prometheus.io/"><br />
-</a></strong><a href="https://prometheus.io/">Prometheus</a>, now part of <a href="https://www.cncf.io/">CNCF</a> (Cloud Native Computing Foundation), can also be used to scrape the resource usage from different Kubernetes components and objects. Using its client libraries, we can also instrument the code of our application.</li>
-</ul>
-
-<p>Another important aspect for troubleshooting and debugging is Logging, in which we collect the logs from different components of a given system. In Kubernetes, we can collect logs from different cluster components, objects, nodes, etc. Unfortunately, however, Kubernetes does not provide cluster-wide logging by default, therefore third party tools are required to centralize and aggregate cluster logs. The most common way to collect the logs is using <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/logging-elasticsearch-kibana/">Elasticsearch</a>, which uses <a href="http://www.fluentd.org/">fluentd</a> with custom configuration as an agent on the nodes. <strong>fluentd</strong> is an open source data collector, which is also part of CNCF.</p>
 
 
 <footer class="footline">
@@ -2613,6 +2552,7 @@ metadata:
             
                 
                     
+                    
                 
                 
 
@@ -2627,6 +2567,9 @@ metadata:
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2708,21 +2651,6 @@ metadata:
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -2740,21 +2668,8 @@ metadata:
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -3103,22 +3018,6 @@ metadata:
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -3134,70 +3033,6 @@ metadata:
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -3303,13 +3138,10 @@ metadata:
             
                 
                     
-                    
                 
                 
 
                     
-                    
-                        
                     
                     
 
@@ -3319,8 +3151,37 @@ metadata:
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
+            
+            
+                
                     
                 
                 
@@ -3364,6 +3225,40 @@ metadata:
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
                     
                         
             
@@ -3498,6 +3393,21 @@ metadata:
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -3515,8 +3425,37 @@ metadata:
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
+            
+            
+                
                     
                 
                 
@@ -3813,10 +3752,10 @@ metadata:
 	 
 	 
 		
-			<a class="nav nav-prev" href="/kubernetes/10_ingress/" title="10 - Ingress"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/devops/chef/2016-04-05-chef-knife-commands/" title="Knife Commands"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/kubernetes/12_resources/" title="12 - Resources" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/devops/cloud-devops-engineer/" title="Cloud DevOps Engineer" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

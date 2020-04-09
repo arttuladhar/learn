@@ -22,6 +22,16 @@ Restore dpkg --clear-selections sudo dpkg --set-selections &amp;lt; list.txt sud
     </item>
     
     <item>
+      <title>Circle CI</title>
+      <link>http://learn.aayushtuladhar.com/devops/circle-ci/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/circle-ci/</guid>
+      <description>Concepts Workflows Workflows define a list of jobs and their run order. It is possible to run jobs concurrently, sequentially, on a schedule, or with a manual gate using an approval job.
+Jobs Jobs are a collection of Steps. All of the steps in the job are executed in a single unit which consumes a CircleCI container from your plan while it’s running. Each job must declare an executor that is either docker, machine, windows or macos.</description>
+    </item>
+    
+    <item>
       <title>DNS Basics</title>
       <link>http://learn.aayushtuladhar.com/devops/2017-01-29-dns-basics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

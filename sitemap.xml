@@ -152,6 +152,10 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/devops/circle-ci/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/devops/cloud-devops-engineer/</loc>
   </url>
   
@@ -366,17 +370,22 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/tags/bigdata/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://learn.aayushtuladhar.com/categories/bigdata/</loc>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/tags/bigdata/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/categories/devops/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/tags/devops/</loc>
     <priority>0</priority>
   </url>
   
