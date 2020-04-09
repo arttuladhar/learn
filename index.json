@@ -186,7 +186,7 @@
 	"title": "AWS Certified Solutions Architect",
 	"tags": [],
 	"description": "",
-	"content": "  01 - AWS Fundamentals   02 - Identity and Access Control   03 - Compute   04 - Networking   "
+	"content": ""
 },
 {
 	"uri": "http://learn.aayushtuladhar.com/javascript/es-6/arrowfunctions/",
@@ -221,7 +221,7 @@
 	"title": "Big Data",
 	"tags": [],
 	"description": "",
-	"content": "  Hive Query Optimizations   Hive Tables [Best Practices]   Jupyter NoteBook - Shortcuts   Setting up Apache Storm   "
+	"content": ""
 },
 {
 	"uri": "http://learn.aayushtuladhar.com/bookmarks/",
@@ -347,7 +347,7 @@
 	"title": "Google Cloud Platform",
 	"tags": [],
 	"description": "",
-	"content": "  Basic Essentials   Cloud Storage   Continuous Delivery with Jenkins in Kubernetes Engine   Orchestrating Cloud with Kubernetes   "
+	"content": ""
 },
 {
 	"uri": "http://learn.aayushtuladhar.com/devops/2016-07-06-gradle-wrapper/",
@@ -630,14 +630,14 @@
 	"content": " Explore, Visualize, and Predict using Pandas \u0026amp; Jupyter  Explore, Visualize, and Predict using Pandas \u0026amp; Jupyter Pandas Intro Load Data Inspecting Data Summarize Data Reference  Setup\n%matplotlib inline import pandas as pd import matplotlib import numpy as np  pd.__version__, matplotlib.__version__, np.__version__  Pandas Intro The pandas library is very popular among data scientists, quants, Excel junkies, and Python developers because it allows you to perform data ingestion, exporting, transformation, and visualization with ease. But if you are only familiar with Python, pandas may present some challenges. Since pandas is inspired by Numpy, its syntax conventions can be confusing to Python developers.\nPandas has two main datatypes: a Series and a DataFrame\n A Series is like a column from a spreadsheet  s = pd.Series([0, 4, 6, 7]) temps = [30, 40, 60, 90] temp_series = pd.Series(temps) temp_series.sum() # Boolean Arrays hot = pd.Series([False, False, True, True]) temp_series[hot] # Masking mask1 = temp_series \u0026gt; 30 mask2 = temp_series \u0026lt; 60 result = temp_series[mask1 \u0026amp; mask2] dates = pd.date_range('20160101', periods=4) temp3 = pd.Series(temps, index=dates)  A DataFrame is like a spreadsheet\ndf = pd.DataFrame({'name': ['Fred', 'Johh', 'Joe', 'Abe'], 'age': s})  Load Data %ls data/ nyc = pd.read_csv('data/central-park-raw.csv', parse_dates=[0])  Inspecting Data # Columns for DataFrame nyc.columns # Get Datatypes for Columns nyc.dtypes # DataFrame Info nyc.info # Show Only First Bit nyc.head(10)  Summarize Data  df['w'].value_counts() - Count number of rows with unique value of variable df.describe()  Reference  https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf  "
 },
 {
-	"uri": "http://learn.aayushtuladhar.com/categories/bigdata/",
+	"uri": "http://learn.aayushtuladhar.com/tags/bigdata/",
 	"title": "bigdata",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://learn.aayushtuladhar.com/tags/bigdata/",
+	"uri": "http://learn.aayushtuladhar.com/categories/bigdata/",
 	"title": "bigdata",
 	"tags": [],
 	"description": "",
