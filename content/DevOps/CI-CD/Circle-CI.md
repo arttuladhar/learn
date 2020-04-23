@@ -3,9 +3,16 @@ title: Circle CI
 tags: ["devops"]
 ---
 
+- [Concepts](#concepts)
+- [Workflows](#workflows)
+- [Jobs](#jobs)
+- [Steps](#steps)
+- [Image](#image)
+- [Example](#example)
+
 ## Concepts
 
-### Workflows
+## Workflows
 
 Workflows define a list of jobs and their run order. It is possible to run jobs concurrently, sequentially, on a schedule, or with a manual gate using an approval job.
 

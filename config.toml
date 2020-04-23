@@ -1,6 +1,6 @@
 baseURL = "http://learn.aayushtuladhar.com"
 languageCode = "en-us"
-title = "Always Learning; Always Improving"
+title = ""
 theme = "hugo-theme-learn"
 
 [params]
@@ -8,7 +8,7 @@ theme = "hugo-theme-learn"
   GitHubUser = "arttuladhar"
   SidebarRecentLimit = 5
   Subtitle = "Always Learning; Always Improving"
-  themeVariant = "green"
+  themeVariant = "blue"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]

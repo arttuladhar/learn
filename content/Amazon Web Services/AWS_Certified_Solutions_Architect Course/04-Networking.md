@@ -153,5 +153,7 @@ Egress-only internet gateways provide IPv6 instances with outgoing access to the
 NAT isn't required with IPv6, and so NATGW's are compatible with IPv6. Egress-only gateways provide the outgoing-only access of a NATGW but do so without adjusting any IP addresses.
 {{% /notice %}}
 
-## DNS 101
+## Global DNS (Route 53) Fundamentals
+
+## Global DNS (Route 53) Advanced
 

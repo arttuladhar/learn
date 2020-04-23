@@ -28,7 +28,7 @@ jekyll new myblog
 
 ### Run Blog Locally
 
-```
+```bash
 bundle exec jekyll serve
 ```
 

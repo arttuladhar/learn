@@ -19,6 +19,7 @@ categories:
   - [Image stream trigger](#image-stream-trigger)
   - [Templates](#templates)
 - [References](#references)
+- [Cheatsheet](#cheatsheet)
 
 ## Architecture
 
@@ -144,3 +145,7 @@ oc create -f <filename>
 * [Core Concepts - Architecture](https://docs.okd.io/latest/architecture/core_concepts/index.html)
 
 * [Core Concepts - Builds and Image Streams](https://docs.openshift.com/container-platform/3.7/architecture/core_concepts/builds_and_image_streams.html)
+
+## Cheatsheet
+
+<script src="https://gist.github.com/arttuladhar/23ac69ac6706d7ee2e0597f8dec3211b.js"></script>

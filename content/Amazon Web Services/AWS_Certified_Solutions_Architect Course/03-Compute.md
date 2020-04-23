@@ -57,16 +57,15 @@ Special Cases
 ---
 ### Elastic Block Storage (EBS)
 
-Elastic Block Storage is a storage service that creates and managed volumes based on four underlying storage types. Volumes are persistent, can be attached and removed from EC2 instances, and are replicated within a single AZ.
-
+Elastic Block Storage is a storage service that **creates and manages volumes** based on four underlying storage types. Volumes are persistent, can be attached and removed from EC2 instances, and are replicated within a single AZ.
 
 {{% notice info %}}
 To protect against AZ failure, EBS snapshots (to S3) can be used. Data is replicated across AZs in the region and (optionally) internationally.
 {{% /notice %}}
 
-* EBS supports a maximum per-instance throughput of 1750 MiB/s and 80,000 IOPS.
+#### Exam Facts
 
-#### EBS Types
+* EBS supports a maximum per-instance throughput of 1750 MiB/s and 80,000 IOPS.
 
 **General Purpose (gp2): (SSD)**
 
@@ -74,6 +73,7 @@ To protect against AZ failure, EBS snapshots (to S3) can be used. Data is replic
 * 3 IOPS/GiB  (100 IOPS - 16,000 IOPS)
 * Burst up to 3,000 IOPS (credit based)
 * 1 GiB - 16 TiB size, max throughput p/vol of 250 MiB/s
+
 
 ---
 ### EBS Snapshots
@@ -121,11 +121,11 @@ Remember the IP address to access metadata
 
 AMIs (Amazon Machine Images) are used to build instance. They store snapshots of EBS volumes, permissions, and a block device mapping, which configures how the instance OS see the attached volumes. AMIs can be shared, free or paid and can be copied to other AWS regions.
 
-1. Configure Instance - Source instance and attached EBS volumes are configured with any required software and configuration.
+1. **Configure Instance** - Source instance and attached EBS volumes are configured with any required software and configuration.
    
-2. Create Image - Snapshots are created from volumes. AMI references snapshots, permission, and block device mapping.
+2. **Create Image** - Snapshots are created from volumes. AMI references snapshots, permission, and block device mapping.
 
-3. Launch Instance - With approriate launch permissions, instances can be created from an AMI. EBS volumes are created using snapshots as the source, and an EC2 instance is created uinsg the block device mapping to reference its new volumes.
+3. **Launch Instance** - With approriate launch permissions, instances can be created from an AMI. EBS volumes are created using snapshots as the source, and an EC2 instance is created uinsg the block device mapping to reference its new volumes.
 
 {{% notice warning %}}
 Downside of using AMI is you can't do dynamic configuration
@@ -147,7 +147,7 @@ In EC2, user data can be used to run **shell scripts** or run **cloud-init** dir
 ---
 ### EC2 Instance Roles
 
-EC2 instance roles are IAM roles that can be "assumed" by EC2 using an itermediary called an **instance profile**. An instance profile is either created automatically when using the console UI or manually when using the CLI. It's a container for the role that is associated with an EC2 instance.
+EC2 **instance roles** are IAM roles that can be "assumed" by EC2 using an itermediary called an **instance profile**. An instance profile is either created automatically when using the console UI or manually when using the CLI. It's a container for the role that is associated with an EC2 instance.
 
 The instance profile allows application on the EC2 instance to access the credentials fromt he role using the **instance metadata**.
 
@@ -209,7 +209,7 @@ Spot Pricing can save you more than 90% than on-demand application.
 
 Reserved instance lock in a reduced rate for one or three years. Zonal reserved instance include a capacity reservation. Your commitment incurs costs even if instance aren't launched. Reserved purchases are used for long-running, understood, and consistent workloads.
 
-**When to Use Reserved Purchases***
+**When to Use Reserved Purchases**
 
 * Base / Consistent Load
 * Known and Understood Growth
@@ -231,6 +231,10 @@ Reserved instance lock in a reduced rate for one or three years. Zonal reserved 
 EC2 dedicated hosts are a feature of EC2, giving you complete control over physical instance placement and dedicated hardware free from other customer interaction.
 
 ## Serverless Compute
+
+![Serverless](/images/AWS_Certified_Solutions_Architect/serverless.png)
+
+Serverless architecture consists of two main principles, including BaaS (Backend as a Service), which means using third party services where possible rather than running your own. Example include Auth0 or Cognito for authentication and Firebase or DynamoDb for data storage. Servless architecture uses event driven architecture using FaaS (Function as a Service) products to provide application logic. These functions are only actively invoked when they are needed.
 
 ### Lambda Essentials
 

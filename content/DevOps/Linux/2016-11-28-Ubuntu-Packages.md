@@ -1,5 +1,5 @@
 ---
-title: Backup and Restore Ubuntu Packages
+title: Ubuntu Packages
 layout: post
 categories:
 - devops

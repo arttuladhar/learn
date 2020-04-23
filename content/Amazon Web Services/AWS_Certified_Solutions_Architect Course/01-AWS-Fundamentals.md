@@ -2,23 +2,28 @@
 title: 01 - AWS Fundamentals
 ---
 
-- [Architecture 101](#architecture-101)
-  - [Access Management Basics](#access-management-basics)
+- [Access Management Basics](#access-management-basics)
   - [AWS Account](#aws-account)
-      - [Authentication](#authentication)
-      - [Authorization](#authorization)
-      - [Billing](#billing)
-  - [AWS Physical and Networking Layer](#aws-physical-and-networking-layer)
-  - [Well-Architected Framework](#well-architected-framework)
-  - [Elasticity](#elasticity)
-  - [Introduction to S3 - (Simple Storage Service)](#introduction-to-s3---simple-storage-service)
+    - [Authentication](#authentication)
+    - [Authorization](#authorization)
+    - [Billing](#billing)
+- [AWS Physical and Networking Layer](#aws-physical-and-networking-layer)
+- [Well-Architected Framework](#well-architected-framework)
+  - [Pillars of Well Architected Framework](#pillars-of-well-architected-framework)
+    - [Security](#security)
+    - [Reliability](#reliability)
+    - [Performance Efficiency](#performance-efficiency)
+    - [Operational Excellence](#operational-excellence)
+    - [Cost Optimization](#cost-optimization)
+- [Elasticity](#elasticity)
+- [Introduction to S3 - (Simple Storage Service)](#introduction-to-s3---simple-storage-service)
+- [Introduction to Cloud Formation](#introduction-to-cloud-formation)
 
-# Architecture 101
+---
 
 ## Access Management Basics
 
-
-## AWS Account
+### AWS Account
 
 AWS accounts are more than just a way to log in and access AWS services — they are a crucial AWS feature that AWS solutions architects can use to implement secure and high-performance systems. 
 
@@ -49,22 +54,68 @@ A failure in one AZ generally won't impact another AZ.
 
 Most AWS services run within AZs. Some series operate from one AZ, while other replicate between AZs. Some services allow you to choose the AZ to use, and some don't.
 
-{{% notice info %}}
+{{% notice note %}}
 Edge locations are small pockets of AWS compute, storage, and networking close to major populations and are generally used for edge computing and content delivery.
 {{% /notice %}}
 
+---
 
 ## Well-Architected Framework
 
 Well-Architected Framework is a set of Best Practices, Principles, Concepts to help you build effective AWS solutions. It introduces general design principles to help you build efficient systems.
 
-Pillars of Well Architected Framework
+### Pillars of Well Architected Framework
 
-* Security
-* Operational Excellence
-* Reliability
-* Performance Efficiency
-* Cost Optimization
+#### Security
+The security pillar includes the ability to protect information, system and assets while delivering business value through risk accessment and mitigation strategies
+
+**Design Principles**
+
+* Implement a strong identity founcation
+* Enable tracebility
+* Apply security at all layers
+* Automate security best practices
+* Protect data in transit and data at rest
+* Prepare for security events
+
+#### Reliability
+The reliability pillar includes the ability of a system to recover from infrastructure or service distruptions, dynamically acquire computing resources to meet demand, and mitigate distruptions, such as misconfigurations or transient network issues.
+
+**Design Principles**
+
+* Test recovery procedures
+* Automatically recover from failure
+* Scale horizontally to increase aggregate system availability
+* Stop guessing capacity
+* Manage change in automation
+
+
+#### Performance Efficiency
+The performance efficiency pillar includes the ability to use computing resources efficiently to meet system requirements and to maintain that efficiency as demand changes and technologies evolve.
+
+**Design Principles**
+
+* Democratize advanced technologies
+* Go global in minutes
+* Use serverless architecture
+* Experiment more often
+* Mechanical sympathy
+
+#### Operational Excellence
+The operational excellence pillar includes the ability to run and monitor systems to deliver business value and to continually improve supporting processesses and procedures.
+
+**Design Principles**
+
+* Perform operations as code
+* Annotate documentation
+* Make frequent, small, reversible changes
+* Refine operations procedures frequently
+* Anticipate failure
+* Learn from all operational failure
+
+#### Cost Optimization
+
+The cost optimization pillar includes the ability to avoid or elimiate unneeded cost of suboptimal resources.
 
 [AWS Well-Architected](https://aws.amazon.com/architecture/well-architected/)
 
@@ -81,3 +132,11 @@ Elasticity, or Elastic Scalling is where automation and horizontal scalling are 
 ## Introduction to S3 - (Simple Storage Service)
 
 Simple Storage Service (S3) is a global object storage platfrom that can be used to store objects in the form of text files, photos, audio, movies, large binaries or other object types.
+
+## Introduction to Cloud Formation
+
+CloudFormation is an Infrasturcture as a Code (IaC) product, you can use to create, manage and remove infrastructure using JSON or YAML.
+
+{{% notice note %}}
+CloudFormation is effective if you frequently deploy the same infrastructure or you require guarantted consistent configuration
+{{% /notice %}}

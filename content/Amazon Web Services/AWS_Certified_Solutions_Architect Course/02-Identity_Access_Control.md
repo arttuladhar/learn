@@ -4,7 +4,6 @@ title: 02 - Identity and Access Control
 
 - [Identity and Access Control](#identity-and-access-control)
   - [IAM Policy](#iam-policy)
-    - [IAM Policy Notes](#iam-policy-notes)
   - [IAM Users](#iam-users)
   - [IAM Groups](#iam-groups)
   - [IAM Access Keys](#iam-access-keys)
@@ -30,10 +29,10 @@ A policy document is a list of statements.
 
 Each statement matches a request to AWS. Requests are matched based on their *Action*(or actions), which are the API calls or operations being attempted and the *Resource* (or resources) the request is against. A given statement results in an **Allow** or **Deny** for the request.
 
-#### IAM Policy Notes
+**IAM Policy - Exam Tips**
 
 * If a request isn't explicitly allowed, it's implicity (**default**) denied.
-* If a request is explicitly denied, it overrides everything else.
+* If a request is explicitly denied, *it overrides everything else*.
 * If a request is explicitly allowed, it's allowed unless denied by an explicit deny.
 * Remember: **DENY** -> **ALLOW** -> **DENY**
 * Only attached policies have any impact
@@ -49,29 +48,43 @@ Each statement matches a request to AWS. Requests are matched based on their *Ac
 Use Managed Policies to control the base level permissions and for customization use in-line permissions as needed.
 {{% /notice %}}
 
-![Identity And Access Management - Users](/images/AWS_Certified_Solutions_Architect/IAM_Users.jpg)
-
 ### IAM Users
+
+![Identity And Access Management - Users](/images/AWS_Certified_Solutions_Architect/IAM_Users.jpg)
 
 IAM users are a type of IAM identity suitable for **long-term** access for a **known entity** (human, service, application)
 
-Principals authenticate to IAM users either with a username and password or using access keys.
+Principals authenticate to IAM users either with a **username** and **password** or using **access keys**.
 
-* Hard limit of 5,000
+**Exam Facts and Figures:**
 
+* Hard limit of 5,000 IAM users per account
+* 10 group membership per IAM user
+* Default maximum of 10 managed policies per user
+* No inline limit, but you cannot exceed 2048 characters for all inline policies on an IAM user
+* 1 MFA per user
+* 2 Access Keys per user
 
 ### IAM Groups
 
 IAM groups allow for large-scale management of IAM users. This way, policies can be applied to groups and impact collections of similar users.
 
-{{% notice info %}}
-Group is not truly an **identity** in IAM because it cannot be identified as a Principal in a permission policy. It is simply a way to attach policies to multiple users at one time.
-{{% /notice %}}
+**Exam Facts and Figures:**
+
+* Groups are an admin feature to group IAM users.
+* Groups can contain many IAM users, and users can be in many groups.
+* IAM inline policies can be added to IAM groups - and these flow onto IAM users who are memebers
+* Managed IAM policies can be attached and flow on to IAM users who are members
+* Groups are not **true** identities, and they can't be referenced from resource policies
+* Groups have no credentials
 
 ### IAM Access Keys
 
-Access keys consist of access key IDs and secret access keys. Access keys are the long-term credentials used to authenticate to AWS for anything but the console UI. This lesson walks through the 
-architecture and discusses some key exam-relevant points.
+Access keys consist of access key IDs and secret access keys. The access key ID is the public part of the key and is stored by AWS once generated. The secret access key is the sensitive and private part of the access key available only once when the access key is initally generated. It is stored only the owner of the key and should never be revealed.
+
+{{% notice note %}}
+Access keys are the long-term credentials used to authenticate to AWS for anything but the console UI.
+{{% /notice %}}
 
 ## Multi-Account Management and Organizations
 
