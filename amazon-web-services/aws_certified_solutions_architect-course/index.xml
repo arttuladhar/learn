@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS Certified Solutions Architect Course on </title>
+    <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/</link>
+    <description>Recent content in AWS Certified Solutions Architect Course on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/06_databases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/06_databases/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>0 - Architecture 101</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/00-architecture-101/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/00-architecture-101/</guid>
+      <description>Access Management Basics  Principal Authentication Identity Authorization  Shared Reponsibility Model Service Models Availability and Recovery Scalling Tiered Application Design Encryption  Access Management Basics Principal A person or application that can make an authenticated or anonymous request to perform an action on a system.
+Authentication The process of authenticating a principal against an identity. This could be via username and passsword or API Keys.
+Identity Objects that require authentication and are authorized to access resources.</description>
+    </item>
+    
+    <item>
+      <title>01 - AWS Fundamentals</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/01-aws-fundamentals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/01-aws-fundamentals/</guid>
+      <description>Access Management Basics  AWS Account Authentication Authorization Billing  AWS Physical and Networking Layer Well-Architected Framework  Pillars of Well Architected Framework Security Reliability Performance Efficiency Operational Excellence Cost Optimization  Elasticity Introduction to S3 - (Simple Storage Service) Introduction to Cloud Formation  Access Management Basics AWS Account AWS accounts are more than just a way to log in and access AWS services — they are a crucial AWS feature that AWS solutions architects can use to implement secure and high-performance systems.</description>
+    </item>
+    
+    <item>
+      <title>02 - Identity and Access Control</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/02-identity_access_control/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/02-identity_access_control/</guid>
+      <description>Identity and Access Control  IAM Policy IAM Users IAM Groups IAM Access Keys  Multi-Account Management and Organizations  AWS Organizations Role Switching Between Accounts   Identity and Access Control Identity and Access Management, known as IAM, is one of the key services within AWS. It controls access to the AWS API endpoints that are used by the console UI, command line tools, and any applications wanting to utilize AWS.</description>
+    </item>
+    
+    <item>
+      <title>03 - Compute</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/03-compute/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/03-compute/</guid>
+      <description>Elastic Cloud Compute (EC2) Elastic Block Storage (EBS)  EBS Types  EBS Snapshots Security Groups Instance Metadata AMI Bootstrap Private Instance and Public Instance EC2 Instance Roles EBS Volume and Snapshot Encryption EBS Optimized, Enhanced Networking, and Placement Group  EBS optimization Enhanced networking Cluster, partition, and spread placement groups  EC2 Billing Models Dedicated Hosts  Elastic Cloud Compute (EC2) EC2 is one of the most widely used services within AWS.</description>
+    </item>
+    
+    <item>
+      <title>04 - Networking</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/04-networking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/04-networking/</guid>
+      <description>Networking Fundamentals  IP Addressing Subnetting Firewall Proxy Servers  Virtual Private Cloud (VPC)  Virtual Private Cloud (VPC): VPC Peering VPC Endpoints  DNS 101  Networking Fundamentals The Open Syste Interconnection (OSI) Model is a standard used by networking manufacturers globally. It was created and published in 1984; it splits all network communications into seven layers. Each layer servers the layer that&amp;rsquo;s above it plus the layer beneath it which adds additional capabilities.</description>
+    </item>
+    
+    <item>
+      <title>05 - Storage and Content Delivery</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/05-storage_and_content_delivery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/05-storage_and_content_delivery/</guid>
+      <description> S3 Architecture and Features S3 Performance and Resilience Cloud Front Network File System </description>
+    </item>
+    
+  </channel>
+</rss>

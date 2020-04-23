@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>devops on Always Learning; Always Improving</title>
+    <title>devops on </title>
     <link>http://learn.aayushtuladhar.com/tags/devops/</link>
-    <description>Recent content in devops on Always Learning; Always Improving</description>
+    <description>Recent content in devops on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
@@ -12,12 +12,12 @@
     
     <item>
       <title>Circle CI</title>
-      <link>http://learn.aayushtuladhar.com/devops/circle-ci/</link>
+      <link>http://learn.aayushtuladhar.com/devops/ci-cd/circle-ci/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/circle-ci/</guid>
-      <description>Concepts Workflows Workflows define a list of jobs and their run order. It is possible to run jobs concurrently, sequentially, on a schedule, or with a manual gate using an approval job.
-Jobs Jobs are a collection of Steps. All of the steps in the job are executed in a single unit which consumes a CircleCI container from your plan while it’s running. Each job must declare an executor that is either docker, machine, windows or macos.</description>
+      <guid>http://learn.aayushtuladhar.com/devops/ci-cd/circle-ci/</guid>
+      <description>Concepts Workflows Jobs Steps Image Example  Concepts Workflows Workflows define a list of jobs and their run order. It is possible to run jobs concurrently, sequentially, on a schedule, or with a manual gate using an approval job.
+Jobs Jobs are a collection of Steps. All of the steps in the job are executed in a single unit which consumes a CircleCI container from your plan while it’s running.</description>
     </item>
     
   </channel>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Architecture on </title>
+    <link>http://learn.aayushtuladhar.com/architecture/</link>
+    <description>Recent content in Architecture on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://learn.aayushtuladhar.com/architecture/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Twelve Factor App</title>
+      <link>http://learn.aayushtuladhar.com/architecture/twelve-factor-app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/architecture/twelve-factor-app/</guid>
+      <description>12factor.net - Link Introduction Methodology for building software-as-a-service app that:
+ Use Declarative formats for setup automation, to minimize time and cost for new developers joining the project. Have a Clean Contract with the underlying operation system, offering Maximum Portability between execution environments Are suitable for Deployment on modern Cloud platforms, obviating the need for servers and system administrators Minimize divergence between deployment and production, enabling Continuous deployment for maximum agility And can Scale up without significant changes to tooling, architecture, or development practices.</description>
+    </item>
+    
+  </channel>
+</rss>

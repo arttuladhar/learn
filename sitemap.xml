@@ -3,11 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/00_containers_and_orchestration/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/06_databases/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/01-aws-fundamentals/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/00-architecture-101/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/00_containers_and_orchestration/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/terraform/introduction/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/01-aws-fundamentals/</loc>
   </url>
   
   <url>
@@ -15,7 +28,7 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/01_kubernetes-architecture/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/01_kubernetes-architecture/</loc>
   </url>
   
   <url>
@@ -27,11 +40,11 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/02-identity_access_control/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/02-identity_access_control/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/02_installing_kubernetes/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/02_installing_kubernetes/</loc>
   </url>
   
   <url>
@@ -39,7 +52,7 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/03-compute/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/03-compute/</loc>
   </url>
   
   <url>
@@ -47,11 +60,11 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/03_minikube/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/03_minikube/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/04_kubernetes_building_blocks/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/04_kubernetes_building_blocks/</loc>
   </url>
   
   <url>
@@ -59,11 +72,11 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/04-networking/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/04-networking/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/05_authorization_access_control/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/05_authorization_access_control/</loc>
   </url>
   
   <url>
@@ -71,51 +84,55 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/05-storage_and_content_delivery/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/06_pod-design/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/06_services/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/06_services/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/07_deploying_standalone_app/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/07_deploying_standalone_app/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/08_kubernetes_volume_management/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/08_kubernetes_volume_management/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/09_configmaps_secrets/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/09_configmaps_secrets/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/10_ingress/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/10_ingress/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/11_advanced_topics/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/11_advanced_topics/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/12_resources/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/12_resources/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/aws/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/architecture/</loc>
   </url>
   
   <url>
     <loc>http://learn.aayushtuladhar.com/javascript/es-6/arrowfunctions/</loc>
-  </url>
-  
-  <url>
-    <loc>http://learn.aayushtuladhar.com/devops/2016-11-28-ubuntu-packages/</loc>
   </url>
   
   <url>
@@ -127,11 +144,11 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/bigdata/</loc>
+    <loc>http://learn.aayushtuladhar.com/data/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/bookmarks/</loc>
+    <loc>http://learn.aayushtuladhar.com/devops/ci-cd/</loc>
   </url>
   
   <url>
@@ -152,7 +169,7 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/devops/circle-ci/</loc>
+    <loc>http://learn.aayushtuladhar.com/devops/ci-cd/circle-ci/</loc>
   </url>
   
   <url>
@@ -168,12 +185,7 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/devops/2017-01-29-dns-basics/</loc>
-  </url>
-  
-  <url>
-    <loc>http://learn.aayushtuladhar.com/data-analytics/</loc>
-    <priority>0</priority>
+    <loc>http://learn.aayushtuladhar.com/devops/network/2017-01-29-dns-basics/</loc>
   </url>
   
   <url>
@@ -185,15 +197,11 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/</loc>
+    <loc>http://learn.aayushtuladhar.com/devops/docker/2019-09-17-docker-compose/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/devops/2019-09-17-docker-compose/</loc>
-  </url>
-  
-  <url>
-    <loc>http://learn.aayushtuladhar.com/devops/2018-04-19-drone/</loc>
+    <loc>http://learn.aayushtuladhar.com/devops/ci-cd/2018-04-19-drone/</loc>
   </url>
   
   <url>
@@ -209,19 +217,23 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/devops/2016-07-06-gradle-wrapper/</loc>
+    <loc>http://learn.aayushtuladhar.com/devops/gradle/2016-07-06-gradle-wrapper/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/bigdata/2017-05-18-hive-query-optimizations/</loc>
+    <loc>http://learn.aayushtuladhar.com/data/hive/2017-05-18-hive-query-optimizations/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/bigdata/2018-01-02-hive-tables-best-practices/</loc>
+    <loc>http://learn.aayushtuladhar.com/data/hive/2018-01-02-hive-tables-best-practices/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/devops/2017-09-22-install-docker-centos-7/</loc>
+    <loc>http://learn.aayushtuladhar.com/devops/docker/2017-09-22-install-docker-centos-7/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/</loc>
   </url>
   
   <url>
@@ -233,19 +245,23 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/devops/2019-08-20-jenkins/</loc>
+    <loc>http://learn.aayushtuladhar.com/devops/ci-cd/2019-08-20-jenkins/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/devops/2019-09-13-jenkins-shared-libs/</loc>
+    <loc>http://learn.aayushtuladhar.com/devops/ci-cd/2019-09-13-jenkins-shared-libs/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/bigdata/2018-05-10-jupyter-notebooks/</loc>
+    <loc>http://learn.aayushtuladhar.com/data/2018-05-10-jupyter-notebooks/</loc>
   </url>
   
   <url>
     <loc>http://learn.aayushtuladhar.com/devops/chef/2016-04-05-chef-knife-commands/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/00_intro/</loc>
   </url>
   
   <url>
@@ -261,7 +277,11 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/devops/2016-11-27-issue-remote-commands/</loc>
+    <loc>http://learn.aayushtuladhar.com/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/linux/2016-11-27-issue-remote-commands/</loc>
   </url>
   
   <url>
@@ -269,7 +289,7 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/devops/2016-10-01-network-command-essentials/</loc>
+    <loc>http://learn.aayushtuladhar.com/devops/network/2016-10-01-network-command-essentials/</loc>
   </url>
   
   <url>
@@ -277,11 +297,7 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/devops/2019-10-3-openshift-cheatsheet/</loc>
-  </url>
-  
-  <url>
-    <loc>http://learn.aayushtuladhar.com/devops/2016-03-24-open-stack-cli/</loc>
+    <loc>http://learn.aayushtuladhar.com/devops/2016-03-24-open-stack/</loc>
   </url>
   
   <url>
@@ -293,11 +309,15 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/devops/security/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/devops/2016-11-26-setting-apache-virtual-host/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/devops/2016-03-01-setting-fqdn/</loc>
+    <loc>http://learn.aayushtuladhar.com/devops/network/2016-03-01-setting-fqdn/</loc>
   </url>
   
   <url>
@@ -305,7 +325,7 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/bigdata/2018-01-02-setting-up-storm-in-5-minutes/</loc>
+    <loc>http://learn.aayushtuladhar.com/data/2018-01-02-setting-up-storm-in-5-minutes/</loc>
   </url>
   
   <url>
@@ -325,7 +345,11 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/devops/2018-09-18-spring-cloud-slueth/</loc>
+    <loc>http://learn.aayushtuladhar.com/java/spring/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/java/spring/2018-09-18-spring-cloud-slueth/</loc>
   </url>
   
   <url>
@@ -350,11 +374,19 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/devops/2019-01-23-nginx/</loc>
+    <loc>http://learn.aayushtuladhar.com/testing/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/devops/2016-07-07-ssh-keys/</loc>
+    <loc>http://learn.aayushtuladhar.com/architecture/twelve-factor-app/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/linux/2016-11-28-ubuntu-packages/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/devops/security/2016-07-07-ssh-keys/</loc>
   </url>
   
   <url>
@@ -366,7 +398,7 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/data-analytics/2018-05-01-pandas/</loc>
+    <loc>http://learn.aayushtuladhar.com/data/data-analytics/2018-05-01-pandas/</loc>
   </url>
   
   <url>

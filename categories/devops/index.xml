@@ -1,25 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>devops on Always Learning; Always Improving</title>
+    <title>devops on </title>
     <link>http://learn.aayushtuladhar.com/categories/devops/</link>
-    <description>Recent content in devops on Always Learning; Always Improving</description>
+    <description>Recent content in devops on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
 	<atom:link href="http://learn.aayushtuladhar.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Backup and Restore Ubuntu Packages</title>
-      <link>http://learn.aayushtuladhar.com/devops/2016-11-28-ubuntu-packages/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/devops/2016-11-28-ubuntu-packages/</guid>
-      <description> List Packages Installed dpkg -l
-Create Backup of What Packages Installed dpkg --get-selection &amp;gt; list.txt
-Restore dpkg --clear-selections sudo dpkg --set-selections &amp;lt; list.txt sudo apt-get autoremove sudo apt-get dselect-upgrade  </description>
-    </item>
     
     <item>
       <title>Berkshelf</title>
@@ -47,10 +36,10 @@ Creating Data Bag (Using Knife) $ knife data bag create DATA_BAG_NAME (DATA_BAG_
     
     <item>
       <title>DNS Basics</title>
-      <link>http://learn.aayushtuladhar.com/devops/2017-01-29-dns-basics/</link>
+      <link>http://learn.aayushtuladhar.com/devops/network/2017-01-29-dns-basics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2017-01-29-dns-basics/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/network/2017-01-29-dns-basics/</guid>
       <description>DNS (Domain Name System) is essential component of modern internet communication. It allows us to reference computers by human friendly names instead of IP Addresses.
 Terminologies  Domain Name IP Address  DNS Lookup using Dig Dig is a flexible tool for interrogating DNS name servers. It performs DNS lookup and is very helpful to troubleshoot DNS problems.
 dig &amp;lt;serverName&amp;gt; +nostats +nocomments +nocmd  $ dig google.com +nostats ; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.</description>
@@ -58,20 +47,20 @@ dig &amp;lt;serverName&amp;gt; +nostats +nocomments +nocmd  $ dig google.com +no
     
     <item>
       <title>Docker Compose</title>
-      <link>http://learn.aayushtuladhar.com/devops/2019-09-17-docker-compose/</link>
+      <link>http://learn.aayushtuladhar.com/devops/docker/2019-09-17-docker-compose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2019-09-17-docker-compose/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/docker/2019-09-17-docker-compose/</guid>
       <description> Docker Compose is used to run multiple containers as a single service.
 # docker-compose.yml version: &#39;2&#39; services: web: build: . # build from Dockerfile context: ./Path dockerfile: Dockerfile ports: - &amp;quot;5000:5000&amp;quot; volumes: - .:/code redis: image: redis  Command Line # Start Service docker-compose start # Stop Service docker-compose stop # Pause Service docker-compose pause # UnPause Service docker-compose unpause # List containers docker-compose ps # Create and start containers docker-compose up # Stop and remove containers, networks, images, and volumes docker-compose down  </description>
     </item>
     
     <item>
       <title>Gradle Wrapper</title>
-      <link>http://learn.aayushtuladhar.com/devops/2016-07-06-gradle-wrapper/</link>
+      <link>http://learn.aayushtuladhar.com/devops/gradle/2016-07-06-gradle-wrapper/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2016-07-06-gradle-wrapper/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/gradle/2016-07-06-gradle-wrapper/</guid>
       <description>Gradle Wrapper The Gradle wrapper allows you to run a Gradle task without requiring that Gradle is installed on your system.
 Creating Gradle Wrapper task wrapper(type: Wrapper) { gradleVersion = &#39;2.10&#39; //we want gradle 2.10 to run this project }  Running Gradle Wrapper gradle wrapper
 Following files will be created:
@@ -80,19 +69,19 @@ Following files will be created:
     
     <item>
       <title>Installing Docker CE on Centos 7</title>
-      <link>http://learn.aayushtuladhar.com/devops/2017-09-22-install-docker-centos-7/</link>
+      <link>http://learn.aayushtuladhar.com/devops/docker/2017-09-22-install-docker-centos-7/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2017-09-22-install-docker-centos-7/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/docker/2017-09-22-install-docker-centos-7/</guid>
       <description>  Install Docker Community Edition Verify  Install Docker Community Edition sudo yum install -y yum-utils device-mapper-persistent-data lvm2 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo sudo yum makecache fast sudo yum install docker-ce sudo systemctl start docker  Verify sudo docker run hello-world  </description>
     </item>
     
     <item>
       <title>Jenkins Shared Library</title>
-      <link>http://learn.aayushtuladhar.com/devops/2019-09-13-jenkins-shared-libs/</link>
+      <link>http://learn.aayushtuladhar.com/devops/ci-cd/2019-09-13-jenkins-shared-libs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2019-09-13-jenkins-shared-libs/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/ci-cd/2019-09-13-jenkins-shared-libs/</guid>
       <description>Jenkins Shared library is the concept of having a common pipeline code in the version control system that can be used by any number of pipeline just by referencing it. In fact, multiple teams can use the same library for their pipelines. Pipeline has support for creating &amp;ldquo;Shared Libraries&amp;rdquo; which can be defined in external source control repositories and loaded into existing Pipelines.
  A shared library is a collection of independent Groovy scripts which you pull into your Jenkinsfile at runtime.</description>
     </item>
@@ -108,10 +97,10 @@ Following files will be created:
     
     <item>
       <title>Linux Command Line Hacks</title>
-      <link>http://learn.aayushtuladhar.com/devops/2016-11-27-issue-remote-commands/</link>
+      <link>http://learn.aayushtuladhar.com/devops/linux/2016-11-27-issue-remote-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2016-11-27-issue-remote-commands/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/linux/2016-11-27-issue-remote-commands/</guid>
       <description> </description>
     </item>
     
@@ -138,20 +127,11 @@ buildscript { repositories { mavenCentral() } dependencies { classpath &#39;org.
     </item>
     
     <item>
-      <title>OpenShift Cheatsheet</title>
-      <link>http://learn.aayushtuladhar.com/devops/2019-10-3-openshift-cheatsheet/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/devops/2019-10-3-openshift-cheatsheet/</guid>
-      <description> </description>
-    </item>
-    
-    <item>
       <title>OpenStack</title>
-      <link>http://learn.aayushtuladhar.com/devops/2016-03-24-open-stack-cli/</link>
+      <link>http://learn.aayushtuladhar.com/devops/2016-03-24-open-stack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2016-03-24-open-stack-cli/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/2016-03-24-open-stack/</guid>
       <description>Getting Started with OpenStack What is OpenStack OpenStack is elastic cloud software that provides software developers with the ability to control the virtual infrastructure on which to deploy their applications. It is a set of software tools for building and managing cloud computing platforms for public and private clouds.
 It accelerates time-to-market by dramatically reducing application provisioning times, giving companies full control of their software development lifecycle and ultimately giving them a significant competitive advantage.</description>
     </item>
@@ -162,7 +142,7 @@ It accelerates time-to-market by dramatically reducing application provisioning 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://learn.aayushtuladhar.com/devops/2019-08-16-openshift/</guid>
-      <description>Architecture Containers and Image  Container Registries  Pods and Services  Pods Services Labels  Builds and Image Streams  Builds Image Stream Image stream tag Image stream image Image stream trigger Templates  References  Architecture OpenShift is a layered system designed to expose underlying Docker-formatted container image and Kubernetes concepts as acurately as possible, with a focus on easy composition of applications by a developer.</description>
+      <description>Architecture Containers and Image  Container Registries  Pods and Services  Pods Services Labels  Builds and Image Streams  Builds Image Stream Image stream tag Image stream image Image stream trigger Templates  References Cheatsheet  Architecture OpenShift is a layered system designed to expose underlying Docker-formatted container image and Kubernetes concepts as acurately as possible, with a focus on easy composition of applications by a developer.</description>
     </item>
     
     <item>
@@ -177,10 +157,10 @@ Name Based Virtual Hosts (Most Common)  The server relies on the client to repor
     
     <item>
       <title>Setting FQDN</title>
-      <link>http://learn.aayushtuladhar.com/devops/2016-03-01-setting-fqdn/</link>
+      <link>http://learn.aayushtuladhar.com/devops/network/2016-03-01-setting-fqdn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2016-03-01-setting-fqdn/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/network/2016-03-01-setting-fqdn/</guid>
       <description>FQDN  Finding FQDN  Hostname  Finding Hostname  Setting hostname and FQDN  FQDN FQDN stands for Fully Qualified Domain Name. It is a domain name that specifies its exact location in the tree hierarhcy of the Domain Name System (DNS). It specifies all domain levels, including the top-level domain and the root zone.
 Example, somehost.example.com
 Finding FQDN hostname -f  Hostname A hostname is a label that is assigned to a device connected to a computer network and that is used to identify the device.</description>
@@ -210,16 +190,16 @@ This starts up a jetty server on default port 4444.</description>
     
     <item>
       <title>Spring Cloud Slueth</title>
-      <link>http://learn.aayushtuladhar.com/devops/2018-09-18-spring-cloud-slueth/</link>
+      <link>http://learn.aayushtuladhar.com/java/spring/2018-09-18-spring-cloud-slueth/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2018-09-18-spring-cloud-slueth/</guid>
+      <guid>http://learn.aayushtuladhar.com/java/spring/2018-09-18-spring-cloud-slueth/</guid>
       <description>A powerful tool for enhancing logs in any application, but especially in a system built up of multiple services. This is where spring-cloud-starter-sleuth comes into play to help you enhance your logging and traceability across multiple systems. Just including the spring-cloud-starter-sluth in your project.
 Few concepts you need to be familiar with when using Spring Cloud Slueth are concepts of Trace and Spans. Trace can though as single request or job that is triggered in an application.</description>
     </item>
     
     <item>
-      <title>Supervisor</title>
+      <title>SupervisorD</title>
       <link>http://learn.aayushtuladhar.com/devops/2016-04-10-setting-up-supervisord/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -229,20 +209,31 @@ Few concepts you need to be familiar with when using Spring Cloud Slueth are con
     
     <item>
       <title>The Twelve Factor App</title>
-      <link>http://learn.aayushtuladhar.com/devops/2019-01-23-nginx/</link>
+      <link>http://learn.aayushtuladhar.com/architecture/twelve-factor-app/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2019-01-23-nginx/</guid>
+      <guid>http://learn.aayushtuladhar.com/architecture/twelve-factor-app/</guid>
       <description>12factor.net - Link Introduction Methodology for building software-as-a-service app that:
  Use Declarative formats for setup automation, to minimize time and cost for new developers joining the project. Have a Clean Contract with the underlying operation system, offering Maximum Portability between execution environments Are suitable for Deployment on modern Cloud platforms, obviating the need for servers and system administrators Minimize divergence between deployment and production, enabling Continuous deployment for maximum agility And can Scale up without significant changes to tooling, architecture, or development practices.</description>
     </item>
     
     <item>
-      <title>Understanding SSH Keys</title>
-      <link>http://learn.aayushtuladhar.com/devops/2016-07-07-ssh-keys/</link>
+      <title>Ubuntu Packages</title>
+      <link>http://learn.aayushtuladhar.com/devops/linux/2016-11-28-ubuntu-packages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2016-07-07-ssh-keys/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/linux/2016-11-28-ubuntu-packages/</guid>
+      <description> List Packages Installed dpkg -l
+Create Backup of What Packages Installed dpkg --get-selection &amp;gt; list.txt
+Restore dpkg --clear-selections sudo dpkg --set-selections &amp;lt; list.txt sudo apt-get autoremove sudo apt-get dselect-upgrade  </description>
+    </item>
+    
+    <item>
+      <title>Understanding SSH Keys</title>
+      <link>http://learn.aayushtuladhar.com/devops/security/2016-07-07-ssh-keys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/security/2016-07-07-ssh-keys/</guid>
       <description>SSH is the most common way of connecting to remove Linux Server. It stands for Secure Shell. It provide a safe and secure way of executing commands, making changes and configuring service remotely. SSH connecting is implemented using client-server model. For a client machine to connect to a remote machine using SSH, SSH daemon must be running on the remote machine.
 Clients generally authenticate either using passwords or by SSH Keys.</description>
     </item>

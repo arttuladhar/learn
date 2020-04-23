@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring on </title>
+    <link>http://learn.aayushtuladhar.com/java/spring/</link>
+    <description>Recent content in Spring on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://learn.aayushtuladhar.com/java/spring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spring Cloud Slueth</title>
+      <link>http://learn.aayushtuladhar.com/java/spring/2018-09-18-spring-cloud-slueth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/java/spring/2018-09-18-spring-cloud-slueth/</guid>
+      <description>A powerful tool for enhancing logs in any application, but especially in a system built up of multiple services. This is where spring-cloud-starter-sleuth comes into play to help you enhance your logging and traceability across multiple systems. Just including the spring-cloud-starter-sluth in your project.
+Few concepts you need to be familiar with when using Spring Cloud Slueth are concepts of Trace and Spans. Trace can though as single request or job that is triggered in an application.</description>
+    </item>
+    
+  </channel>
+</rss>

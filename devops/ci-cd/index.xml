@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CI / CD on </title>
+    <link>http://learn.aayushtuladhar.com/devops/ci-cd/</link>
+    <description>Recent content in CI / CD on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://learn.aayushtuladhar.com/devops/ci-cd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Circle CI</title>
+      <link>http://learn.aayushtuladhar.com/devops/ci-cd/circle-ci/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/ci-cd/circle-ci/</guid>
+      <description>Concepts Workflows Jobs Steps Image Example  Concepts Workflows Workflows define a list of jobs and their run order. It is possible to run jobs concurrently, sequentially, on a schedule, or with a manual gate using an approval job.
+Jobs Jobs are a collection of Steps. All of the steps in the job are executed in a single unit which consumes a CircleCI container from your plan while it’s running.</description>
+    </item>
+    
+    <item>
+      <title>Drone</title>
+      <link>http://learn.aayushtuladhar.com/devops/ci-cd/2018-04-19-drone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/ci-cd/2018-04-19-drone/</guid>
+      <description>Creating Pipeline  Images Cloning Commands Services Plugins  Running Drone Locally Drone Secrets  Repo Level Secrets Org Level Secrets Using Secrets in Pipeline   Drone is a CI/CD platform built on Docker and written in Go.
+Creating Pipeline Drone pipeline are written in .drone.yml file in the root of the repository.
+ Pipelines are event based, which can be triggered via push, pull_request, tag and deployment events</description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>http://learn.aayushtuladhar.com/devops/ci-cd/2019-08-20-jenkins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/ci-cd/2019-08-20-jenkins/</guid>
+      <description>Installing Plugins  Pipeline Script   Installing Jenkins docker pull jenkins/jenkins # Persist Jenkins Data within the Docker Container docker volume create jenkins-data docker run --name jenkins-production \ --detach \ -p 50000:50000 \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ jenkins/jenkins:2.164.2  Access Jenkins at http://localhost:8080/
+Installing Plugins  Blueocean plugin  Manage Jenkins &amp;gt; Manage Plugins
+Pipeline Script Hello World Pipeline Script
+pipeline { agent none environment { APPLICATION_NAME = &#39;hello-jenkins-pipeline&#39; } stages { stage(&#39;build&#39;) { steps { echo &amp;quot;Hello World&amp;quot; } } } }  Pipeline script to Build Another Jenkins Job</description>
+    </item>
+    
+    <item>
+      <title>Jenkins Shared Library</title>
+      <link>http://learn.aayushtuladhar.com/devops/ci-cd/2019-09-13-jenkins-shared-libs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/ci-cd/2019-09-13-jenkins-shared-libs/</guid>
+      <description>Jenkins Shared library is the concept of having a common pipeline code in the version control system that can be used by any number of pipeline just by referencing it. In fact, multiple teams can use the same library for their pipelines. Pipeline has support for creating &amp;ldquo;Shared Libraries&amp;rdquo; which can be defined in external source control repositories and loaded into existing Pipelines.
+ A shared library is a collection of independent Groovy scripts which you pull into your Jenkinsfile at runtime.</description>
+    </item>
+    
+  </channel>
+</rss>

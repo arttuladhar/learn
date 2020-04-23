@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on </title>
+    <link>http://learn.aayushtuladhar.com/devops/security/</link>
+    <description>Recent content in Security on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://learn.aayushtuladhar.com/devops/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Understanding SSH Keys</title>
+      <link>http://learn.aayushtuladhar.com/devops/security/2016-07-07-ssh-keys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/security/2016-07-07-ssh-keys/</guid>
+      <description>SSH is the most common way of connecting to remove Linux Server. It stands for Secure Shell. It provide a safe and secure way of executing commands, making changes and configuring service remotely. SSH connecting is implemented using client-server model. For a client machine to connect to a remote machine using SSH, SSH daemon must be running on the remote machine.
+Clients generally authenticate either using passwords or by SSH Keys.</description>
+    </item>
+    
+  </channel>
+</rss>

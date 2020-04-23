@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Digital Learning Notebook on Always Learning; Always Improving</title>
+    <title>Learning Notebook on </title>
     <link>http://learn.aayushtuladhar.com/</link>
-    <description>Recent content in Digital Learning Notebook on Always Learning; Always Improving</description>
+    <description>Recent content in Learning Notebook on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
@@ -11,22 +11,53 @@
     
     
     <item>
-      <title>00 - Containers and Orchestration</title>
-      <link>http://learn.aayushtuladhar.com/kubernetes/00_containers_and_orchestration/</link>
+      <title></title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/06_databases/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/kubernetes/00_containers_and_orchestration/</guid>
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/06_databases/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>0 - Architecture 101</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/00-architecture-101/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/00-architecture-101/</guid>
+      <description>Access Management Basics  Principal Authentication Identity Authorization  Shared Reponsibility Model Service Models Availability and Recovery Scalling Tiered Application Design Encryption  Access Management Basics Principal A person or application that can make an authenticated or anonymous request to perform an action on a system.
+Authentication The process of authenticating a principal against an identity. This could be via username and passsword or API Keys.
+Identity Objects that require authentication and are authorized to access resources.</description>
+    </item>
+    
+    <item>
+      <title>00 - Containers and Orchestration</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/00_containers_and_orchestration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/00_containers_and_orchestration/</guid>
       <description>Containers Microservices Container Orchestration  Container Orchestrators   Containers Containers are application-centric methods to deliver high-performing, scalable applications on any infrastructure of your choice. Containers are best suited to deliver microservices by providing portable, isolated virtual environments for applications to run without interference from other running applications.
 Microservices Microservices are lightweight applications written in various modern programming languages, with specific dependencies, libraries and environmental requirements. To ensure that an application has everything it needs to run successfully it is packaged together with its dependencies.</description>
     </item>
     
     <item>
-      <title>01 - AWS Fundamentals</title>
-      <link>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/01-aws-fundamentals/</link>
+      <title>00 - Terraform Introduction</title>
+      <link>http://learn.aayushtuladhar.com/terraform/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/01-aws-fundamentals/</guid>
-      <description>Architecture 101  Access Management Basics AWS Account  Authentication Authorization Billing  AWS Physical and Networking Layer Well-Architected Framework Elasticity Introduction to S3 - (Simple Storage Service)   Architecture 101 Access Management Basics AWS Account AWS accounts are more than just a way to log in and access AWS services — they are a crucial AWS feature that AWS solutions architects can use to implement secure and high-performance systems.</description>
+      <guid>http://learn.aayushtuladhar.com/terraform/introduction/</guid>
+      <description> Introduction Terraform is the infrastructure as code offering from HashiCorp. It is a tool for building, changing, and managing infrastructure in a safe, repeatable way.
+Using HCL as High Level Language, Terraform support Infrastrucre as Code by automating creation of those resources. Terraform provides support for desired resources on almost any provider (AWS, GCP, GitHub, Docker etc)
+Feature of Terraform Infrastructue as Code  Idempotent Uses High Level Language (HCL) Code Reusability using Modules  Execution Plan  Show the intent of the deploy Can help ensure everything in the development is intentional  Resource Graph  Illustrates all changes and dependencies  Use Cases for Terraform  Hybrid Cloud Multi-tier Architecture Software Defined Networking  </description>
+    </item>
+    
+    <item>
+      <title>01 - AWS Fundamentals</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/01-aws-fundamentals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/01-aws-fundamentals/</guid>
+      <description>Access Management Basics  AWS Account Authentication Authorization Billing  AWS Physical and Networking Layer Well-Architected Framework  Pillars of Well Architected Framework Security Reliability Performance Efficiency Operational Excellence Cost Optimization  Elasticity Introduction to S3 - (Simple Storage Service) Introduction to Cloud Formation  Access Management Basics AWS Account AWS accounts are more than just a way to log in and access AWS services — they are a crucial AWS feature that AWS solutions architects can use to implement secure and high-performance systems.</description>
     </item>
     
     <item>
@@ -40,10 +71,10 @@ Microservices Microservices are lightweight applications written in various mode
     
     <item>
       <title>01 - Kubernetes Architecture</title>
-      <link>http://learn.aayushtuladhar.com/kubernetes/01_kubernetes-architecture/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/01_kubernetes-architecture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/kubernetes/01_kubernetes-architecture/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/01_kubernetes-architecture/</guid>
       <description>Master Node  Master Node Components Master Node Components: API Server Master Node Components: Scheduler Master Node Componets: Controller Managers Master Node Components: etcd  Worker Node  Worker Node Components Worker Node Component: Container Runtime Worker Node Components: kubelet Worker Node Components: kube-proxy Worker Node Components: Addons  Networking Challenges  Container to Container Communication inside Pods Pod-to-Pod Communication Across Nodes Pod-to-External World Communication   At a very high level, Kubernetes has the following main components</description>
     </item>
     
@@ -71,19 +102,19 @@ Every object has a spec and status:
     
     <item>
       <title>02 - Identity and Access Control</title>
-      <link>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/02-identity_access_control/</link>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/02-identity_access_control/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/02-identity_access_control/</guid>
-      <description>Identity and Access Control  IAM Policy IAM Policy Notes IAM Users IAM Groups IAM Access Keys  Multi-Account Management and Organizations  AWS Organizations Role Switching Between Accounts   Identity and Access Control Identity and Access Management, known as IAM, is one of the key services within AWS. It controls access to the AWS API endpoints that are used by the console UI, command line tools, and any applications wanting to utilize AWS.</description>
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/02-identity_access_control/</guid>
+      <description>Identity and Access Control  IAM Policy IAM Users IAM Groups IAM Access Keys  Multi-Account Management and Organizations  AWS Organizations Role Switching Between Accounts   Identity and Access Control Identity and Access Management, known as IAM, is one of the key services within AWS. It controls access to the AWS API endpoints that are used by the console UI, command line tools, and any applications wanting to utilize AWS.</description>
     </item>
     
     <item>
       <title>02 - Installing Kubernetes</title>
-      <link>http://learn.aayushtuladhar.com/kubernetes/02_installing_kubernetes/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/02_installing_kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/kubernetes/02_installing_kubernetes/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/02_installing_kubernetes/</guid>
       <description>Local Installation On-Premise Installation Cloud Installation  All-in-One Single-Node Installation In this setup, all the master and worker components are installed and running on a single-node. While it is useful for learning, development, and testing, and it should not be used in production. Minikube is one such example, and we are going to explore it in future chapters.
 Single-Node etcd, Single-Master and Multi-Worker Installation In this setup, we have a single-master node, which also runs a single-node etcd instance.</description>
     </item>
@@ -101,10 +132,10 @@ Using Terraform Modules # Download the image module &amp;quot;image&amp;quot; { 
     
     <item>
       <title>03 - Compute</title>
-      <link>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/03-compute/</link>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/03-compute/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/03-compute/</guid>
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/03-compute/</guid>
       <description>Elastic Cloud Compute (EC2) Elastic Block Storage (EBS)  EBS Types  EBS Snapshots Security Groups Instance Metadata AMI Bootstrap Private Instance and Public Instance EC2 Instance Roles EBS Volume and Snapshot Encryption EBS Optimized, Enhanced Networking, and Placement Group  EBS optimization Enhanced networking Cluster, partition, and spread placement groups  EC2 Billing Models Dedicated Hosts  Elastic Cloud Compute (EC2) EC2 is one of the most widely used services within AWS.</description>
     </item>
     
@@ -121,20 +152,20 @@ apiVersion: v1 kind: ConfigMap metadata: name: my-config-map data: myKey: myValu
     
     <item>
       <title>03 - Minikube</title>
-      <link>http://learn.aayushtuladhar.com/kubernetes/03_minikube/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/03_minikube/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/kubernetes/03_minikube/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/03_minikube/</guid>
       <description>Installing Minikube  Command Line Interface (CLI) tools and scripts Web-based User Interface (Web UI) from a web browser APIs from CLI or programmatically Kubectl Proxy   Installing Minikube # Install Minikube brew install minikube # Starting Minikube minikube start minikube start --vm-driver=xhyve minikube start --vm-driver=hyperkit minikube status minikube stop  Any healthy running Kubernetes cluster can be accessed via any one of the following methods:
 Command Line Interface (CLI) tools and scripts kubectl is the Kubernetes Command Line Interface (CLI) client to manage cluster resources and applications.</description>
     </item>
     
     <item>
       <title>04 - Kubernetes Building Blocks</title>
-      <link>http://learn.aayushtuladhar.com/kubernetes/04_kubernetes_building_blocks/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/04_kubernetes_building_blocks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/kubernetes/04_kubernetes_building_blocks/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/04_kubernetes_building_blocks/</guid>
       <description>Kubernetes Object Model Pods  Labels  Replication Controller Replica Set Deployments Namespaces  Kubernetes Object Model With each object, we declare our intent or the desired state under the spec section. When creating an object, the object&amp;rsquo;s configuration data section from below the spec field has to be submitted to the Kubernetes API server.
 Example of Deployment object configuration in YAML format.
 apiVersion: apps/v1 kind: Deployment metadata: name: nginx-deployment labels: app: nginx spec: replicas: 3 selector: matchLabels: app: nginx template: metadata: labels: app: nginx spec: containers: - name: nginx image: nginx:1.</description>
@@ -154,19 +185,19 @@ apiVersion: v1 kind: Pod metadata: name: multi-container-pod spec: containers: -
     
     <item>
       <title>04 - Networking</title>
-      <link>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/04-networking/</link>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/04-networking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/aws/aws_certified_solutions_architect/04-networking/</guid>
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/04-networking/</guid>
       <description>Networking Fundamentals  IP Addressing Subnetting Firewall Proxy Servers  Virtual Private Cloud (VPC)  Virtual Private Cloud (VPC): VPC Peering VPC Endpoints  DNS 101  Networking Fundamentals The Open Syste Interconnection (OSI) Model is a standard used by networking manufacturers globally. It was created and published in 1984; it splits all network communications into seven layers. Each layer servers the layer that&amp;rsquo;s above it plus the layer beneath it which adds additional capabilities.</description>
     </item>
     
     <item>
       <title>05 - Authentication, Authorization, and Admission Control</title>
-      <link>http://learn.aayushtuladhar.com/kubernetes/05_authorization_access_control/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/05_authorization_access_control/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/kubernetes/05_authorization_access_control/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/05_authorization_access_control/</guid>
       <description>Authentication Authorization  Types of RoleBindings Admission Control  Demo - Authentication and Authorization  To access and manage any Kubernetes resource or object in the cluster, we need to access a specific API endpoint on the API server. Each access request goes through the following three stages:
  Authentication - Logs in a user Authorization - Authorizes the API requests added by the logged-in user. Admission Control - Software modules that can modify or reject the requests based on some additional checks, like a pre-set Quota.</description>
     </item>
@@ -182,6 +213,15 @@ Liveness probe Indicates whether the container is running properly, and governs 
     </item>
     
     <item>
+      <title>05 - Storage and Content Delivery</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/05-storage_and_content_delivery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/05-storage_and_content_delivery/</guid>
+      <description> S3 Architecture and Features S3 Performance and Resilience Cloud Front Network File System </description>
+    </item>
+    
+    <item>
       <title>06 - Pod Design</title>
       <link>http://learn.aayushtuladhar.com/kubernetes/ckad/06_pod-design/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -193,58 +233,58 @@ We can attach labels to objects by listing them in the metadata.labels section o
     
     <item>
       <title>06 - Services</title>
-      <link>http://learn.aayushtuladhar.com/kubernetes/06_services/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/06_services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/kubernetes/06_services/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/06_services/</guid>
       <description>Services Service Object Example kube-proxy Service Discovery Servie Type  Cluster IP NodePort LoadBalancer ExternalIP ExternalName   Services  An abstract way to expose an application running on a set of Pods as a network service. With Kubernetes you don’t need to modify your application to use an unfamiliar service discovery mechanism. Kubernetes gives Pods their own IP addresses and a single DNS name for a set of Pods, and can load-balance across them.</description>
     </item>
     
     <item>
       <title>07 - Deploying Standalone App</title>
-      <link>http://learn.aayushtuladhar.com/kubernetes/07_deploying_standalone_app/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/07_deploying_standalone_app/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/kubernetes/07_deploying_standalone_app/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/07_deploying_standalone_app/</guid>
       <description>Creating Deployment using YAML File Exposing Application Liveness and Readiness Probes  Liveness Probe Readiness Probe   Creating Deployment using YAML File webserver.yaml
 apiVersion: apps/v1 kind: Deployment metadata: name: webserver labels: app: nginx spec: replicas: 3 selector: matchLabels: app: nginx template: metadata: labels: app: nginx spec: containers: - name: nginx image: nginx:alpine ports: - containerPort: 80  kubectl create -f webserver.yaml  This will also create ReplicaSet and Pods as defined in the YAML configuration.</description>
     </item>
     
     <item>
       <title>08 - Kubernetes Volume Management</title>
-      <link>http://learn.aayushtuladhar.com/kubernetes/08_kubernetes_volume_management/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/08_kubernetes_volume_management/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/kubernetes/08_kubernetes_volume_management/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/08_kubernetes_volume_management/</guid>
       <description>Volumes Volume Types PersistentVolumeClaims Using a Shared hostPath Volume Type  Volumes As we know, containers running in Pods are ephemeral in nature. All data stored inside a container is deleted if the container crashes. However, the kubelet will restart it with a clean slate, which means that it will not have any of the old data.
 To overcome this problem, Kubernetes uses Volumes. A Volume is essentially a directory backed by a storage medium.</description>
     </item>
     
     <item>
       <title>09 - ConfigMaps and Secrets</title>
-      <link>http://learn.aayushtuladhar.com/kubernetes/09_configmaps_secrets/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/09_configmaps_secrets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/kubernetes/09_configmaps_secrets/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/09_configmaps_secrets/</guid>
       <description>ConfigMaps  Creating ConfigMaps Using CommandLine Using Configuration File Using Properties File Using ConfigMaps Inside Pods As Environment Variable As Volume  Secrets  Creating Secret Create a Secret from Literal and Display Its Details Create a Secret from YAML File Use Secrets Inside Pods   ConfigMaps ConfigMaps allow us to decouple the configuration details from the container image. Using ConfigMaps, we pass configuration data as key-value pairs, which are consumed by Pods or any other system components and controllers, in the form of environment variables, sets of commands and arguments, or volumes.</description>
     </item>
     
     <item>
       <title>10 - Ingress</title>
-      <link>http://learn.aayushtuladhar.com/kubernetes/10_ingress/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/10_ingress/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/kubernetes/10_ingress/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/10_ingress/</guid>
       <description>With Services, routing rules are associated with a given Service. They exist for as long as the Service exists, and there are many rules because there are many Services in the cluster. If we can somehow decouple the routing rules from the application and centralize the rules management, we can then update our application without worrying about its external access. This can be done using the Ingress resource.
  An Ingress is a collection of rules that allow inbound connections to reach the cluster Services.</description>
     </item>
     
     <item>
       <title>11 - Advanced Topics</title>
-      <link>http://learn.aayushtuladhar.com/kubernetes/11_advanced_topics/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/11_advanced_topics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/kubernetes/11_advanced_topics/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/11_advanced_topics/</guid>
       <description>Annotations With Annotations, we can attach arbitrary non-identifying metadata to any objects, in a key-value format:
 &amp;quot;annotations&amp;quot;: { &amp;quot;key1&amp;quot; : &amp;quot;value1&amp;quot;, &amp;quot;key2&amp;quot; : &amp;quot;value2&amp;quot; }  Unlike Labels, annotations are not used to identify and select objects. Annotations can be used to:
  Store build/release IDs, PR numbers, git branch, etc. Phone/pager numbers of people responsible, or directory entries specifying where such information can be found Pointers to logging, monitoring, analytics, audit repositories, debugging tools, etc.</description>
@@ -252,10 +292,10 @@ To overcome this problem, Kubernetes uses Volumes. A Volume is essentially a dir
     
     <item>
       <title>12 - Resources</title>
-      <link>http://learn.aayushtuladhar.com/kubernetes/12_resources/</link>
+      <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/12_resources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/kubernetes/12_resources/</guid>
+      <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/12_resources/</guid>
       <description> Labs CKA Curriculum   </description>
     </item>
     
@@ -267,17 +307,6 @@ To overcome this problem, Kubernetes uses Volumes. A Volume is essentially a dir
       <guid>http://learn.aayushtuladhar.com/javascript/es-6/arrowfunctions/</guid>
       <description>Arrow Function Express allows you to write shorter syntax than it&amp;rsquo;s predecessor Function expression. In addition and more exciting is how the new Arrow function bind their context.
 (param1, param2, param3) =&amp;gt; { statements } singleParam =&amp;gt; { statements } () =&amp;gt; { statements }  Example var materials = [ &amp;#39;Iron&amp;#39;, &amp;#39;Calcium&amp;#39;, &amp;#39;Sodium&amp;#39;, &amp;#39;Magnanese&amp;#39; ] materials.map(material =&amp;gt; material.length)  An arrow function does not newly define its own this when it&amp;rsquo;s being executed.</description>
-    </item>
-    
-    <item>
-      <title>Backup and Restore Ubuntu Packages</title>
-      <link>http://learn.aayushtuladhar.com/devops/2016-11-28-ubuntu-packages/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/devops/2016-11-28-ubuntu-packages/</guid>
-      <description> List Packages Installed dpkg -l
-Create Backup of What Packages Installed dpkg --get-selection &amp;gt; list.txt
-Restore dpkg --clear-selections sudo dpkg --set-selections &amp;lt; list.txt sudo apt-get autoremove sudo apt-get dselect-upgrade  </description>
     </item>
     
     <item>
@@ -315,12 +344,12 @@ Creating Data Bag (Using Knife) $ knife data bag create DATA_BAG_NAME (DATA_BAG_
     
     <item>
       <title>Circle CI</title>
-      <link>http://learn.aayushtuladhar.com/devops/circle-ci/</link>
+      <link>http://learn.aayushtuladhar.com/devops/ci-cd/circle-ci/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/circle-ci/</guid>
-      <description>Concepts Workflows Workflows define a list of jobs and their run order. It is possible to run jobs concurrently, sequentially, on a schedule, or with a manual gate using an approval job.
-Jobs Jobs are a collection of Steps. All of the steps in the job are executed in a single unit which consumes a CircleCI container from your plan while it’s running. Each job must declare an executor that is either docker, machine, windows or macos.</description>
+      <guid>http://learn.aayushtuladhar.com/devops/ci-cd/circle-ci/</guid>
+      <description>Concepts Workflows Jobs Steps Image Example  Concepts Workflows Workflows define a list of jobs and their run order. It is possible to run jobs concurrently, sequentially, on a schedule, or with a manual gate using an approval job.
+Jobs Jobs are a collection of Steps. All of the steps in the job are executed in a single unit which consumes a CircleCI container from your plan while it’s running.</description>
     </item>
     
     <item>
@@ -343,10 +372,10 @@ Jobs Jobs are a collection of Steps. All of the steps in the job are executed in
     
     <item>
       <title>DNS Basics</title>
-      <link>http://learn.aayushtuladhar.com/devops/2017-01-29-dns-basics/</link>
+      <link>http://learn.aayushtuladhar.com/devops/network/2017-01-29-dns-basics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2017-01-29-dns-basics/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/network/2017-01-29-dns-basics/</guid>
       <description>DNS (Domain Name System) is essential component of modern internet communication. It allows us to reference computers by human friendly names instead of IP Addresses.
 Terminologies  Domain Name IP Address  DNS Lookup using Dig Dig is a flexible tool for interrogating DNS name servers. It performs DNS lookup and is very helpful to troubleshoot DNS problems.
 dig &amp;lt;serverName&amp;gt; +nostats +nocomments +nocmd  $ dig google.com +nostats ; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.</description>
@@ -363,20 +392,20 @@ dig &amp;lt;serverName&amp;gt; +nostats +nocomments +nocmd  $ dig google.com +no
     
     <item>
       <title>Docker Compose</title>
-      <link>http://learn.aayushtuladhar.com/devops/2019-09-17-docker-compose/</link>
+      <link>http://learn.aayushtuladhar.com/devops/docker/2019-09-17-docker-compose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2019-09-17-docker-compose/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/docker/2019-09-17-docker-compose/</guid>
       <description> Docker Compose is used to run multiple containers as a single service.
 # docker-compose.yml version: &#39;2&#39; services: web: build: . # build from Dockerfile context: ./Path dockerfile: Dockerfile ports: - &amp;quot;5000:5000&amp;quot; volumes: - .:/code redis: image: redis  Command Line # Start Service docker-compose start # Stop Service docker-compose stop # Pause Service docker-compose pause # UnPause Service docker-compose unpause # List containers docker-compose ps # Create and start containers docker-compose up # Stop and remove containers, networks, images, and volumes docker-compose down  </description>
     </item>
     
     <item>
       <title>Drone</title>
-      <link>http://learn.aayushtuladhar.com/devops/2018-04-19-drone/</link>
+      <link>http://learn.aayushtuladhar.com/devops/ci-cd/2018-04-19-drone/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2018-04-19-drone/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/ci-cd/2018-04-19-drone/</guid>
       <description>Creating Pipeline  Images Cloning Commands Services Plugins  Running Drone Locally Drone Secrets  Repo Level Secrets Org Level Secrets Using Secrets in Pipeline   Drone is a CI/CD platform built on Docker and written in Go.
 Creating Pipeline Drone pipeline are written in .drone.yml file in the root of the repository.
  Pipelines are event based, which can be triggered via push, pull_request, tag and deployment events</description>
@@ -405,10 +434,10 @@ It’s actually react-redux that lets you connect pieces of the state to React c
     
     <item>
       <title>Gradle Wrapper</title>
-      <link>http://learn.aayushtuladhar.com/devops/2016-07-06-gradle-wrapper/</link>
+      <link>http://learn.aayushtuladhar.com/devops/gradle/2016-07-06-gradle-wrapper/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2016-07-06-gradle-wrapper/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/gradle/2016-07-06-gradle-wrapper/</guid>
       <description>Gradle Wrapper The Gradle wrapper allows you to run a Gradle task without requiring that Gradle is installed on your system.
 Creating Gradle Wrapper task wrapper(type: Wrapper) { gradleVersion = &#39;2.10&#39; //we want gradle 2.10 to run this project }  Running Gradle Wrapper gradle wrapper
 Following files will be created:
@@ -417,39 +446,39 @@ Following files will be created:
     
     <item>
       <title>Hive Query Optimizations</title>
-      <link>http://learn.aayushtuladhar.com/bigdata/2017-05-18-hive-query-optimizations/</link>
+      <link>http://learn.aayushtuladhar.com/data/hive/2017-05-18-hive-query-optimizations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/bigdata/2017-05-18-hive-query-optimizations/</guid>
+      <guid>http://learn.aayushtuladhar.com/data/hive/2017-05-18-hive-query-optimizations/</guid>
       <description>Changing Engine for Hive Queries In general, Tez provides increased performance over Map Reduce specially where JOINS are required resulting in intermediate output being written to disk.
 set hive.execution.engine=tez  Using Partitions Partitions separate date in Hive tables by HDFS directories. If data is distributed based on partitions on certain fields, Using those fields to access data allows speeding up Hive queries. In other words, querying without partitions equates to full table scan.</description>
     </item>
     
     <item>
       <title>Hive Tables [Best Practices]</title>
-      <link>http://learn.aayushtuladhar.com/bigdata/2018-01-02-hive-tables-best-practices/</link>
+      <link>http://learn.aayushtuladhar.com/data/hive/2018-01-02-hive-tables-best-practices/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/bigdata/2018-01-02-hive-tables-best-practices/</guid>
+      <guid>http://learn.aayushtuladhar.com/data/hive/2018-01-02-hive-tables-best-practices/</guid>
       <description>Hive Table Storage Formats Avoid using TEXT format, Sequence file format or complex storage format such as JSON. Ideally, RCFile (Row Columnar File) or Parquet files are best suited. If you are building data warehouse on Hive, for better performance use Parquet file format.
 CREATE TABLE IF NOT EXISTS test_table ( col1 int, col2 string ) ROW FORMAT DELIMITED FIELDS TERMINATED BY &#39;,&#39; STORED AS PARQUET;  Compression Techniques Try to split compression algorithms provided by Hadoop &amp;amp; Hive like Snappy.</description>
     </item>
     
     <item>
       <title>Installing Docker CE on Centos 7</title>
-      <link>http://learn.aayushtuladhar.com/devops/2017-09-22-install-docker-centos-7/</link>
+      <link>http://learn.aayushtuladhar.com/devops/docker/2017-09-22-install-docker-centos-7/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2017-09-22-install-docker-centos-7/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/docker/2017-09-22-install-docker-centos-7/</guid>
       <description>  Install Docker Community Edition Verify  Install Docker Community Edition sudo yum install -y yum-utils device-mapper-persistent-data lvm2 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo sudo yum makecache fast sudo yum install docker-ce sudo systemctl start docker  Verify sudo docker run hello-world  </description>
     </item>
     
     <item>
       <title>Jenkins</title>
-      <link>http://learn.aayushtuladhar.com/devops/2019-08-20-jenkins/</link>
+      <link>http://learn.aayushtuladhar.com/devops/ci-cd/2019-08-20-jenkins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2019-08-20-jenkins/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/ci-cd/2019-08-20-jenkins/</guid>
       <description>Installing Plugins  Pipeline Script   Installing Jenkins docker pull jenkins/jenkins # Persist Jenkins Data within the Docker Container docker volume create jenkins-data docker run --name jenkins-production \ --detach \ -p 50000:50000 \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ jenkins/jenkins:2.164.2  Access Jenkins at http://localhost:8080/
 Installing Plugins  Blueocean plugin  Manage Jenkins &amp;gt; Manage Plugins
 Pipeline Script Hello World Pipeline Script
@@ -458,20 +487,20 @@ pipeline { agent none environment { APPLICATION_NAME = &#39;hello-jenkins-pipeli
     
     <item>
       <title>Jenkins Shared Library</title>
-      <link>http://learn.aayushtuladhar.com/devops/2019-09-13-jenkins-shared-libs/</link>
+      <link>http://learn.aayushtuladhar.com/devops/ci-cd/2019-09-13-jenkins-shared-libs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2019-09-13-jenkins-shared-libs/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/ci-cd/2019-09-13-jenkins-shared-libs/</guid>
       <description>Jenkins Shared library is the concept of having a common pipeline code in the version control system that can be used by any number of pipeline just by referencing it. In fact, multiple teams can use the same library for their pipelines. Pipeline has support for creating &amp;ldquo;Shared Libraries&amp;rdquo; which can be defined in external source control repositories and loaded into existing Pipelines.
  A shared library is a collection of independent Groovy scripts which you pull into your Jenkinsfile at runtime.</description>
     </item>
     
     <item>
       <title>Jupyter NoteBook - Shortcuts</title>
-      <link>http://learn.aayushtuladhar.com/bigdata/2018-05-10-jupyter-notebooks/</link>
+      <link>http://learn.aayushtuladhar.com/data/2018-05-10-jupyter-notebooks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/bigdata/2018-05-10-jupyter-notebooks/</guid>
+      <guid>http://learn.aayushtuladhar.com/data/2018-05-10-jupyter-notebooks/</guid>
       <description> Jupyter Shortcuts Command Mode gives to the ability to create, copy, paste, move, and execute cells. A few keys to know: To enter Command Mode (control + m)
    Keywork Description     h Bring up help (ESC to dismiss)   b Create cell below   a Create cell above   c Copy cell   v Paste cell below   Enter Go into Edit Mode   m Change cell type to Markdown   y Change cell type to code   ii Interrupt kernel   oo Restart kernel    </description>
     </item>
@@ -483,6 +512,16 @@ pipeline { agent none environment { APPLICATION_NAME = &#39;hello-jenkins-pipeli
       
       <guid>http://learn.aayushtuladhar.com/devops/chef/2016-04-05-chef-knife-commands/</guid>
       <description> </description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/00_intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/00_intro/</guid>
+      <description>Kubernetes is a container management technology developed in Google lab to manage containerized applications in different kind of environments such as physical, virtual, and cloud infrastructure. It is an open source system which helps in creating and managing containerization of application. This tutorial provides an overview of different kind of features and functionalities of Kubernetes and teaches how to manage the containerized infrastructure and application deployment.
+Features Automatic bin packing</description>
     </item>
     
     <item>
@@ -511,10 +550,10 @@ Strike Through
     
     <item>
       <title>Linux Command Line Hacks</title>
-      <link>http://learn.aayushtuladhar.com/devops/2016-11-27-issue-remote-commands/</link>
+      <link>http://learn.aayushtuladhar.com/devops/linux/2016-11-27-issue-remote-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2016-11-27-issue-remote-commands/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/linux/2016-11-27-issue-remote-commands/</guid>
       <description> </description>
     </item>
     
@@ -529,10 +568,10 @@ Strike Through
     
     <item>
       <title>Network Tools / Command Essentials</title>
-      <link>http://learn.aayushtuladhar.com/devops/2016-10-01-network-command-essentials/</link>
+      <link>http://learn.aayushtuladhar.com/devops/network/2016-10-01-network-command-essentials/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2016-10-01-network-command-essentials/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/network/2016-10-01-network-command-essentials/</guid>
       <description> Must Know Network Tools / Commands NetStat netstat stands for network statistics. This command displays incoming and outgoing network connections as well as other network information. The netstat utility can show you the open connections on your computer, which programs are making which connections, how much data is being transmitted, and other information.
 ## List all connections netstat -a ## List TCP or UDP Connections netstat -at //TCP Connections netstat -au //UDP Connections ## List all Ports being Listened to netstat -an | grep &amp;quot;LISTEN &amp;quot;  IpTables ## Open 9001 Port sudo iptables -A INPUT -p tcp --dport 9001 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT sudo iptables -A OUTPUT -p tcp --sport 9001 -m conntrack --ctstate ESTABLISHED -j ACCEPT sudo iptables -A INPUT -p tcp --dport 3306 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT sudo iptables -A OUTPUT -p tcp --sport 3306 -m conntrack --ctstate ESTABLISHED -j ACCEPT  </description>
     </item>
@@ -551,20 +590,11 @@ buildscript { repositories { mavenCentral() } dependencies { classpath &#39;org.
     </item>
     
     <item>
-      <title>OpenShift Cheatsheet</title>
-      <link>http://learn.aayushtuladhar.com/devops/2019-10-3-openshift-cheatsheet/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/devops/2019-10-3-openshift-cheatsheet/</guid>
-      <description> </description>
-    </item>
-    
-    <item>
       <title>OpenStack</title>
-      <link>http://learn.aayushtuladhar.com/devops/2016-03-24-open-stack-cli/</link>
+      <link>http://learn.aayushtuladhar.com/devops/2016-03-24-open-stack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2016-03-24-open-stack-cli/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/2016-03-24-open-stack/</guid>
       <description>Getting Started with OpenStack What is OpenStack OpenStack is elastic cloud software that provides software developers with the ability to control the virtual infrastructure on which to deploy their applications. It is a set of software tools for building and managing cloud computing platforms for public and private clouds.
 It accelerates time-to-market by dramatically reducing application provisioning times, giving companies full control of their software development lifecycle and ultimately giving them a significant competitive advantage.</description>
     </item>
@@ -575,7 +605,7 @@ It accelerates time-to-market by dramatically reducing application provisioning 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://learn.aayushtuladhar.com/devops/2019-08-16-openshift/</guid>
-      <description>Architecture Containers and Image  Container Registries  Pods and Services  Pods Services Labels  Builds and Image Streams  Builds Image Stream Image stream tag Image stream image Image stream trigger Templates  References  Architecture OpenShift is a layered system designed to expose underlying Docker-formatted container image and Kubernetes concepts as acurately as possible, with a focus on easy composition of applications by a developer.</description>
+      <description>Architecture Containers and Image  Container Registries  Pods and Services  Pods Services Labels  Builds and Image Streams  Builds Image Stream Image stream tag Image stream image Image stream trigger Templates  References Cheatsheet  Architecture OpenShift is a layered system designed to expose underlying Docker-formatted container image and Kubernetes concepts as acurately as possible, with a focus on easy composition of applications by a developer.</description>
     </item>
     
     <item>
@@ -599,10 +629,10 @@ Name Based Virtual Hosts (Most Common)  The server relies on the client to repor
     
     <item>
       <title>Setting FQDN</title>
-      <link>http://learn.aayushtuladhar.com/devops/2016-03-01-setting-fqdn/</link>
+      <link>http://learn.aayushtuladhar.com/devops/network/2016-03-01-setting-fqdn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2016-03-01-setting-fqdn/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/network/2016-03-01-setting-fqdn/</guid>
       <description>FQDN  Finding FQDN  Hostname  Finding Hostname  Setting hostname and FQDN  FQDN FQDN stands for Fully Qualified Domain Name. It is a domain name that specifies its exact location in the tree hierarhcy of the Domain Name System (DNS). It specifies all domain levels, including the top-level domain and the root zone.
 Example, somehost.example.com
 Finding FQDN hostname -f  Hostname A hostname is a label that is assigned to a device connected to a computer network and that is used to identify the device.</description>
@@ -623,10 +653,10 @@ This starts up a jetty server on default port 4444.</description>
     
     <item>
       <title>Setting up Apache Storm</title>
-      <link>http://learn.aayushtuladhar.com/bigdata/2018-01-02-setting-up-storm-in-5-minutes/</link>
+      <link>http://learn.aayushtuladhar.com/data/2018-01-02-setting-up-storm-in-5-minutes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/bigdata/2018-01-02-setting-up-storm-in-5-minutes/</guid>
+      <guid>http://learn.aayushtuladhar.com/data/2018-01-02-setting-up-storm-in-5-minutes/</guid>
       <description>Apache Storm is free and open source distributed real-time computation system. Storm provides reliable real-time data processing what Hadoop did for batch processing. It provides real-time, robust, user friendly, reliable data processing capability with operational Intelligence.
 This post is more about setting up your Storm Environment from ground up in less than 5 Minutes. Yes, you heard it right less than 5 Minutes. Without any delay, let&amp;rsquo;s get it running.</description>
     </item>
@@ -675,16 +705,16 @@ kubectl taint nodes --all node-role.kubernetes.io/master-  </description>
     
     <item>
       <title>Spring Cloud Slueth</title>
-      <link>http://learn.aayushtuladhar.com/devops/2018-09-18-spring-cloud-slueth/</link>
+      <link>http://learn.aayushtuladhar.com/java/spring/2018-09-18-spring-cloud-slueth/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2018-09-18-spring-cloud-slueth/</guid>
+      <guid>http://learn.aayushtuladhar.com/java/spring/2018-09-18-spring-cloud-slueth/</guid>
       <description>A powerful tool for enhancing logs in any application, but especially in a system built up of multiple services. This is where spring-cloud-starter-sleuth comes into play to help you enhance your logging and traceability across multiple systems. Just including the spring-cloud-starter-sluth in your project.
 Few concepts you need to be familiar with when using Spring Cloud Slueth are concepts of Trace and Spans. Trace can though as single request or job that is triggered in an application.</description>
     </item>
     
     <item>
-      <title>Supervisor</title>
+      <title>SupervisorD</title>
       <link>http://learn.aayushtuladhar.com/devops/2016-04-10-setting-up-supervisord/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -717,20 +747,31 @@ terraform init -backend-config &amp;quot;bucket=[BUCKET_NAME]&amp;quot;  </descr
     
     <item>
       <title>The Twelve Factor App</title>
-      <link>http://learn.aayushtuladhar.com/devops/2019-01-23-nginx/</link>
+      <link>http://learn.aayushtuladhar.com/architecture/twelve-factor-app/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2019-01-23-nginx/</guid>
+      <guid>http://learn.aayushtuladhar.com/architecture/twelve-factor-app/</guid>
       <description>12factor.net - Link Introduction Methodology for building software-as-a-service app that:
  Use Declarative formats for setup automation, to minimize time and cost for new developers joining the project. Have a Clean Contract with the underlying operation system, offering Maximum Portability between execution environments Are suitable for Deployment on modern Cloud platforms, obviating the need for servers and system administrators Minimize divergence between deployment and production, enabling Continuous deployment for maximum agility And can Scale up without significant changes to tooling, architecture, or development practices.</description>
     </item>
     
     <item>
-      <title>Understanding SSH Keys</title>
-      <link>http://learn.aayushtuladhar.com/devops/2016-07-07-ssh-keys/</link>
+      <title>Ubuntu Packages</title>
+      <link>http://learn.aayushtuladhar.com/devops/linux/2016-11-28-ubuntu-packages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/devops/2016-07-07-ssh-keys/</guid>
+      <guid>http://learn.aayushtuladhar.com/devops/linux/2016-11-28-ubuntu-packages/</guid>
+      <description> List Packages Installed dpkg -l
+Create Backup of What Packages Installed dpkg --get-selection &amp;gt; list.txt
+Restore dpkg --clear-selections sudo dpkg --set-selections &amp;lt; list.txt sudo apt-get autoremove sudo apt-get dselect-upgrade  </description>
+    </item>
+    
+    <item>
+      <title>Understanding SSH Keys</title>
+      <link>http://learn.aayushtuladhar.com/devops/security/2016-07-07-ssh-keys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/devops/security/2016-07-07-ssh-keys/</guid>
       <description>SSH is the most common way of connecting to remove Linux Server. It stands for Secure Shell. It provide a safe and secure way of executing commands, making changes and configuring service remotely. SSH connecting is implemented using client-server model. For a client machine to connect to a remote machine using SSH, SSH daemon must be running on the remote machine.
 Clients generally authenticate either using passwords or by SSH Keys.</description>
     </item>
@@ -747,10 +788,10 @@ Installation sudo apt-get install apache2-utils.  Usage -p POST Message -H Messa
     
     <item>
       <title>Using Pandas</title>
-      <link>http://learn.aayushtuladhar.com/data-analytics/2018-05-01-pandas/</link>
+      <link>http://learn.aayushtuladhar.com/data/data-analytics/2018-05-01-pandas/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/data-analytics/2018-05-01-pandas/</guid>
+      <guid>http://learn.aayushtuladhar.com/data/data-analytics/2018-05-01-pandas/</guid>
       <description>Explore, Visualize, and Predict using Pandas &amp;amp; Jupyter  Explore, Visualize, and Predict using Pandas &amp;amp; Jupyter Pandas Intro Load Data Inspecting Data Summarize Data Reference  Setup
 %matplotlib inline import pandas as pd import matplotlib import numpy as np  pd.__version__, matplotlib.__version__, np.__version__  Pandas Intro The pandas library is very popular among data scientists, quants, Excel junkies, and Python developers because it allows you to perform data ingestion, exporting, transformation, and visualization with ease.</description>
     </item>
