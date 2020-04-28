@@ -12,22 +12,11 @@
     
     <item>
       <title></title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/06_databases/</link>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06_databases/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/06_databases/</guid>
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06_databases/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>0 - Architecture 101</title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/00-architecture-101/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/00-architecture-101/</guid>
-      <description>Access Management Basics  Principal Authentication Identity Authorization  Shared Reponsibility Model Service Models Availability and Recovery Scalling Tiered Application Design Encryption  Access Management Basics Principal A person or application that can make an authenticated or anonymous request to perform an action on a system.
-Authentication The process of authenticating a principal against an identity. This could be via username and passsword or API Keys.
-Identity Objects that require authentication and are authorized to access resources.</description>
     </item>
     
     <item>
@@ -52,12 +41,14 @@ Feature of Terraform Infrastructue as Code  Idempotent Uses High Level Language 
     </item>
     
     <item>
-      <title>01 - AWS Fundamentals</title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/01-aws-fundamentals/</link>
+      <title>01 - Architecture 101</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/01-architecture-101/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/01-aws-fundamentals/</guid>
-      <description>Access Management Basics  AWS Account Authentication Authorization Billing  AWS Physical and Networking Layer Well-Architected Framework  Pillars of Well Architected Framework Security Reliability Performance Efficiency Operational Excellence Cost Optimization  Elasticity Introduction to S3 - (Simple Storage Service) Introduction to Cloud Formation  Access Management Basics AWS Account AWS accounts are more than just a way to log in and access AWS services — they are a crucial AWS feature that AWS solutions architects can use to implement secure and high-performance systems.</description>
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/01-architecture-101/</guid>
+      <description>Access Management Basics Shared Reponsibility Model Service Models Availability and Fault Tolerance Scalling Tiered Application Design Encryption  Access Management Basics Principal - A person or application that can make an authenticated or anonymous request to perform an action on a system.
+Authentication - The process of authenticating a principal against an identity. This could be via username and passsword or API Keys.
+Identity - Objects that require authentication and are authorized to access resources.</description>
     </item>
     
     <item>
@@ -89,6 +80,15 @@ Setup Docker and Kubernetes Repositories curl -fsSL https://download.docker.com/
     </item>
     
     <item>
+      <title>02 - AWS Fundamentals</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/02-aws-fundamentals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/02-aws-fundamentals/</guid>
+      <description>AWS Accounts  Authentication Authorization Billing  AWS Physical and Networking Layer Well-Architected Framework  Pillars of Well Architected Framework Security Reliability Performance Efficiency Operational Excellence Cost Optimization  Elasticity Introduction to S3 - (Simple Storage Service) Introduction to Cloud Formation  AWS Accounts AWS accounts are more than just a way to log in and access AWS services — they are a crucial AWS feature that AWS solutions architects can use to implement secure and high-performance systems.</description>
+    </item>
+    
+    <item>
       <title>02 - Core Concepts</title>
       <link>http://learn.aayushtuladhar.com/kubernetes/ckad/02_core_concepts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -98,15 +98,6 @@ Setup Docker and Kubernetes Repositories curl -fsSL https://download.docker.com/
  Pod Node Service Service Account  The kubectl api-resource command will list the object types currently available to the cluster.
 Every object has a spec and status:
  Spec - You provide the spec.</description>
-    </item>
-    
-    <item>
-      <title>02 - Identity and Access Control</title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/02-identity_access_control/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/02-identity_access_control/</guid>
-      <description>Identity and Access Control  IAM Policy IAM Users IAM Groups IAM Access Keys  Multi-Account Management and Organizations  AWS Organizations Role Switching Between Accounts   Identity and Access Control Identity and Access Management, known as IAM, is one of the key services within AWS. It controls access to the AWS API endpoints that are used by the console UI, command line tools, and any applications wanting to utilize AWS.</description>
     </item>
     
     <item>
@@ -131,15 +122,6 @@ Using Terraform Modules # Download the image module &amp;quot;image&amp;quot; { 
     </item>
     
     <item>
-      <title>03 - Compute</title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/03-compute/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/03-compute/</guid>
-      <description>Elastic Cloud Compute (EC2) Elastic Block Storage (EBS)  EBS Types  EBS Snapshots Security Groups Instance Metadata AMI Bootstrap Private Instance and Public Instance EC2 Instance Roles EBS Volume and Snapshot Encryption EBS Optimized, Enhanced Networking, and Placement Group  EBS optimization Enhanced networking Cluster, partition, and spread placement groups  EC2 Billing Models Dedicated Hosts  Elastic Cloud Compute (EC2) EC2 is one of the most widely used services within AWS.</description>
-    </item>
-    
-    <item>
       <title>03 - Configuration</title>
       <link>http://learn.aayushtuladhar.com/kubernetes/ckad/03_configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -151,6 +133,15 @@ apiVersion: v1 kind: ConfigMap metadata: name: my-config-map data: myKey: myValu
     </item>
     
     <item>
+      <title>03 - Identity and Access Control</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/03-identity_access_control/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/03-identity_access_control/</guid>
+      <description>Identity and Access Control  IAM Essentials IAM Policies IAM Users IAM Groups IAM Access Keys  Multi-Account Management and Organizations  AWS Organizations Role Switching Between Accounts   Identity and Access Control IAM Essentials Identity and Access Management, known as IAM, is one of the key services within AWS. It controls access to the AWS API endpoints that are used by the console UI, command line tools, and any applications wanting to utilize AWS.</description>
+    </item>
+    
+    <item>
       <title>03 - Minikube</title>
       <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/03_minikube/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -158,6 +149,15 @@ apiVersion: v1 kind: ConfigMap metadata: name: my-config-map data: myKey: myValu
       <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/03_minikube/</guid>
       <description>Installing Minikube  Command Line Interface (CLI) tools and scripts Web-based User Interface (Web UI) from a web browser APIs from CLI or programmatically Kubectl Proxy   Installing Minikube # Install Minikube brew install minikube # Starting Minikube minikube start minikube start --vm-driver=xhyve minikube start --vm-driver=hyperkit minikube status minikube stop  Any healthy running Kubernetes cluster can be accessed via any one of the following methods:
 Command Line Interface (CLI) tools and scripts kubectl is the Kubernetes Command Line Interface (CLI) client to manage cluster resources and applications.</description>
+    </item>
+    
+    <item>
+      <title>04 - Compute</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04-compute/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04-compute/</guid>
+      <description>Server-Based Compute  Elastic Cloud Compute (EC2) Elastic Block Storage (EBS) Exam Facts EBS Snapshots Security Groups Instance Metadata AMI Bootstrap Private Instance and Public Instance EC2 Instance Roles EBS Volume and Snapshot Encryption EBS Optimized, Enhanced Networking, and Placement Group EBS optimization Enhanced networking Cluster, partition, and spread placement groups EC2 Billing Models Dedicated Hosts  Serverless Compute  Serverless Compute Lambda Essentials API Gateway Step Functions  Container Based Compute  ECS   Server-Based Compute Elastic Cloud Compute (EC2) EC2 is one of the most widely used services within AWS.</description>
     </item>
     
     <item>
@@ -184,15 +184,6 @@ apiVersion: v1 kind: Pod metadata: name: multi-container-pod spec: containers: -
     </item>
     
     <item>
-      <title>04 - Networking</title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/04-networking/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/04-networking/</guid>
-      <description>Networking Fundamentals  IP Addressing Subnetting Firewall Proxy Servers  Virtual Private Cloud (VPC)  Virtual Private Cloud (VPC): VPC Peering VPC Endpoints  DNS 101  Networking Fundamentals The Open Syste Interconnection (OSI) Model is a standard used by networking manufacturers globally. It was created and published in 1984; it splits all network communications into seven layers. Each layer servers the layer that&amp;rsquo;s above it plus the layer beneath it which adds additional capabilities.</description>
-    </item>
-    
-    <item>
       <title>05 - Authentication, Authorization, and Admission Control</title>
       <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/05_authorization_access_control/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -203,6 +194,15 @@ apiVersion: v1 kind: Pod metadata: name: multi-container-pod spec: containers: -
     </item>
     
     <item>
+      <title>05 - Networking</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/05-networking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/05-networking/</guid>
+      <description>Networking Fundamentals  IP Addressing Subnetting Firewall Proxy Servers  Virtual Private Cloud (VPC)  Virtual Private Cloud (VPC): VPC Routing Routes VPC Peering VPC Endpoints  Global DNS (Route 53) Fundamentals Global DNS (Route 53) Advanced  Networking Fundamentals The Open Syste Interconnection (OSI) Model is a standard used by networking manufacturers globally. It was created and published in 1984; it splits all network communications into seven layers.</description>
+    </item>
+    
+    <item>
       <title>05 - Observability</title>
       <link>http://learn.aayushtuladhar.com/kubernetes/ckad/05_observability/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -210,15 +210,6 @@ apiVersion: v1 kind: Pod metadata: name: multi-container-pod spec: containers: -
       <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/05_observability/</guid>
       <description>Liveness and Readiness Probes  Liveness probe Readiness Probe  Container Logging Installing Metrics Server Monitoring Applications  Liveness and Readiness Probes Probes - Allow you to customize how Kubernetes determines the status of your containers
 Liveness probe Indicates whether the container is running properly, and governs whether the cluster will automatically stop or restart the container. Liveness probes can be created by including them in the container spec.</description>
-    </item>
-    
-    <item>
-      <title>05 - Storage and Content Delivery</title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/05-storage_and_content_delivery/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/05-storage_and_content_delivery/</guid>
-      <description> S3 Architecture and Features S3 Performance and Resilience Cloud Front Network File System </description>
     </item>
     
     <item>
@@ -248,6 +239,15 @@ We can attach labels to objects by listing them in the metadata.labels section o
       <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/07_deploying_standalone_app/</guid>
       <description>Creating Deployment using YAML File Exposing Application Liveness and Readiness Probes  Liveness Probe Readiness Probe   Creating Deployment using YAML File webserver.yaml
 apiVersion: apps/v1 kind: Deployment metadata: name: webserver labels: app: nginx spec: replicas: 3 selector: matchLabels: app: nginx template: metadata: labels: app: nginx spec: containers: - name: nginx image: nginx:alpine ports: - containerPort: 80  kubectl create -f webserver.yaml  This will also create ReplicaSet and Pods as defined in the YAML configuration.</description>
+    </item>
+    
+    <item>
+      <title>07 - Storage and Content Delivery</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-storage_and_content_delivery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-storage_and_content_delivery/</guid>
+      <description> S3 Architecture and Features S3 Performance and Resilience Cloud Front Network File System </description>
     </item>
     
     <item>
@@ -379,6 +379,16 @@ Jobs Jobs are a collection of Steps. All of the steps in the job are executed in
       <description>DNS (Domain Name System) is essential component of modern internet communication. It allows us to reference computers by human friendly names instead of IP Addresses.
 Terminologies  Domain Name IP Address  DNS Lookup using Dig Dig is a flexible tool for interrogating DNS name servers. It performs DNS lookup and is very helpful to troubleshoot DNS problems.
 dig &amp;lt;serverName&amp;gt; +nostats +nocomments +nocmd  $ dig google.com +nostats ; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.</description>
+    </item>
+    
+    <item>
+      <title>Designing and Building a Custom VPC from Scratch</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/designing-and-building-a-custom-vpc-from-scratch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/designing-and-building-a-custom-vpc-from-scratch/</guid>
+      <description>This hands-on lab provides you with some experience building and connecting the following services inside AWS: VPC, subnets, internet gateway, NAT gateways, Bastion host, route tables, security groups, and network access control lists (NACLs). These services are the foundation of networking architecture inside of AWS and cover concepts such as infrastructure, design, routing, and security.
+Create a VPC  Select Your VPCs. Click Create VPC, and set the following values:  labVPC 10.</description>
     </item>
     
     <item>

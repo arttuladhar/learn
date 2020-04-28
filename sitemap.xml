@@ -3,12 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/06_databases/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06_databases/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/00-architecture-101/</loc>
   </url>
   
   <url>
@@ -20,7 +16,7 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/01-aws-fundamentals/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/01-architecture-101/</loc>
   </url>
   
   <url>
@@ -36,11 +32,11 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/02_core_concepts/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/02-aws-fundamentals/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/02-identity_access_control/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/02_core_concepts/</loc>
   </url>
   
   <url>
@@ -52,15 +48,19 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/03-compute/</loc>
-  </url>
-  
-  <url>
     <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/03_configuration/</loc>
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/03-identity_access_control/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/03_minikube/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04-compute/</loc>
   </url>
   
   <url>
@@ -72,19 +72,15 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/04-networking/</loc>
-  </url>
-  
-  <url>
     <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/05_authorization_access_control/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/05_observability/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/05-networking/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/05-storage_and_content_delivery/</loc>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/05_observability/</loc>
   </url>
   
   <url>
@@ -97,6 +93,10 @@
   
   <url>
     <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/07_deploying_standalone_app/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-storage_and_content_delivery/</loc>
   </url>
   
   <url>
@@ -120,7 +120,7 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws_certified_solutions_architect-course/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/</loc>
   </url>
   
   <url>
@@ -189,6 +189,10 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/designing-and-building-a-custom-vpc-from-scratch/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/javascript/es-6/destructuring/</loc>
   </url>
   
@@ -218,6 +222,10 @@
   
   <url>
     <loc>http://learn.aayushtuladhar.com/devops/gradle/2016-07-06-gradle-wrapper/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/</loc>
   </url>
   
   <url>
