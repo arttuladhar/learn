@@ -1,9 +1,10 @@
 ---
-title: 02 - Identity and Access Control
+title: 03 - Identity and Access Control
 ---
 
 - [Identity and Access Control](#identity-and-access-control)
-  - [IAM Policy](#iam-policy)
+  - [IAM Essentials](#iam-essentials)
+  - [IAM Policies](#iam-policies)
   - [IAM Users](#iam-users)
   - [IAM Groups](#iam-groups)
   - [IAM Access Keys](#iam-access-keys)
@@ -11,8 +12,11 @@ title: 02 - Identity and Access Control
   - [AWS Organizations](#aws-organizations)
   - [Role Switching Between Accounts](#role-switching-between-accounts)
 
+---
+
 ## Identity and Access Control
 
+### IAM Essentials
 Identity and Access Management, known as IAM, is one of the key services within AWS. It controls access to the AWS API endpoints that are used by the console UI, command line tools, and any applications wanting to utilize AWS. Identity and Access Management (IAM) is the primary service that handles authentication and authorization within AWS environments.
 
 IAM controls access to AWS service via **policies** that can be attached to **users**, **groups** and **roles**. Users are given long-term credentials to access AWS resource (username and password or access keys).
@@ -21,7 +25,7 @@ Roles allow for short-term access to resources when assumed, using temporary acc
 
 ![Identity And Access Management](/images/AWS_Certified_Solutions_Architect/IAM.jpg)
 
-### IAM Policy
+### IAM Policies
 
 IAM policies are JSON documents that either allow or deny access to combinations of actions and resources. An IAM policy (policy document) is known as an identity policy when attached to an identity or a resource policy when attached to a resource. They have no effect until they are attached to something.
 

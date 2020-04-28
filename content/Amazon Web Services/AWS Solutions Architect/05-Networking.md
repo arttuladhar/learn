@@ -1,5 +1,5 @@
 ---
-title: 04 - Networking
+title: 05 - Networking
 ---
 - [Networking Fundamentals](#networking-fundamentals)
   - [IP Addressing](#ip-addressing)
@@ -8,27 +8,32 @@ title: 04 - Networking
   - [Proxy Servers](#proxy-servers)
 - [Virtual Private Cloud (VPC)](#virtual-private-cloud-vpc)
   - [Virtual Private Cloud (VPC):](#virtual-private-cloud-vpc-1)
+  - [VPC Routing](#vpc-routing)
+  - [Routes](#routes)
   - [VPC Peering](#vpc-peering)
   - [VPC Endpoints](#vpc-endpoints)
-- [DNS 101](#dns-101)
+- [Global DNS (Route 53) Fundamentals](#global-dns-route-53-fundamentals)
+- [Global DNS (Route 53) Advanced](#global-dns-route-53-advanced)
 
 ## Networking Fundamentals
 
+![OSI Model](/images/AWS_Certified_Solutions_Architect/OSI_Model.jpeg)
+
 The Open Syste Interconnection (OSI) Model is a standard used by networking manufacturers globally. It was created and published in 1984; it splits all network communications into seven layers. Each layer servers the layer that's above it plus the layer beneath it which adds additional capabilities. Data between two devices travels down the stack on the device's A-side (wrapped at each layer) and gets transmitted before moving up the stack at the device B-side (where the wrapping gets stripped aways at every stage). The data wrapping process is called encapsulation.
 
-At Layer 1 (Physical), networks use a shared medium where devices can transmit signals and listen. Layer 1 showcases how data gets received and transmitted while taking into consideration the medium, voltages, and RF details.
+* **At Layer 1 (Physical)**, networks use a shared medium where devices can transmit signals and listen. Layer 1 showcases how data gets received and transmitted while taking into consideration the medium, voltages, and RF details.
 
-Layer 2 (Data Link) adds MAC addresses that can be used for named communication between two devices on a local network. Aditionally, layer 2 adds control over the media, avoiding cross-talk, this allows a back-off time and retransmission. L2 communications use L1 to broadcast and listen. L2 runs on top of L1.
+* **Layer 2 (Data Link)** adds MAC addresses that can be used for named communication between two devices on a local network. Aditionally, layer 2 adds control over the media, avoiding cross-talk, this allows a back-off time and retransmission. L2 communications use L1 to broadcast and listen. L2 runs on top of L1.
 
-The Network Layer (L3) allows for unique device-to-device communcation over interconnected networks. L3 devices can pass packets over tens or even hundreds of L2 networks. The packets remain largely unchanged during this journey - travelling within different L2 frames as they pass over various networks.
+* **The Network Layer (L3)** allows for unique device-to-device communcation over interconnected networks. L3 devices can pass packets over tens or even hundreds of L2 networks. The packets remain largely unchanged during this journey - travelling within different L2 frames as they pass over various networks.
 
-L4 (Transport) adds TCP and UDP. TCP is designated for reliable transport, and UDP is aimed at speed. TCP uses segments to ensure data is received in the consistent order and adds error checking and "ports" allowing different stream of communications to the same host.
+* **L4 (Transport)** adds TCP and UDP. TCP is designated for reliable transport, and UDP is aimed at speed. TCP uses segments to ensure data is received in the consistent order and adds error checking and "ports" allowing different stream of communications to the same host.
 
-L5 (Session) adds the concept of sessions, so that request and reply communication streams are viewed as a single "session" of communication between client and server.
+* **L5 (Session)** adds the concept of sessions, so that request and reply communication streams are viewed as a single "session" of communication between client and server.
 
-L6 (Presentation) adds data converstion, encryption, compression,and standard that L7 can use. L7(Application) is where protocols (such as HTTP, SSH, and FTP) are added.
+* **L6 (Presentation)** adds data converstion, encryption, compression,and standard that L7 can use. L7(Application) is where protocols (such as HTTP, SSH, and FTP) are added.
 
-![OSI Model](/images/AWS_Certified_Solutions_Architect/OSI_Model.jpeg)
+---
 
 ### IP Addressing
 
@@ -42,9 +47,15 @@ Binary | 10000000 | 00000000 | 00000000 | 00000000
 Subnet Mask | 255 | 255 | 255 | 0
 Prefix /24 | 11111111 | 11111111 | 11111111 | X
 
+---
+
 ### Subnetting
 
+![OSI Model](/images/AWS_Certified_Solutions_Architect/Subnets.jpg)
+
 Subnetting is a process of breaking a network down into smaller subnetworks. You might be allocated a public range for your business or decide on a private range for a VPC. Subnetting allows you to break it into smaller allocations for use in smaller network.
+
+If you pick 10.0.0.0/16 for your VPC, it's a single network from 10.0.0.0 to 10.0.255.255 and offers 65,536 addresses. With a certain size of VPC, increasing the prefix creates two smaller networks. Increasing agian creates four even smaller networks. Increasing again creates eight smaller and so on.
 
 ### Firewall
 
@@ -65,7 +76,7 @@ A proxy server is a type of gateway that sits between a private and public netwo
 * A private network within AWS. It's your private data center inside the AWS platform.
 * Can be configured to be public/private or a mixture
 * Regional (can't span regions), highly available, and can be connected to your data center and corporate networks
-* Isolated from other VPCs by default
+* Isolated from other VPCs by *default*
 * VPC and subnet: Max /16 (65,536 IPs) and minimum /28 (16 IPs)
 * VPC subnet can't span AZs (1:1 Mapping)
 * Certain IPs are reserved in subnets
@@ -89,10 +100,29 @@ A proxy server is a type of gateway that sits between a private and public netwo
 * When you need multiple tiers of a more complex set of networking
 * Best practise is to **not** use default for most production things
 
-VPC Routing
+### VPC Routing
 
-Routes
+* Every VPC has a virtual routing device called the VPC router.
+* It has an interface in any VPC subnet known as the "subnet+1" address for 10.0.1.0/24, this would be 10.0.1.1/32
+* The router is highly available, scalable, and controls data entring and leaving the VPC and its subnets.
+* Each VPC has a "main" route table, which is allocated to all subnets in the VPC by default. A subnet must have one route table.
+* Addditional "custom" route tables can be created and associated with subnets - but only one route table (RT) per subnet.
+* A route table controls what the VPC router does with traffic leaving a subnet.
+* An internet gateway is created and attached to a VPC (1:1). It can route traffic for public IPs to and from internet.
 
+### Routes
+
+* A RT is a collection of routes that are used when traffic from a subnet arrives at the VPC router.
+* Every route table has a local route, which matches the CIDR of the VPC and lets traffic be routed between subnets.
+* A route contains a destination and a target. Traffic is forwarded to the target if its destination matches the route destination.
+* If multiple routes apply, the most specific is chosen. A/32 is choen before a /24, before a /16.
+* Default routes (0.0.0.0/0 v4 and ::/0 v6) can be added that match any traffic not already matched.
+* Targets can be IPs or AWS networking gateway objects.
+* A subnet is a public subnet if it is (1) configured to allocate public IPs, (2) if the VPC has an associated **internet gateway**, and (3) if that subnet has a **default** route to that internet gateway.
+
+![OSI Model](/images/AWS_Certified_Solutions_Architect/VPC-Route-IG.jpg)
+
+---
 
 ### VPC Peering
 

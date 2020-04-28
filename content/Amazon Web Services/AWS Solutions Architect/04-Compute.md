@@ -1,26 +1,33 @@
 ---
-title: 03 - Compute
+title: 04 - Compute
 ---
+- [Server-Based Compute](#server-based-compute)
+  - [Elastic Cloud Compute (EC2)](#elastic-cloud-compute-ec2)
+  - [Elastic Block Storage (EBS)](#elastic-block-storage-ebs)
+    - [Exam Facts](#exam-facts)
+  - [EBS Snapshots](#ebs-snapshots)
+  - [Security Groups](#security-groups)
+  - [Instance Metadata](#instance-metadata)
+  - [AMI](#ami)
+  - [Bootstrap](#bootstrap)
+  - [Private Instance and Public Instance](#private-instance-and-public-instance)
+  - [EC2 Instance Roles](#ec2-instance-roles)
+  - [EBS Volume and Snapshot Encryption](#ebs-volume-and-snapshot-encryption)
+  - [EBS Optimized, Enhanced Networking, and Placement Group](#ebs-optimized-enhanced-networking-and-placement-group)
+    - [EBS optimization](#ebs-optimization)
+    - [Enhanced networking](#enhanced-networking)
+    - [Cluster, partition, and spread placement groups](#cluster-partition-and-spread-placement-groups)
+  - [EC2 Billing Models](#ec2-billing-models)
+  - [Dedicated Hosts](#dedicated-hosts)
+- [Serverless Compute](#serverless-compute)
+  - [Serverless Compute](#serverless-compute-1)
+  - [Lambda Essentials](#lambda-essentials)
+  - [API Gateway](#api-gateway)
+  - [Step Functions](#step-functions)
+- [Container Based Compute](#container-based-compute)
+  - [ECS](#ecs)
 
-- [Elastic Cloud Compute (EC2)](#elastic-cloud-compute-ec2)
-- [Elastic Block Storage (EBS)](#elastic-block-storage-ebs)
-  - [EBS Types](#ebs-types)
-- [EBS Snapshots](#ebs-snapshots)
-- [Security Groups](#security-groups)
-- [Instance Metadata](#instance-metadata)
-- [AMI](#ami)
-- [Bootstrap](#bootstrap)
-- [Private Instance and Public Instance](#private-instance-and-public-instance)
-- [EC2 Instance Roles](#ec2-instance-roles)
-- [EBS Volume and Snapshot Encryption](#ebs-volume-and-snapshot-encryption)
-- [EBS Optimized, Enhanced Networking, and Placement Group](#ebs-optimized-enhanced-networking-and-placement-group)
-  - [EBS optimization](#ebs-optimization)
-  - [Enhanced networking](#enhanced-networking)
-  - [Cluster, partition, and spread placement groups](#cluster-partition-and-spread-placement-groups)
-- [EC2 Billing Models](#ec2-billing-models)
-- [Dedicated Hosts](#dedicated-hosts)
-
-![Identity And Access Management - Users](/images/AWS_Certified_Solutions_Architect/EC2.jpg)
+## Server-Based Compute
 
 ### Elastic Cloud Compute (EC2)
 
@@ -54,6 +61,8 @@ Special Cases
 * "n": Higher speed networking
 * "d": NVMe storage
 
+![Identity And Access Management - Users](/images/AWS_Certified_Solutions_Architect/EC2.jpg)
+
 ---
 ### Elastic Block Storage (EBS)
 
@@ -74,7 +83,6 @@ To protect against AZ failure, EBS snapshots (to S3) can be used. Data is replic
 * Burst up to 3,000 IOPS (credit based)
 * 1 GiB - 16 TiB size, max throughput p/vol of 250 MiB/s
 
-
 ---
 ### EBS Snapshots
 
@@ -89,13 +97,15 @@ Snapshots can be copied between regions, shared and automated using Data Lifecyc
 
 ![Identity And Access Management - Users](/images/AWS_Certified_Solutions_Architect/Security_Group.jpg)
 
-Security Groups are software firewalls that can be attached to network interface and (by association) products in AWS. Security groups each have inbound rules and outbound rules. A rule allows traffic to and from a source (IP, network, named AWS entity) and protocol. Security Group belongs to a VPC
+Security Groups are software firewalls that can be attached to network interface and (by association) products in AWS. Security groups each have **inbound rules** and **outbound rules**. A rule allows traffic to and from a source (IP, network, named AWS entity) and protocol. Security Group belongs to a VPC
 
-{{% notice info %}}
+{{% notice note %}}
 Each Elastic Network Interface (ENI) can have upto 5 security groups.
 {{% /notice %}}
 
+{{% notice info %}}
 Security group have a hidden implicit/default deny rule but cannot explicitly deny traffic.
+{{% /notice %}}
 
 They are stateful - meaning for any traffic allowed in/out, the return traffic is automatically allowed. Security groups can reference AWS resource, other security groups, and even themselves.
 
@@ -137,7 +147,6 @@ Downside of using AMI is you can't do dynamic configuration
 Bootstrapping is a process where instructions are executed on an instance during its launch process. Bootstraping is used to configure the instance, perform software installation, and add application configuraiton.
 
 In EC2, user data can be used to run **shell scripts** or run **cloud-init** directives.
-
 ### Private Instance and Public Instance
 
 * **Private Instance** - Private IP allocated when launching instances. Unchanged during stop/start. Released when terminated.
@@ -230,28 +239,43 @@ Reserved instance lock in a reduced rate for one or three years. Zonal reserved 
 
 EC2 dedicated hosts are a feature of EC2, giving you complete control over physical instance placement and dedicated hardware free from other customer interaction.
 
+
 ## Serverless Compute
+
+### Serverless Compute
 
 ![Serverless](/images/AWS_Certified_Solutions_Architect/serverless.png)
 
-Serverless architecture consists of two main principles, including BaaS (Backend as a Service), which means using third party services where possible rather than running your own. Example include Auth0 or Cognito for authentication and Firebase or DynamoDb for data storage. Servless architecture uses event driven architecture using FaaS (Function as a Service) products to provide application logic. These functions are only actively invoked when they are needed.
+Serverless architecture consists of two main principles, including **BaaS** (Backend as a Service), which means using third party services where possible rather than running your own. Example include Auth0 or Cognito for authentication and Firebase or DynamoDb for data storage. Servless architecture uses event driven architecture using **FaaS** (Function as a Service) products to provide application logic. These functions are only actively invoked when they are needed.
 
 ### Lambda Essentials
 
-Lambda is a FaaS product. Function are code, which run in a runtime. Functions are invoked by events, perform actions for **upto 15 minutes** and terminate. Functions are also stateless - each run is clean.
+Lambda is a **FaaS** product. Function are code, which run in a runtime. Functions are invoked by events, perform actions for **upto 15 minutes** and terminate. Functions are also stateless - each run is clean.
+
+![Serverless Compute Lambda](/images/AWS_Certified_Solutions_Architect/Serverless_Compute_Lambda.jpg)
 
 ### API Gateway
 
-API Gateway is a managed API endpoint service. It can be used to create, publish, monitor and secure APIs "As a Service". API Gateway can use other AWS services for compute (FaaS/IaaS) as well as to store and recall data.
+API Gateway is a managed API endpoint service. It can be used to create, publish, monitor and secure APIs **"As a Service"**. API Gateway can use other AWS services for compute (FaaS/IaaS) as well as to store and recall data.
+
+![Api Gateway](/images/AWS_Certified_Solutions_Architect/ApiGateway.jpg)
+
+{{% notice info %}}
+Pricing is based on the number of API calls, the data transferred and any caching required to improve performance.
+{{% /notice %}}
 
 ### Step Functions
 
-Step Functions is a serverless visual workflow servcie that provides state machines. A state machine can orchestrate other AWS services with simple logic, branching, and parallel execution, and it maintains a state. Workflow steps are known as states, and they can perform work via tasks. Step Functions allows for long-running serverless workflows. A state machine can be defined by using Amazon State Language (ASL).
+Step Functions is a **serverless visual workflow** servcie that provides state machines. A state machine can orchestrate other AWS services with simple logic, branching, and parallel execution, and it maintains a state. Workflow steps are known as **states**, and they can perform work via **tasks**. Step Functions allows for long-running serverless workflows. A state machine can be defined by using Amazon State Language (ASL).
+
+Without Step Functions, Lambda functions could only run for 15 minutes. Lambda functions are stateless. State machines maintain state and allow longer running processess.
 
 ## Container Based Compute
 
 ### ECS 
-ECS is a managed container engine. It allows Docker containers to be deployed and managed within AWS environments. ECS can use infrastructure clsutes based on EC2 or Fargate where AWS manages the backing infrastructure.
+ECS is a managed container engine. It allows **Docker containers** to be deployed and managed within AWS environments. ECS can use infrastructure clsutes based on EC2 or Fargate where AWS manages the backing infrastructure.
+
+![Api Gateway](/images/AWS_Certified_Solutions_Architect/Containers_ECS.jpg)
 
 With EC2 launch type utilizes your own EC2 instances. AWS Fargate is a managed service, so tasks are auto placed.
 

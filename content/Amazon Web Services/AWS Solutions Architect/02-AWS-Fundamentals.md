@@ -1,9 +1,8 @@
 ---
-title: 01 - AWS Fundamentals
+title: 02 - AWS Fundamentals
 ---
 
-- [Access Management Basics](#access-management-basics)
-  - [AWS Account](#aws-account)
+- [AWS Accounts](#aws-accounts)
     - [Authentication](#authentication)
     - [Authorization](#authorization)
     - [Billing](#billing)
@@ -21,9 +20,7 @@ title: 01 - AWS Fundamentals
 
 ---
 
-## Access Management Basics
-
-### AWS Account
+## AWS Accounts
 
 AWS accounts are more than just a way to log in and access AWS services — they are a crucial AWS feature that AWS solutions architects can use to implement secure and high-performance systems. 
 

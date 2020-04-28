@@ -1,5 +1,5 @@
 ---
-title: 05 - Storage and Content Delivery
+title: 07 - Storage and Content Delivery
 ---
 
 ## S3 Architecture and Features
