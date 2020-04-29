@@ -11,15 +11,6 @@
     
     
     <item>
-      <title></title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06_databases/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06_databases/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>00 - Containers and Orchestration</title>
       <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/00_containers_and_orchestration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -213,6 +204,15 @@ Liveness probe Indicates whether the container is running properly, and governs 
     </item>
     
     <item>
+      <title>06 - Databases</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06_databases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06_databases/</guid>
+      <description> SQL - RDS SQL - Aurora NoSQL In-Memory Caching </description>
+    </item>
+    
+    <item>
       <title>06 - Pod Design</title>
       <link>http://learn.aayushtuladhar.com/kubernetes/ckad/06_pod-design/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -239,6 +239,16 @@ We can attach labels to objects by listing them in the metadata.labels section o
       <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/07_deploying_standalone_app/</guid>
       <description>Creating Deployment using YAML File Exposing Application Liveness and Readiness Probes  Liveness Probe Readiness Probe   Creating Deployment using YAML File webserver.yaml
 apiVersion: apps/v1 kind: Deployment metadata: name: webserver labels: app: nginx spec: replicas: 3 selector: matchLabels: app: nginx template: metadata: labels: app: nginx spec: containers: - name: nginx image: nginx:alpine ports: - containerPort: 80  kubectl create -f webserver.yaml  This will also create ReplicaSet and Pods as defined in the YAML configuration.</description>
+    </item>
+    
+    <item>
+      <title>07 - Hybrid and Scaling</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-hybrid-scaling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-hybrid-scaling/</guid>
+      <description>Load Balancing and Auto Scalling Load balancing is a method used to distribute incoming connections across a group of servers or services. Incoming connections are made to the load balancer, which distributes them to associated services.
+Elastic Load Balancing (ELB)  ELB is a service that provides a set of highly available and scalable load balancers in one of three versions: Classic (CLB), Application (ALB) and Network (NLB). ELBs can be paired with Auto Scaling groups to enhance high availability and fault tolerance - automating scaling / elasticity.</description>
     </item>
     
     <item>
@@ -383,10 +393,10 @@ dig &amp;lt;serverName&amp;gt; +nostats +nocomments +nocmd  $ dig google.com +no
     
     <item>
       <title>Designing and Building a Custom VPC from Scratch</title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/designing-and-building-a-custom-vpc-from-scratch/</link>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/vpc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/designing-and-building-a-custom-vpc-from-scratch/</guid>
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/vpc/</guid>
       <description>This hands-on lab provides you with some experience building and connecting the following services inside AWS: VPC, subnets, internet gateway, NAT gateways, Bastion host, route tables, security groups, and network access control lists (NACLs). These services are the foundation of networking architecture inside of AWS and cover concepts such as infrastructure, design, routing, and security.
 Create a VPC  Select Your VPCs. Click Create VPC, and set the following values:  labVPC 10.</description>
     </item>
@@ -472,6 +482,17 @@ set hive.execution.engine=tez  Using Partitions Partitions separate date in Hive
       <guid>http://learn.aayushtuladhar.com/data/hive/2018-01-02-hive-tables-best-practices/</guid>
       <description>Hive Table Storage Formats Avoid using TEXT format, Sequence file format or complex storage format such as JSON. Ideally, RCFile (Row Columnar File) or Parquet files are best suited. If you are building data warehouse on Hive, for better performance use Parquet file format.
 CREATE TABLE IF NOT EXISTS test_table ( col1 int, col2 string ) ROW FORMAT DELIMITED FIELDS TERMINATED BY &#39;,&#39; STORED AS PARQUET;  Compression Techniques Try to split compression algorithms provided by Hadoop &amp;amp; Hive like Snappy.</description>
+    </item>
+    
+    <item>
+      <title>Implementing an Auto Scaling Group and Application Load Balancer</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/autoscaling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/autoscaling/</guid>
+      <description>In this AWS hands-on lab, we will integrate two powerful AWS services: Elastic Load Balancers and Auto Scaling groups.
+Specifically, we will create an Auto Scaling group of EC2 instances operating as web servers, and we&amp;rsquo;ll configure an Application Load Balancer to load balance between the instances inside that Auto Scaling group.
+After everything is set up, we will simulate stress tests on the EC2 instances to confirm the Auto Scaling group works as expected.</description>
     </item>
     
     <item>

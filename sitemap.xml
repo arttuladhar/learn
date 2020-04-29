@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06_databases/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/00_containers_and_orchestration/</loc>
   </url>
   
@@ -84,6 +79,10 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06_databases/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/06_pod-design/</loc>
   </url>
   
@@ -93,6 +92,10 @@
   
   <url>
     <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/07_deploying_standalone_app/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-hybrid-scaling/</loc>
   </url>
   
   <url>
@@ -189,7 +192,7 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/designing-and-building-a-custom-vpc-from-scratch/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/vpc/</loc>
   </url>
   
   <url>
@@ -234,6 +237,10 @@
   
   <url>
     <loc>http://learn.aayushtuladhar.com/data/hive/2018-01-02-hive-tables-best-practices/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/autoscaling/</loc>
   </url>
   
   <url>

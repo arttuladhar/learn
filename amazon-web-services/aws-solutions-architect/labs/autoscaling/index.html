@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Designing and Building a Custom VPC from Scratch :: </title>
+    <title>Implementing an Auto Scaling Group and Application Load Balancer :: </title>
 
     
-    <link href="/css/nucleus.css?1588099507" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1588099507" rel="stylesheet">
-    <link href="/css/hybrid.css?1588099507" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1588099507" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1588099507" rel="stylesheet">
-    <link href="/css/auto-complete.css?1588099507" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1588099507" rel="stylesheet">
-    <link href="/css/theme.css?1588099507" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1588099507" rel="stylesheet">
+    <link href="/css/nucleus.css?1588184545" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1588184545" rel="stylesheet">
+    <link href="/css/hybrid.css?1588184545" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1588184545" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1588184545" rel="stylesheet">
+    <link href="/css/auto-complete.css?1588184545" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1588184545" rel="stylesheet">
+    <link href="/css/theme.css?1588184545" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1588184545" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1588099507" rel="stylesheet">
+    <link href="/css/theme-blue.css?1588184545" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1588099507"></script>
+    <script src="/js/jquery-3.3.1.min.js?1588184545"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/amazon-web-services/aws-solutions-architect/labs/designing-and-building-a-custom-vpc-from-scratch/">
+  <body class="" data-url="/amazon-web-services/aws-solutions-architect/labs/autoscaling/">
     <nav id="sidebar" class="">
 
 
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1588099507"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1588099507"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1588184545"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1588184545"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/learn.aayushtuladhar.com";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1588099507"></script>
+<script type="text/javascript" src="/js/search.js?1588184545"></script>
 
     
   </div>
@@ -126,27 +126,6 @@
           
           
         
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/amazon-web-services/aws-solutions-architect/06_databases/" title="" class="dd-item ">
-        <a href="/amazon-web-services/aws-solutions-architect/06_databases/">
-        
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
           
             
             
@@ -262,6 +241,48 @@
  
   
     
+      <li data-nav-id="/amazon-web-services/aws-solutions-architect/06_databases/" title="06 - Databases" class="dd-item ">
+        <a href="/amazon-web-services/aws-solutions-architect/06_databases/">
+        06 - Databases
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-web-services/aws-solutions-architect/07-hybrid-scaling/" title="07 - Hybrid and Scaling" class="dd-item ">
+        <a href="/amazon-web-services/aws-solutions-architect/07-hybrid-scaling/">
+        07 - Hybrid and Scaling
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/amazon-web-services/aws-solutions-architect/07-storage_and_content_delivery/" title="07 - Storage and Content Delivery" class="dd-item ">
         <a href="/amazon-web-services/aws-solutions-architect/07-storage_and_content_delivery/">
         07 - Storage and Content Delivery
@@ -310,9 +331,30 @@
  
   
     
-      <li data-nav-id="/amazon-web-services/aws-solutions-architect/labs/designing-and-building-a-custom-vpc-from-scratch/" title="Designing and Building a Custom VPC from Scratch" class="dd-item active">
-        <a href="/amazon-web-services/aws-solutions-architect/labs/designing-and-building-a-custom-vpc-from-scratch/">
+      <li data-nav-id="/amazon-web-services/aws-solutions-architect/labs/vpc/" title="Designing and Building a Custom VPC from Scratch" class="dd-item ">
+        <a href="/amazon-web-services/aws-solutions-architect/labs/vpc/">
         Designing and Building a Custom VPC from Scratch
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-web-services/aws-solutions-architect/labs/autoscaling/" title="Implementing an Auto Scaling Group and Application Load Balancer" class="dd-item active">
+        <a href="/amazon-web-services/aws-solutions-architect/labs/autoscaling/">
+        Implementing an Auto Scaling Group and Application Load Balancer
         
         </a>
     </li>
@@ -2463,7 +2505,7 @@
             
           
           
-            <a href='/'>Learning Notebook</a> > <a href='/amazon-web-services/'>Amazon Web Services</a> > <a href='/amazon-web-services/aws-solutions-architect/'>AWS Certified Solutions Architect Course</a> > <a href='/amazon-web-services/aws-solutions-architect/labs/'>Hands on Labs</a> > Designing and Building a Custom VPC from Scratch
+            <a href='/'>Learning Notebook</a> > <a href='/amazon-web-services/'>Amazon Web Services</a> > <a href='/amazon-web-services/aws-solutions-architect/'>AWS Certified Solutions Architect Course</a> > <a href='/amazon-web-services/aws-solutions-architect/labs/'>Hands on Labs</a> > Implementing an Auto Scaling Group and Application Load Balancer
           
         
           
@@ -2486,17 +2528,16 @@
 <ul>
 <li>
 <ul>
-<li><a href="#create-a-vpc">Create a VPC</a></li>
-<li><a href="#create-subnets">Create Subnets</a></li>
-<li><a href="#configure-internet-gateway">Configure Internet Gateway</a></li>
-<li><a href="#configure-routing">Configure Routing</a></li>
-<li><a href="#add-default-public-route">Add Default Public Route</a></li>
-<li><a href="#associate-with-subnets">Associate with Subnets</a></li>
-<li><a href="#create-a-bastion-host">Create a Bastion Host</a></li>
-<li><a href="#verify-bastion-host-is-working">Verify Bastion Host Is Working</a></li>
-<li><a href="#create-the-nat-gateways">Create the NAT Gateways</a></li>
-<li><a href="#create-three-private-route-tables">Create Three Private Route Tables</a></li>
-<li><a href="#route-table-associations">Route Table Associations</a></li>
+<li><a href="#learning-objectives">Learning Objectives</a></li>
+<li><a href="#create-an-application-load-balancer">Create an Application Load Balancer</a></li>
+<li><a href="#create-a-launch-template">Create a Launch Template</a></li>
+<li><a href="#create-an-auto-scaling-group">Create an Auto Scaling Group</a>
+<ul>
+<li><a href="#enable-group-metrics-collection">Enable Group Metrics Collection</a></li>
+<li><a href="#edit-the-asg-to-allow-scaling-and-use-the-alb">Edit the ASG to Allow Scaling and Use the ALB</a></li>
+<li><a href="#configure-auto-scaling-group-scaling-policies">Configure Auto Scaling Group Scaling Policies</a></li>
+</ul></li>
+<li><a href="#test-horizontal-scaling">Test Horizontal Scaling</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -2516,7 +2557,7 @@
           
             <h1>
               
-              Designing and Building a Custom VPC from Scratch
+              Implementing an Auto Scaling Group and Application Load Balancer
             </h1>
           
 
@@ -2525,193 +2566,154 @@
 
 
 
-<p>This hands-on lab provides you with some experience building and connecting the following services inside AWS: VPC, subnets, internet gateway, NAT gateways, Bastion host, route tables, security groups, and network access control lists (NACLs). These services are the foundation of networking architecture inside of AWS and cover concepts such as infrastructure, design, routing, and security.</p>
+<p>In this AWS hands-on lab, we will integrate two powerful AWS services: <strong>Elastic Load Balancers</strong> and <strong>Auto Scaling groups</strong>.</p>
 
-<h3 id="create-a-vpc">Create a VPC</h3>
+<p>Specifically, we will create an Auto Scaling group of EC2 instances operating as web servers, and we&rsquo;ll configure an Application Load Balancer to load balance between the instances inside that Auto Scaling group.</p>
 
-<ol>
-<li>Select Your VPCs.</li>
-<li>Click Create VPC, and set the following values:
+<p>After everything is set up, we will simulate stress tests on the EC2 instances to confirm the Auto Scaling group works as expected. This experience is good practice for building highly available and cost-efficient applications on AWS.</p>
 
-<ul>
-<li>labVPC</li>
-<li>10.0.0.0/16</li>
-<li>Amazon Provided IPv6 block</li>
-<li>Default Tenancy</li>
-</ul></li>
-<li>Click Create.</li>
-</ol>
-
-<h3 id="create-subnets">Create Subnets</h3>
-
-<p>Create a three-AZ, three-app tier subnet layout (leaving spaces for a fourth AZ and fourth tier).</p>
-
-<ol>
-<li>Select Subnets.</li>
-<li>Click Create subnet.</li>
-<li>Enter the following values in order for <em>Name</em>, <em>VPC</em>, <em>Availability Zone</em>, and <em>IPv4 CIDR Block</em>. Don&rsquo;t assign IPv6 block.
+<h3 id="learning-objectives">Learning Objectives</h3>
 
 <ul>
-<li>publicA, labVPC, <code>us-east-1a</code>, 10.0.0.0/24</li>
-<li>publicB, labVPC, <code>us-east-1b</code>, 10.0.1.0/24</li>
-<li>publicC, labVPC, <code>us-east-1c</code>, 10.0.2.0/24</li>
-<li>Skip 10.0.3.0/24 as the reserved space for a fourth AZ public subnet</li>
-<li>privateA, labVPC, <code>us-east-1a</code>, 10.0.4.0/24</li>
-<li>privateB, labVPC, <code>us-east-1b</code>, 10.0.5.0/24</li>
-<li>privateC, labVPC, <code>us-east-1c</code>, 10.0.6.0/24</li>
-<li>Skip 10.0.7.0/24 as the reserved space for a fourth AZ private subnet</li>
-<li>dbA, labVPC, <code>us-east-1a</code>, 10.0.8.0/24</li>
-<li>dbB, labVPC, <code>us-east-1b</code>, 10.0.9.0/24</li>
-<li>dbC, labVPC, <code>us-east-1c</code>, 10.0.10.0/24</li>
-<li>Skip 10.0.11.0/24 as the reserved space for a fourth AZ db subnet</li>
-</ul></li>
-</ol>
+<li>Create an Application Load Balancer</li>
+<li>Create a Launch Template</li>
+<li>Create an Auto Scaling Group</li>
+<li>Test Horizontal Scaling</li>
+</ul>
 
-<p>10.0.12.0/24, 10.0.13.0/24, 10.0.14.0/24, and 10.0.15.0/24 can be used for the fourth tier in four AZs, but we won&rsquo;t create them for now.</p>
+<hr />
 
-<p>check_circleCreate Internet Gateway, Public Routing, and Bastion Host</p>
+<p><img src="/images/AWS_Certified_Solutions_Architect/lab_diagram_ASGandALB.png" alt="Lab Diagram" /></p>
 
-<p>From the VPC console:</p>
+<h3 id="create-an-application-load-balancer">Create an Application Load Balancer</h3>
+
+<p>Create an Application Load Balancer to load balance between EC2 instances you will create later on inside your Auto Scaling group:</p>
 
 <ol>
-<li>Select Subnets.</li>
-<li>Select publicA, Actions, and Modify auto-assign IP settings.</li>
-<li>Enable Enable auto-assign public IPv4 address.</li>
-<li>Repeat for <code>publicB</code> and <code>publicC</code>.</li>
+<li>Navigate to the EC2 portion of the console.</li>
+<li>Click on the Load Balancers section under <strong>Load Balancing</strong>.</li>
+<li>Press the Create button under the <strong>Application Load Balancer</strong>.</li>
+<li>Name your load balancer &rdquo;LABALB&rdquo;, leave the ALB set to internet facing, and set the IP address type as ipv4.</li>
+<li>Select the VPC, and add the <code>us-east-1a</code> and <code>us-east-1b</code> AZs to your ALB (*not* the <code>us-east-1c</code> AZ).</li>
+<li>Create a new security group for your ALB, and use &rdquo;ALBSG&rdquo; for the name and description. Configure rules ensuring HTTP is allowed from 0.0.0.0/0 and ::/0 (IPV6).</li>
+<li>Configure a target group for your ALB, naming it ALBTG.</li>
+<li>Expand <em>Advanced health check settings</em>, and reduce the healthy threshold check down to 2.</li>
+<li>Proceed to create your ALB.</li>
 </ol>
 
-<h3 id="configure-internet-gateway">Configure Internet Gateway</h3>
+<p><img src="/images/AWS_Certified_Solutions_Architect/Lab-ApplicationLoadBalancer.jpg" alt="Application Load Balancer" /></p>
+
+<h3 id="create-a-launch-template">Create a Launch Template</h3>
+
+<p>Create an SSH key pair that the EC2 instances will use to control access:</p>
 
 <ol>
-<li>Select Internet Gateways, and click Create internet gateway.</li>
-<li>Set the name tag as labVPCIGW, and click Create.</li>
-<li>Select the newly created IGW, click Actions and then Attach to VPC.</li>
-<li>Select labVPC and click Attach.</li>
+<li>Navigate to EC2 &gt; Network &amp; Security &gt; Key Pairs.</li>
+<li>Click Create Key Pair.</li>
+<li>Call it ALBASG, and download the file to your local machine.</li>
 </ol>
 
-<h3 id="configure-routing">Configure Routing</h3>
+<p>Create a security group for EC2 instances:</p>
 
 <ol>
-<li>Click Route Tables.</li>
-<li>Click Create route table.</li>
-<li>Set the name tag as publicRT and the VPC as labVPC.</li>
-<li>Click Create.</li>
+<li>Navigate to EC2 &gt; Network &amp; Security &gt; Security Groups.</li>
+<li>Click Create Security Group.</li>
+<li>The name and description are ec2web.</li>
+<li>Set the VPC to the lab VPC.</li>
+<li>Add a rule allowing SSH from 0.0.0.0/0 and ::/0 (IPV6).</li>
+<li>Add a rule allowing HTTP from the Security Group ID of the ALB.</li>
+<li>Create the security group.</li>
 </ol>
 
-<h3 id="add-default-public-route">Add Default Public Route</h3>
+<p>Create a launch template that will be used by the Auto Scaling group:</p>
 
 <ol>
-<li>Select publicRT, click Routes, Edit routes, and Add route.</li>
-<li>Set the destination as 0.0.0.0/0, target as Internet Gateway, and select labVPCIGW.</li>
-<li>Click Add route again, set the destination as ::/0 , Internet Gateway, and select labVPCIGW.</li>
-<li>Click Save routes.</li>
+<li>Navigate to EC2 &gt; Instances &gt; Launch Templates.</li>
+<li>Create a new template, and call it &rdquo;LABLT&rdquo; for the name and description.</li>
+<li>The *Source Template* is none.</li>
+<li>Search for AMI, use the <code>Quick Start</code> lab catalog, and pick the Amazon Linux 2 AMI (64-bit x86).</li>
+<li>Set the instance type as t3.micro (not T3a.micro).</li>
+<li>Select the key pair created earlier.</li>
+<li>Network type is VPC.</li>
+<li>Select the ec2web security group created earlier.</li>
+<li>Storage should automatically be populated with a volume, so leave that as default and don&rsquo;t add anything to the network section.</li>
+<li>Expand <em>Advanced Details</em>, and paste the user data for this lesson in the box.</li>
+<li>Click Create Launch Template.</li>
 <li>Click Close.</li>
 </ol>
 
-<h3 id="associate-with-subnets">Associate with Subnets</h3>
+<h3 id="create-an-auto-scaling-group">Create an Auto Scaling Group</h3>
 
 <ol>
-<li>Select publicRT, and click the Subnet Associations tab.</li>
-<li>Click Edit subnet associations.</li>
-<li>Select publicA, publicB, and publicC.</li>
+<li>EC2 &gt; Auto Scaling &gt; Auto Scaling Groups</li>
+<li>Click Create Auto Scaling group.</li>
+<li>Select Launch Template, and choose the template you just created. NOTE: If you receive the message <code>No default VPC found</code>, you can ignore it as we are selecting our VPC below.</li>
+<li>Call the group &rdquo;LABASG&rdquo;.</li>
+<li>Start with two instances.</li>
+<li>Pick the VPC from the lab environment, and select <code>us-east-1a</code> and <code>us-east-1b</code> as subnets.</li>
+<li>Click Next: Configure Scaling Policies.</li>
+<li>For now, keep the group at the initial size.</li>
+<li>Click Next: Configure Notifications &gt; Next: Configure Tags &gt; Review &gt; Create Auto Scaling group &gt; Close.</li>
+</ol>
+
+<p>Note: Make sure the load balancer is ready at this point.</p>
+
+<h4 id="enable-group-metrics-collection">Enable Group Metrics Collection</h4>
+
+<ol>
+<li>Click the Monitoring tab of the ASG.</li>
+<li>Click Enable Group Metrics Collection.</li>
+</ol>
+
+<h4 id="edit-the-asg-to-allow-scaling-and-use-the-alb">Edit the ASG to Allow Scaling and Use the ALB</h4>
+
+<ol>
+<li>Click Actions &gt; Edit</li>
+<li>Set *Max instances* as 6**, click **Target groups, and pick the target group of the ALB.</li>
 <li>Click Save.</li>
 </ol>
 
-<h3 id="create-a-bastion-host">Create a Bastion Host</h3>
-
-<p>From the EC2 console:</p>
+<h4 id="configure-auto-scaling-group-scaling-policies">Configure Auto Scaling Group Scaling Policies</h4>
 
 <ol>
-<li>Click Launch Instance.</li>
-<li>Choose Amazon Linux 2, check 64-bit (x86), and click Select.</li>
-<li>Choose t3.micro, and click Next: Configure Instance Details.</li>
-<li>Leave all as defaults, except set the subnet to publicB and make sure *Auto-assign Public IP* is Use subnet setting (Enable).</li>
-<li>Click Next: Add Storage.</li>
-<li>Click Next: Add Tags.</li>
-<li>Add a tag, and set the *Key* to Name and *Value* to BastionHost.</li>
-<li>Click Next: Configure Security Group.</li>
-<li>For security group, create a new one with the name and description bastionSG.</li>
-<li>Click Review and Launch.</li>
-<li>Click Launch, select to Create a new key pair, call it vpclab, and click Download Key Pair.</li>
-<li>Click Launch Instances and then View Instances.</li>
+<li>Select the Scaling Policies tab of the ASG.</li>
+<li>Click Add policy.</li>
+<li>Click Create a simple scaling policy.</li>
+<li>Name it SCALEOUT, set it to *Take the action* to Add 1 instances, *And then wait* 300 seconds before allowing another scaling activity.</li>
+<li>Click Create new alarm, and uncheck notification.</li>
+<li>Average CPU Utilization is &gt;= 40 percent for 1 period of 5 minutes. Call it HIGHCPU.</li>
+<li>Click Create alarm and Close.</li>
+<li>Click Create.</li>
+<li>Click Add policy again.</li>
+<li>Click Create a simple scaling policy.</li>
+<li>Name it SCALEIN, set it to *Take the action* to Remove 1 instances, *And then wait* 300 seconds before allowing another scaling activity.</li>
+<li>Click Create new alarm, and uncheck notification.</li>
+<li>Average CPU utilization is &lt;= 20 percent for 1 period of 5 minutes. Call it LOWCPU.</li>
+<li>Click Create alarm &gt; Close &gt; Create.</li>
 </ol>
 
-<h3 id="verify-bastion-host-is-working">Verify Bastion Host Is Working</h3>
-
-<p>From the EC2 console:</p>
+<h3 id="test-horizontal-scaling">Test Horizontal Scaling</h3>
 
 <ol>
-<li>When the bastion host has <sup>2</sup>&frasl;<sub>2</sub> status checks, right-click, click Connect, and copy the connection command.
+<li>Connect to one of the EC2 instances.</li>
 
-<ul>
-<li>Linux/macOS users will need to run a <code>chmod 400 vpclab.pem</code> command first to avoid errors.</li>
-<li>Windows users can connect using <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html">this as a guide</a>.</li>
-</ul></li>
-<li>Run the connection command to connect to your bastion host.</li>
+<li><p>Install the stress test application:</p>
+
+<pre><code>sudo amazon-linux-extras install epel -y
+sudo yum install -y stress
+</code></pre></li>
+
+<li><p>Run the stress test on the EC2 instance:</p>
+
+<pre><code>stress --cpu 2 --timeout 300
+</code></pre>
+
+<p>(Optionally, use <code>3000</code> for timeout.)</p></li>
+
+<li><p>After a few minutes, watch the number of instances increase.</p></li>
 </ol>
 
-<p>check_circleConfigure Private Internet Connectivity Using NAT Gateway</p>
-
-<p>From the VPC Console:</p>
-
-<h3 id="create-the-nat-gateways">Create the NAT Gateways</h3>
-
-<ol>
-<li>Click NAT Gateways and then Create NAT Gateway.</li>
-<li>Set the subnet to publicA.</li>
-<li>Click Create New EIP and then Create a NAT Gateway.</li>
-<li>Click Close.</li>
-<li>Repeat the process for <code>publicB</code> and <code>publicC</code> for a total of three NAT gateways.</li>
-<li>Select each NAT gateway in turn, and make a note of the <code>NAT Gateway ID</code> and which public subnet it&rsquo;s in.</li>
-</ol>
-
-<h3 id="create-three-private-route-tables">Create Three Private Route Tables</h3>
-
-<ol>
-<li>Click Route Tables.</li>
-<li>Click Create route table.</li>
-<li>Set the name as privateA-RT and VPC as labVPC.</li>
-<li>Click Create and then Close.</li>
-<li>Repeat for <code>privateB-RT</code> and <code>privateC-RT</code>.</li>
-</ol>
-
-<h3 id="route-table-associations">Route Table Associations</h3>
-
-<p>Do the following for each route table in <code>privateA-RT</code>, <code>privateB-RT</code>, and <code>privateC-RT</code>.</p>
-
-<ol>
-<li>Select the Subnet Associations tab, click Edit subnet associations, select the db and private subnets in the same AZ.
-
-<ul>
-<li><code>privateA-RT</code> = privateA and dbA</li>
-</ul></li>
-<li>Click Save.</li>
-<li>On the same route table, click Routes, Edit routes, and Add route.</li>
-<li>Set the destination as 0.0.0.0/0, target as NAT Gateway, and select the NAT Gateway ID in the same AZ (in the list you made earlier).</li>
-<li>Click Close.</li>
-<li>Repeat these steps for each route table.</li>
-</ol>
-
-<p>check_circleConfigure and Test VPC Security</p>
-
-<ol>
-<li>Create an App Server privateA using the same bastion <code>vpclab</code> key.</li>
-<li>Configure security group, only allowing incoming SSH from the bastion security group.</li>
-<li>Log in via SSH to the App Server.</li>
-<li>In the AWS console, navigate to VPC &gt; Network ACLs.</li>
-<li>Select the default NACL, and click Edit inbound rules.</li>
-<li>Click Add Rule, and set the following values:
-
-<ul>
-<li><em>Rule #</em>: 50</li>
-<li><em>Type</em>: ALL Traffic</li>
-<li><em>Source</em>: Your IP address (which you can get by googling &ldquo;what is my IP&rdquo; in a new browser tab), and append /32 at the end</li>
-<li><em>Allow / Deny</em>: DENY</li>
-</ul></li>
-<li>In the terminal, try to log in to the bastion host.</li>
-<li>In the AWS console, remove the NACL&rsquo;s rule #50 to remove the explicit DENY.</li>
-<li>In the terminal, try connecting to the bastion host again.</li>
-</ol>
+<p><img src="/images/AWS_Certified_Solutions_Architect/Lab-AutoScaling.jpg" alt="Implement Auto Scaling" /></p>
 
 
 <footer class="footline">
@@ -2896,6 +2898,22 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -2904,6 +2922,25 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -4341,7 +4378,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/amazon-web-services/aws-solutions-architect/labs/" title="Hands on Labs"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/amazon-web-services/aws-solutions-architect/labs/vpc/" title="Designing and Building a Custom VPC from Scratch"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/architecture/" title="Architecture" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -4354,19 +4391,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1588099507"></script>
-    <script src="/js/perfect-scrollbar.min.js?1588099507"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1588099507"></script>
-    <script src="/js/jquery.sticky.js?1588099507"></script>
-    <script src="/js/featherlight.min.js?1588099507"></script>
-    <script src="/js/highlight.pack.js?1588099507"></script>
+    <script src="/js/clipboard.min.js?1588184545"></script>
+    <script src="/js/perfect-scrollbar.min.js?1588184545"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1588184545"></script>
+    <script src="/js/jquery.sticky.js?1588184545"></script>
+    <script src="/js/featherlight.min.js?1588184545"></script>
+    <script src="/js/highlight.pack.js?1588184545"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1588099507"></script>
-    <script src="/js/learn.js?1588099507"></script>
-    <script src="/js/hugo-learn.js?1588099507"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1588184545"></script>
+    <script src="/js/learn.js?1588184545"></script>
+    <script src="/js/hugo-learn.js?1588184545"></script>
 
-    <link href="/mermaid/mermaid.css?1588099507" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1588099507"></script>
+    <link href="/mermaid/mermaid.css?1588184545" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1588184545"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

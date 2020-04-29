@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>00 - Terraform Introduction :: </title>
+    <title>Designing and Building a Custom VPC from Scratch :: </title>
 
     
     <link href="/css/nucleus.css?1588184545" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/terraform/introduction/">
+  <body class="" data-url="/amazon-web-services/aws-solutions-architect/labs/vpc/">
     <nav id="sidebar" class="">
 
 
@@ -79,7 +79,7 @@
   
     
     <li data-nav-id="/amazon-web-services/" title="Amazon Web Services" class="dd-item 
-        
+        parent
         
         
         ">
@@ -108,7 +108,7 @@
   
     
     <li data-nav-id="/amazon-web-services/aws-solutions-architect/" title="AWS Certified Solutions Architect Course" class="dd-item 
-        
+        parent
         
         
         ">
@@ -305,7 +305,7 @@
   
     
     <li data-nav-id="/amazon-web-services/aws-solutions-architect/labs/" title="Hands on Labs" class="dd-item 
-        
+        parent
         
         
         ">
@@ -331,7 +331,7 @@
  
   
     
-      <li data-nav-id="/amazon-web-services/aws-solutions-architect/labs/vpc/" title="Designing and Building a Custom VPC from Scratch" class="dd-item ">
+      <li data-nav-id="/amazon-web-services/aws-solutions-architect/labs/vpc/" title="Designing and Building a Custom VPC from Scratch" class="dd-item active">
         <a href="/amazon-web-services/aws-solutions-architect/labs/vpc/">
         Designing and Building a Custom VPC from Scratch
         
@@ -2166,7 +2166,7 @@
   
     
     <li data-nav-id="/terraform/" title="Terraform" class="dd-item 
-        parent
+        
         
         
         ">
@@ -2192,7 +2192,7 @@
  
   
     
-      <li data-nav-id="/terraform/introduction/" title="00 - Terraform Introduction" class="dd-item active">
+      <li data-nav-id="/terraform/introduction/" title="00 - Terraform Introduction" class="dd-item ">
         <a href="/terraform/introduction/">
         00 - Terraform Introduction
         
@@ -2497,7 +2497,19 @@
             
           
           
-            <a href='/'>Learning Notebook</a> > <a href='/terraform/'>Terraform</a> > 00 - Terraform Introduction
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Learning Notebook</a> > <a href='/amazon-web-services/'>Amazon Web Services</a> > <a href='/amazon-web-services/aws-solutions-architect/'>AWS Certified Solutions Architect Course</a> > <a href='/amazon-web-services/aws-solutions-architect/labs/'>Hands on Labs</a> > Designing and Building a Custom VPC from Scratch
+          
+        
+          
+        
           
         
           
@@ -2514,13 +2526,19 @@
 <ul>
 <li>
 <ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#feature-of-terraform">Feature of Terraform</a>
+<li>
 <ul>
-<li><a href="#infrastructue-as-code">Infrastructue as Code</a></li>
-<li><a href="#execution-plan">Execution Plan</a></li>
-<li><a href="#resource-graph">Resource Graph</a></li>
-<li><a href="#use-cases-for-terraform">Use Cases for Terraform</a></li>
+<li><a href="#create-a-vpc">Create a VPC</a></li>
+<li><a href="#create-subnets">Create Subnets</a></li>
+<li><a href="#configure-internet-gateway">Configure Internet Gateway</a></li>
+<li><a href="#configure-routing">Configure Routing</a></li>
+<li><a href="#add-default-public-route">Add Default Public Route</a></li>
+<li><a href="#associate-with-subnets">Associate with Subnets</a></li>
+<li><a href="#create-a-bastion-host">Create a Bastion Host</a></li>
+<li><a href="#verify-bastion-host-is-working">Verify Bastion Host Is Working</a></li>
+<li><a href="#create-the-nat-gateways">Create the NAT Gateways</a></li>
+<li><a href="#create-three-private-route-tables">Create Three Private Route Tables</a></li>
+<li><a href="#route-table-associations">Route Table Associations</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -2540,7 +2558,7 @@
           
             <h1>
               
-              00 - Terraform Introduction
+              Designing and Building a Custom VPC from Scratch
             </h1>
           
 
@@ -2549,42 +2567,193 @@
 
 
 
-<h2 id="introduction">Introduction</h2>
+<p>This hands-on lab provides you with some experience building and connecting the following services inside AWS: VPC, subnets, internet gateway, NAT gateways, Bastion host, route tables, security groups, and network access control lists (NACLs). These services are the foundation of networking architecture inside of AWS and cover concepts such as infrastructure, design, routing, and security.</p>
 
-<p>Terraform is the infrastructure as code offering from HashiCorp. It is a tool for building, changing, and managing infrastructure in a safe, repeatable way.</p>
+<h3 id="create-a-vpc">Create a VPC</h3>
 
-<p>Using HCL as High Level Language, Terraform support Infrastrucre as Code by automating creation of those resources. Terraform provides support for desired resources on almost any provider (AWS, GCP, GitHub, Docker etc)</p>
-
-<h2 id="feature-of-terraform">Feature of Terraform</h2>
-
-<h3 id="infrastructue-as-code">Infrastructue as Code</h3>
+<ol>
+<li>Select Your VPCs.</li>
+<li>Click Create VPC, and set the following values:
 
 <ul>
-<li>Idempotent</li>
-<li>Uses High Level Language (HCL)</li>
-<li>Code Reusability using Modules</li>
-</ul>
+<li>labVPC</li>
+<li>10.0.0.0/16</li>
+<li>Amazon Provided IPv6 block</li>
+<li>Default Tenancy</li>
+</ul></li>
+<li>Click Create.</li>
+</ol>
 
-<h3 id="execution-plan">Execution Plan</h3>
+<h3 id="create-subnets">Create Subnets</h3>
 
-<ul>
-<li>Show the intent of the deploy</li>
-<li>Can help ensure everything in the development is intentional</li>
-</ul>
+<p>Create a three-AZ, three-app tier subnet layout (leaving spaces for a fourth AZ and fourth tier).</p>
 
-<h3 id="resource-graph">Resource Graph</h3>
-
-<ul>
-<li>Illustrates all changes and dependencies</li>
-</ul>
-
-<h3 id="use-cases-for-terraform">Use Cases for Terraform</h3>
+<ol>
+<li>Select Subnets.</li>
+<li>Click Create subnet.</li>
+<li>Enter the following values in order for <em>Name</em>, <em>VPC</em>, <em>Availability Zone</em>, and <em>IPv4 CIDR Block</em>. Don&rsquo;t assign IPv6 block.
 
 <ul>
-<li>Hybrid Cloud</li>
-<li>Multi-tier Architecture</li>
-<li>Software Defined Networking</li>
-</ul>
+<li>publicA, labVPC, <code>us-east-1a</code>, 10.0.0.0/24</li>
+<li>publicB, labVPC, <code>us-east-1b</code>, 10.0.1.0/24</li>
+<li>publicC, labVPC, <code>us-east-1c</code>, 10.0.2.0/24</li>
+<li>Skip 10.0.3.0/24 as the reserved space for a fourth AZ public subnet</li>
+<li>privateA, labVPC, <code>us-east-1a</code>, 10.0.4.0/24</li>
+<li>privateB, labVPC, <code>us-east-1b</code>, 10.0.5.0/24</li>
+<li>privateC, labVPC, <code>us-east-1c</code>, 10.0.6.0/24</li>
+<li>Skip 10.0.7.0/24 as the reserved space for a fourth AZ private subnet</li>
+<li>dbA, labVPC, <code>us-east-1a</code>, 10.0.8.0/24</li>
+<li>dbB, labVPC, <code>us-east-1b</code>, 10.0.9.0/24</li>
+<li>dbC, labVPC, <code>us-east-1c</code>, 10.0.10.0/24</li>
+<li>Skip 10.0.11.0/24 as the reserved space for a fourth AZ db subnet</li>
+</ul></li>
+</ol>
+
+<p>10.0.12.0/24, 10.0.13.0/24, 10.0.14.0/24, and 10.0.15.0/24 can be used for the fourth tier in four AZs, but we won&rsquo;t create them for now.</p>
+
+<p>check_circleCreate Internet Gateway, Public Routing, and Bastion Host</p>
+
+<p>From the VPC console:</p>
+
+<ol>
+<li>Select Subnets.</li>
+<li>Select publicA, Actions, and Modify auto-assign IP settings.</li>
+<li>Enable Enable auto-assign public IPv4 address.</li>
+<li>Repeat for <code>publicB</code> and <code>publicC</code>.</li>
+</ol>
+
+<h3 id="configure-internet-gateway">Configure Internet Gateway</h3>
+
+<ol>
+<li>Select Internet Gateways, and click Create internet gateway.</li>
+<li>Set the name tag as labVPCIGW, and click Create.</li>
+<li>Select the newly created IGW, click Actions and then Attach to VPC.</li>
+<li>Select labVPC and click Attach.</li>
+</ol>
+
+<h3 id="configure-routing">Configure Routing</h3>
+
+<ol>
+<li>Click Route Tables.</li>
+<li>Click Create route table.</li>
+<li>Set the name tag as publicRT and the VPC as labVPC.</li>
+<li>Click Create.</li>
+</ol>
+
+<h3 id="add-default-public-route">Add Default Public Route</h3>
+
+<ol>
+<li>Select publicRT, click Routes, Edit routes, and Add route.</li>
+<li>Set the destination as 0.0.0.0/0, target as Internet Gateway, and select labVPCIGW.</li>
+<li>Click Add route again, set the destination as ::/0 , Internet Gateway, and select labVPCIGW.</li>
+<li>Click Save routes.</li>
+<li>Click Close.</li>
+</ol>
+
+<h3 id="associate-with-subnets">Associate with Subnets</h3>
+
+<ol>
+<li>Select publicRT, and click the Subnet Associations tab.</li>
+<li>Click Edit subnet associations.</li>
+<li>Select publicA, publicB, and publicC.</li>
+<li>Click Save.</li>
+</ol>
+
+<h3 id="create-a-bastion-host">Create a Bastion Host</h3>
+
+<p>From the EC2 console:</p>
+
+<ol>
+<li>Click Launch Instance.</li>
+<li>Choose Amazon Linux 2, check 64-bit (x86), and click Select.</li>
+<li>Choose t3.micro, and click Next: Configure Instance Details.</li>
+<li>Leave all as defaults, except set the subnet to publicB and make sure *Auto-assign Public IP* is Use subnet setting (Enable).</li>
+<li>Click Next: Add Storage.</li>
+<li>Click Next: Add Tags.</li>
+<li>Add a tag, and set the *Key* to Name and *Value* to BastionHost.</li>
+<li>Click Next: Configure Security Group.</li>
+<li>For security group, create a new one with the name and description bastionSG.</li>
+<li>Click Review and Launch.</li>
+<li>Click Launch, select to Create a new key pair, call it vpclab, and click Download Key Pair.</li>
+<li>Click Launch Instances and then View Instances.</li>
+</ol>
+
+<h3 id="verify-bastion-host-is-working">Verify Bastion Host Is Working</h3>
+
+<p>From the EC2 console:</p>
+
+<ol>
+<li>When the bastion host has <sup>2</sup>&frasl;<sub>2</sub> status checks, right-click, click Connect, and copy the connection command.
+
+<ul>
+<li>Linux/macOS users will need to run a <code>chmod 400 vpclab.pem</code> command first to avoid errors.</li>
+<li>Windows users can connect using <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html">this as a guide</a>.</li>
+</ul></li>
+<li>Run the connection command to connect to your bastion host.</li>
+</ol>
+
+<p>check_circleConfigure Private Internet Connectivity Using NAT Gateway</p>
+
+<p>From the VPC Console:</p>
+
+<h3 id="create-the-nat-gateways">Create the NAT Gateways</h3>
+
+<ol>
+<li>Click NAT Gateways and then Create NAT Gateway.</li>
+<li>Set the subnet to publicA.</li>
+<li>Click Create New EIP and then Create a NAT Gateway.</li>
+<li>Click Close.</li>
+<li>Repeat the process for <code>publicB</code> and <code>publicC</code> for a total of three NAT gateways.</li>
+<li>Select each NAT gateway in turn, and make a note of the <code>NAT Gateway ID</code> and which public subnet it&rsquo;s in.</li>
+</ol>
+
+<h3 id="create-three-private-route-tables">Create Three Private Route Tables</h3>
+
+<ol>
+<li>Click Route Tables.</li>
+<li>Click Create route table.</li>
+<li>Set the name as privateA-RT and VPC as labVPC.</li>
+<li>Click Create and then Close.</li>
+<li>Repeat for <code>privateB-RT</code> and <code>privateC-RT</code>.</li>
+</ol>
+
+<h3 id="route-table-associations">Route Table Associations</h3>
+
+<p>Do the following for each route table in <code>privateA-RT</code>, <code>privateB-RT</code>, and <code>privateC-RT</code>.</p>
+
+<ol>
+<li>Select the Subnet Associations tab, click Edit subnet associations, select the db and private subnets in the same AZ.
+
+<ul>
+<li><code>privateA-RT</code> = privateA and dbA</li>
+</ul></li>
+<li>Click Save.</li>
+<li>On the same route table, click Routes, Edit routes, and Add route.</li>
+<li>Set the destination as 0.0.0.0/0, target as NAT Gateway, and select the NAT Gateway ID in the same AZ (in the list you made earlier).</li>
+<li>Click Close.</li>
+<li>Repeat these steps for each route table.</li>
+</ol>
+
+<p>check_circleConfigure and Test VPC Security</p>
+
+<ol>
+<li>Create an App Server privateA using the same bastion <code>vpclab</code> key.</li>
+<li>Configure security group, only allowing incoming SSH from the bastion security group.</li>
+<li>Log in via SSH to the App Server.</li>
+<li>In the AWS console, navigate to VPC &gt; Network ACLs.</li>
+<li>Select the default NACL, and click Edit inbound rules.</li>
+<li>Click Add Rule, and set the following values:
+
+<ul>
+<li><em>Rule #</em>: 50</li>
+<li><em>Type</em>: ALL Traffic</li>
+<li><em>Source</em>: Your IP address (which you can get by googling &ldquo;what is my IP&rdquo; in a new browser tab), and append /32 at the end</li>
+<li><em>Allow / Deny</em>: DENY</li>
+</ul></li>
+<li>In the terminal, try to log in to the bastion host.</li>
+<li>In the AWS console, remove the NACL&rsquo;s rule #50 to remove the explicit DENY.</li>
+<li>In the terminal, try connecting to the bastion host again.</li>
+</ol>
 
 
 <footer class="footline">
@@ -2622,8 +2791,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -2640,6 +2807,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -2654,6 +2822,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2783,6 +2954,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -2795,6 +2967,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -2812,6 +2985,9 @@
             
                 
                     
+                        
+                        
+                    
                 
                 
 
@@ -4042,7 +4218,6 @@
             
             
                 
-                    
                     
                 
                 
@@ -4057,7 +4232,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -4073,9 +4247,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -4244,10 +4415,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/terraform/" title="Terraform"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/amazon-web-services/aws-solutions-architect/labs/" title="Hands on Labs"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/terraform/hcl_basics/" title="01 - HCL Basics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/amazon-web-services/aws-solutions-architect/labs/autoscaling/" title="Implementing an Auto Scaling Group and Application Load Balancer" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

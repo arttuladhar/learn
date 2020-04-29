@@ -12,12 +12,23 @@
     
     <item>
       <title>Designing and Building a Custom VPC from Scratch</title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/designing-and-building-a-custom-vpc-from-scratch/</link>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/vpc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/designing-and-building-a-custom-vpc-from-scratch/</guid>
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/vpc/</guid>
       <description>This hands-on lab provides you with some experience building and connecting the following services inside AWS: VPC, subnets, internet gateway, NAT gateways, Bastion host, route tables, security groups, and network access control lists (NACLs). These services are the foundation of networking architecture inside of AWS and cover concepts such as infrastructure, design, routing, and security.
 Create a VPC  Select Your VPCs. Click Create VPC, and set the following values:  labVPC 10.</description>
+    </item>
+    
+    <item>
+      <title>Implementing an Auto Scaling Group and Application Load Balancer</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/autoscaling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/autoscaling/</guid>
+      <description>In this AWS hands-on lab, we will integrate two powerful AWS services: Elastic Load Balancers and Auto Scaling groups.
+Specifically, we will create an Auto Scaling group of EC2 instances operating as web servers, and we&amp;rsquo;ll configure an Application Load Balancer to load balance between the instances inside that Auto Scaling group.
+After everything is set up, we will simulate stress tests on the EC2 instances to confirm the Auto Scaling group works as expected.</description>
     </item>
     
   </channel>

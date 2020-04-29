@@ -11,15 +11,6 @@
     
     
     <item>
-      <title></title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06_databases/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06_databases/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>01 - Architecture 101</title>
       <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/01-architecture-101/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -64,6 +55,25 @@ Identity - Objects that require authentication and are authorized to access reso
       
       <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/05-networking/</guid>
       <description>Networking Fundamentals  IP Addressing Subnetting Firewall Proxy Servers  Virtual Private Cloud (VPC)  Virtual Private Cloud (VPC): VPC Routing Routes VPC Peering VPC Endpoints  Global DNS (Route 53) Fundamentals Global DNS (Route 53) Advanced  Networking Fundamentals The Open Syste Interconnection (OSI) Model is a standard used by networking manufacturers globally. It was created and published in 1984; it splits all network communications into seven layers.</description>
+    </item>
+    
+    <item>
+      <title>06 - Databases</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06_databases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06_databases/</guid>
+      <description> SQL - RDS SQL - Aurora NoSQL In-Memory Caching </description>
+    </item>
+    
+    <item>
+      <title>07 - Hybrid and Scaling</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-hybrid-scaling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-hybrid-scaling/</guid>
+      <description>Load Balancing and Auto Scalling Load balancing is a method used to distribute incoming connections across a group of servers or services. Incoming connections are made to the load balancer, which distributes them to associated services.
+Elastic Load Balancing (ELB)  ELB is a service that provides a set of highly available and scalable load balancers in one of three versions: Classic (CLB), Application (ALB) and Network (NLB). ELBs can be paired with Auto Scaling groups to enhance high availability and fault tolerance - automating scaling / elasticity.</description>
     </item>
     
     <item>
