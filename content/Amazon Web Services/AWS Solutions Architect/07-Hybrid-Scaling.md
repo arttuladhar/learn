@@ -77,3 +77,9 @@ Launch templates should be used over launch configuration where possible. **Neit
 
 Auto Scaling groups use launch configuration or launch template and allow automatic scale-out or scale-in based on configurable metrics. Auto Scaling groups are often paired with elastic load balancers.
 
+Metrics such as CPU utilization or network transfer can be used either to scale out or scale in using scaling policies. Scaling can be manual, scheduled, or dynamic. Cooldowns can be defined to ensure rapid in/out events don't occur.
+
+Scaling policies can be simple, step scaling, or target tracking.
+
+
+
