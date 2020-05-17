@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>Creating a Static Website Using Amazon S3</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/creating_static_website_using_s3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/creating_static_website_using_s3/</guid>
+      <description>Create S3 Bucket  Navigate to the S3 portion of the AWS Management Console. Create a bucket, choosing a globally unique name. Select US East (N. Virginia) region. Click Next. Leave options as defaults; click Next. Under permissions, uncheck all four permissions restrictions. Click Next. Click Create bucket. Select bucket name. Click Upload. Add files (use your own or those from the sample website). Click Upload.  Enable Static Website Hosting  Click the bucket name.</description>
+    </item>
+    
+    <item>
       <title>Designing and Building a Custom VPC from Scratch</title>
       <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/vpc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -18,6 +27,26 @@
       <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/vpc/</guid>
       <description>This hands-on lab provides you with some experience building and connecting the following services inside AWS: VPC, subnets, internet gateway, NAT gateways, Bastion host, route tables, security groups, and network access control lists (NACLs). These services are the foundation of networking architecture inside of AWS and cover concepts such as infrastructure, design, routing, and security.
 Create a VPC  Select Your VPCs. Click Create VPC, and set the following values:  labVPC 10.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Cloud Formation</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/cloud_formation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/cloud_formation/</guid>
+      <description>AWS CloudFormation provides users with a simple way to create and manage a collection of Amazon Web Services (AWS) resources by provisioning and updating them in a predictable way. AWS CloudFormation enables you to manage your complete infrastructure or AWS resources in a text file.</description>
+    </item>
+    
+    <item>
+      <title>Implementing VPC Peering</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/implementing_vpc_peering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/implementing_vpc_peering/</guid>
+      <description>Create a VPC Peer Ensure you are logged in to the AWS account, INSTANCE1, and INSTANCE2 using the cloud_user credentials provided.
+ Change the NACL for Public2 Subnet - change ICMP from 0.0.0.0/0 to 10.0.0.0/13 Create a VPC peer from VPC1 to VPC2 Accept the VPC peer between VPC1 and VPC2  Configure Routing Ensure the VPC peer is created and active from Task 1:
+ Locate the route tables associated with PublicSubnet1 and PrivateSubnet1 In each - Add a route for the CIDR of VPC2 and the target of the VPC Peer created in Task 1 Locate the route tables associated with PublicSubnet2 and PrivateSubnet2 In each - Add a route for the CIDR of VPC1 and the target of the VPC Peer created in Task 1 Obtain the privateIP for Instance2 and ping it from Instance1  Create VPC Peer Mesh Ensure the VPC Peer from Task 1 is created and active:</description>
     </item>
     
     <item>
@@ -29,6 +58,28 @@ Create a VPC  Select Your VPCs. Click Create VPC, and set the following values
       <description>In this AWS hands-on lab, we will integrate two powerful AWS services: Elastic Load Balancers and Auto Scaling groups.
 Specifically, we will create an Auto Scaling group of EC2 instances operating as web servers, and we&amp;rsquo;ll configure an Application Load Balancer to load balance between the instances inside that Auto Scaling group.
 After everything is set up, we will simulate stress tests on the EC2 instances to confirm the Auto Scaling group works as expected.</description>
+    </item>
+    
+    <item>
+      <title>REST API with</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/rest_api_with_api_gateway/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/rest_api_with_api_gateway/</guid>
+      <description>IAM Setup Create Policy
+Create Policy with name lambda_execute with following JSON, which will allow to perform lambda:InvokeFunction on all resources
+{ &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;lambda:InvokeFunction&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;*&amp;quot; } ] }  Create an IAM role lambda_invoke_function_assume_apigw_role
+Edit Trust Policy
+{ &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: { &amp;quot;Service&amp;quot;: [ &amp;quot;lambda.amazonaws.com&amp;quot;, &amp;quot;apigateway.amazonaws.com&amp;quot; ] }, &amp;quot;Action&amp;quot;: &amp;quot;sts:AssumeRole&amp;quot; } ] }  Creating Lambda Function</description>
+    </item>
+    
+    <item>
+      <title>Using EC2 Roles and Instance Profiles</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/ec2_roles_instance_profiles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/ec2_roles_instance_profiles/</guid>
+      <description>AWS Identity and Access Management (IAM) roles for Amazon Elastic Compute Cloud (EC2) provide the ability to grant instances temporary credentials. These temporary credentials can then be used by hosted applications to access permissions configured within the role. IAM roles eliminate the need for managing credentials, help mitigate long-term security risks, and simplify permissions management.</description>
     </item>
     
   </channel>

@@ -55,7 +55,11 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04-compute/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_2-compute_serverless/</loc>
   </url>
   
   <url>
@@ -188,6 +192,10 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/creating_static_website_using_s3/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/devops/network/2017-01-29-dns-basics/</loc>
   </url>
   
@@ -212,7 +220,15 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/javascript/eloquent_js/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/hugo-basics/basic_1/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/cloud_formation/</loc>
   </url>
   
   <url>
@@ -240,6 +256,10 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/implementing_vpc_peering/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/autoscaling/</loc>
   </url>
   
@@ -256,7 +276,16 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/tags/javascript/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/javascript/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/javascript/eloquent_js/revisited/</loc>
   </url>
   
   <url>
@@ -324,6 +353,10 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/rest_api_with_api_gateway/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/devops/security/</loc>
   </url>
   
@@ -357,6 +390,10 @@
   
   <url>
     <loc>http://learn.aayushtuladhar.com/terraform/terraform_docker/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/javascript/es-6/spread/</loc>
   </url>
   
   <url>
@@ -406,6 +443,10 @@
   
   <url>
     <loc>http://learn.aayushtuladhar.com/devops/2017-03-15-using-apache-server-benchmarking/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/ec2_roles_instance_profiles/</loc>
   </url>
   
   <url>

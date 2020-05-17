@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eloquent JavaScript on </title>
+    <link>http://learn.aayushtuladhar.com/javascript/eloquent_js/</link>
+    <description>Recent content in Eloquent JavaScript on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://learn.aayushtuladhar.com/javascript/eloquent_js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript Revisited</title>
+      <link>http://learn.aayushtuladhar.com/javascript/eloquent_js/revisited/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/javascript/eloquent_js/revisited/</guid>
+      <description>JavaScript  Language of the Web Introduced in 1995 as a way to add programs to web pages ECMAScript Standard  Values, Types and Operators  Inside the computer&amp;rsquo;s world, there is only data. You can read data, modify data, create new data but anything that isn&amp;rsquo;t data simple does not exist.
+ DataTypes  Numbers Strings  Single Quotes or Double Quotes Escaping using \n String Concatenation (+)  Boolean Undefined Values  Null Undefined   Operators  Binary -&amp;gt; Takes Two Values Unary -&amp;gt; Takes One Value  Arithmetic Operators  Addition (+) Substraction (-) Multiplication (*) Division (/) Modulus (%)  Comparison Operator  Greater Than (&amp;gt;) Less Than (&amp;lt;) Greater Than or Equal To (&amp;gt;=) Less Than or Equal To (&amp;lt;=) Equal to (==) Not Equal to (!</description>
+    </item>
+    
+  </channel>
+</rss>

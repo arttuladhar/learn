@@ -143,12 +143,21 @@ Command Line Interface (CLI) tools and scripts kubectl is the Kubernetes Command
     </item>
     
     <item>
-      <title>04 - Compute</title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04-compute/</link>
+      <title>04 - Compute Services</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04-compute/</guid>
-      <description>Server-Based Compute  Elastic Cloud Compute (EC2) Elastic Block Storage (EBS) Exam Facts EBS Snapshots Security Groups Instance Metadata AMI Bootstrap Private Instance and Public Instance EC2 Instance Roles EBS Volume and Snapshot Encryption EBS Optimized, Enhanced Networking, and Placement Group EBS optimization Enhanced networking Cluster, partition, and spread placement groups EC2 Billing Models Dedicated Hosts  Serverless Compute  Serverless Compute Lambda Essentials API Gateway Step Functions  Container Based Compute  ECS   Server-Based Compute Elastic Cloud Compute (EC2) EC2 is one of the most widely used services within AWS.</description>
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/</guid>
+      <description>Elastic Cloud Compute (EC2) Elastic Block Storage (EBS)  Exam Facts  EBS Snapshots Security Groups Instance Metadata AMI Bootstrap Private Instance and Public Instance Advanced Topics  EC2 Instance Roles EBS Volume and Snapshot Encryption EBS Optimized, Enhanced Networking, and Placement Group EBS optimization Enhanced networking  Cluster, partition, and spread placement groups  EC2 Billing Models - Spot Instances EC2 Billing Models - Reserved Instances Dedicated Hosts   Elastic Cloud Compute (EC2) EC2 is one of the most widely used services within AWS.</description>
+    </item>
+    
+    <item>
+      <title>04 - Compute Services - Serverless</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_2-compute_serverless/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_2-compute_serverless/</guid>
+      <description>Serverless Compute  Lambda Essentials API Gateway Step Functions  Container Based Compute  ECS   Serverless Compute Serverless architecture consists of two main principles, including BaaS (Backend as a Service), which means using third party services where possible rather than running your own. Example include Auth0 or Cognito for authentication and Firebase or DynamoDb for data storage. Servless architecture uses event driven architecture using FaaS (Function as a Service) products to provide application logic.</description>
     </item>
     
     <item>
@@ -190,7 +199,7 @@ apiVersion: v1 kind: Pod metadata: name: multi-container-pod spec: containers: -
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/05-networking/</guid>
-      <description>Networking Fundamentals  IP Addressing Subnetting Firewall Proxy Servers  Virtual Private Cloud (VPC)  Virtual Private Cloud (VPC): VPC Routing Routes VPC Peering VPC Endpoints  Global DNS (Route 53) Fundamentals Global DNS (Route 53) Advanced  Networking Fundamentals The Open Syste Interconnection (OSI) Model is a standard used by networking manufacturers globally. It was created and published in 1984; it splits all network communications into seven layers.</description>
+      <description>Networking Fundamentals  OSI Model IP Addressing Subnetting Firewall Proxy Servers  Virtual Private Cloud (VPC)  Virtual Private Cloud (VPC): VPC Routing Routes VPC Peering VPC Endpoints  Global DNS (Route 53) Fundamentals Global DNS (Route 53) Advanced  Networking Fundamentals OSI Model The Open Syste Interconnection (OSI) Model is a standard used by networking manufacturers globally. It was created and published in 1984; it splits all network communications into seven layers.</description>
     </item>
     
     <item>
@@ -381,6 +390,15 @@ Jobs Jobs are a collection of Steps. All of the steps in the job are executed in
     </item>
     
     <item>
+      <title>Creating a Static Website Using Amazon S3</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/creating_static_website_using_s3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/creating_static_website_using_s3/</guid>
+      <description>Create S3 Bucket  Navigate to the S3 portion of the AWS Management Console. Create a bucket, choosing a globally unique name. Select US East (N. Virginia) region. Click Next. Leave options as defaults; click Next. Under permissions, uncheck all four permissions restrictions. Click Next. Click Create bucket. Select bucket name. Click Upload. Add files (use your own or those from the sample website). Click Upload.  Enable Static Website Hosting  Click the bucket name.</description>
+    </item>
+    
+    <item>
       <title>DNS Basics</title>
       <link>http://learn.aayushtuladhar.com/devops/network/2017-01-29-dns-basics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -441,6 +459,15 @@ Creating Pipeline Drone pipeline are written in .drone.yml file in the root of t
     </item>
     
     <item>
+      <title>Getting Started with Cloud Formation</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/cloud_formation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/cloud_formation/</guid>
+      <description>AWS CloudFormation provides users with a simple way to create and manage a collection of Amazon Web Services (AWS) resources by provisioning and updating them in a predictable way. AWS CloudFormation enables you to manage your complete infrastructure or AWS resources in a text file.</description>
+    </item>
+    
+    <item>
       <title>Getting Started with Redux</title>
       <link>http://learn.aayushtuladhar.com/javascript/reactjs/redux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -485,6 +512,17 @@ CREATE TABLE IF NOT EXISTS test_table ( col1 int, col2 string ) ROW FORMAT DELIM
     </item>
     
     <item>
+      <title>Implementing VPC Peering</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/implementing_vpc_peering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/implementing_vpc_peering/</guid>
+      <description>Create a VPC Peer Ensure you are logged in to the AWS account, INSTANCE1, and INSTANCE2 using the cloud_user credentials provided.
+ Change the NACL for Public2 Subnet - change ICMP from 0.0.0.0/0 to 10.0.0.0/13 Create a VPC peer from VPC1 to VPC2 Accept the VPC peer between VPC1 and VPC2  Configure Routing Ensure the VPC peer is created and active from Task 1:
+ Locate the route tables associated with PublicSubnet1 and PrivateSubnet1 In each - Add a route for the CIDR of VPC2 and the target of the VPC Peer created in Task 1 Locate the route tables associated with PublicSubnet2 and PrivateSubnet2 In each - Add a route for the CIDR of VPC1 and the target of the VPC Peer created in Task 1 Obtain the privateIP for Instance2 and ping it from Instance1  Create VPC Peer Mesh Ensure the VPC Peer from Task 1 is created and active:</description>
+    </item>
+    
+    <item>
       <title>Implementing an Auto Scaling Group and Application Load Balancer</title>
       <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/autoscaling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -502,6 +540,16 @@ After everything is set up, we will simulate stress tests on the EC2 instances t
       
       <guid>http://learn.aayushtuladhar.com/devops/docker/2017-09-22-install-docker-centos-7/</guid>
       <description>  Install Docker Community Edition Verify  Install Docker Community Edition sudo yum install -y yum-utils device-mapper-persistent-data lvm2 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo sudo yum makecache fast sudo yum install docker-ce sudo systemctl start docker  Verify sudo docker run hello-world  </description>
+    </item>
+    
+    <item>
+      <title>JavaScript Revisited</title>
+      <link>http://learn.aayushtuladhar.com/javascript/eloquent_js/revisited/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/javascript/eloquent_js/revisited/</guid>
+      <description>JavaScript  Language of the Web Introduced in 1995 as a way to add programs to web pages ECMAScript Standard  Values, Types and Operators  Inside the computer&amp;rsquo;s world, there is only data. You can read data, modify data, create new data but anything that isn&amp;rsquo;t data simple does not exist.
+ DataTypes  Numbers Strings  Single Quotes or Double Quotes Escaping using \n String Concatenation (+)  Boolean Undefined Values  Null Undefined   Operators  Binary -&amp;gt; Takes Two Values Unary -&amp;gt; Takes One Value  Arithmetic Operators  Addition (+) Substraction (-) Multiplication (*) Division (/) Modulus (%)  Comparison Operator  Greater Than (&amp;gt;) Less Than (&amp;lt;) Greater Than or Equal To (&amp;gt;=) Less Than or Equal To (&amp;lt;=) Equal to (==) Not Equal to (!</description>
     </item>
     
     <item>
@@ -649,6 +697,19 @@ It accelerates time-to-market by dramatically reducing application provisioning 
     </item>
     
     <item>
+      <title>REST API with</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/rest_api_with_api_gateway/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/rest_api_with_api_gateway/</guid>
+      <description>IAM Setup Create Policy
+Create Policy with name lambda_execute with following JSON, which will allow to perform lambda:InvokeFunction on all resources
+{ &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;lambda:InvokeFunction&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;*&amp;quot; } ] }  Create an IAM role lambda_invoke_function_assume_apigw_role
+Edit Trust Policy
+{ &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: { &amp;quot;Service&amp;quot;: [ &amp;quot;lambda.amazonaws.com&amp;quot;, &amp;quot;apigateway.amazonaws.com&amp;quot; ] }, &amp;quot;Action&amp;quot;: &amp;quot;sts:AssumeRole&amp;quot; } ] }  Creating Lambda Function</description>
+    </item>
+    
+    <item>
       <title>Setting Apache Virtual Host</title>
       <link>http://learn.aayushtuladhar.com/devops/2016-11-26-setting-apache-virtual-host/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -735,6 +796,16 @@ kubectl taint nodes --all node-role.kubernetes.io/master-  </description>
     </item>
     
     <item>
+      <title>Spread Syntax</title>
+      <link>http://learn.aayushtuladhar.com/javascript/es-6/spread/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/javascript/es-6/spread/</guid>
+      <description>Spread Syntax represented by ... expands an iterable to its individual elements.
+Common use cases:  Spread in array literal  const head = [&#39;eyes&#39;,&#39;nose&#39;,&#39;mouth&#39;] const body = [&#39;stomach&#39;,&#39;hip&#39;,&#39;legs&#39;] const headBody = [...head, ...body] console.log(headBody) // [&amp;quot;eyes&amp;quot;, &amp;quot;nose&amp;quot;, &amp;quot;mouth&amp;quot;, &amp;quot;stomach&amp;quot;, &amp;quot;hip&amp;quot;, &amp;quot;legs&amp;quot;]   Spread in Object Literals  const obj1 = { foo: &#39;bar&#39;, x: 42 }; const obj2 = { foo: &#39;baz&#39;, y: 13 }; const clonedObj = { .</description>
+    </item>
+    
+    <item>
       <title>Spring Cloud Slueth</title>
       <link>http://learn.aayushtuladhar.com/java/spring/2018-09-18-spring-cloud-slueth/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -815,6 +886,15 @@ Clients generally authenticate either using passwords or by SSH Keys.</descripti
       <guid>http://learn.aayushtuladhar.com/devops/2017-03-15-using-apache-server-benchmarking/</guid>
       <description>Apache Benchmark is a single-threaded command line tool for measuring the performance of a HTTP web server. It gives you an impression of how many requests per second your server is capable of serving.
 Installation sudo apt-get install apache2-utils.  Usage -p POST Message -H Message Header -T Content Type -c Concurrent Clients -n Number of Requests to Run in the Test  GET REQUEST $ ab -n200 -c100 -H &amp;quot;APP-TOKEN: Q977quNeXjFsNjLNlmC9MK1HuRP+fFKmwDX9KSD6Y=&amp;quot; \ http://test-api.</description>
+    </item>
+    
+    <item>
+      <title>Using EC2 Roles and Instance Profiles</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/ec2_roles_instance_profiles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/labs/ec2_roles_instance_profiles/</guid>
+      <description>AWS Identity and Access Management (IAM) roles for Amazon Elastic Compute Cloud (EC2) provide the ability to grant instances temporary credentials. These temporary credentials can then be used by hosted applications to access permissions configured within the role. IAM roles eliminate the need for managing credentials, help mitigate long-term security risks, and simplify permissions management.</description>
     </item>
     
     <item>

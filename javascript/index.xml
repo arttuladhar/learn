@@ -42,6 +42,16 @@ It’s actually react-redux that lets you connect pieces of the state to React c
     </item>
     
     <item>
+      <title>Spread Syntax</title>
+      <link>http://learn.aayushtuladhar.com/javascript/es-6/spread/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/javascript/es-6/spread/</guid>
+      <description>Spread Syntax represented by ... expands an iterable to its individual elements.
+Common use cases:  Spread in array literal  const head = [&#39;eyes&#39;,&#39;nose&#39;,&#39;mouth&#39;] const body = [&#39;stomach&#39;,&#39;hip&#39;,&#39;legs&#39;] const headBody = [...head, ...body] console.log(headBody) // [&amp;quot;eyes&amp;quot;, &amp;quot;nose&amp;quot;, &amp;quot;mouth&amp;quot;, &amp;quot;stomach&amp;quot;, &amp;quot;hip&amp;quot;, &amp;quot;legs&amp;quot;]   Spread in Object Literals  const obj1 = { foo: &#39;bar&#39;, x: 42 }; const obj2 = { foo: &#39;baz&#39;, y: 13 }; const clonedObj = { .</description>
+    </item>
+    
+    <item>
       <title>Teplate Literals</title>
       <link>http://learn.aayushtuladhar.com/javascript/template-literals/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
