@@ -1,5 +1,5 @@
 ---
-title: 04 - Compute Services
+title: 04 - Compute Services - Server Based
 ---
 
 - [Elastic Cloud Compute (EC2)](#elastic-cloud-compute-ec2)

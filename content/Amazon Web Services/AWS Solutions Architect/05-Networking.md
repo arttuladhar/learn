@@ -11,10 +11,22 @@ title: 05 - Networking
   - [Virtual Private Cloud (VPC):](#virtual-private-cloud-vpc-1)
   - [VPC Routing](#vpc-routing)
   - [Routes](#routes)
+  - [Bastion Hosts (Jump Boxes)](#bastion-hosts-jump-boxes)
+- [* Multifactor authentication, ID federation and/or IP blocks.](#ul-limultifactor-authentication-id-federation-andor-ip-blocksli-ul)
+  - [NAT Gateway](#nat-gateway)
+  - [Network ACLs](#network-acls)
   - [VPC Peering](#vpc-peering)
   - [VPC Endpoints](#vpc-endpoints)
-- [Global DNS (Route 53) Fundamentals](#global-dns-route-53-fundamentals)
-- [Global DNS (Route 53) Advanced](#global-dns-route-53-advanced)
+- [Global DNS (Route 53)](#global-dns-route-53)
+  - [Hosted Zone](#hosted-zone)
+    - [Public Zones](#public-zones)
+    - [Private Zones](#private-zones)
+  - [Routing Policy](#routing-policy)
+    - [Simple Routing](#simple-routing)
+    - [Failover Routing](#failover-routing)
+    - [Weighted Routing Policy](#weighted-routing-policy)
+    - [Latency Based Routing](#latency-based-routing)
+    - [GeoLocation based Routing](#geolocation-based-routing)
 
 ## Networking Fundamentals
 
@@ -80,7 +92,7 @@ A proxy server is a type of gateway that sits between a private and public netwo
 * Regional (can't span regions), highly available, and can be connected to your data center and corporate networks
 * Isolated from other VPCs by *default*
 * VPC and subnet: Max /16 (65,536 IPs) and minimum /28 (16 IPs)
-* VPC subnet can't span AZs (1:1 Mapping)
+* VPC subnet cannot span AZs (1:1 Mapping)
 * Certain IPs are reserved in subnets
 
 **Regional Default VPC:**
@@ -103,8 +115,8 @@ A proxy server is a type of gateway that sits between a private and public netwo
 
 ### VPC Routing
 
-* Every VPC has a virtual routing device called the VPC router.
-* It has an interface in any VPC subnet known as the "subnet+1" address for 10.0.1.0/24, this would be 10.0.1.1/32
+* Every VPC has a virtual routing device called the **VPC Router**.
+* It has an interface in any VPC subnet known as the "subnet+1" address for 10.0.1.0/24, this would be 10.0.1.1 / 32
 * The router is highly available, scalable, and controls data entring and leaving the VPC and its subnets.
 * Each VPC has a "main" route table, which is allocated to all subnets in the VPC by default. A subnet must have one route table.
 * Addditional "custom" route tables can be created and associated with subnets - but only one route table (RT) per subnet.
@@ -113,17 +125,54 @@ A proxy server is a type of gateway that sits between a private and public netwo
 
 ### Routes
 
-* A RT is a collection of routes that are used when traffic from a subnet arrives at the VPC router.
-* Every route table has a local route, which matches the CIDR of the VPC and lets traffic be routed between subnets.
+* A Route Table is a collection of routes that are used when traffic from a subnet arrives at the VPC router.
+* Every route table has a **local** route, which matches the CIDR of the VPC and lets traffic be routed between subnets.
 * A route contains a destination and a target. Traffic is forwarded to the target if its destination matches the route destination.
-* If multiple routes apply, the most specific is chosen. A/32 is choen before a /24, before a /16.
+* If multiple routes apply, **the most specific** is chosen. A/32 is choen before a /24, before a /16.
 * Default routes (0.0.0.0/0 v4 and ::/0 v6) can be added that match any traffic not already matched.
 * Targets can be IPs or AWS networking gateway objects.
 * A subnet is a public subnet if it is (1) configured to allocate public IPs, (2) if the VPC has an associated **internet gateway**, and (3) if that subnet has a **default** route to that internet gateway.
 
+{{% notice info %}}
+An Internet gateway can be attached to only a single VPC; A VPC can have a single Internet Gateway. Internet Gateway is Highly Available by Design.
+{{% /notice %}}
+
 ![OSI Model](/images/AWS_Certified_Solutions_Architect/VPC-Route-IG.jpg)
 
 ---
+### Bastion Hosts (Jump Boxes)
+
+* A host that sits at the perimeter of a VPC
+* It functions as an entry point to the VPC for trusted admins.
+* Allows for update or configuration tweaks remotely while allowing the VPC to stay private and protected.
+* Generally connected to via a SSH (Linux) or RDP (Windows)
+* Bastion hosts must be kept updated, and security hardened and audited regularly.
+* Multifactor authentication, ID federation and/or IP blocks.
+---
+
+### NAT Gateway
+
+NAT (Network Address Translation) is a process where the source or destination attribute of an IP packets are changed. Static NAT is process of 1:1 translation where an internet gateway converts a private address to public IP Address. Dynamic NAT is a variation that allows many private IP to get outgoing internet access using smaller number of public IP (generally one). Dynamic NAT is provided within AWS using NAT gateway that allows private subnet in AWS VPC to acess the internet.
+
+NAT Gateway is used to enable instances ina private subnet to connect to the internet or other AWS services, but prevent the internet from initiating a connection with those instances.
+
+{{% notice warning %}}
+NAT Gateway are not HA by Design. It is inside single Available Zone. It scales well with load.
+{{% /notice %}}
+
+---
+### Network ACLs
+
+* Network ACLs operate at Layer 4 of the OSI Model (TCP/UDP and below)
+* A subnet has to be associated with a NACL - either the VPC default or a custom NACL
+* NACLs only impact traffic crossing the boundary of a subnet. (If communication occurs within a subnet, no NACLs are involved)
+* NACLs are collection of rules that explicitly allow or deny traffic based on its protocol, port range, and source/destination.
+* Rules are processed in number order, lowest first. When a match is found, that action is taken and processing stops.
+* NACLs have two set of rules: inbound and outbound.
+
+{{% notice note %}}
+With NACL, you cannot reference logical AWS resources because it operates at Layer 4 or below of OSI Model. But with NACL, you can explicitly deny routes.
+{{% /notice %}}
 
 ### VPC Peering
 
@@ -151,12 +200,14 @@ A proxy server is a type of gateway that sits between a private and public netwo
 4. Ensure there aren't any connection Blocking Rules in Network ACLs
 
 {{% notice warning %}}
-VPCs doesn't support Transitive Routing
+VPC Pairing doesn't support Transitive Routing
 {{% /notice %}}
 
 ### VPC Endpoints
 
 VPC Endpoints are gateway objects created within a VPC. They can be used to connect to AWS public servers without the need for the VPC to have an attached internet gateway and be public.
+
+![VPC Endpoints](/images/AWS_Certified_Solutions_Architect/AWS_VPC_Endpoints.jpg)
 
 **VPC Endpoint Types:**
 
@@ -184,7 +235,53 @@ Egress-only internet gateways provide IPv6 instances with outgoing access to the
 NAT isn't required with IPv6, and so NATGW's are compatible with IPv6. Egress-only gateways provide the outgoing-only access of a NATGW but do so without adjusting any IP addresses.
 {{% /notice %}}
 
-## Global DNS (Route 53) Fundamentals
 
-## Global DNS (Route 53) Advanced
+## Global DNS (Route 53)
 
+### Hosted Zone
+
+A zone or hosted zone is a container for DNS records relating to a particular domain (e.g, google.com). Route 53 supports public hosted zones, which influce the domain that is viable from the internet and VPCs. Private hosted zones are similar but accessible only from the VPCs they are associated with.
+
+#### Public Zones
+
+* A public hosted zone is created when you register a domain with Route 53, when you transfer a domain into Route 53, or if you create one manually.
+* A hosted zone will have "name servers" - these are the IP addressess you can give to a domain operator, so Route 53 becomes "authoritative" for a domain
+
+#### Private Zones
+
+* Private Zone are created manually and associated with one or more VPCs
+* Private zones need `enableDnsHostnames` and `enableDnsSupport` enabled on VPC
+
+### Routing Policy
+
+#### Simple Routing
+
+A simple routing policy is a single record within a hosted zone that contains one or more values. When queried a simple routing policy record returns all the values in a randomized order.
+
+![Simple Routing Policy](/images/AWS_Certified_Solutions_Architect/Simple_Routing.jpg)
+
+Pros: Simple, the default, even spread of requests
+
+Cons: No performance control, no granual health checks, for alias type
+
+#### Failover Routing
+
+Failover routing allows you to create two records with same name. One is designed as the primary and another as secondary. Queries will resolve to the primary - unless it is unhealthy, in which the Route 53 will respond with the secondary.
+
+(Single Primary Record Type and Single Secondary Record Type)
+
+![Failover Routing](/images/AWS_Certified_Solutions_Architect/Failover_Routing.jpg)
+
+#### Weighted Routing Policy
+
+Weighted routing can be used to control the amount of traffic that reaches specific resources. It can be useful when testing new software or when resources are being added or removed from.
+
+![Weighted Routing Policy](/images/AWS_Certified_Solutions_Architect/Weighted_Routing_Policy.jpg)
+
+#### Latency Based Routing
+
+Checks with Latency Database with latency based host in DNS
+
+#### GeoLocation based Routing
+
+Geolocation routing lets you choose the resource that server your traffic based on the geographic region from which queries originate.
