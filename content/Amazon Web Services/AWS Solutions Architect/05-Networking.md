@@ -2,6 +2,7 @@
 title: 05 - Networking
 ---
 - [Networking Fundamentals](#networking-fundamentals)
+  - [OSI Model](#osi-model)
   - [IP Addressing](#ip-addressing)
   - [Subnetting](#subnetting)
   - [Firewall](#firewall)
@@ -17,6 +18,7 @@ title: 05 - Networking
 
 ## Networking Fundamentals
 
+### OSI Model
 ![OSI Model](/images/AWS_Certified_Solutions_Architect/OSI_Model.jpeg)
 
 The Open Syste Interconnection (OSI) Model is a standard used by networking manufacturers globally. It was created and published in 1984; it splits all network communications into seven layers. Each layer servers the layer that's above it plus the layer beneath it which adds additional capabilities. Data between two devices travels down the stack on the device's A-side (wrapped at each layer) and gets transmitted before moving up the stack at the device B-side (where the wrapping gets stripped aways at every stage). The data wrapping process is called encapsulation.
@@ -67,7 +69,7 @@ Firewall establish a barrier between networks of different security levels and h
 
 A proxy server acts as a gateway between you and the internet. It's an intermediary server separating end users from the websites they browse. Proxy servers provide varying levels of functionality, security, and privacy depending on your use case, needs, or company policy.
 
-A proxy server is a type of gateway that sits between a private and public network. Proxy servers can also choose to pass on traffic or not based on network layer appliances eg, username or element of corporate identity.
+A proxy server is a type of gateway that sits between a private and public network. Proxy servers can also choose to pass on traffic or not based on network layer appliances eg, username or element of corporate identity. It inspects outbound requests from an on-premise or private network client
 
 ## Virtual Private Cloud (VPC)
 
@@ -80,7 +82,6 @@ A proxy server is a type of gateway that sits between a private and public netwo
 * VPC and subnet: Max /16 (65,536 IPs) and minimum /28 (16 IPs)
 * VPC subnet can't span AZs (1:1 Mapping)
 * Certain IPs are reserved in subnets
-
 
 **Regional Default VPC:**
 
@@ -146,7 +147,7 @@ A proxy server is a type of gateway that sits between a private and public netwo
 
 1. Create VPC Peering Object
 2. Add Route **FROM** VPC Subnet and **TO** VPC Peering Object.
-3. Update Security Group to Unblock the Inbound and Outbound Rules 
+3. Update Security Group to Unblock the Inbound and Outbound Rules
 4. Ensure there aren't any connection Blocking Rules in Network ACLs
 
 {{% notice warning %}}
@@ -167,7 +168,7 @@ VPC Endpoints are gateway objects created within a VPC. They can be used to conn
 * If the entire VPC is private with no IGW
 * If a specific instance has no public IP/NATGW and needs to access public services
 * To access resources restricted to specific VPCs or endpoints (private S3 bucket)
-  
+
 Limitations and Considerations:
 * Gateway endpoints are used via route table entries - they are gateway devices. Prefix lists for a service are used in the destintation field with the gateway as the target.
 * Gateway endpoints can be restricted via policies
