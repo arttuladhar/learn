@@ -143,21 +143,21 @@ Command Line Interface (CLI) tools and scripts kubectl is the Kubernetes Command
     </item>
     
     <item>
-      <title>04 - Compute Services</title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/</guid>
-      <description>Elastic Cloud Compute (EC2) Elastic Block Storage (EBS)  Exam Facts  EBS Snapshots Security Groups Instance Metadata AMI Bootstrap Private Instance and Public Instance Advanced Topics  EC2 Instance Roles EBS Volume and Snapshot Encryption EBS Optimized, Enhanced Networking, and Placement Group EBS optimization Enhanced networking  Cluster, partition, and spread placement groups  EC2 Billing Models - Spot Instances EC2 Billing Models - Reserved Instances Dedicated Hosts   Elastic Cloud Compute (EC2) EC2 is one of the most widely used services within AWS.</description>
-    </item>
-    
-    <item>
-      <title>04 - Compute Services - Serverless</title>
+      <title>04 (B) - Compute Services - Serverless</title>
       <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_2-compute_serverless/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_2-compute_serverless/</guid>
       <description>Serverless Compute  Lambda Essentials API Gateway Step Functions  Container Based Compute  ECS   Serverless Compute Serverless architecture consists of two main principles, including BaaS (Backend as a Service), which means using third party services where possible rather than running your own. Example include Auth0 or Cognito for authentication and Firebase or DynamoDb for data storage. Servless architecture uses event driven architecture using FaaS (Function as a Service) products to provide application logic.</description>
+    </item>
+    
+    <item>
+      <title>04 - Compute Services - Server Based</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/</guid>
+      <description>Elastic Cloud Compute (EC2) Elastic Block Storage (EBS)  Exam Facts  EBS Snapshots Security Groups Instance Metadata AMI Bootstrap Private Instance and Public Instance Advanced Topics  EC2 Instance Roles EBS Volume and Snapshot Encryption EBS Optimized, Enhanced Networking, and Placement Group EBS optimization Enhanced networking  Cluster, partition, and spread placement groups  EC2 Billing Models - Spot Instances EC2 Billing Models - Reserved Instances Dedicated Hosts   Elastic Cloud Compute (EC2) EC2 is one of the most widely used services within AWS.</description>
     </item>
     
     <item>
@@ -199,7 +199,7 @@ apiVersion: v1 kind: Pod metadata: name: multi-container-pod spec: containers: -
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/05-networking/</guid>
-      <description>Networking Fundamentals  OSI Model IP Addressing Subnetting Firewall Proxy Servers  Virtual Private Cloud (VPC)  Virtual Private Cloud (VPC): VPC Routing Routes VPC Peering VPC Endpoints  Global DNS (Route 53) Fundamentals Global DNS (Route 53) Advanced  Networking Fundamentals OSI Model The Open Syste Interconnection (OSI) Model is a standard used by networking manufacturers globally. It was created and published in 1984; it splits all network communications into seven layers.</description>
+      <description>Networking Fundamentals  OSI Model IP Addressing Subnetting Firewall Proxy Servers  Virtual Private Cloud (VPC)  Virtual Private Cloud (VPC): VPC Routing Routes Bastion Hosts (Jump Boxes)  * Multifactor authentication, ID federation and/or IP blocks.  NAT Gateway Network ACLs VPC Peering VPC Endpoints  Global DNS (Route 53)  Hosted Zone Public Zones Private Zones Routing Policy Simple Routing Failover Routing Weighted Routing Policy Latency Based Routing GeoLocation based Routing   Networking Fundamentals OSI Model The Open Syste Interconnection (OSI) Model is a standard used by networking manufacturers globally.</description>
     </item>
     
     <item>

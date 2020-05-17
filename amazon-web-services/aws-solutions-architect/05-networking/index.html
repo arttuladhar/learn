@@ -12,21 +12,21 @@
     <title>05 - Networking :: </title>
 
     
-    <link href="/css/nucleus.css?1589677435" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1589677435" rel="stylesheet">
-    <link href="/css/hybrid.css?1589677435" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1589677435" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1589677435" rel="stylesheet">
-    <link href="/css/auto-complete.css?1589677435" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1589677435" rel="stylesheet">
-    <link href="/css/theme.css?1589677435" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1589677435" rel="stylesheet">
+    <link href="/css/nucleus.css?1589736558" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1589736558" rel="stylesheet">
+    <link href="/css/hybrid.css?1589736558" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1589736558" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1589736558" rel="stylesheet">
+    <link href="/css/auto-complete.css?1589736558" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1589736558" rel="stylesheet">
+    <link href="/css/theme.css?1589736558" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1589736558" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1589677435" rel="stylesheet">
+    <link href="/css/theme-blue.css?1589736558" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1589677435"></script>
+    <script src="/js/jquery-3.3.1.min.js?1589736558"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1589677435"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1589677435"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1589736558"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1589736558"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/learn.aayushtuladhar.com";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1589677435"></script>
+<script type="text/javascript" src="/js/search.js?1589736558"></script>
 
     
   </div>
@@ -199,9 +199,9 @@
  
   
     
-      <li data-nav-id="/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/" title="04 - Compute Services" class="dd-item ">
-        <a href="/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/">
-        04 - Compute Services
+      <li data-nav-id="/amazon-web-services/aws-solutions-architect/04_2-compute_serverless/" title="04 (B) - Compute Services - Serverless" class="dd-item ">
+        <a href="/amazon-web-services/aws-solutions-architect/04_2-compute_serverless/">
+        04 (B) - Compute Services - Serverless
         
         </a>
     </li>
@@ -220,9 +220,9 @@
  
   
     
-      <li data-nav-id="/amazon-web-services/aws-solutions-architect/04_2-compute_serverless/" title="04 - Compute Services - Serverless" class="dd-item ">
-        <a href="/amazon-web-services/aws-solutions-architect/04_2-compute_serverless/">
-        04 - Compute Services - Serverless
+      <li data-nav-id="/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/" title="04 - Compute Services - Server Based" class="dd-item ">
+        <a href="/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/">
+        04 - Compute Services - Server Based
         
         </a>
     </li>
@@ -2739,11 +2739,28 @@
 <li><a href="#virtual-private-cloud-vpc-1">Virtual Private Cloud (VPC):</a></li>
 <li><a href="#vpc-routing">VPC Routing</a></li>
 <li><a href="#routes">Routes</a></li>
+<li><a href="#bastion-hosts-jump-boxes">Bastion Hosts (Jump Boxes)</a></li>
+<li><a href="#nat-gateway">NAT Gateway</a></li>
+<li><a href="#network-acls">Network ACLs</a></li>
 <li><a href="#vpc-peering">VPC Peering</a></li>
 <li><a href="#vpc-endpoints">VPC Endpoints</a></li>
 </ul></li>
-<li><a href="#global-dns-route-53-fundamentals">Global DNS (Route 53) Fundamentals</a></li>
-<li><a href="#global-dns-route-53-advanced">Global DNS (Route 53) Advanced</a></li>
+<li><a href="#global-dns-route-53">Global DNS (Route 53)</a>
+<ul>
+<li><a href="#hosted-zone">Hosted Zone</a>
+<ul>
+<li><a href="#public-zones">Public Zones</a></li>
+<li><a href="#private-zones">Private Zones</a></li>
+</ul></li>
+<li><a href="#routing-policy">Routing Policy</a>
+<ul>
+<li><a href="#simple-routing">Simple Routing</a></li>
+<li><a href="#failover-routing">Failover Routing</a></li>
+<li><a href="#weighted-routing-policy">Weighted Routing Policy</a></li>
+<li><a href="#latency-based-routing">Latency Based Routing</a></li>
+<li><a href="#geolocation-based-routing">GeoLocation based Routing</a></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -2787,11 +2804,29 @@
 <li><a href="#virtual-private-cloud-vpc-1">Virtual Private Cloud (VPC):</a></li>
 <li><a href="#vpc-routing">VPC Routing</a></li>
 <li><a href="#routes">Routes</a></li>
+<li><a href="#bastion-hosts-jump-boxes">Bastion Hosts (Jump Boxes)</a></li>
+</ul></li>
+<li><a href="#ul-limultifactor-authentication-id-federation-andor-ip-blocksli-ul">* Multifactor authentication, ID federation and/or IP blocks.</a>
+
+<ul>
+<li><a href="#nat-gateway">NAT Gateway</a></li>
+<li><a href="#network-acls">Network ACLs</a></li>
 <li><a href="#vpc-peering">VPC Peering</a></li>
 <li><a href="#vpc-endpoints">VPC Endpoints</a></li>
 </ul></li>
-<li><a href="#global-dns-route-53-fundamentals">Global DNS (Route 53) Fundamentals</a></li>
-<li><a href="#global-dns-route-53-advanced">Global DNS (Route 53) Advanced</a></li>
+<li><a href="#global-dns-route-53">Global DNS (Route 53)</a>
+
+<ul>
+<li><a href="#hosted-zone">Hosted Zone</a></li>
+<li><a href="#public-zones">Public Zones</a></li>
+<li><a href="#private-zones">Private Zones</a></li>
+<li><a href="#routing-policy">Routing Policy</a></li>
+<li><a href="#simple-routing">Simple Routing</a></li>
+<li><a href="#failover-routing">Failover Routing</a></li>
+<li><a href="#weighted-routing-policy">Weighted Routing Policy</a></li>
+<li><a href="#latency-based-routing">Latency Based Routing</a></li>
+<li><a href="#geolocation-based-routing">GeoLocation based Routing</a></li>
+</ul></li>
 </ul>
 
 <h2 id="networking-fundamentals">Networking Fundamentals</h2>
@@ -2894,7 +2929,7 @@
 <li>Regional (can&rsquo;t span regions), highly available, and can be connected to your data center and corporate networks</li>
 <li>Isolated from other VPCs by <em>default</em></li>
 <li>VPC and subnet: Max /16 (65,536 IPs) and minimum /28 (16 IPs)</li>
-<li>VPC subnet can&rsquo;t span AZs (1:1 Mapping)</li>
+<li>VPC subnet cannot span AZs (1:1 Mapping)</li>
 <li>Certain IPs are reserved in subnets</li>
 </ul>
 
@@ -2923,8 +2958,8 @@
 <h3 id="vpc-routing">VPC Routing</h3>
 
 <ul>
-<li>Every VPC has a virtual routing device called the VPC router.</li>
-<li>It has an interface in any VPC subnet known as the &ldquo;subnet+1&rdquo; address for 10.0.1.0/24, this would be 10.0.1.<sup>1</sup>&frasl;<sub>32</sub></li>
+<li>Every VPC has a virtual routing device called the <strong>VPC Router</strong>.</li>
+<li>It has an interface in any VPC subnet known as the &ldquo;subnet+1&rdquo; address for 10.0.1.0/24, this would be 10.0.1.1 / 32</li>
 <li>The router is highly available, scalable, and controls data entring and leaving the VPC and its subnets.</li>
 <li>Each VPC has a &ldquo;main&rdquo; route table, which is allocated to all subnets in the VPC by default. A subnet must have one route table.</li>
 <li>Addditional &ldquo;custom&rdquo; route tables can be created and associated with subnets - but only one route table (RT) per subnet.</li>
@@ -2935,18 +2970,64 @@
 <h3 id="routes">Routes</h3>
 
 <ul>
-<li>A RT is a collection of routes that are used when traffic from a subnet arrives at the VPC router.</li>
-<li>Every route table has a local route, which matches the CIDR of the VPC and lets traffic be routed between subnets.</li>
+<li>A Route Table is a collection of routes that are used when traffic from a subnet arrives at the VPC router.</li>
+<li>Every route table has a <strong>local</strong> route, which matches the CIDR of the VPC and lets traffic be routed between subnets.</li>
 <li>A route contains a destination and a target. Traffic is forwarded to the target if its destination matches the route destination.</li>
-<li>If multiple routes apply, the most specific is chosen. A/32 is choen before a /24, before a /16.</li>
+<li>If multiple routes apply, <strong>the most specific</strong> is chosen. A/32 is choen before a /24, before a /16.</li>
 <li>Default routes (0.0.0.0/0 v4 and ::/0 v6) can be added that match any traffic not already matched.</li>
 <li>Targets can be IPs or AWS networking gateway objects.</li>
 <li>A subnet is a public subnet if it is (1) configured to allocate public IPs, (2) if the VPC has an associated <strong>internet gateway</strong>, and (3) if that subnet has a <strong>default</strong> route to that internet gateway.</li>
 </ul>
 
+
+<div class="notices info" ><p>An Internet gateway can be attached to only a single VPC; A VPC can have a single Internet Gateway. Internet Gateway is Highly Available by Design.</p>
+</div>
+
+
 <p><img src="/images/AWS_Certified_Solutions_Architect/VPC-Route-IG.jpg" alt="OSI Model" /></p>
 
 <hr />
+
+<h3 id="bastion-hosts-jump-boxes">Bastion Hosts (Jump Boxes)</h3>
+
+<ul>
+<li>A host that sits at the perimeter of a VPC</li>
+<li>It functions as an entry point to the VPC for trusted admins.</li>
+<li>Allows for update or configuration tweaks remotely while allowing the VPC to stay private and protected.</li>
+<li>Generally connected to via a SSH (Linux) or RDP (Windows)</li>
+<li>Bastion hosts must be kept updated, and security hardened and audited regularly.</li>
+<li>Multifactor authentication, ID federation and/or IP blocks.
+&mdash;</li>
+</ul>
+
+<h3 id="nat-gateway">NAT Gateway</h3>
+
+<p>NAT (Network Address Translation) is a process where the source or destination attribute of an IP packets are changed. Static NAT is process of 1:1 translation where an internet gateway converts a private address to public IP Address. Dynamic NAT is a variation that allows many private IP to get outgoing internet access using smaller number of public IP (generally one). Dynamic NAT is provided within AWS using NAT gateway that allows private subnet in AWS VPC to acess the internet.</p>
+
+<p>NAT Gateway is used to enable instances ina private subnet to connect to the internet or other AWS services, but prevent the internet from initiating a connection with those instances.</p>
+
+
+<div class="notices warning" ><p>NAT Gateway are not HA by Design. It is inside single Available Zone. It scales well with load.</p>
+</div>
+
+
+<hr />
+
+<h3 id="network-acls">Network ACLs</h3>
+
+<ul>
+<li>Network ACLs operate at Layer 4 of the OSI Model (TCP/UDP and below)</li>
+<li>A subnet has to be associated with a NACL - either the VPC default or a custom NACL</li>
+<li>NACLs only impact traffic crossing the boundary of a subnet. (If communication occurs within a subnet, no NACLs are involved)</li>
+<li>NACLs are collection of rules that explicitly allow or deny traffic based on its protocol, port range, and source/destination.</li>
+<li>Rules are processed in number order, lowest first. When a match is found, that action is taken and processing stops.</li>
+<li>NACLs have two set of rules: inbound and outbound.</li>
+</ul>
+
+
+<div class="notices note" ><p>With NACL, you cannot reference logical AWS resources because it operates at Layer 4 or below of OSI Model. But with NACL, you can explicitly deny routes.</p>
+</div>
+
 
 <h3 id="vpc-peering">VPC Peering</h3>
 
@@ -2980,13 +3061,15 @@
 </ol>
 
 
-<div class="notices warning" ><p>VPCs doesn&rsquo;t support Transitive Routing</p>
+<div class="notices warning" ><p>VPC Pairing doesn&rsquo;t support Transitive Routing</p>
 </div>
 
 
 <h3 id="vpc-endpoints">VPC Endpoints</h3>
 
 <p>VPC Endpoints are gateway objects created within a VPC. They can be used to connect to AWS public servers without the need for the VPC to have an attached internet gateway and be public.</p>
+
+<p><img src="/images/AWS_Certified_Solutions_Architect/AWS_VPC_Endpoints.jpg" alt="VPC Endpoints" /></p>
 
 <p><strong>VPC Endpoint Types:</strong></p>
 
@@ -3019,9 +3102,59 @@
 </div>
 
 
-<h2 id="global-dns-route-53-fundamentals">Global DNS (Route 53) Fundamentals</h2>
+<h2 id="global-dns-route-53">Global DNS (Route 53)</h2>
 
-<h2 id="global-dns-route-53-advanced">Global DNS (Route 53) Advanced</h2>
+<h3 id="hosted-zone">Hosted Zone</h3>
+
+<p>A zone or hosted zone is a container for DNS records relating to a particular domain (e.g, google.com). Route 53 supports public hosted zones, which influce the domain that is viable from the internet and VPCs. Private hosted zones are similar but accessible only from the VPCs they are associated with.</p>
+
+<h4 id="public-zones">Public Zones</h4>
+
+<ul>
+<li>A public hosted zone is created when you register a domain with Route 53, when you transfer a domain into Route 53, or if you create one manually.</li>
+<li>A hosted zone will have &ldquo;name servers&rdquo; - these are the IP addressess you can give to a domain operator, so Route 53 becomes &ldquo;authoritative&rdquo; for a domain</li>
+</ul>
+
+<h4 id="private-zones">Private Zones</h4>
+
+<ul>
+<li>Private Zone are created manually and associated with one or more VPCs</li>
+<li>Private zones need <code>enableDnsHostnames</code> and <code>enableDnsSupport</code> enabled on VPC</li>
+</ul>
+
+<h3 id="routing-policy">Routing Policy</h3>
+
+<h4 id="simple-routing">Simple Routing</h4>
+
+<p>A simple routing policy is a single record within a hosted zone that contains one or more values. When queried a simple routing policy record returns all the values in a randomized order.</p>
+
+<p><img src="/images/AWS_Certified_Solutions_Architect/Simple_Routing.jpg" alt="Simple Routing Policy" /></p>
+
+<p>Pros: Simple, the default, even spread of requests</p>
+
+<p>Cons: No performance control, no granual health checks, for alias type</p>
+
+<h4 id="failover-routing">Failover Routing</h4>
+
+<p>Failover routing allows you to create two records with same name. One is designed as the primary and another as secondary. Queries will resolve to the primary - unless it is unhealthy, in which the Route 53 will respond with the secondary.</p>
+
+<p>(Single Primary Record Type and Single Secondary Record Type)</p>
+
+<p><img src="/images/AWS_Certified_Solutions_Architect/Failover_Routing.jpg" alt="Failover Routing" /></p>
+
+<h4 id="weighted-routing-policy">Weighted Routing Policy</h4>
+
+<p>Weighted routing can be used to control the amount of traffic that reaches specific resources. It can be useful when testing new software or when resources are being added or removed from.</p>
+
+<p><img src="/images/AWS_Certified_Solutions_Architect/Weighted_Routing_Policy.jpg" alt="Weighted Routing Policy" /></p>
+
+<h4 id="latency-based-routing">Latency Based Routing</h4>
+
+<p>Checks with Latency Database with latency based host in DNS</p>
+
+<h4 id="geolocation-based-routing">GeoLocation based Routing</h4>
+
+<p>Geolocation routing lets you choose the resource that server your traffic based on the geographic region from which queries originate.</p>
 
 
 <footer class="footline">
@@ -4828,7 +4961,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/amazon-web-services/aws-solutions-architect/04_2-compute_serverless/" title="04 - Compute Services - Serverless"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/" title="04 - Compute Services - Server Based"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/amazon-web-services/aws-solutions-architect/06_databases/" title="06 - Databases" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -4841,19 +4974,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1589677435"></script>
-    <script src="/js/perfect-scrollbar.min.js?1589677435"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1589677435"></script>
-    <script src="/js/jquery.sticky.js?1589677435"></script>
-    <script src="/js/featherlight.min.js?1589677435"></script>
-    <script src="/js/highlight.pack.js?1589677435"></script>
+    <script src="/js/clipboard.min.js?1589736558"></script>
+    <script src="/js/perfect-scrollbar.min.js?1589736558"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1589736558"></script>
+    <script src="/js/jquery.sticky.js?1589736558"></script>
+    <script src="/js/featherlight.min.js?1589736558"></script>
+    <script src="/js/highlight.pack.js?1589736558"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1589677435"></script>
-    <script src="/js/learn.js?1589677435"></script>
-    <script src="/js/hugo-learn.js?1589677435"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1589736558"></script>
+    <script src="/js/learn.js?1589736558"></script>
+    <script src="/js/hugo-learn.js?1589736558"></script>
 
-    <link href="/mermaid/mermaid.css?1589677435" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1589677435"></script>
+    <link href="/mermaid/mermaid.css?1589736558" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1589736558"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
