@@ -14,7 +14,6 @@ Load balancing is a method used to distribute incoming connections across a grou
 * An elastic load balancer can be public facing, meaning it accepts traffic from the public internet or internal, which is only accessible from inside a VPC and is often used betwen application tiers.
 * An elastic load balancer accepts traffic via listerers using protocol and ports. It can stirp HTTPS at this point, meaning it handles encryption/decryption, reducing CPU usage on instances.
 
-
 **Classic Load Balancers**
 
 * CLB are the oldest type of load balancers and genrally should be avoided for new projects.
