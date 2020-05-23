@@ -143,21 +143,21 @@ Command Line Interface (CLI) tools and scripts kubectl is the Kubernetes Command
     </item>
     
     <item>
+      <title>04 (A) - Compute Services - Server Based</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/</guid>
+      <description>Elastic Cloud Compute (EC2) Elastic Block Storage (EBS)  Exam Facts  EBS Snapshots Security Groups Instance Metadata AMI Bootstrap Private Instance and Public Instance Advanced Topics  EC2 Instance Roles EBS Volume and Snapshot Encryption EBS Optimized, Enhanced Networking, and Placement Group EBS optimization Enhanced networking  Cluster, partition, and spread placement groups  EC2 Billing Models - Spot Instances EC2 Billing Models - Reserved Instances Dedicated Hosts   Elastic Cloud Compute (EC2) EC2 is one of the most widely used services within AWS.</description>
+    </item>
+    
+    <item>
       <title>04 (B) - Compute Services - Serverless</title>
       <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_2-compute_serverless/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_2-compute_serverless/</guid>
       <description>Serverless Compute  Lambda Essentials API Gateway Step Functions  Container Based Compute  ECS   Serverless Compute Serverless architecture consists of two main principles, including BaaS (Backend as a Service), which means using third party services where possible rather than running your own. Example include Auth0 or Cognito for authentication and Firebase or DynamoDb for data storage. Servless architecture uses event driven architecture using FaaS (Function as a Service) products to provide application logic.</description>
-    </item>
-    
-    <item>
-      <title>04 - Compute Services - Server Based</title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/</guid>
-      <description>Elastic Cloud Compute (EC2) Elastic Block Storage (EBS)  Exam Facts  EBS Snapshots Security Groups Instance Metadata AMI Bootstrap Private Instance and Public Instance Advanced Topics  EC2 Instance Roles EBS Volume and Snapshot Encryption EBS Optimized, Enhanced Networking, and Placement Group EBS optimization Enhanced networking  Cluster, partition, and spread placement groups  EC2 Billing Models - Spot Instances EC2 Billing Models - Reserved Instances Dedicated Hosts   Elastic Cloud Compute (EC2) EC2 is one of the most widely used services within AWS.</description>
     </item>
     
     <item>
@@ -214,11 +214,13 @@ Liveness probe Indicates whether the container is running properly, and governs 
     
     <item>
       <title>06 - Databases</title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06_databases/</link>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-databases/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06_databases/</guid>
-      <description> SQL - RDS SQL - Aurora NoSQL In-Memory Caching </description>
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-databases/</guid>
+      <description>SQL - RDS RDS is a Database as a Service (DBaaS) product. It can be used to provision a fully functional database without the admin overhead traditionally associated with DB platforms. It can perform at scale, be made publicly accessible, and can be configured for demanding availability and durability scenarios.
+RDS supports a number of database engines:
+ MySQL, MariaDB, PostgreSQL, Oracle, Microsoft SQL Server Aurora: An in-house developed engine with substantial features and performance enhancements.</description>
     </item>
     
     <item>
@@ -252,21 +254,21 @@ apiVersion: apps/v1 kind: Deployment metadata: name: webserver labels: app: ngin
     
     <item>
       <title>07 - Hybrid and Scaling</title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-hybrid-scaling/</link>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/08-hybrid-scaling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-hybrid-scaling/</guid>
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/08-hybrid-scaling/</guid>
       <description>Load Balancing and Auto Scalling Load balancing is a method used to distribute incoming connections across a group of servers or services. Incoming connections are made to the load balancer, which distributes them to associated services.
 Elastic Load Balancing (ELB)  ELB is a service that provides a set of highly available and scalable load balancers in one of three versions: Classic (CLB), Application (ALB) and Network (NLB). ELBs can be paired with Auto Scaling groups to enhance high availability and fault tolerance - automating scaling / elasticity.</description>
     </item>
     
     <item>
       <title>07 - Storage and Content Delivery</title>
-      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-storage_and_content_delivery/</link>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06-storage_and_content_delivery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-storage_and_content_delivery/</guid>
-      <description> S3 Architecture and Features S3 Performance and Resilience Cloud Front Network File System </description>
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06-storage_and_content_delivery/</guid>
+      <description>S3 Architecture and Features  Permissions Transferring Data to S3 Single PUT Upload (Default) Multi Part Upload Encryption Static Websites and CORS Object Versioning Presigned URL  S3 Performance and Resilience  Storage Tiers / Classes Standard Standard Infrequent Access (Standard - IA) One Zone - IA Glacier Glacier Deep Archive Intellgent Tiering Lifecycle Rules S3 Cross Region Replication  Cloud Front  CloudFront Components Origin Access Identity (OAI)  Network File System  Amazon EFS Throughput modes Performance Mode   S3 Architecture and Features Permissions Bucket authorization within S3 is controlled using Identity Policies on AWS identities, as well as Bucket policies in the form of resource policies on the bucket and bucket or object ACLs.</description>
     </item>
     
     <item>

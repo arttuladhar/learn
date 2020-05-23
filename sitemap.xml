@@ -55,11 +55,11 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_2-compute_serverless/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_2-compute_serverless/</loc>
   </url>
   
   <url>
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06_databases/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-databases/</loc>
   </url>
   
   <url>
@@ -99,11 +99,11 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-hybrid-scaling/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/08-hybrid-scaling/</loc>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-storage_and_content_delivery/</loc>
+    <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06-storage_and_content_delivery/</loc>
   </url>
   
   <url>
@@ -458,22 +458,22 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/tags/bigdata/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://learn.aayushtuladhar.com/categories/bigdata/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/tags/devops/</loc>
+    <loc>http://learn.aayushtuladhar.com/tags/bigdata/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://learn.aayushtuladhar.com/categories/devops/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/tags/devops/</loc>
     <priority>0</priority>
   </url>
   
