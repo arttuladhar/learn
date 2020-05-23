@@ -72,9 +72,7 @@ Identity - Objects that require authentication and are authorized to access reso
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/07-databases/</guid>
-      <description>SQL - RDS RDS is a Database as a Service (DBaaS) product. It can be used to provision a fully functional database without the admin overhead traditionally associated with DB platforms. It can perform at scale, be made publicly accessible, and can be configured for demanding availability and durability scenarios.
-RDS supports a number of database engines:
- MySQL, MariaDB, PostgreSQL, Oracle, Microsoft SQL Server Aurora: An in-house developed engine with substantial features and performance enhancements.</description>
+      <description>SQL - RDS  RDS Backups and Restore RDS Resilency RDS Multi-AZ RDS Read Replica  When would you use RDS Read Replica Deployment   SQL - Aurora  Aurora Serverless  Notes   NoSQL - DynamoDB  In-Memory Caching   SQL - RDS RDS is a Database as a Service (DBaaS) product. It can be used to provision a fully functional database without the admin overhead traditionally associated with DB platforms.</description>
     </item>
     
     <item>

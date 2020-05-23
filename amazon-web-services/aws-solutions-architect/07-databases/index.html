@@ -12,21 +12,21 @@
     <title>06 - Databases :: </title>
 
     
-    <link href="/css/nucleus.css?1590209871" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1590209871" rel="stylesheet">
-    <link href="/css/hybrid.css?1590209871" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1590209871" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1590209871" rel="stylesheet">
-    <link href="/css/auto-complete.css?1590209871" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1590209871" rel="stylesheet">
-    <link href="/css/theme.css?1590209871" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1590209871" rel="stylesheet">
+    <link href="/css/nucleus.css?1590213412" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1590213412" rel="stylesheet">
+    <link href="/css/hybrid.css?1590213412" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1590213412" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1590213412" rel="stylesheet">
+    <link href="/css/auto-complete.css?1590213412" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1590213412" rel="stylesheet">
+    <link href="/css/theme.css?1590213412" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1590213412" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1590209871" rel="stylesheet">
+    <link href="/css/theme-blue.css?1590213412" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1590209871"></script>
+    <script src="/js/jquery-3.3.1.min.js?1590213412"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1590209871"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1590209871"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1590213412"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1590213412"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/learn.aayushtuladhar.com";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1590209871"></script>
+<script type="text/javascript" src="/js/search.js?1590213412"></script>
 
     
   </div>
@@ -2726,23 +2726,30 @@
 <ul>
 <li>
 <ul>
-<li>
+<li><a href="#sql-rds">SQL - RDS</a>
 <ul>
-<li><a href="#sql-rds">SQL - RDS</a></li>
 <li><a href="#rds-backups-and-restore">RDS Backups and Restore</a></li>
 <li><a href="#rds-resilency">RDS Resilency</a>
 <ul>
 <li><a href="#rds-multi-az">RDS Multi-AZ</a></li>
-<li><a href="#rds-read-replica">RDS Read Replica</a></li>
+<li><a href="#rds-read-replica">RDS Read Replica</a>
+<ul>
+<li><a href="#when-would-you-use-rds-read-replica-deployment">When would you use RDS Read Replica Deployment</a></li>
+</ul></li>
+</ul></li>
 </ul></li>
 <li><a href="#sql-aurora">SQL - Aurora</a>
 <ul>
-<li><a href="#aurora-serverless">Aurora Serverless</a></li>
-</ul></li>
-<li><a href="#nosql">NoSQL</a>
+<li>
 <ul>
-<li><a href="#dynamodb">DynamoDB</a></li>
+<li><a href="#aurora-serverless">Aurora Serverless</a>
+<ul>
+<li><a href="#notes">Notes</a></li>
 </ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#nosql-dynamodb">NoSQL - DynamoDB</a>
+<ul>
 <li><a href="#in-memory-caching">In-Memory Caching</a></li>
 </ul></li>
 </ul></li>
@@ -2772,7 +2779,36 @@
 
 
 
-<h3 id="sql-rds">SQL - RDS</h3>
+<ul>
+<li><a href="#sql---rds">SQL - RDS</a>
+
+<ul>
+<li><a href="#rds-backups-and-restore">RDS Backups and Restore</a></li>
+<li><a href="#rds-resilency">RDS Resilency</a></li>
+<li><a href="#rds-multi-az">RDS Multi-AZ</a></li>
+<li><a href="#rds-read-replica">RDS Read Replica</a>
+
+<ul>
+<li><a href="#when-would-you-use-rds-read-replica-deployment">When would you use RDS Read Replica Deployment</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#sql---aurora">SQL - Aurora</a>
+
+<ul>
+<li><a href="#aurora-serverless">Aurora Serverless</a>
+
+<ul>
+<li><a href="#notes">Notes</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#nosql---dynamodb">NoSQL - DynamoDB</a>
+
+<ul>
+<li><a href="#in-memory-caching">In-Memory Caching</a></li>
+</ul></li>
+</ul>
+
+<h2 id="sql-rds">SQL - RDS</h2>
 
 <p>RDS is a Database as a Service (DBaaS) product. It can be used to provision a fully functional database without the admin overhead traditionally associated with DB platforms. It can perform at scale, be made publicly accessible, and can be configured for demanding availability and durability scenarios.</p>
 
@@ -2823,7 +2859,15 @@
 
 <p><img src="/images/AWS_Certified_Solutions_Architect/RDS_Backups.jpg" alt="RDS Backups" /></p>
 
-<p>When you restore a snapshot, it will create a brand new instance of RDS with new CNAME.</p>
+<ul>
+<li>When you restore a snapshot, it will create a brand new instance of RDS with new CNAME.</li>
+<li>When restoring from a backup, a new database will be created, meaning it will not override the existing database.</li>
+</ul>
+
+
+<div class="notices info" ><p>KMS is a regional service, so if the database is restored to another region, it will require a new master key.</p>
+</div>
+
 
 <h3 id="rds-resilency">RDS Resilency</h3>
 
@@ -2831,8 +2875,8 @@
 
 <ul>
 <li>RDS can be provisioned in single or Multi-AZ mode.</li>
-<li>Multi-AZ provisions a primary instance and a standby instance in a different AZ of the same region</li>
-<li>Only the primary can be accessed using the instance CNAME</li>
+<li>Multi-AZ provisions a primary instance and a standby instance in a different AZ of the same region.</li>
+<li>Only the primary can be accessed using the instance CNAME.</li>
 <li>There is no performance benefit, but it provides a better (Recovery Time Objective) RTO than restoring a snapshot.</li>
 </ul>
 
@@ -2842,35 +2886,42 @@
 
 <h4 id="rds-read-replica">RDS Read Replica</h4>
 
-<p>RDS Read Replicas are read-only copies of an RDS instance that can be created in the same region or a different region from the primary instance.</p>
-
-<p>Read Replicas can be addressed independently (each having their own DNS name) and used for read workloads, allowing you to scale reads. Five Read Replicas can be created from a RDS instance, allowing a 5x increase in reads.</p>
-
-
-<div class="notices info" ><p>First step on creating RDS Read Replica is to enable automatic backup on the master instance.</p>
-</div>
-
-
-<p><strong>Why Read Replicas</strong></p>
+<p>RDS Read Replicas are read-only copies of an RDS instance that can be created in the same region or a different region from the primary instance. Read Replicas can be addressed independently (each having their own DNS name) and used for read workloads, allowing you to scale reads. <strong>5 Read Replicas</strong> can be created from a RDS instance, allowing a 5x increase in reads.</p>
 
 <ul>
-<li>Global Resilence</li>
-<li>Independently Scale Out Reads (Horizontal Scalling)
+<li>Unlike Multi-AZs, read replicas can be used across regions. They also can be within the same AZ or even across AZs.</li>
+<li>AWS takes care of the networking aspects needed for asynchronous syncing between the primary and secondary regions.</li>
+<li>Unlike Multi-AZ, Read Replicas perform asynchronous replication from the primary to the secondary region.</li>
+<li>The master instance needs to have backups enabled for read replication to occur.</li>
+</ul>
+
+<h5 id="when-would-you-use-rds-read-replica-deployment">When would you use RDS Read Replica Deployment</h5>
+
+<ul>
+<li>When needing a faster recovery time than restoration from a snapshot</li>
+<li>When most of your DB usage is reading rather than writing, you can scale out your datbase instances for read-only purpose. (Horizontal Scalling)</li>
+<li>Have a Global Resilence
 <br /></li>
 </ul>
 
 <hr />
 
-<h3 id="sql-aurora">SQL - Aurora</h3>
+<h2 id="sql-aurora">SQL - Aurora</h2>
 
-<p>Aurora is a database engine developed by AWS that is compatible with MySQL, PostgreSQL and associated tools.</p>
+<p>Amazon Aurora is a fully-managed, MySQL-compatible, relational database engine that combines the speed and availability of high-end commercial databases with the simplicity and cost-effectiveness of open source database.</p>
 
 <ul>
 <li>Aurora uses a base configuration of a cluster - shared storage</li>
 <li>A cluster contains a single primary instance and zero of more replicas.</li>
 <li>All instances (primary and replicas) use the <strong>same shared storage</strong> - the cluster volumes.</li>
-<li>Cluster volume scales automatically, only bills for consumed data, and it&rsquo;s constantly backed up to S3.</li>
+<li>Aurora cluster volumes automatically scale as the amount of data in your database increases, up to a maximum of 64 tebibytes (TiB)</li>
+<li>AWS Aurora only bills for consumed data, and it&rsquo;s constantly backed up to S3.</li>
 </ul>
+
+
+<div class="notices info" ><p>Aurora can have maximum of 15 replicas.</p>
+</div>
+
 
 <p><img src="/images/AWS_Certified_Solutions_Architect/Aurora_Cluster_Architecture.jpg" alt="Aurora Cluster Architecture" /></p>
 
@@ -2878,24 +2929,35 @@
 <li>Automatic Backup</li>
 <li>Snapshot Process</li>
 <li>Backtrack - There is an outage, whenever we do a backtrack. Maximum window of 72 Hours.</li>
-<li>Parallel Queries</li>
+<li>Parallel Queries - The parallel query option allows for optimal performance by allowing query execution across all nodes, at the same time, in a cluster.</li>
 </ul>
 
 <h4 id="aurora-serverless">Aurora Serverless</h4>
 
-<p>Aurora Serverless is based on the same database engine as Aurora, but instead of provisioning certain resouce allocation. Aurora Serverless handles this as a server. You simply specify a minimum and maximum number of Aurora capacity units (ACUs).</p>
+<p>Aurora Serverless is a fully managed on-demand, auto-scalling, high-availabile relational database <strong>that only charge when it&rsquo;s in use</strong>. Aurora Serverless is based on the same database engine as Aurora, but instead of provisioning certain resouce allocation. Aurora Serverless handles this as a service. You simply specify a minimum and maximum number of Aurora capacity units (ACUs).</p>
 
-<p>Abstracts away the capacity planning for database. You simply pay for the usage of the database. You start with specifying minimum and capacity unit with ACUs.</p>
+<p>Abstracts away the capacity planning for database. You simply pay based on the resource you use (per second). You start with specifying minimum and capacity unit with ACUs.</p>
 
-<p>Usage - Unknown usage, Peak Usage at certain times, Shutdown database when not in use, good use case for Dev or Test databases.</p>
+<p>Common Use case for Aurora Serveless are -</p>
 
-<p>Aurora Serverless exists in single Availability Zone.</p>
+<ul>
+<li>When an application uses a database and has random surges of traffic</li>
+<li>When you want to remove the complexity of managing database instances</li>
+<li>When you want automatically scaling database instances</li>
+<li>When deploying an application and have unpredictable database usage patterns</li>
+<li>Test environments when you need to Shutdown database when not in use</li>
+</ul>
 
-<p>Data API allows you to query database using traditional apis.</p>
+<h5 id="notes">Notes</h5>
 
-<h3 id="nosql">NoSQL</h3>
+<ul>
+<li>Aurora Serverless exists only in single Availability Zone.</li>
+<li>Aurora Serverless DB clusters can only be accessed from within a VPC.</li>
+<li>With Aurora Serverless, the database endpoint connects to a proxy fleet that routes the workload to a fleet of resources that are automatically scaled.</li>
+<li>Data API allows you to query database using traditional apis. Using Query Editor, a web-based tool you can log into the Aurora Serverless cluster and execute queries.</li>
+</ul>
 
-<h4 id="dynamodb">DynamoDB</h4>
+<h2 id="nosql-dynamodb">NoSQL - DynamoDB</h2>
 
 <p>DynamoDB is a NoSQL database service. It&rsquo;s a global service, partioned regionally and allows the creation of tables.</p>
 
@@ -4721,19 +4783,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1590209871"></script>
-    <script src="/js/perfect-scrollbar.min.js?1590209871"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1590209871"></script>
-    <script src="/js/jquery.sticky.js?1590209871"></script>
-    <script src="/js/featherlight.min.js?1590209871"></script>
-    <script src="/js/highlight.pack.js?1590209871"></script>
+    <script src="/js/clipboard.min.js?1590213412"></script>
+    <script src="/js/perfect-scrollbar.min.js?1590213412"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1590213412"></script>
+    <script src="/js/jquery.sticky.js?1590213412"></script>
+    <script src="/js/featherlight.min.js?1590213412"></script>
+    <script src="/js/highlight.pack.js?1590213412"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1590209871"></script>
-    <script src="/js/learn.js?1590209871"></script>
-    <script src="/js/hugo-learn.js?1590209871"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1590213412"></script>
+    <script src="/js/learn.js?1590213412"></script>
+    <script src="/js/hugo-learn.js?1590213412"></script>
 
-    <link href="/mermaid/mermaid.css?1590209871" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1590209871"></script>
+    <link href="/mermaid/mermaid.css?1590213412" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1590213412"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
