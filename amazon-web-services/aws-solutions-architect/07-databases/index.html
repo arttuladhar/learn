@@ -12,21 +12,21 @@
     <title>06 - Databases :: </title>
 
     
-    <link href="/css/nucleus.css?1590340579" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1590340579" rel="stylesheet">
-    <link href="/css/hybrid.css?1590340579" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1590340579" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1590340579" rel="stylesheet">
-    <link href="/css/auto-complete.css?1590340579" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1590340579" rel="stylesheet">
-    <link href="/css/theme.css?1590340579" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1590340579" rel="stylesheet">
+    <link href="/css/nucleus.css?1590344378" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1590344378" rel="stylesheet">
+    <link href="/css/hybrid.css?1590344378" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1590344378" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1590344378" rel="stylesheet">
+    <link href="/css/auto-complete.css?1590344378" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1590344378" rel="stylesheet">
+    <link href="/css/theme.css?1590344378" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1590344378" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1590340579" rel="stylesheet">
+    <link href="/css/theme-blue.css?1590344378" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1590340579"></script>
+    <script src="/js/jquery-3.3.1.min.js?1590344378"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1590340579"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1590340579"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1590344378"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1590344378"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/learn.aayushtuladhar.com";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1590340579"></script>
+<script type="text/javascript" src="/js/search.js?1590344378"></script>
 
     
   </div>
@@ -2754,7 +2754,14 @@
 <li><a href="#performance-and-billing">Performance and Billing</a></li>
 <li><a href="#streams-and-triggers">Streams and Triggers</a></li>
 <li><a href="#dynamodb-indexes">DynamoDB Indexes</a></li>
-<li><a href="#in-memory-caching">In-Memory Caching</a></li>
+</ul></li>
+<li><a href="#in-memory-caching">In-Memory Caching</a>
+<ul>
+<li><a href="#dynamodb-accelerator-dax">DynamoDB Accelerator (DAX)</a>
+<ul>
+<li><a href="#use-case">Use Case</a></li>
+</ul></li>
+<li><a href="#elastic-cache">Elastic Cache</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -2812,7 +2819,13 @@
 <li><a href="#performance-and-billing">Performance and Billing</a></li>
 <li><a href="#streams-and-triggers">Streams and Triggers</a></li>
 <li><a href="#dynamodb-indexes">DynamoDB Indexes</a></li>
-<li><a href="#in-memory-caching">In-Memory Caching</a></li>
+</ul></li>
+<li><a href="#in-memory-caching">In-Memory Caching</a>
+
+<ul>
+<li><a href="#dynamodb-accelerator-dax">DynamoDB Accelerator (DAX)</a></li>
+<li><a href="#use-case">Use Case</a></li>
+<li><a href="#elastic-cache">Elastic Cache</a></li>
 </ul></li>
 </ul>
 
@@ -3060,9 +3073,34 @@
 
 <p>Indexes can have certain projected attributes.</p>
 
-<h3 id="in-memory-caching">In-Memory Caching</h3>
+<h2 id="in-memory-caching">In-Memory Caching</h2>
 
-<p>DynamoDB Accelerator (DAX)</p>
+<h3 id="dynamodb-accelerator-dax">DynamoDB Accelerator (DAX)</h3>
+
+<p>DynamoDB Accelerator (DAX) is an in-memory cache designed specifically for DynamoDB. Results delivered from the DAX are available in microseconds rather than in the single-digit millisecond available from DynamoDB.</p>
+
+<p><img src="/images/AWS_Certified_Solutions_Architect/DAX-1.jpg" alt="DAX-1" /></p>
+
+<p>DAX maintains two distinct caches: the item cache and the query cache. The item cache is populated with results from the <strong>GetItem</strong> and <strong>BatchGetItems</strong> and has a five minute default TTL. The query cache stores results of Query and Scan operations and caches based on the parameters specified.</p>
+
+<p><img src="/images/AWS_Certified_Solutions_Architect/DAX-2.jpg" alt="DAX-2" /></p>
+
+<h4 id="use-case">Use Case</h4>
+
+<ul>
+<li>Read Intensive Applications</li>
+<li>Applications that are latency sensitive (Real-time bidding, Online Stores)</li>
+</ul>
+
+<h3 id="elastic-cache">Elastic Cache</h3>
+
+<p>ElasticCache is a managed in-memory data store supporting the <strong>Redis</strong> or <strong>Memcached</strong> engines.</p>
+
+<p>ElastiCache is used for two common use cases:
+* Offloading database reads by caching responses, improving application speed and reducing costs
+* Storing user sessions state, allowing for stateless compute instances (used for fault-tolerant architectures)</p>
+
+<p>Generally, ElastiCache is used with key value databases or to store simple sessions data but it can be used with SQL datbase engines.</p>
 
 
 <footer class="footline">
@@ -4882,19 +4920,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1590340579"></script>
-    <script src="/js/perfect-scrollbar.min.js?1590340579"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1590340579"></script>
-    <script src="/js/jquery.sticky.js?1590340579"></script>
-    <script src="/js/featherlight.min.js?1590340579"></script>
-    <script src="/js/highlight.pack.js?1590340579"></script>
+    <script src="/js/clipboard.min.js?1590344379"></script>
+    <script src="/js/perfect-scrollbar.min.js?1590344379"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1590344379"></script>
+    <script src="/js/jquery.sticky.js?1590344379"></script>
+    <script src="/js/featherlight.min.js?1590344379"></script>
+    <script src="/js/highlight.pack.js?1590344379"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1590340579"></script>
-    <script src="/js/learn.js?1590340579"></script>
-    <script src="/js/hugo-learn.js?1590340579"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1590344379"></script>
+    <script src="/js/learn.js?1590344379"></script>
+    <script src="/js/hugo-learn.js?1590344379"></script>
 
-    <link href="/mermaid/mermaid.css?1590340579" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1590340579"></script>
+    <link href="/mermaid/mermaid.css?1590344379" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1590344379"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
