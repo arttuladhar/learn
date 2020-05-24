@@ -16,7 +16,10 @@ title: 06 - Databases
   - [Performance and Billing](#performance-and-billing)
   - [Streams and Triggers](#streams-and-triggers)
   - [DynamoDB Indexes](#dynamodb-indexes)
-  - [In-Memory Caching](#in-memory-caching)
+- [In-Memory Caching](#in-memory-caching)
+  - [DynamoDB Accelerator (DAX)](#dynamodb-accelerator-dax)
+    - [Use Case](#use-case)
+  - [Elastic Cache](#elastic-cache)
 
 ## SQL - RDS
 
@@ -223,6 +226,28 @@ Global secondary indexes can be created at any point after the table is created.
 
 Indexes can have certain projected attributes.
 
-### In-Memory Caching
+## In-Memory Caching
 
-DynamoDB Accelerator (DAX)
+### DynamoDB Accelerator (DAX)
+
+DynamoDB Accelerator (DAX) is an in-memory cache designed specifically for DynamoDB. Results delivered from the DAX are available in microseconds rather than in the single-digit millisecond available from DynamoDB.
+
+![DAX-1](/images/AWS_Certified_Solutions_Architect/DAX-1.jpg)
+
+DAX maintains two distinct caches: the item cache and the query cache. The item cache is populated with results from the **GetItem** and **BatchGetItems** and has a five minute default TTL. The query cache stores results of Query and Scan operations and caches based on the parameters specified.
+
+![DAX-2](/images/AWS_Certified_Solutions_Architect/DAX-2.jpg)
+
+#### Use Case
+* Read Intensive Applications
+* Applications that are latency sensitive (Real-time bidding, Online Stores)
+
+### Elastic Cache
+
+ElasticCache is a managed in-memory data store supporting the **Redis** or **Memcached** engines. 
+
+ElastiCache is used for two common use cases:
+* Offloading database reads by caching responses, improving application speed and reducing costs
+* Storing user sessions state, allowing for stateless compute instances (used for fault-tolerant architectures)
+
+Generally, ElastiCache is used with key value databases or to store simple sessions data but it can be used with SQL datbase engines.
