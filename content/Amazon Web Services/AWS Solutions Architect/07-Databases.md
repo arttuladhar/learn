@@ -12,6 +12,10 @@ title: 06 - Databases
     - [Aurora Serverless](#aurora-serverless)
       - [Notes](#notes)
 - [NoSQL - DynamoDB](#nosql---dynamodb)
+  - [Query and Scan Operation](#query-and-scan-operation)
+  - [Performance and Billing](#performance-and-billing)
+  - [Streams and Triggers](#streams-and-triggers)
+  - [DynamoDB Indexes](#dynamodb-indexes)
   - [In-Memory Caching](#in-memory-caching)
 
 ## SQL - RDS
@@ -48,6 +52,8 @@ RDS supports encryption with the following limits/restrictions/conditions:
 * Encryption cannot be removed.
 
 Network access to an RDS instance is controlled by a security group (SG) associated with the RDS instance.
+
+Since RDS can only have one master instance at a time, increasing its resources will help with its writing capacity.
 
 ### RDS Backups and Restore
 
@@ -136,7 +142,86 @@ Common Use case for Aurora Serveless are -
 
 ## NoSQL - DynamoDB
 
-DynamoDB is a NoSQL database service. It's a global service, partioned regionally and allows the creation of tables.
+Amazon DynamoDB is a key-value and document database that delivers single-digit millisecond performance at any scale. It is a **NoSQL** database service. It's a regional service, partioned regionally and allows the creation of tables, hence tables names in DynamoDB have to be regionally unique. . 
+
+* A **Table** is a collection of items that share the same partition key (PK) or partition key and sort key(SK) together with other configuration and performance settings.
+* An **Item** is a collection of attributes (upto 400 KB in size) inside a table that shares the same key structure as every other items in the table.
+* An attribute is a key and value
+* Dynamo DB doesn't enforce strict schema for items in the collection
+* Using Identity Policy, we can provide access to DynamoDB.  Unlike S3, you cannot apply resource level policy.
+* From resilency perspective, DynamoDB is resilent on regional basis. DynamoDB stores atleast 3 copies of data across different availability zone. DynamoDB handles networking and replication.
+
+*user_fav_movies*
+
+```
+{
+    "name": "Bob Smith",
+    "createdAtTS": 1590268741
+    "email": "bob.smith@gmail.com",
+    "fav_movies": [
+        "Titanic",
+        "50 First Dates"
+    ]
+}
+
+{
+    "name": "John Doe",
+    "createdAtTS": 1590268931
+    "email": "john.doe@gmail.com",
+    "fav_movies": [
+        "Beautiful Mind",
+        "Shutter Island"
+    ]
+}
+```
+
+### Query and Scan Operation
+
+* Scan - Scan operation has to read every items on the table and apply filter to filter out items that doesn't match the filter. It is super flexible but it consumers lots of capacity units so it's so efficent to perform scan query on large tables.
+* Query - Query operation allows to lookup on the table without perform entire table scan, but you need to specify  primary key and filter based on sort key. It is more efficent than Scan operation.
+
+* DynamoDB maintains continuous backups of your table for the last 35 day
+* Manual Backup
+* Encryption comes default with DynamoDB
+* Global Tables - Table needs to be empty and Enabled Streams Enable
+* DynamoDB has full integration with CloudWatch
+
+### Performance and Billing
+
+DynamoDB has two read/write capacity modes: **Provisioned throughput** (default) and **on-demand mode**. When using on-demand mode, DynamoDB automatically scales to handle performance demands and bills a per-request charge. When using provisioned throughput mode, each table is configured with read capacity units (RCU) and write capacity units (WCU).
+
+DynamoDB is highly resilent and replicates data across multiple AZs in a region. When you receive a HTTP 200, a write has been completed and is durable. This doesn't mean it's been written to all AZs - this generally occurs within a second.
+
+An eventually consistent read will request data, preferring speed. It's possible the data received may not relect a recent write. Eventual consistency is the default for read operations in DDB.
+
+A strong consistency read ensures DynamoDB returns the most up-to-date copy of data - it takes longe rbut is sometimes required for application that require consistency.
+
+### Streams and Triggers
+
+When enabled, streams provide an ordered list of changes that occur to items within a DynamoDB table. A stream is a rolling 24-hour window of changes. Streams are enabled per table and only contain data from the point of being enabled.
+
+Every stream has an ARN that identifies it globally across all tables, accounts, and regions.
+
+Streams can be configured with one of four view types:
+
+* **KEYS_ONLY** - Whenever an item is added, updated or deleted, the key(s) of that item are added to the stream.
+* **NEW_IMAGE** - The entire item is added to the stream "post-change"
+* **OLD_IMAGE** - The entire item is added to the stream "pre-change"
+* **NEW_AND_OLD_IMAGES** - Both the new and old versions of the items are added to the stream.
+
+Streams can be integrated with AWS Lambda, invoking a function whenever items are changed in a DynamoDB table (a DB trigger)
+
+![DynamoDB-Streams](/images/AWS_Certified_Solutions_Architect/DynamoDB_Streams.jpg)
+
+### DynamoDB Indexes
+
+Indexes provide an alternative representation of data in a table, which is useful for application with varying query demands. Indexes come in two forms: Local Secondary Indexes (LSI) and Global Secondary Indexes (GSI). Indexes are intracted with as though they are table, but they are just an alternate representaiton of data in an existing table.
+
+Local secondary indexes must be **created at the same time** as creating a table. They use the same partition key but an altneative sort key. They share the RCU and WCU values for the main table. With using LSI efficient queries can be performed based on alternative sort key. You can create upto 5 LSI per table.
+
+Global secondary indexes can be created at any point after the table is created. They can use different partition and sort keys. **They have their own RCU and WCU values**. You can create upto 20 GSI per table.
+
+Indexes can have certain projected attributes.
 
 ### In-Memory Caching
 
