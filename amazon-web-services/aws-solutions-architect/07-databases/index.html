@@ -12,21 +12,21 @@
     <title>06 - Databases :: </title>
 
     
-    <link href="/css/nucleus.css?1590213412" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1590213412" rel="stylesheet">
-    <link href="/css/hybrid.css?1590213412" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1590213412" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1590213412" rel="stylesheet">
-    <link href="/css/auto-complete.css?1590213412" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1590213412" rel="stylesheet">
-    <link href="/css/theme.css?1590213412" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1590213412" rel="stylesheet">
+    <link href="/css/nucleus.css?1590340579" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1590340579" rel="stylesheet">
+    <link href="/css/hybrid.css?1590340579" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1590340579" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1590340579" rel="stylesheet">
+    <link href="/css/auto-complete.css?1590340579" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1590340579" rel="stylesheet">
+    <link href="/css/theme.css?1590340579" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1590340579" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1590213412" rel="stylesheet">
+    <link href="/css/theme-blue.css?1590340579" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1590213412"></script>
+    <script src="/js/jquery-3.3.1.min.js?1590340579"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1590213412"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1590213412"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1590340579"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1590340579"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/learn.aayushtuladhar.com";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1590213412"></script>
+<script type="text/javascript" src="/js/search.js?1590340579"></script>
 
     
   </div>
@@ -2750,6 +2750,10 @@
 </ul></li>
 <li><a href="#nosql-dynamodb">NoSQL - DynamoDB</a>
 <ul>
+<li><a href="#query-and-scan-operation">Query and Scan Operation</a></li>
+<li><a href="#performance-and-billing">Performance and Billing</a></li>
+<li><a href="#streams-and-triggers">Streams and Triggers</a></li>
+<li><a href="#dynamodb-indexes">DynamoDB Indexes</a></li>
 <li><a href="#in-memory-caching">In-Memory Caching</a></li>
 </ul></li>
 </ul></li>
@@ -2804,6 +2808,10 @@
 <li><a href="#nosql---dynamodb">NoSQL - DynamoDB</a>
 
 <ul>
+<li><a href="#query-and-scan-operation">Query and Scan Operation</a></li>
+<li><a href="#performance-and-billing">Performance and Billing</a></li>
+<li><a href="#streams-and-triggers">Streams and Triggers</a></li>
+<li><a href="#dynamodb-indexes">DynamoDB Indexes</a></li>
 <li><a href="#in-memory-caching">In-Memory Caching</a></li>
 </ul></li>
 </ul>
@@ -2852,6 +2860,8 @@
 </ul>
 
 <p>Network access to an RDS instance is controlled by a security group (SG) associated with the RDS instance.</p>
+
+<p>Since RDS can only have one master instance at a time, increasing its resources will help with its writing capacity.</p>
 
 <h3 id="rds-backups-and-restore">RDS Backups and Restore</h3>
 
@@ -2959,7 +2969,96 @@
 
 <h2 id="nosql-dynamodb">NoSQL - DynamoDB</h2>
 
-<p>DynamoDB is a NoSQL database service. It&rsquo;s a global service, partioned regionally and allows the creation of tables.</p>
+<p>Amazon DynamoDB is a key-value and document database that delivers single-digit millisecond performance at any scale. It is a <strong>NoSQL</strong> database service. It&rsquo;s a regional service, partioned regionally and allows the creation of tables, hence tables names in DynamoDB have to be regionally unique. .</p>
+
+<ul>
+<li>A <strong>Table</strong> is a collection of items that share the same partition key (PK) or partition key and sort key(SK) together with other configuration and performance settings.</li>
+<li>An <strong>Item</strong> is a collection of attributes (upto 400 KB in size) inside a table that shares the same key structure as every other items in the table.</li>
+<li>An attribute is a key and value</li>
+<li>Dynamo DB doesn&rsquo;t enforce strict schema for items in the collection</li>
+<li>Using Identity Policy, we can provide access to DynamoDB.  Unlike S3, you cannot apply resource level policy.</li>
+<li>From resilency perspective, DynamoDB is resilent on regional basis. DynamoDB stores atleast 3 copies of data across different availability zone. DynamoDB handles networking and replication.</li>
+</ul>
+
+<p><em>user_fav_movies</em></p>
+
+<pre><code>{
+    &quot;name&quot;: &quot;Bob Smith&quot;,
+    &quot;createdAtTS&quot;: 1590268741
+    &quot;email&quot;: &quot;bob.smith@gmail.com&quot;,
+    &quot;fav_movies&quot;: [
+        &quot;Titanic&quot;,
+        &quot;50 First Dates&quot;
+    ]
+}
+
+{
+    &quot;name&quot;: &quot;John Doe&quot;,
+    &quot;createdAtTS&quot;: 1590268931
+    &quot;email&quot;: &quot;john.doe@gmail.com&quot;,
+    &quot;fav_movies&quot;: [
+        &quot;Beautiful Mind&quot;,
+        &quot;Shutter Island&quot;
+    ]
+}
+</code></pre>
+
+<h3 id="query-and-scan-operation">Query and Scan Operation</h3>
+
+<ul>
+<li>Scan - Scan operation has to read every items on the table and apply filter to filter out items that doesn&rsquo;t match the filter. It is super flexible but it consumers lots of capacity units so it&rsquo;s so efficent to perform scan query on large tables.</li>
+
+<li><p>Query - Query operation allows to lookup on the table without perform entire table scan, but you need to specify  primary key and filter based on sort key. It is more efficent than Scan operation.</p></li>
+
+<li><p>DynamoDB maintains continuous backups of your table for the last 35 day</p></li>
+
+<li><p>Manual Backup</p></li>
+
+<li><p>Encryption comes default with DynamoDB</p></li>
+
+<li><p>Global Tables - Table needs to be empty and Enabled Streams Enable</p></li>
+
+<li><p>DynamoDB has full integration with CloudWatch</p></li>
+</ul>
+
+<h3 id="performance-and-billing">Performance and Billing</h3>
+
+<p>DynamoDB has two read/write capacity modes: <strong>Provisioned throughput</strong> (default) and <strong>on-demand mode</strong>. When using on-demand mode, DynamoDB automatically scales to handle performance demands and bills a per-request charge. When using provisioned throughput mode, each table is configured with read capacity units (RCU) and write capacity units (WCU).</p>
+
+<p>DynamoDB is highly resilent and replicates data across multiple AZs in a region. When you receive a HTTP 200, a write has been completed and is durable. This doesn&rsquo;t mean it&rsquo;s been written to all AZs - this generally occurs within a second.</p>
+
+<p>An eventually consistent read will request data, preferring speed. It&rsquo;s possible the data received may not relect a recent write. Eventual consistency is the default for read operations in DDB.</p>
+
+<p>A strong consistency read ensures DynamoDB returns the most up-to-date copy of data - it takes longe rbut is sometimes required for application that require consistency.</p>
+
+<h3 id="streams-and-triggers">Streams and Triggers</h3>
+
+<p>When enabled, streams provide an ordered list of changes that occur to items within a DynamoDB table. A stream is a rolling 24-hour window of changes. Streams are enabled per table and only contain data from the point of being enabled.</p>
+
+<p>Every stream has an ARN that identifies it globally across all tables, accounts, and regions.</p>
+
+<p>Streams can be configured with one of four view types:</p>
+
+<ul>
+<li><strong>KEYS_ONLY</strong> - Whenever an item is added, updated or deleted, the key(s) of that item are added to the stream.</li>
+<li><strong>NEW_IMAGE</strong> - The entire item is added to the stream &ldquo;post-change&rdquo;</li>
+<li><strong>OLD_IMAGE</strong> - The entire item is added to the stream &ldquo;pre-change&rdquo;</li>
+<li><strong>NEW_AND_OLD_IMAGES</strong> - Both the new and old versions of the items are added to the stream.</li>
+</ul>
+
+<p>Streams can be integrated with AWS Lambda, invoking a function whenever items are changed in a DynamoDB table (a DB trigger)</p>
+
+<p><img src="/images/AWS_Certified_Solutions_Architect/DynamoDB_Streams.jpg" alt="DynamoDB-Streams" /></p>
+
+<h3 id="dynamodb-indexes">DynamoDB Indexes</h3>
+
+<p>Indexes provide an alternative representation of data in a table, which is useful for application with varying query demands. Indexes come in two forms: Local Secondary Indexes (LSI) and Global Secondary Indexes (GSI). Indexes are intracted with as though they are table, but they are just an alternate representaiton of data in an existing table.</p>
+
+<p>Local secondary indexes must be <strong>created at the same time</strong> as creating a table. They use the same partition key but an altneative sort key. They share the RCU and WCU values for the main table. With using LSI efficient queries can be performed based on alternative sort key. You can create upto 5 LSI per table.</p>
+
+<p>Global secondary indexes can be created at any point after the table is created. They can use different partition and sort keys. <strong>They have their own RCU and WCU values</strong>. You can create upto 20 GSI per table.</p>
+
+<p>Indexes can have certain projected attributes.</p>
 
 <h3 id="in-memory-caching">In-Memory Caching</h3>
 
@@ -4783,19 +4882,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1590213412"></script>
-    <script src="/js/perfect-scrollbar.min.js?1590213412"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1590213412"></script>
-    <script src="/js/jquery.sticky.js?1590213412"></script>
-    <script src="/js/featherlight.min.js?1590213412"></script>
-    <script src="/js/highlight.pack.js?1590213412"></script>
+    <script src="/js/clipboard.min.js?1590340579"></script>
+    <script src="/js/perfect-scrollbar.min.js?1590340579"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1590340579"></script>
+    <script src="/js/jquery.sticky.js?1590340579"></script>
+    <script src="/js/featherlight.min.js?1590340579"></script>
+    <script src="/js/highlight.pack.js?1590340579"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1590213412"></script>
-    <script src="/js/learn.js?1590213412"></script>
-    <script src="/js/hugo-learn.js?1590213412"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1590340579"></script>
+    <script src="/js/learn.js?1590340579"></script>
+    <script src="/js/hugo-learn.js?1590340579"></script>
 
-    <link href="/mermaid/mermaid.css?1590213412" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1590213412"></script>
+    <link href="/mermaid/mermaid.css?1590340579" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1590340579"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
