@@ -256,8 +256,7 @@ apiVersion: apps/v1 kind: Deployment metadata: name: webserver labels: app: ngin
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/08-hybrid-scaling/</guid>
-      <description>Load Balancing and Auto Scalling Load balancing is a method used to distribute incoming connections across a group of servers or services. Incoming connections are made to the load balancer, which distributes them to associated services.
-Elastic Load Balancing (ELB)  ELB is a service that provides a set of highly available and scalable load balancers in one of three versions: Classic (CLB), Application (ALB) and Network (NLB). ELBs can be paired with Auto Scaling groups to enhance high availability and fault tolerance - automating scaling / elasticity.</description>
+      <description>Load Balancing and Auto Scalling  Elastic Load Balancing (ELB)  Launch Templates and Configurations Auto Scalling Groups  Scaling  VPN and Direct Connect  VPN VPC VPN Components Single Tunnel with Single Customer Gateway Full AWS Resilency with Two Tunnel Endpoint Full High Available VPN Connection Direct Connect (DX) VPN vs Direc Connect or Both VPN Direct Connect Both  Snowball and Snowmobile  Snowball Snowball Edge Snowmobile  Data and DB Migration  Storage Gateway Database Migration Service (DMS)  Identity Federation and SSO  Identity Federation (IDF) SAML 2.</description>
     </item>
     
     <item>
@@ -277,6 +276,15 @@ Elastic Load Balancing (ELB)  ELB is a service that provides a set of highly ava
       <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/08_kubernetes_volume_management/</guid>
       <description>Volumes Volume Types PersistentVolumeClaims Using a Shared hostPath Volume Type  Volumes As we know, containers running in Pods are ephemeral in nature. All data stored inside a container is deleted if the container crashes. However, the kubelet will restart it with a clean slate, which means that it will not have any of the old data.
 To overcome this problem, Kubernetes uses Volumes. A Volume is essentially a directory backed by a storage medium.</description>
+    </item>
+    
+    <item>
+      <title>09 - Application, Analytics, and Operations</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/09-applicationanalyticsoperations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/09-applicationanalyticsoperations/</guid>
+      <description>Application Integration Simple Notification Service (SNS)  SNS is a Publisher / Subscriber based fully managed Regional Service. It is a Public Service. SNS coordinates and manages the sending and delivery of messages. Messages sent to a topic are delivered to subscribers SNS is integrated with many AWS serviecs and can be used for certain event notifications (e.g. CloudFormation, Stack creation etc) Using SNS, CloudWatch can notifiy admins of important alerts SNS can be used for mobile push notifications  SNS Components Topic  An isolated configuration for SNS, including permissions Messages (&amp;lt;= 256 KB) are sent to a topic Subscribers to that topic receive messages  Subscribers  Endpoint that receive message for topic  HTTP(S) Email SQS (Message can be added to one or more queues) Mobile Push Notification Lambda Functions SMS   Publisher  An entity that publishes/sends message to queues  Application AWS services, including S3 (S3 events), CloudWatch, CloudFormation etc.</description>
     </item>
     
     <item>
