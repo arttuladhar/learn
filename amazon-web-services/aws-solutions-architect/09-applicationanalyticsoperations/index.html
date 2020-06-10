@@ -12,21 +12,21 @@
     <title>09 - Application, Analytics, and Operations :: </title>
 
     
-    <link href="/css/nucleus.css?1591026945" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1591026945" rel="stylesheet">
-    <link href="/css/hybrid.css?1591026945" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1591026945" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1591026945" rel="stylesheet">
-    <link href="/css/auto-complete.css?1591026945" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1591026945" rel="stylesheet">
-    <link href="/css/theme.css?1591026945" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1591026945" rel="stylesheet">
+    <link href="/css/nucleus.css?1591827162" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1591827162" rel="stylesheet">
+    <link href="/css/hybrid.css?1591827162" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1591827162" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1591827162" rel="stylesheet">
+    <link href="/css/auto-complete.css?1591827162" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1591827162" rel="stylesheet">
+    <link href="/css/theme.css?1591827162" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1591827162" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1591026945" rel="stylesheet">
+    <link href="/css/theme-blue.css?1591827162" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1591026945"></script>
+    <script src="/js/jquery-3.3.1.min.js?1591827162"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1591026945"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1591026945"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1591827162"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1591827162"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/learn.aayushtuladhar.com";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1591026945"></script>
+<script type="text/javascript" src="/js/search.js?1591827162"></script>
 
     
   </div>
@@ -2768,12 +2768,21 @@
 <ul>
 <li><a href="#athena">Athena</a></li>
 <li><a href="#elastic-mapreduce-emr">Elastic MapReduce (EMR)</a></li>
-<li><a href="#kinesis-and-firehose">Kinesis and Firehose</a></li>
+<li><a href="#kinesis-and-firehose">Kinesis and Firehose</a>
+<ul>
+<li><a href="#kinesis-stream">Kinesis Stream</a></li>
+<li><a href="#kinesis-shard">Kinesis Shard</a></li>
+<li><a href="#kinesis-data-record">Kinesis Data Record</a></li>
+<li><a href="#kinesis-firehose">Kinesis Firehose</a></li>
+</ul></li>
 <li><a href="#redshift">Redshift</a></li>
 </ul></li>
 <li><a href="#logging-and-monitoring">Logging and Monitoring</a>
 <ul>
-<li><a href="#cloudwatch">CloudWatch</a></li>
+<li><a href="#cloudwatch">CloudWatch</a>
+<ul>
+<li><a href="#cloudwatch-metrics-and-alarms">CloudWatch Metrics and Alarms</a></li>
+</ul></li>
 <li><a href="#cloudwatch-logs">CloudWatch Logs</a></li>
 <li><a href="#cloudtrail">CloudTrail</a></li>
 <li><a href="#vpc-flow-logs">VPC Flow Logs</a></li>
@@ -2785,8 +2794,14 @@
 </ul></li>
 <li><a href="#deployment">Deployment</a>
 <ul>
-<li><a href="#elastic-beanstalk">Elastic Beanstalk</a></li>
-<li><a href="#opsworks">OpsWorks</a></li>
+<li><a href="#elastic-beanstalk">Elastic Beanstalk</a>
+<ul>
+<li><a href="#deployment-options">Deployment Options</a></li>
+</ul></li>
+<li><a href="#opsworks">OpsWorks</a>
+<ul>
+<li><a href="#opsworks-components">OpsWorks Components</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -2814,6 +2829,59 @@
 
 
 
+
+<ul>
+<li><a href="#application-integration">Application Integration</a>
+
+<ul>
+<li><a href="#simple-notification-service-sns">Simple Notification Service (SNS)</a></li>
+<li><a href="#sns-components">SNS Components</a>
+
+<ul>
+<li><a href="#topic">Topic</a></li>
+<li><a href="#subscribers">Subscribers</a></li>
+<li><a href="#publisher">Publisher</a></li>
+</ul></li>
+<li><a href="#simple-queue-service-sqs">Simple Queue Service (SQS)</a></li>
+<li><a href="#polling-types">Polling Types</a></li>
+<li><a href="#elastic-transcoder">Elastic Transcoder</a></li>
+</ul></li>
+<li><a href="#analytics">Analytics</a>
+
+<ul>
+<li><a href="#athena">Athena</a></li>
+<li><a href="#elastic-mapreduce-emr">Elastic MapReduce (EMR)</a></li>
+<li><a href="#kinesis-and-firehose">Kinesis and Firehose</a></li>
+<li><a href="#kinesis-stream">Kinesis Stream</a></li>
+<li><a href="#kinesis-shard">Kinesis Shard</a></li>
+<li><a href="#kinesis-data-record">Kinesis Data Record</a></li>
+<li><a href="#kinesis-firehose">Kinesis Firehose</a></li>
+<li><a href="#redshift">Redshift</a></li>
+</ul></li>
+<li><a href="#logging-and-monitoring">Logging and Monitoring</a>
+
+<ul>
+<li><a href="#cloudwatch">CloudWatch</a></li>
+<li><a href="#cloudwatch-metrics-and-alarms">CloudWatch Metrics and Alarms</a></li>
+<li><a href="#cloudwatch-logs">CloudWatch Logs</a></li>
+<li><a href="#cloudtrail">CloudTrail</a></li>
+<li><a href="#vpc-flow-logs">VPC Flow Logs</a></li>
+</ul></li>
+<li><a href="#operations">Operations</a>
+
+<ul>
+<li><a href="#cloudwatch-events">CloudWatch Events</a></li>
+<li><a href="#kms">KMS</a></li>
+</ul></li>
+<li><a href="#deployment">Deployment</a>
+
+<ul>
+<li><a href="#elastic-beanstalk">Elastic Beanstalk</a></li>
+<li><a href="#deployment-options">Deployment Options</a></li>
+<li><a href="#opsworks">OpsWorks</a></li>
+<li><a href="#opsworks-components">OpsWorks Components</a></li>
+</ul></li>
+</ul>
 
 <h2 id="application-integration">Application Integration</h2>
 
@@ -2899,13 +2967,21 @@
 
 <li><p>FIFO queues ensure first-in,first-out delivery. Messages are delivered once only - duplicates do not occur. The throughput is limited to ~ 3,000 messages per second with batching or ~300 without by default.</p>
 
-<pre><code>aws sqs get-queue-attributes --queue-url https://URL --attribute-names All
+<pre><code>## Get Queue Attributes
+aws sqs get-queue-attributes --queue-url https://URL --attribute-names All
+
+## Send Message
 aws sqs send-message --queue-url https://URL --message-body &quot;INSERTMESSAGE&quot;
+
+## Receive Message
 aws sqs receive-message --queue-url https://URL
+
+## Delete Message
 aws sqs delete-message --queue-url https://URL --receipt-handle &quot;INSERTHANDLE&quot;
+
+## Receive Message (Long Poll)
 aws sqs receive-message --wait-time-seconds 10 --max-number-of-messages 10 --queue-url https://URL
 aws sqs --region us-east-1 receive-message --wait-time-seconds 10 --max-number-of-messages 10 --queue-url https://URL
-aws sqs delete-message --queue-url https://URL --receipt-handle &quot;INSERTHANDLE&quot;
 </code></pre></li>
 </ul>
 
@@ -2940,29 +3016,252 @@ aws sqs delete-message --queue-url https://URL --receipt-handle &quot;INSERTHAND
 
 <h3 id="kinesis-and-firehose">Kinesis and Firehose</h3>
 
+<p>Kinesis is a scalable and resilent streaming service from AWS. It is designed to ingest large amounts of data from hundreds, thousands, or even millions of producers. Consumers can access a rolling window of that data, or it can be stored in persistent storage of database products.</p>
+
+<p><img src="/images/AWS_Certified_Solutions_Architect/Kinesis.jpg" alt="Kinesis" /></p>
+
+<h4 id="kinesis-stream">Kinesis Stream</h4>
+
+<p>A Kinesis stream can be used to collect, process, and analyze a large amount of incoming data. A stream is a public service accessible from inside VPCs or from the public internet by an unlimited number of producers.</p>
+
+<p>Kinesis streams include storage for all incoming data within a 24 hour default window, which can be increased to seven days for an additional charge. Data records are added by producers and read by consumers.</p>
+
+<h4 id="kinesis-shard">Kinesis Shard</h4>
+
+<p>Kinesis shards are added to streams to allow them to scale. A stream starts with at least one shard, which allows 1 MB of ingestion and 2MB of consumption. Shards can be added or removed from streams.</p>
+
+<h4 id="kinesis-data-record">Kinesis Data Record</h4>
+
+<p>The basis entity written to and read from Kinesis stream, a data record can be upto 1 MB in size.</p>
+
+
+<div class="notices info" ><p>You would use Kinesis rather than SQS when you need many producers and many consumers as well as a rolling window of data. SQS is a queue. Kinesis allows lots of independent consumers reading the same data window.</p>
+</div>
+
+
+<p>SQS is designed as a Queing Solution to decouple systems whereas Kinesis is designed as more of Publish Subscribe model where message from a producer is consumed by multiple consumers.</p>
+
+<h4 id="kinesis-firehose">Kinesis Firehose</h4>
+
+<p>Amazon Kinesis Data Firehose is the easiest way to reliably load streaming data into data lakes, data stores and analytics tools. It can capture, transform, and load streaming data into Amazon S3, Amazon Redshift, Amazon Elasticsearch Service, and Splunk, enabling near real-time analytics with existing business intelligence tools and dashboards you’re already using today.</p>
+
 <h3 id="redshift">Redshift</h3>
+
+<p>Redshift is a petabyte-scale data warehousing solution. It&rsquo;s a <strong>column-based database</strong> designed for analytical workloads. Generally, a relational store like RDS would be used for OLTP workloads (e.g queries, inserts, updates, and deletes), and Redshift would be used for OLAP (e.g. retrieval and analytics). Multiple databases become source data to be injected into a data warehouse solutions such as Redshift.</p>
+
+<p><img src="/images/AWS_Certified_Solutions_Architect/RedShift.jpg" alt="RedShift" /></p>
+
+<p>Data can be loaded from S3 and unloaded to S3. Additionally, backups can be performed to S3, and various AWS services such as Kinesis can inject data into Redshift.</p>
 
 <h2 id="logging-and-monitoring">Logging and Monitoring</h2>
 
 <h3 id="cloudwatch">CloudWatch</h3>
 
+<p><img src="/images/AWS_Certified_Solutions_Architect/Cloud_Watch.jpg" alt="Cloud Watch" /></p>
+
+<p>CloudWatch is a service that provides near real-time monitoring of AWS products. In essence, it&rsquo;s a metrics repository. You can import customer metric data in real-time from some AWS services and on-premises platforms.</p>
+
+<p>Data retention is based on granuality:
+* One-hour metrics are retained for 455 days
+* Five-minute metrics for 63 days
+* One-minute metrics for 15 days</p>
+
+<p>Metrics can be configured with <strong>Alarms</strong> that can take actions, and data can be presented as a dashboard.</p>
+
+<h4 id="cloudwatch-metrics-and-alarms">CloudWatch Metrics and Alarms</h4>
+
+<p>A CloudWatch metric is a set of data points over time. An example is CPU utilization of an EC2 instance. Alarm can be created on metrics, thaking an action if the alarm is triggered.</p>
+
+<p>Alarms have a number of key components:
+* Metric - The data point over time being measured
+* Threshold - Threshold value to trigger an alarm
+* Period - Time duration for the metric to beyond the Threshold
+* Action - What to do when an alarm is triggered.</p>
+
+
+<div class="notices info" ><p>You can configure Dynamic Alarm so that it can also use Anomalyn detection and trigger an Alarm</p>
+</div>
+
+
 <h3 id="cloudwatch-logs">CloudWatch Logs</h3>
+
+<p>CloudWatch Logs provides functionality to store, monitor, and access logs from EC2, on-premises servers, Lambda, CloudTrail, Route 53, VPC Flow Logs, customer applications, and much more. Metric filters can be used to analyze logs and create metrics.</p>
+
+<p><img src="/images/AWS_Certified_Solutions_Architect/Cloud_Watch_Logs.jpg" alt="Cloud Watch Logs" /></p>
+
+<ul>
+<li>Log Groups - Container for Log Streams.</li>
+<li>Log Streams - A Log Stream is a sequence of log events within the same source.</li>
+<li>Log Events - A Log Event is a timestamp and a raw message.</li>
+</ul>
+
+
+<div class="notices tip" ><p>You can set expiration date for the Log Groups</p>
+</div>
+
+
+
+<div class="notices tip" ><p>Cloud Watch Log Metric Filer is creaetd on a Log Group with a pattern match and Alarm can also be created</p>
+</div>
+
 
 <h3 id="cloudtrail">CloudTrail</h3>
 
+<p>CloudTrail is a governance, compliance, risk management and auditing service that records account activity within an AWS account. Any actions taken by users, roles, or AWS services are recorded to the service. Activity is recorded as a CloudTrail event, and by default you can <strong>view 90 days via event history</strong>. Trails can be created, giving more control over logging and allowing events to be stored in S3 and CloudWatch Logs.</p>
+
+<p>Events can be management events that log control plane events (e.g, user login, configuring security, and adjusting security groups) or data events (eg, Object-level events in S3 or funciton-level events in Lambda).</p>
+
+<p>Cloud Trail service is not real-time and it is delivered in batches.</p>
+
 <h3 id="vpc-flow-logs">VPC Flow Logs</h3>
+
+<p>VPC Flow Logs allows you to capture metadaa about the traffic flowing in and ou of networking inerfaces within a VPC. Flow logs can be placed on a specific <strong>network interface</strong>, a <strong>subnet</strong> or an <strong>entire VPC</strong> and will capture metadata from the capture point and anything within it. Flow logs aren&rsquo;t real-time and don&rsquo;t capture the actutal traffic - only metadata on the traffic.</p>
+
+<p><img src="/images/AWS_Certified_Solutions_Architect/VPC-Flow-Logs.jpg" alt="VPC Flow Logs" /></p>
+
+<p>VPC Flow Logs is not real ttime and it only capttures only certain metadata information. Flow Logs don&rsquo;t capture all traffic logs.</p>
 
 <h2 id="operations">Operations</h2>
 
 <h3 id="cloudwatch-events">CloudWatch Events</h3>
 
+<p>CloudWatch Eventts has a near real-time visibility of changes that happen within an AWS account. Using rules, you can match against certain events within an account and delivery those events to a number of supported targets.</p>
+
+<p>Within rules, many AWS services are natively supported as event sources and delivery the events directly. For others, CloudWatch allows event pattern matching against CloudTrail events. Additional rules support scheduled events as sources, allowing cron-style function for
+periodically passing events to targets.</p>
+
+<p>Some examples of event targets include:
+* EC2 instances
+* Lambda functions
+* Step Functions state machines
+* SNS topics
+* SQS Queues</p>
+
+
+<div class="notices tip" ><p>You can use CloudWatch Events (CRON Style Rule) to stop EC2 Functions.</p>
+</div>
+
+
 <h3 id="kms">KMS</h3>
+
+<p>AWS Key Management Service (KMS) provides regional, secure key management and encryption and decryption services. KMS is <strong>FIPS 140-2 level 2</strong> validated and certain aspects support level 3. Everything in KMS is regional, KMS can use CloudHSM via Custom Key Stores.</p>
+
+<p>KMS manages customer master keys (<strong>CMK</strong>), which are created in a region and never leave the region or KMS. They can encrypt or decrypt data upto 4KM. CMK&rsquo;s have key policies and can be used to create other keys. There are three types of CMK</p>
+
+<ul>
+<li><p><strong>AWS Managed CMK</strong>: Used by default if you pick encryption within most AWS services and formatted as aws/service-name. Only the service they belong to can use them directly.</p></li>
+
+<li><p><strong>Customer Managed CMK</strong>: Certain services allow you to pick a CMK you manage. Customer managed CMKs allow key rotation configuration, and they can be controlled via key policies and enabled/disabled.</p></li>
+
+<li><p><strong>AWS Owned CMK</strong>: Keys used by AWS on a shared basis across many accounts - you normally don&rsquo;t see these.</p></li>
+
+<li><p>KMS can encrypt upto 4KB with a CMK - you supply the data and specify the key to use.</p></li>
+
+<li><p>It can decrypt data up to 4KB - you provide the ciphertext, and it returns the plaintext</p></li>
+
+<li><p>You can also <strong>re-encrypt</strong> up to 4KB - you supply the ciphertext, the new key to use, and you are returned new ciphertext.</p>
+
+<pre><code># Create Customer Managed Key
+aws kms create-key --description &quot;LA KMS DEMO CMK&quot;
+
+# Create Alias for KeyID
+aws kms create-alias --target-key-id XXX --alias-name &quot;alias/lakmsdemo&quot; --region us-east-1
+
+# Encrypt a file with CMK
+echo &quot;this is a secret message&quot; &gt; topsecret.txt
+aws kms encrypt --key-id KEYID --plaintext file://topsecret.txt --output text --query CiphertextBlob 
+aws kms encrypt --key-id KEYID --plaintext file://topsecret.txt --output text --query CiphertextBlob | base64 --decode &gt; topsecret.encrypted
+
+# Decrypt a Cipher Text
+aws kms decrypt --ciphertext-blob fileb://topsecret.encrypted --output text --query Plaintext | base64 --decode 
+
+aws kms generate-data-key --key-id KEYID --key-spec AES_256 --region us-east-1
+</code></pre></li>
+</ul>
+
+<p>KMS can generate a data encryption key (DEK) using a CMK. You or a service can use a DEK to encrypt or decrypt data of any size. KMS supplies a plaintext version and an encrypted version</p>
+
+<pre><code># Generate Data Key
+aws kms generate-data-key --key-id KEYID --key-spec AES_256
+</code></pre>
 
 <h2 id="deployment">Deployment</h2>
 
 <h3 id="elastic-beanstalk">Elastic Beanstalk</h3>
 
+<p>Elastic Beanstalk (EB) is a Platform as a Service product. It allows you to deploy code and, with very little effort or modification, the service will provision the infrastructure on your behalf.</p>
+
+<p>Elastic Beanstalk handles provisioning, monitoring, Auto Scalling, load balancing, and software updating for you - you just worry about the cost.</p>
+
+<p><img src="/images/AWS_Certified_Solutions_Architect/ElasticBeanstalk-HighLevel.jpg" alt="Elastic Beanstalk (High Level)" /></p>
+
+<p><img src="/images/AWS_Certified_Solutions_Architect/Elastic-Beanstalk-Detailed.jpg" alt="Elastic Beanstalk (Detailed)" /></p>
+
+
+<div class="notices tip" ><p>If you need to provision an environment for an application with little admin overhead and if you use one of the supported languages and can see EB-specific config.</p>
+</div>
+
+
+
+<div class="notices warning" ><p>Donot use Elastic Beanstalk if you want low-level infrastructure control.</p>
+</div>
+
+
+<h4 id="deployment-options">Deployment Options</h4>
+
+<ul>
+<li>All at Once - An updated application version is deployed to all instances. Quick and simple but not recommended for production deployments.</li>
+<li>Rolling Deployment - Splits instances into batches and deploys one batch at a time</li>
+<li>Rolling with Additional Batch - Similar to Rolling Deployment, but provisions a new batch, deploying and testing before removing the old batch</li>
+<li>Blue/Green - Maintains two environments, deploy, and swap CNAME.</li>
+</ul>
+
 <h3 id="opsworks">OpsWorks</h3>
+
+<ul>
+<li>OpsWork is an implementation of the Chef configuration management and deployment platform.</li>
+<li>OpsWorks move away from the low-level configurability of CloudFormation but not as far as Elastic Beanstalk</li>
+<li>OpsWork lets you create a stack of resources with layers and manage resources as a unit.</li>
+</ul>
+
+<h4 id="opsworks-components">OpsWorks Components</h4>
+
+<ul>
+<li>Stacks
+
+<ul>
+<li>A unit of managed infrastructure</li>
+<li>Can use stacks per application or per platform</li>
+<li>Could use stacks for development, staging, or production environments</li>
+</ul></li>
+<li>Layers
+
+<ul>
+<li>Comparable to application tiers within a stack</li>
+<li>e.g, Database Layer, Application Layer, Proxy Layer</li>
+<li>Receipes are generally associated with layers and configuration what to install on instances in that layer</li>
+</ul></li>
+<li>Instances
+
+<ul>
+<li>Instances are EC2 instances associated with a layer</li>
+<li>Configured as <sup>24</sup>&frasl;<sub>7</sub>, load based, or time based</li>
+</ul></li>
+<li>Apps
+
+<ul>
+<li>Apps are deployed to layers from a source code repo or S3</li>
+<li>Actual deployment happens using receipes on layers</li>
+</ul></li>
+<li>Recipes
+
+<ul>
+<li>Setup - Executed on an instance when first provisioned</li>
+<li>Configure - Executed on all instances when instances are added or removed</li>
+<li>Deploy and UnDeploy - Executed when apps are added or removed</li>
+<li>Shutdown - Executed when an instance is shut down but before it&rsquo;s stoppepd</li>
+</ul></li>
+</ul>
 
 
 <footer class="footline">
@@ -4798,19 +5097,19 @@ aws sqs delete-message --queue-url https://URL --receipt-handle &quot;INSERTHAND
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1591026945"></script>
-    <script src="/js/perfect-scrollbar.min.js?1591026945"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1591026945"></script>
-    <script src="/js/jquery.sticky.js?1591026945"></script>
-    <script src="/js/featherlight.min.js?1591026945"></script>
-    <script src="/js/highlight.pack.js?1591026945"></script>
+    <script src="/js/clipboard.min.js?1591827162"></script>
+    <script src="/js/perfect-scrollbar.min.js?1591827162"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1591827162"></script>
+    <script src="/js/jquery.sticky.js?1591827162"></script>
+    <script src="/js/featherlight.min.js?1591827162"></script>
+    <script src="/js/highlight.pack.js?1591827162"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1591026945"></script>
-    <script src="/js/learn.js?1591026945"></script>
-    <script src="/js/hugo-learn.js?1591026945"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1591827162"></script>
+    <script src="/js/learn.js?1591827162"></script>
+    <script src="/js/hugo-learn.js?1591827162"></script>
 
-    <link href="/mermaid/mermaid.css?1591026945" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1591026945"></script>
+    <link href="/mermaid/mermaid.css?1591827162" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1591827162"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
