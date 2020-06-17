@@ -12,21 +12,21 @@
     <title>05 - Networking :: </title>
 
     
-    <link href="/css/nucleus.css?1591827162" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1591827162" rel="stylesheet">
-    <link href="/css/hybrid.css?1591827162" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1591827162" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1591827162" rel="stylesheet">
-    <link href="/css/auto-complete.css?1591827162" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1591827162" rel="stylesheet">
-    <link href="/css/theme.css?1591827162" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1591827162" rel="stylesheet">
+    <link href="/css/nucleus.css?1592367420" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1592367420" rel="stylesheet">
+    <link href="/css/hybrid.css?1592367420" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1592367420" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1592367420" rel="stylesheet">
+    <link href="/css/auto-complete.css?1592367420" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1592367420" rel="stylesheet">
+    <link href="/css/theme.css?1592367420" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1592367420" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1591827162" rel="stylesheet">
+    <link href="/css/theme-blue.css?1592367420" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1591827162"></script>
+    <script src="/js/jquery-3.3.1.min.js?1592367420"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1591827162"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1591827162"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1592367420"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1592367420"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/learn.aayushtuladhar.com";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1591827162"></script>
+<script type="text/javascript" src="/js/search.js?1592367420"></script>
 
     
   </div>
@@ -2827,7 +2827,7 @@
 <li><a href="#routes">Routes</a></li>
 <li><a href="#bastion-hosts-jump-boxes">Bastion Hosts (Jump Boxes)</a></li>
 </ul></li>
-<li><a href="#ul-limultifactor-authentication-id-federation-andor-ip-blocksli-ul">* Multifactor authentication, ID federation and/or IP blocks.</a>
+<li><a href="#ullimultifactor-authentication-id-federation-andor-ip-blocksliul">* Multifactor authentication, ID federation and/or IP blocks.</a>
 
 <ul>
 <li><a href="#nat-gateway">NAT Gateway</a></li>
@@ -3107,14 +3107,17 @@
 <li>To access resources restricted to specific VPCs or endpoints (private S3 bucket)</li>
 </ul>
 
-<p>Limitations and Considerations:
-* Gateway endpoints are used via route table entries - they are gateway devices. Prefix lists for a service are used in the destintation field with the gateway as the target.
-* Gateway endpoints can be restricted via policies
-* Gateway endpoints are HA across AZs in a region
-* Interface endpoints are interfaces in a specific subnet. For HA, you need to add multiple interfaces - one per AZ
-* Interface endpoints are controlled via SGs on that interface. NACLs also impact traffic.
-* Interface endpoints add or replace the DNS for the service - no route table updates are required.
-* Code changes to use the endpoint DNS, or enable private DNS to override the default service DNS.</p>
+<p>Limitations and Considerations:</p>
+
+<ul>
+<li>Gateway endpoints are used via route table entries - they are gateway devices. Prefix lists for a service are used in the destintation field with the gateway as the target.</li>
+<li>Gateway endpoints can be restricted via policies</li>
+<li>Gateway endpoints are HA across AZs in a region</li>
+<li>Interface endpoints are interfaces in a specific subnet. For HA, you need to add multiple interfaces - one per AZ</li>
+<li>Interface endpoints are controlled via SGs on that interface. NACLs also impact traffic.</li>
+<li>Interface endpoints add or replace the DNS for the service - no route table updates are required.</li>
+<li>Code changes to use the endpoint DNS, or enable private DNS to override the default service DNS.</li>
+</ul>
 
 <p>Egress-only internet gateways provide IPv6 instances with outgoing access to the public internet using IPv6 but prevent the instances from being accessed from the internet.</p>
 
@@ -5011,19 +5014,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1591827162"></script>
-    <script src="/js/perfect-scrollbar.min.js?1591827162"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1591827162"></script>
-    <script src="/js/jquery.sticky.js?1591827162"></script>
-    <script src="/js/featherlight.min.js?1591827162"></script>
-    <script src="/js/highlight.pack.js?1591827162"></script>
+    <script src="/js/clipboard.min.js?1592367420"></script>
+    <script src="/js/perfect-scrollbar.min.js?1592367420"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1592367420"></script>
+    <script src="/js/jquery.sticky.js?1592367420"></script>
+    <script src="/js/featherlight.min.js?1592367420"></script>
+    <script src="/js/highlight.pack.js?1592367420"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1591827162"></script>
-    <script src="/js/learn.js?1591827162"></script>
-    <script src="/js/hugo-learn.js?1591827162"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1592367420"></script>
+    <script src="/js/learn.js?1592367420"></script>
+    <script src="/js/hugo-learn.js?1592367420"></script>
 
-    <link href="/mermaid/mermaid.css?1591827162" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1591827162"></script>
+    <link href="/mermaid/mermaid.css?1592367420" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1592367420"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

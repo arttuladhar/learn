@@ -148,7 +148,7 @@ Command Line Interface (CLI) tools and scripts kubectl is the Kubernetes Command
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/</guid>
-      <description>Elastic Cloud Compute (EC2) Elastic Block Storage (EBS)  Exam Facts  EBS Snapshots Security Groups Instance Metadata AMI Bootstrap Private Instance and Public Instance Advanced Topics  EC2 Instance Roles EBS Volume and Snapshot Encryption EBS Optimized, Enhanced Networking, and Placement Group EBS optimization Enhanced networking  Cluster, partition, and spread placement groups  EC2 Billing Models - Spot Instances EC2 Billing Models - Reserved Instances Dedicated Hosts   Elastic Cloud Compute (EC2) EC2 is one of the most widely used services within AWS.</description>
+      <description>Elastic Cloud Compute (EC2) Elastic Block Storage (EBS)  Exam Facts General Purpose (gp2): (SSD) Provisioned IOPS SSD (io1): (SSD) Throughput Optimized(st1): (HHD) Cold HDD (sc1): HDD  EBS Snapshots Security Groups Instance Metadata AMI Bootstrap Private Instance and Public Instance Advanced Topics  EC2 Instance Roles EBS Volume and Snapshot Encryption EBS Optimized, Enhanced Networking, and Placement Group EBS optimization Enhanced networking  Cluster, partition, and spread placement groups  EC2 Billing Models - Spot Instances EC2 Billing Models - Reserved Instances Dedicated Hosts   Elastic Cloud Compute (EC2) EC2 is one of the most widely used services within AWS.</description>
     </item>
     
     <item>
