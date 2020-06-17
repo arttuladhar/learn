@@ -12,7 +12,7 @@ title: 05 - Networking
   - [VPC Routing](#vpc-routing)
   - [Routes](#routes)
   - [Bastion Hosts (Jump Boxes)](#bastion-hosts-jump-boxes)
-- [* Multifactor authentication, ID federation and/or IP blocks.](#ul-limultifactor-authentication-id-federation-andor-ip-blocksli-ul)
+- [* Multifactor authentication, ID federation and/or IP blocks.](#ullimultifactor-authentication-id-federation-andor-ip-blocksliul)
   - [NAT Gateway](#nat-gateway)
   - [Network ACLs](#network-acls)
   - [VPC Peering](#vpc-peering)
@@ -221,6 +221,7 @@ VPC Endpoints are gateway objects created within a VPC. They can be used to conn
 * To access resources restricted to specific VPCs or endpoints (private S3 bucket)
 
 Limitations and Considerations:
+
 * Gateway endpoints are used via route table entries - they are gateway devices. Prefix lists for a service are used in the destintation field with the gateway as the target.
 * Gateway endpoints can be restricted via policies
 * Gateway endpoints are HA across AZs in a region

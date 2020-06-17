@@ -5,6 +5,10 @@ title: 04 (A) - Compute Services - Server Based
 - [Elastic Cloud Compute (EC2)](#elastic-cloud-compute-ec2)
 - [Elastic Block Storage (EBS)](#elastic-block-storage-ebs)
     - [Exam Facts](#exam-facts)
+    - [General Purpose (gp2): (SSD)](#general-purpose-gp2-ssd)
+    - [Provisioned IOPS SSD (io1): (SSD)](#provisioned-iops-ssd-io1-ssd)
+    - [Throughput Optimized(st1): (HHD)](#throughput-optimizedst1-hhd)
+    - [Cold HDD (sc1): HDD](#cold-hdd-sc1-hdd)
 - [EBS Snapshots](#ebs-snapshots)
 - [Security Groups](#security-groups)
 - [Instance Metadata](#instance-metadata)
@@ -69,26 +73,25 @@ To protect against AZ failure, EBS snapshots (to S3) can be used. Data is replic
 
 * EBS supports a maximum per-instance throughput of 1750 MiB/s and 80,000 IOPS.
 
-**General Purpose (gp2): (SSD)**
-
+#### General Purpose (gp2): (SSD)
 * Default for most workloads
 * 3 IOPS/GB  (100 IOPS - 16,000 IOPS)
 * Burst up to 3,000 IOPS (credit based)
 * Volume Size of 1 GiB - 16 TB size, max throughput p/vol of 250 MB/s
 
-**Provisioned IOPS SSD (io1): (SSD)**
+#### Provisioned IOPS SSD (io1): (SSD)
 * Used for application that require sustained IOPS performance
 * Large database workloads 
 * Volume size of 4 GB - 16TB, max throughput of 1000 MB/s
 
-**Throughput Optimized(st1): (HHD)**
+#### Throughput Optimized(st1): (HHD)
 * Low storage cost
 * Used for frequently accessed, throughput-intensive workloads (streaming, bigdata)
 * Cannot be a boot volume
 * Volume size of 500GB - 16TB
 * Max throughput - 500MB/s and IOPS 500
 
-**Cold HDD (sc1): HDD**
+#### Cold HDD (sc1): HDD
 * Lowest cost
 * Infrequent accessed data
 * Cannot bee a boot volume
