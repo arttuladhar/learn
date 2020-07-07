@@ -32,6 +32,15 @@ Feature of Terraform Infrastructue as Code  Idempotent Uses High Level Language 
     </item>
     
     <item>
+      <title>01 - AWS Compute Services</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/01-compute/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/01-compute/</guid>
+      <description>Elastic Cloud Compute (EC2)  EC2 is a Cloud Computing Service. It is responsible for providing long-running compute as service. Configures your EC2 by choosing your OS, Storage, Memory, Network Throughput EC2 comes in variety Instance types of specialization for different roles [EC2 Families]  General Purpose - Balance of Compute, Memory and Networking resources Compute Optimized - Ideal for compute based application that benefit from high performance processor Memory Optimized - Ideal for fast performance workloads processing large data sets in memory Storage Optimized - Ideal for high sequential, read and write access to very large dataset on local storage Accelerated Optimized - Hardware accelerators, or, co-processors  Instance sizes include Nano, Small, Medium, Large, X.</description>
+    </item>
+    
+    <item>
       <title>01 - Architecture 101</title>
       <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/01-architecture-101/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -113,6 +122,24 @@ Using Terraform Modules # Download the image module &amp;quot;image&amp;quot; { 
     </item>
     
     <item>
+      <title>02 - VPC Networking</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/02-networking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/02-networking/</guid>
+      <description>Virtual Private Cloud (VPC)  A private network within AWS. It lets you provision a logically isolated section of AWS cloud where you can launch AWS resources in a virtual network you define. Can be configured to be public/private or a mixture Regional Service (can’t span regions), highly available, and can be connected to your data center and corporate networks Isolated from other VPCs by default VPC and subnet: Max /16 (65,536 IPs) and minimum /28 (16 IPs) VPC subnet cannot span AZs (1:1 Mapping) Certain IPs are reserved in subnets By default you can create up to 5 VPC per region Default VPC  Required for some AWS services Pre-configured with all required network / security configurations A /20 Public subnet in each AZ, allocating a public P by default Attached internet gateway with a &amp;ldquo;main&amp;rdquo; route table sending all IPv4 traffic to the internet gateway using a 0.</description>
+    </item>
+    
+    <item>
+      <title>03 - AWS Storage</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/03-storage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/03-storage/</guid>
+      <description>Amazon S3  Simple Storage Service (S3) is object based Storage Service. Stores unlimited amount of data without worrying about underlying infrastructure S3 replicates data across at least 3 AZ&amp;rsquo;s to ensure 99.99% Availability and 99.99% (11 9&amp;rsquo;s Durability) Objects can be from 0 Bytes up to 5 TB (Multipart Upload). Single PUT upload support up to 5 GB For filesize greater than 100 MB, Multipart Uploads are recommended S3 Transfer Acceleration enables fast, easy, and secure transfers of files over long distances between your client and an S3 bucket.</description>
+    </item>
+    
+    <item>
       <title>03 - Configuration</title>
       <link>http://learn.aayushtuladhar.com/kubernetes/ckad/03_configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -184,6 +211,24 @@ apiVersion: v1 kind: Pod metadata: name: multi-container-pod spec: containers: -
     </item>
     
     <item>
+      <title>04 - Network and Content Delivery</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/04-network-content-delivery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/04-network-content-delivery/</guid>
+      <description>Amazon CloudFront  CloudFront is a CDN (Content Delivery Network). It makes website load faster by serving cached content Benefits of using CloudFront includes  Lower Latency Higher Transfer Speed Reduced load on Content Server  Origin is the address of where the original copies of your files reside eg. S3, EC2, ELB Distribution defines a collection of Edge locations and behaviors on how it should handle your cached content Distribution has 2 types: Web Distribution (static website content) and RTMP (streaming media) Edge Locations are local infrastructure that hosts cache of data Origin Identity Access (OAI) is used to access private S3 buckets, restricting S3 bucket access only via Cloud Front Access to cached content can by protected via Signed Urls or Signed Cookies Lambda@Edge allows you to pass each request through a Lambda to change the behavior of the response  Amazon Route 53  Route53 is a DNS provider, register and manage domains, create record sets and health check of resources Simple Routing (Default) - A simple routing policy is a single record within a hosted zone that contains one or more values.</description>
+    </item>
+    
+    <item>
+      <title>05 - AWS Database Services</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/05-database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/05-database/</guid>
+      <description>Amazon RDS (Relational Database Service)  RDS is a Database as a Service (DBaaS) product. It can be used to provision a fully functional database without the admin overhead traditionally associated with DB platforms RDS supports a number of database engines - MySQL, MariaDB, PostgreSQL, Oracle, Microsoft SQL Server, Aurora RDS can be deployed in single AZ or Multi-AZ mode (for resilience) and supports General purpose and Memory Optimized instances RDS instances are managed by AWS, you cannot SSH into the VM instances Primary use case for RDS are Relational, Transactional databases.</description>
+    </item>
+    
+    <item>
       <title>05 - Authentication, Authorization, and Admission Control</title>
       <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/05_authorization_access_control/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -210,6 +255,15 @@ apiVersion: v1 kind: Pod metadata: name: multi-container-pod spec: containers: -
       <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/05_observability/</guid>
       <description>Liveness and Readiness Probes  Liveness probe Readiness Probe  Container Logging Installing Metrics Server Monitoring Applications  Liveness and Readiness Probes Probes - Allow you to customize how Kubernetes determines the status of your containers
 Liveness probe Indicates whether the container is running properly, and governs whether the cluster will automatically stop or restart the container. Liveness probes can be created by including them in the container spec.</description>
+    </item>
+    
+    <item>
+      <title>06 - Analytics</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/06-analytics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/06-analytics/</guid>
+      <description>Amazon Athena  Amazon Athena is an interactive query service that utilizes Schema-On-Read, allowing you to run ad-hoc SQL like queries on data from a range of sources Athena is used to query large dataset (structured, semi-structured, and unstructured) stored in S3 with infrequent access pattern You are charged for compute time only. You don’t need to maintain separate dataset for Athena, it can directly access S3 bucket  Amazon EMR  EMR is tool for large-scale parallel processing of big data and other large data workloads It is based on the Apache Hadoop framework and is delivered as a managed cluster using EC2 instances It is used for huge-scale log analysis, indexing, machine learning, financial analysis, simulations, bio-informatics and many other large-scale applications EMR cluster have zero or more core nodes, which are managed by the master node.</description>
     </item>
     
     <item>
@@ -241,6 +295,15 @@ We can attach labels to objects by listing them in the metadata.labels section o
     </item>
     
     <item>
+      <title>07 - Application Integration</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/07-application-integration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/07-application-integration/</guid>
+      <description>Amazon Simple Notification Service (SNS)  SNS is a fully managed pub/sub messaging service Topics are logical access point and communication channel within SNS Topics can be encrypted via KMS Subscribers are endpoints that receive message for topic. When a topic received a message it automatically and immediately pushes messages to subscribers SNS supports notification over multiple protocols:  HTTP/HTTPS - Subscribers specify a URL as part of the subscription registration Email/Email Json - Messages are sent to registered address as email SQS - User can specify an SQS standard queue as the endpoint SMS - Messages are sent to registered phone number as SMS text messages   Amazon Simple Queue Service (SQS)  SQS provides fully managed, highly available message queuing service for inter-process /service /service messaging SQS is used for application integration, it lets decouple different systems SQS supports both Standard and FIFO Queues Standard queues are distributed and scalable to nearly unlimited message volume.</description>
+    </item>
+    
+    <item>
       <title>07 - Deploying Standalone App</title>
       <link>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/07_deploying_standalone_app/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -266,6 +329,15 @@ apiVersion: apps/v1 kind: Deployment metadata: name: webserver labels: app: ngin
       
       <guid>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06-storage_and_content_delivery/</guid>
       <description>S3 Architecture and Features  Permissions Transferring Data to S3 Single PUT Upload (Default) Multi Part Upload Encryption Static Websites and CORS Object Versioning Presigned URL  S3 Performance and Resilience  Storage Tiers / Classes Standard Standard Infrequent Access (Standard - IA) One Zone - IA Glacier Glacier Deep Archive Intellgent Tiering Lifecycle Rules S3 Cross Region Replication  Cloud Front  CloudFront Components Origin Access Identity (OAI)  Network File System  Amazon EFS Throughput modes Performance Mode   S3 Architecture and Features Permissions Bucket authorization within S3 is controlled using Identity Policies on AWS identities, as well as Bucket policies in the form of resource policies on the bucket and bucket or object ACLs.</description>
+    </item>
+    
+    <item>
+      <title>08 - Hybrid and Scaling</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/08-hybrid-scaling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/08-hybrid-scaling/</guid>
+      <description> Snowball and Snowball Edge  Snowball and Snowball Edge is a rugged container which contains a storage device It is used to move large amount of data quickly in and out of AWS. You can both export or import data using Snowball or Snowmobile Snowball and Snowball Edge is peta-scale migration; Snowmobile is for exabyte-scale migration Snowball comes in two sizes:  50 TB (42 TB of usable space) 80 TB (72 TB of usable space)  Snowball Edge comes in two sizes:  100 TB (83 TB of usable space) 100 TB Clustered (45 TB per node)  Snowball Edge includes both Storage and edge-computing workloads Snowball Edge provides three options  Edge Storage Optimized (24 vCPU) Edge Compute Optimized (52 vCPU)) Edge Compute Optimized with GPU  Snowball and Snowball Edge are idea for data transfer from 10 TB to 10 PB of data transfer  Snowmobile  It is 45 foot long ruggedize shipping container, pulled by a semi-trailer truck Snowmobile comes in one size: 100 PB Available in certain areas via special order from AWS Ideal for greater than 10PB Data Transfer for a single location Situated on side and connected into your data center for the duration of the transfer  </description>
     </item>
     
     <item>
@@ -715,6 +787,15 @@ Create Policy with name lambda_execute with following JSON, which will allow to 
 { &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;lambda:InvokeFunction&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;*&amp;quot; } ] }  Create an IAM role lambda_invoke_function_assume_apigw_role
 Edit Trust Policy
 { &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: { &amp;quot;Service&amp;quot;: [ &amp;quot;lambda.amazonaws.com&amp;quot;, &amp;quot;apigateway.amazonaws.com&amp;quot; ] }, &amp;quot;Action&amp;quot;: &amp;quot;sts:AssumeRole&amp;quot; } ] }  Creating Lambda Function</description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/amazon-web-services/study-guide/resources/</guid>
+      <description> AWS Well-Architected Amazon Elastic Compute Cloud Documentation Introduction to AWS Lambda &amp;amp; Serverless Applications  </description>
     </item>
     
     <item>
