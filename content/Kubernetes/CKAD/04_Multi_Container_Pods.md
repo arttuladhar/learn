@@ -4,9 +4,9 @@ title: 04 - Multi Container Pods
 
 Multi-container pods are simply pods with more than one container that all work together as a single unit.
 
-It is often a good idea to keep containers separate by keeping them in their own seperate pods, but there are several cases where multi-continer pods can be beneficial.
+It is often a good idea to keep containers separate by keeping them in their own separate pods, but there are several cases where multi-container pods can be beneficial.
 
-You can create multi-continer pods by listing multiple containers in the pod definition.
+You can create multi-container pods by listing multiple containers in the pod definition.
 
 ```yml
 apiVersion: v1

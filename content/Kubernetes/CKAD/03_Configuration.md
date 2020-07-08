@@ -80,7 +80,7 @@ This spec will cause the container to run as the OS user with an ID of 1000, and
 ```yml
 apiVersion: v1
 kind: Pod
-metadat:
+metadata:
     name: my-securitycontext-pod
 spec:
     securityContext:

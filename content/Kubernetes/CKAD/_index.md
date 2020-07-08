@@ -1,5 +1,5 @@
 ---
-title: CKAD
+title: Certified Kubernetes Application Developer (CKAD)
 ---
 
 {{%children style="h4"%}}
