@@ -199,12 +199,12 @@
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/</loc>
+    <loc>http://learn.aayushtuladhar.com/categories/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://learn.aayushtuladhar.com/categories/</loc>
-    <priority>0</priority>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/</loc>
   </url>
   
   <url>
@@ -350,6 +350,18 @@
   
   <url>
     <loc>http://learn.aayushtuladhar.com/kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab1-creating-kubernetes-pods/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab2-configuring-kubernetes-pods/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab3-forwarding-port-traffic/</loc>
   </url>
   
   <url>

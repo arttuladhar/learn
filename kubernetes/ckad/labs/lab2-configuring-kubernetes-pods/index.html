@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>AWS Certified Solutions Architect Course :: </title>
+    <title>Lab2 - Configuring Kubernetes Pod :: </title>
 
     
     <link href="/css/nucleus.css?1594233810" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/amazon-web-services/aws-solutions-architect/">
+  <body class="" data-url="/kubernetes/ckad/labs/lab2-configuring-kubernetes-pods/">
     <nav id="sidebar" class="">
 
 
@@ -79,7 +79,7 @@
   
     
     <li data-nav-id="/amazon-web-services/" title="Amazon Web Services" class="dd-item 
-        parent
+        
         
         
         ">
@@ -108,8 +108,8 @@
   
     
     <li data-nav-id="/amazon-web-services/aws-solutions-architect/" title="AWS Certified Solutions Architect Course" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/amazon-web-services/aws-solutions-architect/">
@@ -2090,7 +2090,7 @@
   
     
     <li data-nav-id="/kubernetes/" title="Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -2119,7 +2119,7 @@
   
     
     <li data-nav-id="/kubernetes/ckad/" title="Certified Kubernetes Application Developer (CKAD)" class="dd-item 
-        
+        parent
         
         
         ">
@@ -2292,7 +2292,7 @@
  
   
     
-      <li data-nav-id="/kubernetes/ckad/labs/lab2-configuring-kubernetes-pods/" title="Lab2 - Configuring Kubernetes Pod" class="dd-item ">
+      <li data-nav-id="/kubernetes/ckad/labs/lab2-configuring-kubernetes-pods/" title="Lab2 - Configuring Kubernetes Pod" class="dd-item active">
         <a href="/kubernetes/ckad/labs/lab2-configuring-kubernetes-pods/">
         Lab2 - Configuring Kubernetes Pod
         
@@ -3012,7 +3012,13 @@
             
           
           
-            <a href='/'>Learning Notebook</a> > <a href='/amazon-web-services/'>Amazon Web Services</a> > AWS Certified Solutions Architect Course
+            
+            
+          
+          
+            <a href='/'>Learning Notebook</a> > <a href='/kubernetes/'>Kubernetes</a> > <a href='/kubernetes/ckad/'>Certified Kubernetes Application Developer (CKAD)</a> > Lab2 - Configuring Kubernetes Pod
+          
+        
           
         
           
@@ -3025,7 +3031,22 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#create-a-configmap-called-candy-service-config-to-store-the-container-s-configuration-data">Create a ConfigMap called <code>candy-service-config</code> to store the container&rsquo;s configuration data.</a></li>
+<li><a href="#create-a-kubernetes-secret-called-db-password-to-store-the-database-password">Create a Kubernetes secret called <code>db-password</code> to store the database password.</a></li>
+<li><a href="#create-the-pod-for-the-candy-service-application-according-to-the-provided-specification">Create the pod for the candy-service application according to the provided specification.</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -3041,7 +3062,7 @@
           
             <h1>
               
-              AWS Certified Solutions Architect Course
+              Lab2 - Configuring Kubernetes Pod
             </h1>
           
 
@@ -3049,183 +3070,71 @@
 
 
 
-	
+
+<h4 id="create-a-configmap-called-candy-service-config-to-store-the-container-s-configuration-data">Create a ConfigMap called <code>candy-service-config</code> to store the container&rsquo;s configuration data.</h4>
+
+<p><em>candy-service-config.yml</em></p>
+
+<pre><code class="language-yml">apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: candy-service-config
+data:
+    candy.cfg: |-
+        candy.peppermint.power: 100000000
+        candy.nougat-armor.strength: 10
+</code></pre>
+
+<h4 id="create-a-kubernetes-secret-called-db-password-to-store-the-database-password">Create a Kubernetes secret called <code>db-password</code> to store the database password.</h4>
+
+<p><em>candy-service-secret.yml</em></p>
+
+<pre><code class="language-yml">apiVersion: v1
+kind: Secret
+metadata:
+   name: db-password
+stringData:
+   db-password: Kub3rn3t3sRul3s!
+</code></pre>
+
+<h4 id="create-the-pod-for-the-candy-service-application-according-to-the-provided-specification">Create the pod for the candy-service application according to the provided specification.</h4>
+
+<p><em>candy-service-pod.yml</em></p>
+
+<pre><code class="language-yml">apiVersion: v1
+kind: Pod
+metadata:
+   name: candy-service
+spec:
+  securityContext:
+    fsGroup: 2000
+  containers:
+  - name: candy-service
+    image: linuxacademycontent/candy-service:1
+    volumeMounts:
+      - name: candy-service-volume
+        mountPath: /etc/candy-service
+    env:
+      - name: DB_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: db-password
+            key: db-password
+    resources:
+      requests:
+        memory: &quot;64Mi&quot;
+        cpu: &quot;250m&quot;
+      limits:
+        memory: &quot;128Mi&quot;
+        cpu: &quot;500m&quot;
+  volumes:
+     - name: candy-service-volume
+       configMap:
+         name: candy-service-config          
+</code></pre>
 
 
-
-
-
-
-<ul class="children children-li">
-	
-
-	
-		
-			
-		
-	
-
-	
-
-	
-		
-	
-		
-			
-				
-<li>
-<a href="/amazon-web-services/aws-solutions-architect/01-architecture-101/" >01 - Architecture 101</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/amazon-web-services/aws-solutions-architect/02-aws-fundamentals/" >02 - AWS Fundamentals</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/amazon-web-services/aws-solutions-architect/03-identity_access_control/" >03 - Identity and Access Control</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/amazon-web-services/aws-solutions-architect/04_1-compute_server_based/" >04 (A) - Compute Services - Server Based</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/amazon-web-services/aws-solutions-architect/04_2-compute_serverless/" >04 (B) - Compute Services - Serverless</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/amazon-web-services/aws-solutions-architect/05-networking/" >05 - Networking</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/amazon-web-services/aws-solutions-architect/07-databases/" >06 - Databases</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/amazon-web-services/aws-solutions-architect/08-hybrid-scaling/" >07 - Hybrid and Scaling</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/amazon-web-services/aws-solutions-architect/06-storage_and_content_delivery/" >07 - Storage and Content Delivery</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/amazon-web-services/aws-solutions-architect/09-applicationanalyticsoperations/" >09 - Application, Analytics, and Operations</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/amazon-web-services/aws-solutions-architect/labs/" >Hands on Labs</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-	
-</ul>
-
-
-
-
-
-
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -3260,6 +3169,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -3275,7 +3186,6 @@
             
             
                 
-                    
                     
                 
                 
@@ -3292,9 +3202,6 @@
             
                 
                     
-                        
-                        
-                    
                 
                 
 
@@ -4634,6 +4541,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -4650,6 +4558,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -4662,6 +4571,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -4775,6 +4687,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -4790,6 +4703,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -5249,10 +5165,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/amazon-web-services/" title="Amazon Web Services"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/kubernetes/ckad/labs/lab1-creating-kubernetes-pods/" title="Lab1 - Creating Kubernetes Pod"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/amazon-web-services/aws-solutions-architect/01-architecture-101/" title="01 - Architecture 101" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/kubernetes/ckad/labs/lab3-forwarding-port-traffic/" title="Lab3 - Forwarding Port Traffic with an Ambassador Container" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -5282,3 +5198,4 @@
 
   </body>
 </html>
+

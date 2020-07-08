@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CKAD on </title>
+    <title>Certified Kubernetes Application Developer (CKAD) on </title>
     <link>http://learn.aayushtuladhar.com/kubernetes/ckad/</link>
-    <description>Recent content in CKAD on </description>
+    <description>Recent content in Certified Kubernetes Application Developer (CKAD) on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
@@ -50,8 +50,8 @@ apiVersion: v1 kind: ConfigMap metadata: name: my-config-map data: myKey: myValu
       
       <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/04_multi_container_pods/</guid>
       <description>Multi-container pods are simply pods with more than one container that all work together as a single unit.
-It is often a good idea to keep containers separate by keeping them in their own seperate pods, but there are several cases where multi-continer pods can be beneficial.
-You can create multi-continer pods by listing multiple containers in the pod definition.
+It is often a good idea to keep containers separate by keeping them in their own separate pods, but there are several cases where multi-container pods can be beneficial.
+You can create multi-container pods by listing multiple containers in the pod definition.
 apiVersion: v1 kind: Pod metadata: name: multi-container-pod spec: containers: - name: nginx image: nginx:1.</description>
     </item>
     
@@ -73,6 +73,39 @@ Liveness probe Indicates whether the container is running properly, and governs 
       <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/06_pod-design/</guid>
       <description>Labels, Selectors, and Annotations Deployments Rolling Updates and Rollbacks  Rolling Updates and Rollbacks  Jobs and CronJobs  Labels, Selectors, and Annotations Labels are key-value pairs attached to Kubernetes objects. They are used for identifying various attributes of objects which can in turn be used to select and group various subsets of those objects.
 We can attach labels to objects by listing them in the metadata.labels section of an object descriptor.</description>
+    </item>
+    
+    <item>
+      <title>Lab1 - Creating Kubernetes Pod</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab1-creating-kubernetes-pods/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab1-creating-kubernetes-pods/</guid>
+      <description>nginx.yml
+apiVersion: v1 kind: Pod metadata: name: nginx namespace: web spec: containers: - name: nginx image: nginx command: [&#39;nginx&#39;] args: [&#39;-g&#39;, &#39;daemon off;&#39;, &#39;-q&#39;] ports: - containerPort: 80  ## Applying Spec Definition for Creating Pod kubectl -n web apply -f nginx.yml ## Verifying Pod running in web namespace kubectl get pods -n web  </description>
+    </item>
+    
+    <item>
+      <title>Lab2 - Configuring Kubernetes Pod</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab2-configuring-kubernetes-pods/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab2-configuring-kubernetes-pods/</guid>
+      <description> Create a ConfigMap called candy-service-config to store the container&amp;rsquo;s configuration data. candy-service-config.yml
+apiVersion: v1 kind: ConfigMap metadata: name: candy-service-config data: candy.cfg: |- candy.peppermint.power: 100000000 candy.nougat-armor.strength: 10  Create a Kubernetes secret called db-password to store the database password. candy-service-secret.yml
+apiVersion: v1 kind: Secret metadata: name: db-password stringData: db-password: Kub3rn3t3sRul3s!  Create the pod for the candy-service application according to the provided specification. candy-service-pod.yml
+apiVersion: v1 kind: Pod metadata: name: candy-service spec: securityContext: fsGroup: 2000 containers: - name: candy-service image: linuxacademycontent/candy-service:1 volumeMounts: - name: candy-service-volume mountPath: /etc/candy-service env: - name: DB_PASSWORD valueFrom: secretKeyRef: name: db-password key: db-password resources: requests: memory: &amp;quot;64Mi&amp;quot; cpu: &amp;quot;250m&amp;quot; limits: memory: &amp;quot;128Mi&amp;quot; cpu: &amp;quot;500m&amp;quot; volumes: - name: candy-service-volume configMap: name: candy-service-config  </description>
+    </item>
+    
+    <item>
+      <title>Lab3 - Forwarding Port Traffic with an Ambassador Container</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab3-forwarding-port-traffic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab3-forwarding-port-traffic/</guid>
+      <description>fruit-service-ambassador-config.yml
+# Config Map for HA Proxy apiVersion: v1 kind: ConfigMap metadata: name: fruit-service-ambassador-config data: haproxy.cfg: |- global daemon maxconn 256 defaults mode http timeout connect 5000ms timeout client 50000ms timeout server 50000ms listen http-in bind *:80 server server1 127.0.0.1:8775 maxconn 32  fruit-service-pod.yml
+# Pod Definition for fruit-service apiVersion: v1 kind: Pod metadata: name: fruit-service spec: containers: - name: fruit-service-container image: linuxacademycontent/legacy-fruit-service:1 - name: fruit-service-ambassador image: haproxy:1.7 ports: - containerPort: 80 volumeMounts: - name: config-volume mountPath: /usr/local/etc/haproxy volumes: - name: config-volume configMap: name: fruit-service-ambassador-config  busybox.</description>
     </item>
     
   </channel>
