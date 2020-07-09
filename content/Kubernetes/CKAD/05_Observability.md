@@ -8,6 +8,7 @@ title: 05 - Observability
 - [Container Logging](#container-logging)
 - [Installing Metrics Server](#installing-metrics-server)
 - [Monitoring Applications](#monitoring-applications)
+- [Debugging](#debugging)
 
 ## Liveness and Readiness Probes
 
@@ -107,3 +108,14 @@ kubectl top pod resource-consumer-big
 kubectl top pods -n kube-system
 kubectl top nodes
 ```
+
+---
+
+## Debugging
+
+Problems will occur in any system, and Kubernetes provides some great tools to help locate and fix problems when they occur within a cluster. Helpful resources:
+
+* https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application/
+* https://kubernetes.io/docs/tasks/debug-application-cluster/debug-pod-replication-controller/
+* https://kubernetes.io/docs/tasks/debug-application-cluster/debug-service/
+

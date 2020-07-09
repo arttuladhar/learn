@@ -28,13 +28,13 @@ spec:
     image: nginx
 ```
 
-```
+```shell
 kubectl get pods --show-labels
 ```
 
 Selectors are used for identifying and selecting a specific group of objects using their labels. One way to use selectors is to use them with `kubectl get` to retrieve a specific list of objects. We can specify a selector using the `-l` flag.
 
-```
+```shell
 # Equality Based Selector
 kubectl get pods -l app=my-app
 
@@ -108,7 +108,7 @@ Note the following:
 * **spec.template** - A template pod descriptor which defines the pods which will be created
 * **spec.selector** - The deployment will manage all pods whose label match this selector
 
-```
+```shell
 kubectl get deployments
 
 kubectl get deployment <deployment_name>
@@ -124,8 +124,9 @@ kubectl delete deployment <deployment_name>
 
 Rolling updates provide a way to update a deployment to a new container version by gradually updating replicas so that there is no downtime.
 
-*rolling-deployment-nginx.yml*
 ```yml
+# rolling-deployment-nginx.yml
+--
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -147,7 +148,7 @@ spec:
         - containerPort: 80
 ```
 
-```
+```shell
 # Set New Image for the Deployment
 kubectl set image deployment/rolling-deployment nginx=nginx:1.7.9 --record
 
@@ -163,15 +164,16 @@ The --record flag records information about the update so that it can be rolled 
 
 Rollbacks allow us to revert to a previous state. For example, if a rolling update breaks something, we can quickly recover by using a rollback.
 
-```
+```shell
 # Get Rollout History for Deployment
 kubectl rollout history deployment/rolling-deployment
 ```
+
 {{% notice info %}}
 The --revision flag will give more information on a specific revision number
 {{% /notice %}}
 
-```
+```shell
 # Perform Rollback to previous revision
 kubectl rollout undo deployment/rolling-deployment
 kubectl rollout undo deployment/rolling-deployment --to-revision=1

@@ -6,7 +6,7 @@ Using Ubuntu Distribution (Ubuntu Xenial LTS 16.04) as Base Image for the Virtua
 
 #### Setup Docker and Kubernetes Repositories
 
-```
+```shell
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
@@ -22,7 +22,7 @@ EOF
 
 #### Install Docker, Kubelet, KubeAdm and KubeCtl
 
-```
+```shell
 sudo apt-get update
 
 sudo apt-get install -y docker-ce=18.06.1~ce~3-0~ubuntu kubelet=1.17.0-00 kubeadm=1.17.0-00 kubectl=1.17.0-00
@@ -40,7 +40,7 @@ sudo sysctl -p
 
 -----
 
-#### Initailize Cluster on Kube Master
+#### Initialize Cluster on Kube Master
 
 ```
 # Initialize Kube Cluster
@@ -66,8 +66,3 @@ sudo kubeadm join 172.31.47.84:6443 --token c06upw.nhz4qqqifxmqdzaf     --discov
 {{% notice tip %}}
 You can use `kubeadm token create --print-join-command` to get the join command.
 {{% /notice %}}
-
-
-
-
-
