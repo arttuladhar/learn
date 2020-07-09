@@ -253,7 +253,7 @@ apiVersion: v1 kind: Pod metadata: name: multi-container-pod spec: containers: -
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/05_observability/</guid>
-      <description>Liveness and Readiness Probes  Liveness probe Readiness Probe  Container Logging Installing Metrics Server Monitoring Applications  Liveness and Readiness Probes Probes - Allow you to customize how Kubernetes determines the status of your containers
+      <description>Liveness and Readiness Probes  Liveness probe Readiness Probe  Container Logging Installing Metrics Server Monitoring Applications Debugging  Liveness and Readiness Probes Probes - Allow you to customize how Kubernetes determines the status of your containers
 Liveness probe Indicates whether the container is running properly, and governs whether the cluster will automatically stop or restart the container. Liveness probes can be created by including them in the container spec.</description>
     </item>
     
@@ -684,6 +684,25 @@ Features Automatic bin packing</description>
     </item>
     
     <item>
+      <title>Lab 6 - Rolling Updates with Kubernetes Deployments</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab6-rolling-updates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab6-rolling-updates/</guid>
+      <description> candy-deployment Deployment descriptor apiVersion: extensions/v1beta1 kind: Deployment metadata: annotations: deployment.kubernetes.io/revision: &amp;quot;1&amp;quot; kubectl.kubernetes.io/last-applied-configuration: | {&amp;quot;apiVersion&amp;quot;:&amp;quot;apps/v1&amp;quot;,&amp;quot;kind&amp;quot;:&amp;quot;Deployment&amp;quot;,&amp;quot;metadata&amp;quot;:{&amp;quot;annotations&amp;quot;:{},&amp;quot;name&amp;quot;:&amp;quot;candy-deployment&amp;quot;,&amp;quot;namespace&amp;quot;:&amp;quot;default&amp;quot;},&amp;quot;spec&amp;quot;:{&amp;quot;replicas&amp;quot;:2,&amp;quot;selector&amp;quot;:{&amp;quot;matchLabels&amp;quot;:{&amp;quot;app&amp;quot;:&amp;quot;candy-ws&amp;quot;}},&amp;quot;template&amp;quot;:{&amp;quot;metadata&amp;quot;:{&amp;quot;labels&amp;quot;:{&amp;quot;app&amp;quot;:&amp;quot;candy-ws&amp;quot;}},&amp;quot;spec&amp;quot;:{&amp;quot;containers&amp;quot;:[{&amp;quot;image&amp;quot;:&amp;quot;linuxacademycontent/candy-service:2&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;candy-ws&amp;quot;}]}}}} creationTimestamp: null generation: 1 name: candy-deployment selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/candy-deployment spec: progressDeadlineSeconds: 600 replicas: 2 revisionHistoryLimit: 10 selector: matchLabels: app: candy-ws strategy: rollingUpdate: maxSurge: 25% maxUnavailable: 25% type: RollingUpdate template: metadata: creationTimestamp: null labels: app: candy-ws spec: containers: - image: linuxacademycontent/candy-service:2 imagePullPolicy: IfNotPresent name: candy-ws resources: {} terminationMessagePath: /dev/termination-log terminationMessagePolicy: File dnsPolicy: ClusterFirst restartPolicy: Always schedulerName: default-scheduler securityContext: {} terminationGracePeriodSeconds: 30  Updating to New Image # Setting New Image for Deployment kubectl set image deployment/candy-deployment candy-ws=linuxacademycontent/candy-service:3 --record # Performing Rollout kubectl rollout status deployment/candy-deployment  Performing RollBack kubectl rollout history deployment/candy-deployment kubectl rollout undo deployment/candy-deployment  </description>
+    </item>
+    
+    <item>
+      <title>Lab 7 - Configuring Cron Jobs in Kubernetes</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab7-cronjobs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab7-cronjobs/</guid>
+      <description>cleanup-cronjob.yml
+apiVersion: batch/v1beta1 kind: CronJob metadata: name: cleanup-cronjob spec: schedule: &amp;quot;*/1 * * * *&amp;quot; jobTemplate: spec: template: spec: containers: - name: hello image: linuxacademycontent/data-cleanup:1 restartPolicy: OnFailure  </description>
+    </item>
+    
+    <item>
       <title>Lab1 - Creating Kubernetes Pod</title>
       <link>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab1-creating-kubernetes-pods/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -714,6 +733,25 @@ apiVersion: v1 kind: Pod metadata: name: candy-service spec: securityContext: fs
       <description>fruit-service-ambassador-config.yml
 # Config Map for HA Proxy apiVersion: v1 kind: ConfigMap metadata: name: fruit-service-ambassador-config data: haproxy.cfg: |- global daemon maxconn 256 defaults mode http timeout connect 5000ms timeout client 50000ms timeout server 50000ms listen http-in bind *:80 server server1 127.0.0.1:8775 maxconn 32  fruit-service-pod.yml
 # Pod Definition for fruit-service apiVersion: v1 kind: Pod metadata: name: fruit-service spec: containers: - name: fruit-service-container image: linuxacademycontent/legacy-fruit-service:1 - name: fruit-service-ambassador image: haproxy:1.7 ports: - containerPort: 80 volumeMounts: - name: config-volume mountPath: /usr/local/etc/haproxy volumes: - name: config-volume configMap: name: fruit-service-ambassador-config  busybox.</description>
+    </item>
+    
+    <item>
+      <title>Lab4 - Configuring Probes for a Kubernetes Pod</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab4-configuring-probes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab4-configuring-probes/</guid>
+      <description>candy-service-pod.yml
+apiVersion: v1 kind: Pod metadata: name: candy-service spec: containers: - name: candy-service image: linuxacademycontent/candy-service:2 livenessProbe: httpGet: path: /healthz port: 8081 readinessProbe: httpGet: path: / port: 80  </description>
+    </item>
+    
+    <item>
+      <title>Lab5 - Debugging Kubernetes</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab5-debugging-kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab5-debugging-kubernetes/</guid>
+      <description> Identify the Problem kubectl get pods --all-namespaces  Get the Broken Pods&amp;rsquo;s Container Logs kubectl logs cart-ws -n candy-store  Fix the Problem # Save the Pod Descriptor of Broken Pod kubectl get pod &amp;lt;pod name&amp;gt; -n &amp;lt;namespace&amp;gt; -o yaml --export &amp;gt; broken-pod.yml # Delete Broken Pod kubectl delete pod &amp;lt;pod name&amp;gt; -n &amp;lt;namespace&amp;gt; # Recreate Broken Pod kubectl apply -f broken-pod.yml -n &amp;lt;namespace&amp;gt; # Verify Fix kubectl get pod &amp;lt;pod name&amp;gt; -n &amp;lt;namespace&amp;gt;  </description>
     </item>
     
     <item>

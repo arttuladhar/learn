@@ -353,6 +353,14 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab6-rolling-updates/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab7-cronjobs/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab1-creating-kubernetes-pods/</loc>
   </url>
   
@@ -362,6 +370,14 @@
   
   <url>
     <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab3-forwarding-port-traffic/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab4-configuring-probes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab5-debugging-kubernetes/</loc>
   </url>
   
   <url>
