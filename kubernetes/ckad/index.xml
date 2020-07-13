@@ -76,6 +76,28 @@ We can attach labels to objects by listing them in the metadata.labels section o
     </item>
     
     <item>
+      <title>07 - Services and Networking</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/07_services_networking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/07_services_networking/</guid>
+      <description>Services Services create an abstraction layer which provides network access to a dynamic set of pods.
+Most services use a selector to determine which pods will receive traffic though the service. As pods included in the service are created and removed dynamically, clients can receive uninterrupted access by using the service.
+Services are Kubernetes objects which means that they can be created using yaml descriptors. Here is an example of a simple service:</description>
+    </item>
+    
+    <item>
+      <title>08 - State and Persistence</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/08_state_persistence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/08_state_persistence/</guid>
+      <description>Volumes The internal storage of a container is ephemeral, meaning that it is designed to be highly temporary. Volumes allow you to provide more permanent storage to a pod that exists beyond the life of a container.
+Kubernetes volumes allow us to mount storage to a container that isn&amp;rsquo;t in the container itself.
+apiVersion: v1 kind: Pod metadata: name: volume-pod spec: containers: - image: busybox name: busybox command: [&amp;quot;/bin/sh&amp;quot;, &amp;quot;-c&amp;quot;, &amp;quot;while true; do sleep 3600; done&amp;quot;] volumeMounts: - mountPath: /tmp/storage name: my-volume volumes: - name: my-volume emptyDir: {}  Persistent Volumes (PVs) and Persistent Volume Claims (PVCs) Kubernetes is designed to manage stateless containers.</description>
+    </item>
+    
+    <item>
       <title>Lab 6 - Rolling Updates with Kubernetes Deployments</title>
       <link>http://learn.aayushtuladhar.com/kubernetes/ckad/labs/lab6-rolling-updates/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

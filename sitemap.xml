@@ -131,6 +131,10 @@
   </url>
   
   <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/07_services_networking/</loc>
+  </url>
+  
+  <url>
     <loc>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06-storage_and_content_delivery/</loc>
   </url>
   
@@ -140,6 +144,10 @@
   
   <url>
     <loc>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/08_kubernetes_volume_management/</loc>
+  </url>
+  
+  <url>
+    <loc>http://learn.aayushtuladhar.com/kubernetes/ckad/08_state_persistence/</loc>
   </url>
   
   <url>

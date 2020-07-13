@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>devops :: </title>
+    <title>08 - State and Persistence :: </title>
 
     
     <link href="/css/nucleus.css?1594662292" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/categories/devops/">
+  <body class="" data-url="/kubernetes/ckad/08_state_persistence/">
     <nav id="sidebar" class="">
 
 
@@ -2090,7 +2090,7 @@
   
     
     <li data-nav-id="/kubernetes/" title="Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -2119,7 +2119,7 @@
   
     
     <li data-nav-id="/kubernetes/ckad/" title="Certified Kubernetes Application Developer (CKAD)" class="dd-item 
-        
+        parent
         
         
         ">
@@ -2292,7 +2292,7 @@
  
   
     
-      <li data-nav-id="/kubernetes/ckad/08_state_persistence/" title="08 - State and Persistence" class="dd-item ">
+      <li data-nav-id="/kubernetes/ckad/08_state_persistence/" title="08 - State and Persistence" class="dd-item active">
         <a href="/kubernetes/ckad/08_state_persistence/">
         08 - State and Persistence
         
@@ -3130,7 +3130,25 @@
                     
           
           
-            devops
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Learning Notebook</a> > <a href='/kubernetes/'>Kubernetes</a> > <a href='/kubernetes/ckad/'>Certified Kubernetes Application Developer (CKAD)</a> > 08 - State and Persistence
+          
+        
+          
+        
+          
+        
           
         
                  
@@ -3139,7 +3157,19 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#volumes">Volumes</a></li>
+<li><a href="#persistent-volumes-pvs-and-persistent-volume-claims-pvcs">Persistent Volumes (PVs) and Persistent Volume Claims (PVCs)</a>
+<ul>
+<li><a href="#creating-persistent-volume">Creating Persistent Volume</a></li>
+</ul></li>
+<li><a href="#attaching-persistent-volume-claims-to-a-pod">Attaching Persistent Volume Claims to a Pod</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -3155,9 +3185,7 @@
           
             <h1>
               
-                taxonomy ::
-              
-              devops
+              08 - State and Persistence
             </h1>
           
 
@@ -3166,59 +3194,99 @@
 
 
 
+<h2 id="volumes">Volumes</h2>
 
-<ul>
-	
-		<li><a href="/devops/chef/2016-02-29-berks/">Berkshelf</a></li>
-	
-		<li><a href="/devops/chef/2018-01-30-chef-databags/">Chef Databags</a></li>
-	
-		<li><a href="/devops/network/2017-01-29-dns-basics/">DNS Basics</a></li>
-	
-		<li><a href="/devops/docker/2019-09-17-docker-compose/">Docker Compose</a></li>
-	
-		<li><a href="/devops/gradle/2016-07-06-gradle-wrapper/">Gradle Wrapper</a></li>
-	
-		<li><a href="/devops/docker/2017-09-22-install-docker-centos-7/">Installing Docker CE on Centos 7</a></li>
-	
-		<li><a href="/devops/ci-cd/2019-09-13-jenkins-shared-libs/">Jenkins Shared Library</a></li>
-	
-		<li><a href="/devops/chef/2016-04-05-chef-knife-commands/">Knife Commands</a></li>
-	
-		<li><a href="/devops/linux/2016-11-27-issue-remote-commands/">Linux Command Line Hacks</a></li>
-	
-		<li><a href="/devops/2019-02-26-mqtt/">Mqtt</a></li>
-	
-		<li><a href="/devops/2019-10-8-owasp/">OWASP Dependency Check</a></li>
-	
-		<li><a href="/devops/2016-03-24-open-stack/">OpenStack</a></li>
-	
-		<li><a href="/devops/2019-08-16-openshift/">Openshift</a></li>
-	
-		<li><a href="/devops/2016-11-26-setting-apache-virtual-host/">Setting Apache Virtual Host</a></li>
-	
-		<li><a href="/devops/network/2016-03-01-setting-fqdn/">Setting FQDN</a></li>
-	
-		<li><a href="/devops/2017-02-05-setting-selenium-grid/">Setting Selenium Grid</a></li>
-	
-		<li><a href="/devops/2019-09-17-setting-up-jekyll-website/">Setting up Jekyll Website</a></li>
-	
-		<li><a href="/java/spring/2018-09-18-spring-cloud-slueth/">Spring Cloud Slueth</a></li>
-	
-		<li><a href="/devops/2016-04-10-setting-up-supervisord/">SupervisorD</a></li>
-	
-		<li><a href="/architecture/twelve-factor-app/">The Twelve Factor App</a></li>
-	
-		<li><a href="/devops/linux/2016-11-28-ubuntu-packages/">Ubuntu Packages</a></li>
-	
-		<li><a href="/devops/security/2016-07-07-ssh-keys/">Understanding SSH Keys</a></li>
-	
-		<li><a href="/devops/2017-03-15-using-apache-server-benchmarking/">Using Apache Server Benchmarking</a></li>
-	
-</ul>
+<p>The internal storage of a container is ephemeral, meaning that it is designed to be highly temporary. Volumes allow you to provide more permanent storage to a pod that exists beyond the life of a container.</p>
+
+<p>Kubernetes volumes allow us to mount storage to a container that isn&rsquo;t in the container itself.</p>
+
+<pre><code class="language-yml">apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-pod
+spec:
+  containers:
+  - image: busybox
+    name: busybox
+    command: [&quot;/bin/sh&quot;, &quot;-c&quot;, &quot;while true; do sleep 3600; done&quot;]
+    volumeMounts:
+    - mountPath: /tmp/storage
+      name: my-volume
+  volumes:
+  - name: my-volume
+    emptyDir: {}
+</code></pre>
+
+<hr />
+
+<h2 id="persistent-volumes-pvs-and-persistent-volume-claims-pvcs">Persistent Volumes (PVs) and Persistent Volume Claims (PVCs)</h2>
+
+<p>Kubernetes is designed to manage stateless containers. Pods and containers can be easily deleted and/or replaced. When a container is removed, data stored inside the container&rsquo;s internal disk is lost.</p>
+
+<p>State persistence refers to maintaining data outside and potentially beyond the life of a container. This usually means storing data in some kind of persistent data store that can accessed by containers.</p>
+
+<p>PersistentVolumes (PVs) and PersistentVolumeClaims (PVCs) provide a way to easily consume storage resources, especially in the context of a complex production environment that uses multiple storage solutions.</p>
+
+<p><strong>PersistentVolume (PV)</strong> represents a storage resource, whereas <strong>PersistentVolumeClaim (PVC)</strong> represents an Abstraction layer between user (pod) and the PV. PVC will automatically bind themselves to a PV that has compatible <strong>StorageClass</strong> and <strong>accessMode</strong></p>
+
+<h3 id="creating-persistent-volume">Creating Persistent Volume</h3>
+
+<pre><code class="language-yml">kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: my-pv
+spec:
+  storageClassName: local-storage
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: &quot;/mnt/data&quot;
+</code></pre>
+
+<pre><code class="language-yml">apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: my-pvc
+spec:
+  storageClassName: local-storage
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 512Mi
+</code></pre>
+
+<pre><code class="language-shell"># Get Persistent Volume
+kubectl get pv
+
+# Get Persistent Volume Claims
+kubectl get pvc
+</code></pre>
+
+<h2 id="attaching-persistent-volume-claims-to-a-pod">Attaching Persistent Volume Claims to a Pod</h2>
+
+<pre><code class="language-yml">kind: Pod
+apiVersion: v1
+metadata:
+  name: my-pvc-pod
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    command: [&quot;/bin/sh&quot;, &quot;-c&quot;, &quot;while true; do sleep 3600; done&quot;]
+    volumeMounts:
+    - mountPath: &quot;/mnt/storage&quot;
+      name: my-storage
+  volumes:
+  - name: my-storage
+    persistentVolumeClaim:
+      claimName: my-pvc
+</code></pre>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -4626,6 +4694,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -4641,6 +4710,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -4653,6 +4723,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -4766,6 +4839,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -4781,6 +4855,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -5336,8 +5413,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/kubernetes/ckad/07_services_networking/" title="07 - Services and Networking"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/amazon-web-services/" title="Amazon Web Services" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/kubernetes/ckad/labs/lab6-rolling-updates/" title="Lab 6 - Rolling Updates with Kubernetes Deployments" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -5367,3 +5446,4 @@
 
   </body>
 </html>
+

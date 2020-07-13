@@ -323,6 +323,17 @@ apiVersion: apps/v1 kind: Deployment metadata: name: webserver labels: app: ngin
     </item>
     
     <item>
+      <title>07 - Services and Networking</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/07_services_networking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/07_services_networking/</guid>
+      <description>Services Services create an abstraction layer which provides network access to a dynamic set of pods.
+Most services use a selector to determine which pods will receive traffic though the service. As pods included in the service are created and removed dynamically, clients can receive uninterrupted access by using the service.
+Services are Kubernetes objects which means that they can be created using yaml descriptors. Here is an example of a simple service:</description>
+    </item>
+    
+    <item>
       <title>07 - Storage and Content Delivery</title>
       <link>http://learn.aayushtuladhar.com/amazon-web-services/aws-solutions-architect/06-storage_and_content_delivery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -348,6 +359,17 @@ apiVersion: apps/v1 kind: Deployment metadata: name: webserver labels: app: ngin
       <guid>http://learn.aayushtuladhar.com/kubernetes/introduction-to-kubernetes-lfs158/08_kubernetes_volume_management/</guid>
       <description>Volumes Volume Types PersistentVolumeClaims Using a Shared hostPath Volume Type  Volumes As we know, containers running in Pods are ephemeral in nature. All data stored inside a container is deleted if the container crashes. However, the kubelet will restart it with a clean slate, which means that it will not have any of the old data.
 To overcome this problem, Kubernetes uses Volumes. A Volume is essentially a directory backed by a storage medium.</description>
+    </item>
+    
+    <item>
+      <title>08 - State and Persistence</title>
+      <link>http://learn.aayushtuladhar.com/kubernetes/ckad/08_state_persistence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://learn.aayushtuladhar.com/kubernetes/ckad/08_state_persistence/</guid>
+      <description>Volumes The internal storage of a container is ephemeral, meaning that it is designed to be highly temporary. Volumes allow you to provide more permanent storage to a pod that exists beyond the life of a container.
+Kubernetes volumes allow us to mount storage to a container that isn&amp;rsquo;t in the container itself.
+apiVersion: v1 kind: Pod metadata: name: volume-pod spec: containers: - image: busybox name: busybox command: [&amp;quot;/bin/sh&amp;quot;, &amp;quot;-c&amp;quot;, &amp;quot;while true; do sleep 3600; done&amp;quot;] volumeMounts: - mountPath: /tmp/storage name: my-volume volumes: - name: my-volume emptyDir: {}  Persistent Volumes (PVs) and Persistent Volume Claims (PVCs) Kubernetes is designed to manage stateless containers.</description>
     </item>
     
     <item>

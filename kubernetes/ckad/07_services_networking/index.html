@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>devops :: </title>
+    <title>07 - Services and Networking :: </title>
 
     
     <link href="/css/nucleus.css?1594662292" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/categories/devops/">
+  <body class="" data-url="/kubernetes/ckad/07_services_networking/">
     <nav id="sidebar" class="">
 
 
@@ -2090,7 +2090,7 @@
   
     
     <li data-nav-id="/kubernetes/" title="Kubernetes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -2119,7 +2119,7 @@
   
     
     <li data-nav-id="/kubernetes/ckad/" title="Certified Kubernetes Application Developer (CKAD)" class="dd-item 
-        
+        parent
         
         
         ">
@@ -2271,7 +2271,7 @@
  
   
     
-      <li data-nav-id="/kubernetes/ckad/07_services_networking/" title="07 - Services and Networking" class="dd-item ">
+      <li data-nav-id="/kubernetes/ckad/07_services_networking/" title="07 - Services and Networking" class="dd-item active">
         <a href="/kubernetes/ckad/07_services_networking/">
         07 - Services and Networking
         
@@ -3130,7 +3130,25 @@
                     
           
           
-            devops
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Learning Notebook</a> > <a href='/kubernetes/'>Kubernetes</a> > <a href='/kubernetes/ckad/'>Certified Kubernetes Application Developer (CKAD)</a> > 07 - Services and Networking
+          
+        
+          
+        
+          
+        
           
         
                  
@@ -3139,7 +3157,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#network-policy">Network Policy</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -3155,9 +3181,7 @@
           
             <h1>
               
-                taxonomy ::
-              
-              devops
+              07 - Services and Networking
             </h1>
           
 
@@ -3166,59 +3190,77 @@
 
 
 
+<h2 id="services">Services</h2>
+
+<p>Services create an abstraction layer which provides network access to a dynamic set of pods.</p>
+
+<p>Most services use a <em>selector</em> to determine which pods will receive traffic though the service. As pods included in the service are created and removed dynamically, clients can receive uninterrupted access by using the service.</p>
+
+<p>Services are Kubernetes objects which means that they can be created using yaml descriptors. Here is an example of a simple service:</p>
+
+<pre><code class="language-yaml">kind: Service
+apiVersion: v1
+metadata:
+    name: my-service
+spec:
+    type: ClusterIP
+    selector:
+        app: nginx
+    ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80
+</code></pre>
+
+<p>There are four service types in Kubernetes.</p>
 
 <ul>
-	
-		<li><a href="/devops/chef/2016-02-29-berks/">Berkshelf</a></li>
-	
-		<li><a href="/devops/chef/2018-01-30-chef-databags/">Chef Databags</a></li>
-	
-		<li><a href="/devops/network/2017-01-29-dns-basics/">DNS Basics</a></li>
-	
-		<li><a href="/devops/docker/2019-09-17-docker-compose/">Docker Compose</a></li>
-	
-		<li><a href="/devops/gradle/2016-07-06-gradle-wrapper/">Gradle Wrapper</a></li>
-	
-		<li><a href="/devops/docker/2017-09-22-install-docker-centos-7/">Installing Docker CE on Centos 7</a></li>
-	
-		<li><a href="/devops/ci-cd/2019-09-13-jenkins-shared-libs/">Jenkins Shared Library</a></li>
-	
-		<li><a href="/devops/chef/2016-04-05-chef-knife-commands/">Knife Commands</a></li>
-	
-		<li><a href="/devops/linux/2016-11-27-issue-remote-commands/">Linux Command Line Hacks</a></li>
-	
-		<li><a href="/devops/2019-02-26-mqtt/">Mqtt</a></li>
-	
-		<li><a href="/devops/2019-10-8-owasp/">OWASP Dependency Check</a></li>
-	
-		<li><a href="/devops/2016-03-24-open-stack/">OpenStack</a></li>
-	
-		<li><a href="/devops/2019-08-16-openshift/">Openshift</a></li>
-	
-		<li><a href="/devops/2016-11-26-setting-apache-virtual-host/">Setting Apache Virtual Host</a></li>
-	
-		<li><a href="/devops/network/2016-03-01-setting-fqdn/">Setting FQDN</a></li>
-	
-		<li><a href="/devops/2017-02-05-setting-selenium-grid/">Setting Selenium Grid</a></li>
-	
-		<li><a href="/devops/2019-09-17-setting-up-jekyll-website/">Setting up Jekyll Website</a></li>
-	
-		<li><a href="/java/spring/2018-09-18-spring-cloud-slueth/">Spring Cloud Slueth</a></li>
-	
-		<li><a href="/devops/2016-04-10-setting-up-supervisord/">SupervisorD</a></li>
-	
-		<li><a href="/architecture/twelve-factor-app/">The Twelve Factor App</a></li>
-	
-		<li><a href="/devops/linux/2016-11-28-ubuntu-packages/">Ubuntu Packages</a></li>
-	
-		<li><a href="/devops/security/2016-07-07-ssh-keys/">Understanding SSH Keys</a></li>
-	
-		<li><a href="/devops/2017-03-15-using-apache-server-benchmarking/">Using Apache Server Benchmarking</a></li>
-	
+<li><strong>ClusterIP</strong> - The service is exposed within the cluster using an internal IP address. The service is also accessible using the cluster DNS</li>
+<li><strong>NodePort</strong> - The service is exposed externally via a port which listens on each node in the cluster.</li>
+<li><strong>LoadBalancer</strong> - This only works if your cluster is set up to work with a cloud provider. The service is exposed though a load balancer that is created on the cloud platform.</li>
+<li><strong>ExternalName</strong> - This maps the service to an external address. It is used to allow resources within the cluster to access things outside the cluster though a service</li>
 </ul>
 
+<hr />
 
-<footer class=" footline" >
+<h2 id="network-policy">Network Policy</h2>
+
+<p>By default, all pods in the cluster can communicate with any other pod, and reach out to any available IP.</p>
+
+<p>NetworkPolicies allow you to limit what network traffic is allowed to and from pods in your cluster.</p>
+
+<ul>
+<li><strong>podSelector</strong> - Determines which pods the NetworkPolicy applies to</li>
+<li><strong>policyTypes</strong> - Sets whether the policy governs incoming traffic (ingress), outgoing traffic (egress), or both</li>
+<li><strong>ingress</strong> - Rules for incoming traffic</li>
+<li><strong>egres</strong> - Rules for outgoing traffic</li>
+<li><strong>rules</strong> - Both ingress and egress rules are whitelist-based, meaning that any traffic that does not match at least one rule will be blocked</li>
+</ul>
+
+<pre><code class="language-yml">apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: 
+  name: my-network-policy
+spec: 
+  podSelector: 
+    matchLabels: 
+      app: MyApp
+  policyTypes: 
+    - Ingress
+  ingress: 
+    - from: 
+        - podSelector:
+            matchLabels:
+              app: MyApp
+          ports: 
+            - protocol: TCP
+              port: 6379
+              
+
+</code></pre>
+
+
+<footer class="footline">
 	
 </footer>
 
@@ -4626,6 +4668,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -4641,6 +4684,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -4653,6 +4697,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -4750,6 +4797,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -4765,6 +4813,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -5336,8 +5387,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/kubernetes/ckad/06_pod-design/" title="06 - Pod Design"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/amazon-web-services/" title="Amazon Web Services" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/kubernetes/ckad/08_state_persistence/" title="08 - State and Persistence" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -5367,3 +5420,4 @@
 
   </body>
 </html>
+
