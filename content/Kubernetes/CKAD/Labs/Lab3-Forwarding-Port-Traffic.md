@@ -1,5 +1,5 @@
 ---
-title: Lab3 - Forwarding Port Traffic with an Ambassador Container
+title: Lab03 - Forwarding Port Traffic with an Ambassador Container
 ---
 
 *fruit-service-ambassador-config.yml*

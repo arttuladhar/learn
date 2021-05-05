@@ -1,5 +1,5 @@
 ---
-title: Lab 6 - Rolling Updates with Kubernetes Deployments
+title: Lab06 - Rolling Updates with Kubernetes Deployments
 ---
 
 #### `candy-deployment` Deployment descriptor

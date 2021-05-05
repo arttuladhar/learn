@@ -1,5 +1,5 @@
 ---
-title: Lab1 - Creating Kubernetes Pod
+title: Lab01 - Creating Kubernetes Pod
 ---
 
 *nginx.yml*

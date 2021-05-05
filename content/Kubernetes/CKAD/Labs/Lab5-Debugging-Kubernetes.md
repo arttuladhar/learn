@@ -1,5 +1,5 @@
 ---
-title: Lab5 - Debugging Kubernetes
+title: Lab05 - Debugging Kubernetes
 ---
 
 ### Identify the Problem

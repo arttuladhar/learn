@@ -10,7 +10,7 @@ Most services use a *selector* to determine which pods will receive traffic thou
 
 Services are Kubernetes objects which means that they can be created using yaml descriptors. Here is an example of a simple service:
 
-```yaml
+```yml
 kind: Service
 apiVersion: v1
 metadata:

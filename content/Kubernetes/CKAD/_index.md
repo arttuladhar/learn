@@ -7,3 +7,4 @@ title: Certified Kubernetes Application Developer (CKAD)
 ## Reference
 
 * [Linux Academy - CKAD Study Guide](/pdf/ckad-study-guide.pdf)
+* [Kubernetes Documentation](https://kubernetes.io/docs/home/)

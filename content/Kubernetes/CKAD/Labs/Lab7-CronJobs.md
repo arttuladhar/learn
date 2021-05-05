@@ -1,5 +1,5 @@
 ---
-title: Lab 7 - Configuring Cron Jobs in Kubernetes
+title: Lab07 - Configuring Cron Jobs in Kubernetes
 ---
 
 *cleanup-cronjob.yml*

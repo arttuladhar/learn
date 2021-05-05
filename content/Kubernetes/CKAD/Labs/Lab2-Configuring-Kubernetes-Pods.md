@@ -1,5 +1,5 @@
 ---
-title: Lab2 - Configuring Kubernetes Pod
+title: Lab02 - Configuring Kubernetes Pod
 ---
 
 #### Create a ConfigMap called `candy-service-config` to store the container's configuration data.

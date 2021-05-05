@@ -51,7 +51,7 @@ kubectl get pods -l app=myapp, env=prod
 Annotations are similar to labels in that they can be used to store custom metadata about objects.
 
 {{% notice warning %}}
-However, unline labels, annotations cannot be used to select or group objects in Kubernetes. External tools can read, write and interact with anootations.
+However, unlike labels, annotations cannot be used to select or group objects in Kubernetes. External tools can read, write and interact with annotations
 {{% /notice %}}
 
 We can attach annotations to objects using the `metadata.annotations` section of the object descriptors:
@@ -74,7 +74,7 @@ Like labels, existing annotations can also be viewed using `kubectl describe`
 
 ## Deployments
 
-**Deployments** provide a way to declaratively manage a dynamic set of replica pods. They provide powerful functionality such as scalling and rolling updates.
+**Deployments** provide a way to declaratively manage a dynamic set of replica pods. They provide powerful functionality such as scaling and rolling updates.
 
 A deployment define a desired state for the replica pods. The cluster will constantly work to maintain the desired state, creating, removing, and modifying the replica pods accordingly.
 
@@ -104,8 +104,11 @@ spec:
 ```
 
 Note the following:
+
 * **spec.replicas** - The number of replica pods
+  
 * **spec.template** - A template pod descriptor which defines the pods which will be created
+
 * **spec.selector** - The deployment will manage all pods whose label match this selector
 
 ```shell

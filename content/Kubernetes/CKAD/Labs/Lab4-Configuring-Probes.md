@@ -1,5 +1,5 @@
 ---
-title: Lab4 - Configuring Probes for a Kubernetes Pod
+title: Lab04 - Configuring Probes for a Kubernetes Pod
 ---
 
 `candy-service-pod.yml`

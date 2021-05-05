@@ -105,7 +105,7 @@ kubectl get pods -n my-ckad
 
 You can specify the `command` that will be used to run a container in the Pod spec. Thiw will override any built-in default command specified by the container image.
 
-```yaml
+```yml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -121,7 +121,7 @@ spec:
     restartPolicy: Never
 ```
 
-Ports are another important part of container configuration. If you need a poart that the container is listening on to be exposed to the cluster, you can specify a `containerPort`
+Ports are another important part of container configuration. If you need a port that the container is listening on to be exposed to the cluster, you can specify a `containerPort`
 
 *my-containerport-pod.yml*
 

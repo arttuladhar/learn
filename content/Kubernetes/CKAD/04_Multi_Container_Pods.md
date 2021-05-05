@@ -27,8 +27,8 @@ spec:
 How can containers interact with one another in a pod ?
 
 * **Shared Network** - All listening ports are accessible to other containers in the pod, even if they are not exposed outside the pod.
-* **Shared Storage Volumes** - Containers can intereact with each other by reading and modifying files in a shared storage volume that is mounted with both containers.
-* **Shared Process Namespace** - With process namespace sharing enabled, containers in the same pod can interact with and signal one another's process.
+* **Shared Storage Volumes** - Containers can interact with each other by reading and modifying files in a shared storage volume that is mounted with both containers.
+* **Shared Process Namespace** - With process namespace sharing enabled, containers in the same pod can interact with and signal one another process.
 
 
 ## Design Patterns for Multi-Container Pods
